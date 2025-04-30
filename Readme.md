@@ -33,6 +33,10 @@ A WebAssembly-based image converter for the AVIF format, enabling fast encoding 
 ```bash
 git clone https://github.com/fahara02/ConvAvif.git
 cd ConvAvif
+mkdir build
+cd build
+emcmake cmake -DCMAKE_BUILD_TYPE=Release ..
+emmake make
 ```
 
 ## Building

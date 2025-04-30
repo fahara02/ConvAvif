@@ -1,0 +1,91 @@
+cmake_minimum_required(VERSION 3.15)
+project(imageconverter LANGUAGES C CXX)
+
+include(ExternalProject)
+
+set(EXTERNAL_INSTALL_DIR ${CMAKE_BINARY_DIR}/external)
+
+# Generate Meson cross-file for Emscripten
+set(DAV1D_MESON_CROSS_FILE ${CMAKE_BINARY_DIR}/dav1d-cross.ini)
+# Use CMake's compilers for cross-file
+file(TO_CMAKE_PATH "${CMAKE_C_COMPILER}" EMCC_PATH)
+file(TO_CMAKE_PATH "${CMAKE_CXX_COMPILER}" EMXX_PATH)
+file(TO_CMAKE_PATH "${CMAKE_AR}" EMAR_PATH)
+file(WRITE ${DAV1D_MESON_CROSS_FILE}
+"[binaries]\n"
+"c = '${EMCC_PATH}'\n"
+"cpp = '${EMXX_PATH}'\n"
+"ar = '${EMAR_PATH}'\n\n"
+"[host_machine]\n"
+"system = 'emscripten'\n"
+"cpu_family = 'wasm32'\n"
+"cpu = 'wasm32'\n"
+"endian = 'little'\n"
+)
+
+# Build dav1d with Meson
+ExternalProject_Add(dav1d
+  GIT_REPOSITORY https://code.videolan.org/videolan/dav1d.git
+  SOURCE_DIR ${CMAKE_BINARY_DIR}/dav1d/src
+  BINARY_DIR ${CMAKE_BINARY_DIR}/dav1d/build
+  CONFIGURE_COMMAND meson setup ${CMAKE_BINARY_DIR}/dav1d/build ${CMAKE_BINARY_DIR}/dav1d/src --cross-file=${DAV1D_MESON_CROSS_FILE} --prefix=${EXTERNAL_INSTALL_DIR} --default-library static --buildtype release
+  BUILD_COMMAND meson compile -C ${CMAKE_BINARY_DIR}/dav1d/build
+  INSTALL_COMMAND meson install -C ${CMAKE_BINARY_DIR}/dav1d/build
+)
+
+# Build libavif with CMake
+ExternalProject_Add(libavif
+  GIT_REPOSITORY https://github.com/AOMediaCodec/libavif.git
+  GIT_TAG main
+  PREFIX ${CMAKE_BINARY_DIR}/libavif
+  DEPENDS dav1d
+  INSTALL_DIR ${EXTERNAL_INSTALL_DIR}
+  CMAKE_ARGS
+    -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+    -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_DIR}
+    -DAVIF_CODEC_DAV1D=ON
+    -DAVIF_LIBYUV=LOCAL
+    -DDAV1D_LIBRARY=${EXTERNAL_INSTALL_DIR}/lib/libdav1d.a
+    -DDAV1D_INCLUDE_DIR=${EXTERNAL_INSTALL_DIR}/include
+    -DBUILD_SHARED_LIBS=OFF
+    -DCMAKE_BUILD_TYPE=Release
+)
+
+# Expose install dirs and property queries removed; now use EXTERNAL_INSTALL_DIR directly
+include(FetchContent)
+FetchContent_Declare(
+  stb
+  GIT_REPOSITORY https://github.com/nothings/stb
+  SOURCE_DIR ${CMAKE_SOURCE_DIR}/third_party/stb
+)
+FetchContent_MakeAvailable(stb)
+
+set(CMAKE_EXECUTABLE_SUFFIX ".html")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --no-wasm-opt -sEXPORTED_FUNCTIONS=_convert_image,_free_buffer -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,UTF8ToString,allocate,intArrayFromString -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1 -sEXPORT_ES6=1")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --no-wasm-opt")
+
+include_directories(
+  include
+  ${stb_SOURCE_DIR}
+  ${EXTERNAL_INSTALL_DIR}/include
+)
+link_directories(${EXTERNAL_INSTALL_DIR}/lib)
+
+# Imported static library targets for dav1d and avif
+add_library(dav1d_static STATIC IMPORTED)
+set_target_properties(dav1d_static PROPERTIES
+  IMPORTED_LOCATION "${EXTERNAL_INSTALL_DIR}/lib/libdav1d.a"
+)
+
+add_library(avif_static STATIC IMPORTED)
+set_target_properties(avif_static PROPERTIES
+  IMPORTED_LOCATION "${EXTERNAL_INSTALL_DIR}/lib/libavif.a"
+  INTERFACE_LINK_LIBRARIES dav1d_static
+)
+
+add_executable(imageconverter src/imageconverter.cpp)
+add_dependencies(imageconverter dav1d libavif)
+
+target_compile_definitions(imageconverter PRIVATE STB_IMAGE_IMPLEMENTATION STB_IMAGE_RESIZE_IMPLEMENTATION)
+# Link against imported static libraries
+target_link_libraries(imageconverter PRIVATE avif_static dav1d_static)

@@ -1,0 +1,40 @@
+# Build artifacts
+_deps
+build
+# Ignore third-party dependencies except STB
+third_party/*
+!third_party/stb/
+!third_party/stb/**
+dav1d
+libavif
+external
+dav1d-prefix
+dav1d-cross.ini
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+build.ninja
+
+# WebAssembly artifacts
+*.wasm
+*.js.map
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.suo
+*.userossc
+*.sdf
+
+# OS generated files
+.DS_Store
+Thumbs.db

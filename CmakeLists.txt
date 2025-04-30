@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(imageconverter LANGUAGES C CXX)
+# Disallow in-source builds
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+  message(FATAL_ERROR "In-source builds are not allowed. Please create a separate 'build' directory and run CMake there (e.g. mkdir build && cd build && cmake ..).")
+endif()
 
 include(ExternalProject)
 

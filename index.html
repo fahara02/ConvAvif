@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+  <script type="module">
+    import Module from './build/imageconverter.js';
+    Module().then(Module => {
+      const fileInput = document.getElementById('fileInput');
+      const widthInput = document.getElementById('width');
+      const heightInput = document.getElementById('height');
+      const convertBtn = document.getElementById('convertBtn');
+      const outputImg = document.getElementById('output');
+
+      // auto-detect image dimensions on file selection
+      fileInput.addEventListener('change', () => {
+        if (!fileInput.files.length) return;
+        const file = fileInput.files[0];
+        const imgTmp = new Image();
+        imgTmp.onload = () => {
+          widthInput.value = imgTmp.naturalWidth;
+          heightInput.value = imgTmp.naturalHeight;
+          URL.revokeObjectURL(imgTmp.src);
+        };
+        imgTmp.src = URL.createObjectURL(file);
+      });
+
+      convertBtn.addEventListener('click', async () => {
+        if (!fileInput.files.length) {
+          alert('Please select an image file.');
+          return;
+        }
+        const file = fileInput.files[0];
+        const width = parseInt(widthInput.value, 10);
+        const height = parseInt(heightInput.value, 10);
+        const buffer = await file.arrayBuffer();
+        const uint8 = new Uint8Array(buffer);
+        const config = new Module.EncodeConfig();
+        config.codecChoice = Module.CodecChoice.AOM;
+        // use YUV420 for wide browser support and proper color conversion
+        config.pixelFormat = Module.AvifPixelFormat.YUV420;
+        try {
+          const result = Module.convertImage(uint8, width, height, config);
+          const view = result.getData();
+          // clone to non-shared buffer
+          const copy = view.slice();
+          // free WASM ImageBuffer
+          result.delete();
+          // build blob from copied buffer
+          const blob = new Blob([copy.buffer], { type: 'image/avif' });
+          console.log('AVIF data size:', copy.byteLength);
+          
+          outputImg.src = URL.createObjectURL(blob);
+        } catch (e) {
+          console.error('Conversion error:', e);
+          alert('Conversion failed: ' + (e.message || e));
+        }
+      });
+    });
+  </script>
+  <title>AVIF Image Converter Test</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input, button { margin: 5px; }
+    img { display: block; margin-top: 10px; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>AVIF Image Converter</h1>
+  <input type="file" id="fileInput" accept="image/*" />
+  <label>Width: <input type="number" id="width" value="800" /></label>
+  <label>Height: <input type="number" id="height" value="600" /></label>
+  <button id="convertBtn">Convert to AVIF</button>
+  <img id="output" alt="Converted AVIF will appear here" />
+</body>
+</html>

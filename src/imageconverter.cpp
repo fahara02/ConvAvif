@@ -87,7 +87,8 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
                              std::string(avifResultToString(optionResult)));
   }
 
-  avifImage *image = avifImageCreate(width, height, 8, config.pixelFormat);
+
+  avifImage *image = avifImageCreate(width, height, RGB_DEPTH, config.pixelFormat);
   // Set color profile to sRGB/BT.709
   image->colorPrimaries = AVIF_COLOR_PRIMARIES_BT709;
   image->transferCharacteristics = AVIF_TRANSFER_CHARACTERISTICS_SRGB;
@@ -97,6 +98,7 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
   avifRGBImageSetDefaults(&rgb, image);
   rgb.chromaUpsampling = AVIF_CHROMA_UPSAMPLING_AUTOMATIC;
   rgb.format = AVIF_RGB_FORMAT_RGBA;
+  
   rgb.depth = RGB_DEPTH;
   rgb.pixels = resized_data.data();
   rgb.rowBytes = width * avifRGBImagePixelSize(&rgb);
@@ -196,6 +198,7 @@ EMSCRIPTEN_BINDINGS(avif_enums) {
       .value("YUV422", AVIF_PIXEL_FORMAT_YUV422)
       .value("YUV420", AVIF_PIXEL_FORMAT_YUV420)
       .value("YUV400", AVIF_PIXEL_FORMAT_YUV400);
+    
   emscripten::enum_<avifCodecChoice>("AvifCodecChoice")
       .value("AUTO", AVIF_CODEC_CHOICE_AUTO)
       .value("AOM", AVIF_CODEC_CHOICE_AOM)

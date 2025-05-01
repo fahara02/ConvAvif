@@ -5,7 +5,7 @@
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
   <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
   <script type="module">
-    import Module from './build/imageconverter.js';
+    import Module from '/build/imageconverter.js';
     Module().then(Module => {
       let origWidth = 0, origHeight = 0;
       const fileInput = document.getElementById('fileInput');
@@ -280,7 +280,7 @@
     <span>New size: <span id="newSize">-</span></span>
     <span>Compression: <span id="compressionPercent">-</span></span>
   </div>
-  <img id="output" src="placeholder.svg" alt="Converted AVIF will appear here" />
+  <img id="output" src="/asset/placeholder.svg" alt="Converted AVIF will appear here" />
   <a id="downloadLink" style="display:none;"></a>
 </body>
 </html>

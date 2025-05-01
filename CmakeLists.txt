@@ -198,3 +198,4 @@ add_dependencies(imageconverter dav1d libavif svt_av1)
 
 target_compile_definitions(imageconverter PRIVATE STB_IMAGE_IMPLEMENTATION STB_IMAGE_RESIZE_IMPLEMENTATION)
 target_link_libraries(imageconverter PRIVATE pthread_stubs avif_static dav1d_static aom_static ${EXTERNAL_INSTALL_DIR}/lib/libSvtAv1Enc.a)
+

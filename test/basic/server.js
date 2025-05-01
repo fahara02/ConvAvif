@@ -1,6 +1,6 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const app = express();
 
 // Required security headers
 app.use((req, res, next) => {
@@ -12,8 +12,14 @@ app.use((req, res, next) => {
 // Serve static files from root directory
 app.use(express.static(__dirname));
 
-// Serve build files from /build
-app.use('/build', express.static(path.join(__dirname, 'build')));
+// Serve WASM files from root /dist
+app.use('/dist', express.static(path.join(__dirname, '..', '..', 'dist')));
+
+// Serve Emscripten build artifacts from /build
+app.use('/build', express.static(path.join(__dirname, '..', '..', 'build')));
+
+// Serve static assets from /asset
+app.use('/asset', express.static(path.join(__dirname, '..', '..', 'asset')));
 
 // Handle direct requests to index.html
 app.get('/', (req, res) => {
@@ -24,6 +30,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running:
   - Main page: http://localhost:${PORT}
-  - WASM files: http://localhost:${PORT}/build/
+  - WASM files: http://localhost:${PORT}/dist/
   - Press Ctrl+C to stop`);
 });

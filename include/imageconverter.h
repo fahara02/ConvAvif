@@ -4,8 +4,7 @@
 #include <algorithm>
 #include <avif/avif.h>
 #include <string>
-
-static constexpr int RGB_DEPTH = 8;
+static constexpr int RGB_DEPTH=8;
 static constexpr int MAX_QUALITY = 99;
 static constexpr int MAX_QUANTIZER = 63;
 static constexpr int MAX_TILE_LOG2 = 6;
@@ -14,6 +13,8 @@ static constexpr int MAX_SHARPNESS = 7; // Sharpness range (0-7)
 template <typename T> void setField(T &field, T minVal, T maxVal) {
   field = std::clamp(field, minVal, maxVal);
 }
+
+
 
 struct EncodeConfig {
 private:

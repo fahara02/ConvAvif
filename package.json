@@ -2,20 +2,37 @@
   "name": "convavif",
   "version": "1.0.0",
   "description": "A WebAssembly-based image converter for the AVIF format, enabling fast encoding and decoding in browser or Node.js environments.",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build:wasm": "emcc src/imageconverter.cpp src/pthread_stubs.c -Iinclude --bind -O3 -sMODULARIZE=1 -sEXPORT_ES6=1 -sENVIRONMENT=node,web -sALLOW_MEMORY_GROWTH=1 -o dist/convavif.mjs",
-    "build": "npm run build:wasm",
-    "prepare": "npm run build"
+    "start": "node test/root-server.js",
+    "build:wasm": "scripts\\build-wasm.bat",
+    "build:ts": "tsup",
+    "build": "npm run build:wasm && npm run copy:wasm && npm run build:ts",
+    "prepare": "npm run build",
+    "copy:wasm": "node scripts/copy-wasm.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "express": "^5.1.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "express": "^5.1.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   }
 }

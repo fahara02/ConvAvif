@@ -7,6 +7,7 @@
   <script type="module">
     import Module from './build/imageconverter.js';
     Module().then(Module => {
+      let origWidth = 0, origHeight = 0;
       const fileInput = document.getElementById('fileInput');
       const widthInput = document.getElementById('width');
       const heightInput = document.getElementById('height');
@@ -24,6 +25,8 @@
         const file = fileInput.files[0];
         const imgTmp = new Image();
         imgTmp.onload = () => {
+          origWidth = imgTmp.naturalWidth;
+          origHeight = imgTmp.naturalHeight;
           widthInput.value = imgTmp.naturalWidth;
           heightInput.value = imgTmp.naturalHeight;
           URL.revokeObjectURL(imgTmp.src);
@@ -32,14 +35,43 @@
        
       });
 
+      const resizeModeInput = document.getElementById('resizeMode');
+      resizeModeInput.addEventListener('change', () => {
+        document.getElementById('fixedResizeInputs').style.display = resizeModeInput.value === 'fixed' ? '' : 'none';
+        document.getElementById('percentResizeInputs').style.display = resizeModeInput.value === 'percent' ? '' : 'none';
+      });
+      const keepAspectCheckbox = document.getElementById('keepAspect');
+      widthInput.addEventListener('input', () => {
+        if (resizeModeInput.value === 'fixed' && keepAspectCheckbox.checked && origWidth && origHeight) {
+          heightInput.value = Math.round(widthInput.value * origHeight / origWidth);
+        }
+      });
+      heightInput.addEventListener('input', () => {
+        if (resizeModeInput.value === 'fixed' && keepAspectCheckbox.checked && origWidth && origHeight) {
+          widthInput.value = Math.round(heightInput.value * origWidth / origHeight);
+        }
+      });
+
       convertBtn.addEventListener('click', async () => {
         if (!fileInput.files.length) {
           alert('Please select an image file.');
           return;
         }
         const file = fileInput.files[0];
-        const width = parseInt(widthInput.value, 10);
-        const height = parseInt(heightInput.value, 10);
+        // Compute resize dimensions
+        let width, height;
+        const mode = document.getElementById('resizeMode').value;
+        if (mode === 'percent') {
+          const percent = parseInt(document.getElementById('percentValue').value, 10);
+          width = Math.round(origWidth * percent / 100);
+          height = Math.round(origHeight * percent / 100);
+        } else {
+          width = parseInt(widthInput.value, 10);
+          height = parseInt(heightInput.value, 10);
+          if (document.getElementById('keepAspect').checked) {
+            height = Math.round(width * origHeight / origWidth);
+          }
+        }
         const buffer = await file.arrayBuffer();
         const uint8 = new Uint8Array(buffer);
         const config = new Module.EncodeConfig();
@@ -191,17 +223,27 @@
   </div>
   <div class="controls">
     <input type="file" id="fileInput" accept="image/*" required />
-    <label for="width">Width:</label>
-    <input type="number" id="width" value="800" placeholder="px" required />
-    <label for="height">Height:</label>
-    <input type="number" id="height" value="600" placeholder="px" required />
-    <!-- Add after height input -->
-<div class="controls">
-  <label for="quality">Quality:</label>
-  <input type="range" id="quality" min="0" max="99" value="30">
-  <span id="qualityValue">30</span>
-</div>
-
+    <label for="resizeMode">Resize Mode:</label>
+    <select id="resizeMode">
+      <option value="fixed" selected>Fixed</option>
+      <option value="percent">Percentage</option>
+    </select>
+    <div id="fixedResizeInputs">
+      <label for="width">Width:</label>
+      <input type="number" id="width" value="800" placeholder="px" required />
+      <label for="height">Height:</label>
+      <input type="number" id="height" value="600" placeholder="px" required />
+      <label><input type="checkbox" id="keepAspect" checked> Keep aspect ratio</label>
+    </div>
+    <div id="percentResizeInputs" style="display:none;">
+      <label for="percentValue">Percent (%):</label>
+      <input type="number" id="percentValue" min="1" max="100" value="100">
+    </div>
+    <label for="quality">Quality:</label>
+    <input type="range" id="quality" min="0" max="99" value="30">
+    <span id="qualityValue">30</span>
+    <button id="convertBtn">Convert to AVIF</button>
+  </div>
 <details class="advanced-settings">
   <summary>Advanced Settings</summary>
   <div class="advanced-controls">
@@ -233,8 +275,6 @@
     <input type="number" id="tileCols" min="0" max="6" value="0">
   </div>
 </details>
-    <button id="convertBtn">Convert to AVIF</button>
-  </div>
   <div class="stats">
     <span>Original size: <span id="originalSize">-</span></span>
     <span>New size: <span id="newSize">-</span></span>

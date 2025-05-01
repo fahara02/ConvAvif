@@ -5,6 +5,7 @@
 #include <avif/avif.h>
 #include <string>
 
+static constexpr int RGB_DEPTH = 8;
 static constexpr int MAX_QUALITY = 99;
 static constexpr int MAX_QUANTIZER = 63;
 static constexpr int MAX_TILE_LOG2 = 6;

@@ -24,12 +24,13 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
   if (!data)
     throw std::runtime_error("Failed to load image");
 
-  // Resize image
+  // Resize image to RGBA
   std::vector<unsigned char> resized_data(width * height * 4);
-  printf("Resized buffer: %dx%d@%dch (expected %zu bytes)\n", width, height,
-         channels, resized_data.size());
-  stbir_resize_uint8_linear(data, w, h, 0, resized_data.data(), width, height,
-                            0, STBIR_RGBA);
+  printf("Resized buffer: %dx%d@4ch (expected %zu bytes)\n", width, height,
+         resized_data.size());
+  stbir_resize_uint8_linear(data, w, h, 0,
+                            resized_data.data(), width, height, 0,
+                            STBIR_RGBA);
   stbi_image_free(data);
 
   // Configure AVIF encoder
@@ -94,11 +95,13 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
   image->yuvRange = AVIF_RANGE_FULL; // Use full range for web content
   avifRGBImage rgb;
   avifRGBImageSetDefaults(&rgb, image);
+  rgb.chromaUpsampling = AVIF_CHROMA_UPSAMPLING_AUTOMATIC;
   rgb.format = AVIF_RGB_FORMAT_RGBA;
-  rgb.depth = 8;
+  rgb.depth = RGB_DEPTH;
   rgb.pixels = resized_data.data();
-  rgb.rowBytes = width * 4;
-  rgb.alphaPremultiplied = AVIF_FALSE;
+  rgb.rowBytes = width * avifRGBImagePixelSize(&rgb);
+  rgb.alphaPremultiplied =  AVIF_FALSE;
+  rgb.ignoreAlpha =  false;
   avifResult convertResult = avifImageRGBToYUV(image, &rgb);
   if (convertResult != AVIF_RESULT_OK) {
     avifEncoderDestroy(encoder);

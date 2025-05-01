@@ -2,6 +2,7 @@
   "name": "convavif",
   "version": "1.0.0",
   "description": "A WebAssembly-based image converter for the AVIF format, enabling fast encoding and decoding in browser or Node.js environments.",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,14 +11,16 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./wasm": "./dist/imageconverter.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node test/root-server.js",
     "build:wasm": "scripts\\build-wasm.bat",
     "build:ts": "tsup",
-    "build": "npm run build:wasm && npm run copy:wasm && npm run build:ts",
+    "build": "npm run build:wasm  && npm run build:ts && npm run copy:wasm",
+    "build-nwb": " npm run build:ts && npm run copy:wasm",
     "prepare": "npm run build",
     "copy:wasm": "node scripts/copy-wasm.js"
   },
@@ -31,6 +34,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "@types/node": "^22.15.3",
     "express": "^5.1.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"

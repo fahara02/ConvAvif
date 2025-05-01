@@ -1,5 +1,5 @@
 // Test script for the convavif npm package using actual image file
-import * as convavif from 'convavif';
+import * as convavif from '../dist/index.js';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 

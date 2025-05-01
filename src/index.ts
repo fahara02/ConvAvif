@@ -1,3 +1,3 @@
-export * from './convAvif';
-export * from './types';
+export * from './types.ts';
+export * from './convAvif.ts';
 

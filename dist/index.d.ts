@@ -78,7 +78,6 @@ declare global {
         importScripts?: (path: string) => void;
     }
 }
-
 /**
  * Initialize and return the WASM module instance
  */

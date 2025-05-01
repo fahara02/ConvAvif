@@ -1,4 +1,16 @@
 // Wrapper for ConvAvif WASM module and utility functions
+import {
+    ConvAvifModule,
+    ConvertImageParams,
+    ConvertImageResult,
+    EncodeConfig,
+    ResizeMode,
+    ResizeOptionsFixed,
+    ResizeOptionsPercent,
+    AvifPixelFormat,
+    CodecChoice,
+    Tune
+} from './types.js';
 
 // Allow for both build-time and runtime import resolution
 // In build/dev, import from the build directory
@@ -13,44 +25,49 @@ declare global {
 }
 
 /**
- * We load the WASM module at runtime, as it's shipped as a standalone file
+ * Load the WASM module, handling different environments
  */
 const loadModuleFactory = async (): Promise<any> => {
-  // Path to WASM module (runtime path, not build path)
-  const wasmPath = './convavif.mjs'; // Same path for browser and Node.js
+  // Define paths based on environment
+  const paths = [
+    // Path 1: When importing as a package - use wasm.mjs export
+    './wasm.mjs',
+    // Path 2: Direct path to the dist folder
+    './imageconverter.js',
+    // Path 3: Development path (relative to src folder)
+    '../dist/imageconverter.js',
+    // Path 4: Browser relative path
+    '/dist/imageconverter.js'
+  ];
 
-  try {
-    // Use dynamic import for both browser and Node.js ES modules
-    // This works in both environments for ESM
-    const dynamicImport = new Function('path', 'return import(path)');
-    const mod = await dynamicImport(wasmPath);
-    return mod.default || mod;
-  } catch (e: unknown) {
-    const error = e as Error;
-    console.error('Error loading WASM module:', error);
-    console.warn('Attempting development fallback path...');
-    
+  let lastError: Error | null = null;
+
+  // Try each path in sequence
+  for (const path of paths) {
     try {
-      // Try direct import with relative path for development
-      // This is useful during development when linking locally
-      // @ts-ignore - Allow dynamic import during development
-      const mod = await import('../build/imageconverter.js');
-      return mod.default || mod;
-    } catch (fallbackError) {
-      console.error('Fallback import also failed:', fallbackError);
-      throw new Error(`Failed to load WASM module: ${error.message || 'Unknown error'}`);
+      if (typeof window !== 'undefined') {
+        // Browser environment
+        const dynamicImport = new Function('path', 'return import(path)');
+        const mod = await dynamicImport(path);
+        return mod.default || mod;
+      } else {
+        // Node environment - dynamic import with relative path
+        // @ts-ignore - Dynamic import in Node
+        const mod = await import(path);
+        return mod.default || mod;
+      }
+    } catch (e) {
+      lastError = e as Error;
+      console.warn(`Failed to load WASM from path: ${path}`);
+      // Continue to next path
     }
   }
+
+  // All paths failed
+  console.error('All module loading attempts failed');
+  throw new Error(`Failed to load WASM module: ${lastError?.message || 'Unknown error'}`);
 };
-import {
-    ConvAvifModule,
-    ConvertImageParams,
-    ConvertImageResult,
-    EncodeConfig,
-    ResizeMode,
-    ResizeOptionsFixed,
-    ResizeOptionsPercent
-} from './types';
+// Types are already imported at the top of the file
 
 
 

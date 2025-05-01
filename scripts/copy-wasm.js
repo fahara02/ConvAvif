@@ -1,5 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Define paths
 const buildDir = path.join(__dirname, '..', 'build');
@@ -44,6 +48,18 @@ if (fs.existsSync(sourceJsPath)) {
   }
 } else {
   console.error(`✗ Error: Source JS file not found: ${sourceJsPath}`);
+}
+
+// Create a module wrapper file to support the package.json exports field
+const wrapperContent = `// Auto-generated WASM wrapper for package exports
+export { default } from './imageconverter.js';
+`;
+
+try {
+  fs.writeFileSync(path.join(distDir, 'wasm.mjs'), wrapperContent);
+  console.log(`✓ Created wasm module wrapper: ${path.join(distDir, 'wasm.mjs')}`);
+} catch (err) {
+  console.error(`✗ Error creating wasm wrapper file: ${err.message}`);
 }
 
 console.log('WASM files copy completed');

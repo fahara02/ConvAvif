@@ -26,17 +26,21 @@ var Tune = /* @__PURE__ */ ((Tune2) => {
 
 // src/convAvif.ts
 var loadModuleFactory = async () => {
-  const wasmPath = typeof window !== "undefined" ? "./convavif.mjs" : "./convavif.mjs";
-  if (typeof window !== "undefined") {
+  const wasmPath = "./convavif.mjs";
+  try {
     const dynamicImport = new Function("path", "return import(path)");
     const mod = await dynamicImport(wasmPath);
     return mod.default || mod;
-  } else {
+  } catch (e) {
+    const error = e;
+    console.error("Error loading WASM module:", error);
+    console.warn("Attempting development fallback path...");
     try {
-      return eval("require")(wasmPath);
-    } catch (e) {
-      console.warn("Falling back to development WASM path");
-      return eval("require")("../build/imageconverter.js");
+      const mod = await import("../build/imageconverter.js");
+      return mod.default || mod;
+    } catch (fallbackError) {
+      console.error("Fallback import also failed:", fallbackError);
+      throw new Error(`Failed to load WASM module: ${error.message || "Unknown error"}`);
     }
   }
 };

@@ -1,7 +1,9 @@
 "use strict";
+var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -15,6 +17,14 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // src/index.ts
@@ -59,17 +69,21 @@ var Tune = /* @__PURE__ */ ((Tune2) => {
 
 // src/convAvif.ts
 var loadModuleFactory = async () => {
-  const wasmPath = typeof window !== "undefined" ? "./convavif.mjs" : "./convavif.mjs";
-  if (typeof window !== "undefined") {
+  const wasmPath = "./convavif.mjs";
+  try {
     const dynamicImport = new Function("path", "return import(path)");
     const mod = await dynamicImport(wasmPath);
     return mod.default || mod;
-  } else {
+  } catch (e) {
+    const error = e;
+    console.error("Error loading WASM module:", error);
+    console.warn("Attempting development fallback path...");
     try {
-      return eval("require")(wasmPath);
-    } catch (e) {
-      console.warn("Falling back to development WASM path");
-      return eval("require")("../build/imageconverter.js");
+      const mod = await import("../build/imageconverter.js");
+      return mod.default || mod;
+    } catch (fallbackError) {
+      console.error("Fallback import also failed:", fallbackError);
+      throw new Error(`Failed to load WASM module: ${error.message || "Unknown error"}`);
     }
   }
 };

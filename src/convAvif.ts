@@ -17,28 +17,28 @@ declare global {
  */
 const loadModuleFactory = async (): Promise<any> => {
   // Path to WASM module (runtime path, not build path)
-  const wasmPath = typeof window !== 'undefined' 
-    ? './convavif.mjs'         // Browser
-    : './convavif.mjs';        // Node.js
+  const wasmPath = './convavif.mjs'; // Same path for browser and Node.js
 
-  // Use dynamic import or require based on environment
-  if (typeof window !== 'undefined') {
-    // Browser - use Function constructor to avoid bundling issues
-    // This allows the path to be resolved at runtime
+  try {
+    // Use dynamic import for both browser and Node.js ES modules
+    // This works in both environments for ESM
     const dynamicImport = new Function('path', 'return import(path)');
     const mod = await dynamicImport(wasmPath);
     return mod.default || mod;
-  } else {
-    // Node - use require
+  } catch (e: unknown) {
+    const error = e as Error;
+    console.error('Error loading WASM module:', error);
+    console.warn('Attempting development fallback path...');
+    
     try {
-      // Try normal package path
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      return eval('require')(wasmPath);
-    } catch (e) {
-      // During development/testing, fallback to build path
-      console.warn('Falling back to development WASM path');
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      return eval('require')('../build/imageconverter.js');
+      // Try direct import with relative path for development
+      // This is useful during development when linking locally
+      // @ts-ignore - Allow dynamic import during development
+      const mod = await import('../build/imageconverter.js');
+      return mod.default || mod;
+    } catch (fallbackError) {
+      console.error('Fallback import also failed:', fallbackError);
+      throw new Error(`Failed to load WASM module: ${error.message || 'Unknown error'}`);
     }
   }
 };

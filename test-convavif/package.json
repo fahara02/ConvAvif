@@ -1,0 +1,16 @@
+{
+  "name": "test-convavif",
+  "version": "1.0.0",
+  "description": "Test project for convavif package",
+  "main": "test.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "convavif": "file:../"
+  }
+}

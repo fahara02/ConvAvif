@@ -80,12 +80,12 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
   encoder->tileRowsLog2 = config.tileRowsLog2;
   encoder->tileColsLog2 = config.tileColsLog2;
 
-  avifResult optionResult = avifEncoderSetCodecSpecificOption(
-      encoder, "cq-level", std::to_string(config.quality).c_str());
-  if (optionResult != AVIF_RESULT_OK) {
-    throw std::runtime_error("Failed to set quality: " +
-                             std::string(avifResultToString(optionResult)));
-  }
+  // avifResult optionResult = avifEncoderSetCodecSpecificOption(
+  //     encoder, "cq-level", std::to_string(config.quality).c_str());
+  // if (optionResult != AVIF_RESULT_OK) {
+  //   throw std::runtime_error("Failed to set quality: " +
+  //                            std::string(avifResultToString(optionResult)));
+  // }
 
 
   avifImage *image = avifImageCreate(width, height, RGB_DEPTH, config.pixelFormat);

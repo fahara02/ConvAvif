@@ -8,6 +8,7 @@
 static constexpr int MAX_QUALITY = 99;
 static constexpr int MAX_QUANTIZER = 63;
 static constexpr int MAX_TILE_LOG2 = 6;
+static constexpr int MAX_SHARPNESS = 7; // Sharpness range (0-7)
 
 template <typename T> void setField(T &field, T minVal, T maxVal) {
   field = std::clamp(field, minVal, maxVal);
@@ -21,11 +22,13 @@ private:
     return q == -1 ? -1 : std::clamp(q, 0, MAX_QUANTIZER);
   }
   int validatedTileLog2(int t) const { return std::clamp(t, 0, MAX_TILE_LOG2); }
+  int validatedSharpness(int s) const { return std::clamp(s, 0, MAX_SHARPNESS); }
 
 public:
   int quality = 30;
   int qualityAlpha = -1;
   int speed = 6;
+  int sharpness = 0; // 0-7 filter strength
   avifPixelFormat pixelFormat = AVIF_PIXEL_FORMAT_YUV420;
   enum CodecChoice { AUTO, AOM, SVT } codecChoice = AOM;
   int minQuantizer = -1; // 0-63, -1 for default
@@ -41,6 +44,7 @@ public:
   void setMaxQuantizer(int q) { maxQuantizer = validatedQuantizer(q); }
   void setTileRowsLog2(int t) { tileRowsLog2 = validatedTileLog2(t); }
   void setTileColsLog2(int t) { tileColsLog2 = validatedTileLog2(t); }
+  void setSharpness(int s) { sharpness = validatedSharpness(s); }
 
   // Getters
   int getQuality() const { return quality; }
@@ -48,6 +52,7 @@ public:
   int getMaxQuantizer() const { return maxQuantizer; }
   int getTileRowsLog2() const { return tileRowsLog2; }
   int getTileColsLog2() const { return tileColsLog2; }
+  int getSharpness() const { return sharpness; }
 };
 
 std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,

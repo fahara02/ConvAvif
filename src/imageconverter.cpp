@@ -68,8 +68,9 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
   encoder->qualityAlpha =
       (config.qualityAlpha == -1) ? config.quality : config.qualityAlpha;
   encoder->speed = config.speed;
+  // Apply sharpness (0-7) via codec-specific option
+  avifEncoderSetCodecSpecificOption(encoder, "sharpness", std::to_string(config.sharpness).c_str());
   // Map percent quality (0-100) to libavif quantizer (0=best..63=worst)
-  
   int q = static_cast<int>(std::round((100 - config.quality) * MAX_QUANTIZER/ 100.0));
   encoder->minQuantizer = q;
   encoder->maxQuantizer = q;
@@ -170,7 +171,8 @@ EMSCRIPTEN_BINDINGS(ImageConverter) {
                 &EncodeConfig::setTileRowsLog2)
       .property("tileColsLog2", &EncodeConfig::getTileColsLog2,
                 &EncodeConfig::setTileColsLog2)
-      .property("tune", &EncodeConfig::tune);
+      .property("tune", &EncodeConfig::tune)
+      .property("sharpness", &EncodeConfig::sharpness);
   emscripten::enum_<EncodeConfig::CodecChoice>("CodecChoice")
       .value("AUTO", EncodeConfig::CodecChoice::AUTO)
       .value("AOM", EncodeConfig::CodecChoice::AOM)

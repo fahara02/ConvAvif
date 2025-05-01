@@ -43,15 +43,22 @@
         try {
           const result = Module.convertImage(uint8, width, height, config);
           const view = result.getData();
-          // clone to non-shared buffer
-          const copy = view.slice();
-          // free WASM ImageBuffer
-          result.delete();
-          // build blob from copied buffer
-          const blob = new Blob([copy.buffer], { type: 'image/avif' });
-          console.log('AVIF data size:', copy.byteLength);
+          const copy = new Uint8Array(view); // Correct copy
+           result.delete(); // Now safe to free WASM memory
+
+          console.log('From JS AVIF data size:', copy.byteLength);
+            // Use the copied data to create the Blob
+           const blob = new Blob([copy], { type: 'image/avif' });
           
-          outputImg.src = URL.createObjectURL(blob);
+          
+          const url = URL.createObjectURL(blob);
+          console.log(url);
+          outputImg.src = url;
+          const downloadLink = document.getElementById('downloadLink');
+          downloadLink.href = url;
+          downloadLink.download = 'converted.avif';
+          downloadLink.style.display = 'block';
+          downloadLink.textContent = '⬇️ Download AVIF';
         } catch (e) {
           console.error('Conversion error:', e);
           alert('Conversion failed: ' + (e.message || e));
@@ -73,5 +80,6 @@
   <label>Height: <input type="number" id="height" value="600" /></label>
   <button id="convertBtn">Convert to AVIF</button>
   <img id="output" alt="Converted AVIF will appear here" />
+  <a id="downloadLink" style="display:none;"></a>
 </body>
 </html>

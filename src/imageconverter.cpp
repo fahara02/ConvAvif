@@ -83,6 +83,15 @@ if (optionResult != AVIF_RESULT_OK) {
 
   avifRWData output = AVIF_DATA_EMPTY;
   avifResult result = avifEncoderWrite(encoder, image, &output);
+
+if (result != AVIF_RESULT_OK) {
+  avifEncoderDestroy(encoder);
+  avifImageDestroy(image);
+  avifRWDataFree(&output);
+  throw std::runtime_error("AVIF encoding failed: " +
+                           std::string(avifResultToString(result)));
+}
+  printf("From cpp AVIF output size: %zu bytes\n", output.size); // Log output size
   avifEncoderDestroy(encoder);
   avifImageDestroy(image);
   
@@ -93,11 +102,13 @@ if (optionResult != AVIF_RESULT_OK) {
   }
 
   // Copy output to managed buffer
-  uint8_t *output_data = static_cast<uint8_t *>(malloc(output.size));
-  memcpy(output_data, output.data, output.size);
-  avifRWDataFree(&output);
+ 
+  // Copy AVIF data into a vector (ensures ownership)
+  std::vector<uint8_t> output_data(output.data, output.data + output.size);
+  avifRWDataFree(&output); // Free libavif's buffer
 
-  return std::make_shared<ImageBuffer>(output_data, output.size);
+
+  return std::make_shared<ImageBuffer>(std::move(output_data)); 
 }
 
 

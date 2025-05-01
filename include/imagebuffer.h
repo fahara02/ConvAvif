@@ -1,22 +1,22 @@
-// imagebuffer.h
 #include <emscripten.h>
 #include <emscripten/bind.h>
 #include <memory>
+#include <vector> // Add this
 
 class ImageBuffer {
 public:
-  ImageBuffer(uint8_t *data, size_t size) : data_(data), size_(size) {}
-  ~ImageBuffer() { free(data_); }
+  // Store data in a vector to manage ownership safely
+  ImageBuffer(std::vector<uint8_t> data) : data_(std::move(data)) {}
 
   emscripten::val getData() const {
-    return emscripten::val(emscripten::typed_memory_view(size_, data_));
+    // Return a view into the vector's data
+    return emscripten::val(emscripten::typed_memory_view(data_.size(), data_.data()));
   }
 
-  size_t getSize() const { return size_; }
+  size_t getSize() const { return data_.size(); }
 
 private:
-  uint8_t *data_;
-  size_t size_;
+  std::vector<uint8_t> data_; // Owns the data
 };
 
 EMSCRIPTEN_BINDINGS(ImageBuffer) {

@@ -1,6 +1,7 @@
 #include "imageconverter.h"
 #include <avif/avif.h>
 #include <cstdlib>
+#include <cmath>
 #include <emscripten/bind.h>       // for emscripten::val, typed_memory_view
 #include <emscripten/emscripten.h> // for EM_ASM
 #include <stb_image.h>
@@ -10,6 +11,11 @@
 std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
                                            int width, int height,
                                            const EncodeConfig &config) {
+
+  // Before resizing
+  if (width <= 0 || height <= 0 || width > 8192 || height > 8192) {
+    throw std::runtime_error("Invalid dimensions (1-8192px allowed)");
+  }
   // Decode input image
   int w, h, channels;
   unsigned char *data = stbi_load_from_memory(
@@ -20,6 +26,8 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
 
   // Resize image
   std::vector<unsigned char> resized_data(width * height * 4);
+  printf("Resized buffer: %dx%d@%dch (expected %zu bytes)\n", width, height,
+         channels, resized_data.size());
   stbir_resize_uint8_linear(data, w, h, 0, resized_data.data(), width, height,
                             0, STBIR_RGBA);
   stbi_image_free(data);
@@ -60,8 +68,13 @@ std::shared_ptr<ImageBuffer> convert_image(const std::string &input_data,
   encoder->qualityAlpha =
       (config.qualityAlpha == -1) ? config.quality : config.qualityAlpha;
   encoder->speed = config.speed;
-  encoder->minQuantizer = config.minQuantizer;
-  encoder->maxQuantizer = config.maxQuantizer;
+  // Map percent quality (0-100) to libavif quantizer (0=best..63=worst)
+  
+  int q = static_cast<int>(std::round((100 - config.quality) * MAX_QUANTIZER/ 100.0));
+  encoder->minQuantizer = q;
+  encoder->maxQuantizer = q;
+  encoder->minQuantizerAlpha = q;
+  encoder->maxQuantizerAlpha = q;
   encoder->tileRowsLog2 = config.tileRowsLog2;
   encoder->tileColsLog2 = config.tileColsLog2;
 

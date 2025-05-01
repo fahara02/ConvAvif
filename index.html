@@ -29,6 +29,7 @@
           URL.revokeObjectURL(imgTmp.src);
         };
         imgTmp.src = URL.createObjectURL(file);
+       
       });
 
       convertBtn.addEventListener('click', async () => {
@@ -47,9 +48,7 @@
         config.pixelFormat = Module.AvifPixelFormat.YUV420;
         config.quality = parseInt(qualityInput.value); 
         config.speed = parseInt(document.getElementById('speed').value);
-        config.tune = parseInt(document.getElementById('tune').value);
-        config.minQuantizer=parseInt(document.getElementById('minQuantizer').value);
-        config.maxQuantizer=parseInt(document.getElementById('maxQuantizer').value);
+        config.tune = parseInt(document.getElementById('tune').value);       
         config.tileRowsLog2=parseInt(document.getElementById('tileRows').value);
         config.tileColsLog2=parseInt(document.getElementById('tileCols').value);
         try {
@@ -61,8 +60,13 @@
           console.log('From JS AVIF data size:', copy.byteLength);
             // Use the copied data to create the Blob
            const blob = new Blob([copy], { type: 'image/avif' });
-          
-          
+          // Update size stats
+          const originalSize = file.size;
+          const newSize = copy.byteLength;
+          const compression = ((originalSize - newSize) / originalSize * 100).toFixed(2);
+          document.getElementById('originalSize').textContent = `${(originalSize/1024).toFixed(2)} KB`;
+          document.getElementById('newSize').textContent = `${(newSize/1024).toFixed(2)} KB`;
+          document.getElementById('compressionPercent').textContent = `${compression}%`;
           const url = URL.createObjectURL(blob);
           console.log(url);
           outputImg.src = url;
@@ -167,6 +171,15 @@
   width: 80px;
   padding: 5px;
 }
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.stats span {
+  flex: 1;
+  text-align: center;
+}
   </style>
 </head>
 <body>
@@ -183,8 +196,8 @@
     <!-- Add after height input -->
 <div class="controls">
   <label for="quality">Quality:</label>
-  <input type="range" id="quality" min="0" max="99" value="60">
-  <span id="qualityValue">60</span>
+  <input type="range" id="quality" min="0" max="99" value="30">
+  <span id="qualityValue">30</span>
 </div>
 
 <details class="advanced-settings">
@@ -200,11 +213,7 @@
       <option value="2">SSIM</option>
     </select>
 
-    <label for="minQuantizer">Min Quantizer (0-63):</label>
-    <input type="number" id="minQuantizer" min="0" max="63" value="-1">
-    
-    <label for="maxQuantizer">Max Quantizer (0-63):</label>
-    <input type="number" id="maxQuantizer" min="0" max="63" value="-1">
+   
     
     <label for="tileRows">Tile Rows Log2:</label>
     <input type="number" id="tileRows" min="0" max="6" value="0">
@@ -214,6 +223,11 @@
   </div>
 </details>
     <button id="convertBtn">Convert to AVIF</button>
+  </div>
+  <div class="stats">
+    <span>Original size: <span id="originalSize">-</span></span>
+    <span>New size: <span id="newSize">-</span></span>
+    <span>Compression: <span id="compressionPercent">-</span></span>
   </div>
   <img id="output" src="placeholder.svg" alt="Converted AVIF will appear here" />
   <a id="downloadLink" style="display:none;"></a>

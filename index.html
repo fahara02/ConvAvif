@@ -12,6 +12,11 @@
       const heightInput = document.getElementById('height');
       const convertBtn = document.getElementById('convertBtn');
       const outputImg = document.getElementById('output');
+      const qualityInput = document.getElementById('quality');
+      const qualityValue = document.getElementById('qualityValue');
+      qualityInput.addEventListener('input', () => {
+               qualityValue.textContent = qualityInput.value;
+          });
 
       // auto-detect image dimensions on file selection
       fileInput.addEventListener('change', () => {
@@ -40,6 +45,13 @@
         config.codecChoice = Module.CodecChoice.AOM;
         // use YUV420 for wide browser support and proper color conversion
         config.pixelFormat = Module.AvifPixelFormat.YUV420;
+        config.quality = parseInt(qualityInput.value); 
+        config.speed = parseInt(document.getElementById('speed').value);
+        config.tune = parseInt(document.getElementById('tune').value);
+        config.minQuantizer=parseInt(document.getElementById('minQuantizer').value);
+        config.maxQuantizer=parseInt(document.getElementById('maxQuantizer').value);
+        config.tileRowsLog2=parseInt(document.getElementById('tileRows').value);
+        config.tileColsLog2=parseInt(document.getElementById('tileCols').value);
         try {
           const result = Module.convertImage(uint8, width, height, config);
           const view = result.getData();
@@ -66,20 +78,144 @@
       });
     });
   </script>
-  <title>AVIF Image Converter Test</title>
+  <title>ConvAvif - AVIF Image Converter</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    input, button { margin: 5px; }
-    img { display: block; margin-top: 10px; max-width: 100%; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .project-header h1 {
+      margin: 0;
+      font-size: 2em;
+      text-align: center;
+    }
+    .project-header p {
+      text-align: center;
+      margin: 0 0 20px;
+      color: #666;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .controls input[type="file"] {
+      flex: 1 1 auto;
+    }
+    .controls input[type="number"] {
+      width: 80px;
+      padding: 5px;
+    }
+    .controls button {
+      padding: 8px 16px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .controls button:hover {
+      background: #0055aa;
+    }
+    img#output {
+      display: block;
+      margin-top: 20px;
+      max-width: 100%;
+      border: 1px solid #ddd;
+    }
+    a#downloadLink {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a#downloadLink:hover {
+      text-decoration: underline;
+    }
+    .advanced-settings {
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.advanced-settings summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.advanced-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.advanced-controls label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.advanced-controls input[type="number"] {
+  width: 80px;
+  padding: 5px;
+}
   </style>
 </head>
 <body>
-  <h1>AVIF Image Converter</h1>
-  <input type="file" id="fileInput" accept="image/*" />
-  <label>Width: <input type="number" id="width" value="800" /></label>
-  <label>Height: <input type="number" id="height" value="600" /></label>
-  <button id="convertBtn">Convert to AVIF</button>
-  <img id="output" alt="Converted AVIF will appear here" />
+  <div class="project-header">
+    <h1>ConvAvif</h1>
+    <p>AVIF Image Converter</p>
+  </div>
+  <div class="controls">
+    <input type="file" id="fileInput" accept="image/*" required />
+    <label for="width">Width:</label>
+    <input type="number" id="width" value="800" placeholder="px" required />
+    <label for="height">Height:</label>
+    <input type="number" id="height" value="600" placeholder="px" required />
+    <!-- Add after height input -->
+<div class="controls">
+  <label for="quality">Quality:</label>
+  <input type="range" id="quality" min="0" max="99" value="60">
+  <span id="qualityValue">60</span>
+</div>
+
+<details class="advanced-settings">
+  <summary>Advanced Settings</summary>
+  <div class="advanced-controls">
+    <label for="speed">Speed (0-10):</label>
+    <input type="number" id="speed" min="0" max="10" value="6">
+    
+    <label for="tune">Tune:</label>
+    <select id="tune">
+      <option value="0">Default</option>
+      <option value="1">PSNR</option>
+      <option value="2">SSIM</option>
+    </select>
+
+    <label for="minQuantizer">Min Quantizer (0-63):</label>
+    <input type="number" id="minQuantizer" min="0" max="63" value="-1">
+    
+    <label for="maxQuantizer">Max Quantizer (0-63):</label>
+    <input type="number" id="maxQuantizer" min="0" max="63" value="-1">
+    
+    <label for="tileRows">Tile Rows Log2:</label>
+    <input type="number" id="tileRows" min="0" max="6" value="0">
+    
+    <label for="tileCols">Tile Columns Log2:</label>
+    <input type="number" id="tileCols" min="0" max="6" value="0">
+  </div>
+</details>
+    <button id="convertBtn">Convert to AVIF</button>
+  </div>
+  <img id="output" src="placeholder.svg" alt="Converted AVIF will appear here" />
   <a id="downloadLink" style="display:none;"></a>
 </body>
 </html>

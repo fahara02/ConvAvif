@@ -2,14 +2,18 @@
   "name": "convavif",
   "version": "1.0.0",
   "description": "A WebAssembly-based image converter for the AVIF format, enabling fast encoding and decoding in browser or Node.js environments.",
-  "main": "server.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:wasm": "emcc src/imageconverter.cpp src/pthread_stubs.c -Iinclude --bind -O3 -sMODULARIZE=1 -sEXPORT_ES6=1 -sENVIRONMENT=node,web -sALLOW_MEMORY_GROWTH=1 -o dist/convavif.mjs",
+    "build": "npm run build:wasm",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "files": ["dist"],
   "dependencies": {
     "express": "^5.1.0",
     "path": "^0.12.7"

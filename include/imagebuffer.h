@@ -5,7 +5,7 @@
 
 class ImageBuffer {
 public:
-  // Store data in a vector to manage ownership safely
+
   ImageBuffer(std::vector<uint8_t> data) : data_(std::move(data)) {}
 
   emscripten::val getData() const {
@@ -16,7 +16,7 @@ public:
   size_t getSize() const { return data_.size(); }
 
 private:
-  std::vector<uint8_t> data_; // Owns the data
+  std::vector<uint8_t> data_; 
 };
 
 EMSCRIPTEN_BINDINGS(ImageBuffer) {

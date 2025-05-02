@@ -162,7 +162,7 @@ ExternalProject_Add(libavif
 
 # Configure Emscripten flags with pthread support
 set(CMAKE_EXECUTABLE_SUFFIX ".html")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --no-wasm-opt --bind -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,UTF8ToString,allocate,intArrayFromString,HEAPU8 -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1 -sEXPORT_ES6=1 -pthread -sUSE_PTHREADS=1 -sSHARED_MEMORY=1 -sINITIAL_MEMORY=512MB ")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --no-wasm-opt --bind -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,UTF8ToString,allocate,intArrayFromString,HEAPU8 -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1 -sEXPORT_ES6=1 -pthread -sUSE_PTHREADS=1 -sSTACK_SIZE=16MB -sSHARED_MEMORY=1 -sINITIAL_MEMORY=1GB -sMAXIMUM_MEMORY=2GB ")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --no-wasm-opt --bind -sDISABLE_EXCEPTION_CATCHING=0 -pthread -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=navigator.hardwareConcurrency")
 
 include(FetchContent)

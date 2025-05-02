@@ -40,6 +40,36 @@ export enum Tune {
   TUNE_SSIM = 2,
 }
 
+// Error codes (match ConverterError enum in C++)
+export enum ErrorCode {
+  // Success
+  OK = 0,
+
+  // Application-specific errors
+  INVALID_DIMENSIONS = 100,
+  IMAGE_LOAD_FAILED,
+  ENCODER_CREATION_FAILED,
+  CONVERSION_FAILED,
+  ENCODING_FAILED,
+  INVALID_ARGUMENT,
+  OUT_OF_MEMORY,
+  INVALID_QUANTIZER_VALUES,
+  UNKNOWN_ERROR,
+
+  // AVIF errors start at 200 (offset to avoid overlap)
+  AVIF_ERROR_START = 200
+}
+
+// Error object returned from C++ (matches Error class in C++)
+export interface ConverterError {
+  /** Error code */
+  code: ErrorCode;
+  /** Error message */
+  message: string;
+  /** Stack trace (if available) */
+  stackTrace: string;
+}
+
 // Encoding configuration (match EncodeConfig struct in C++)
 export interface EncodeConfig {
   quality: number;
@@ -81,15 +111,33 @@ export interface SharedImageBuffer extends ImageBuffer {
   delete(): void;
 }
 
-/** Return type of Module.convertImage (std::shared_ptr<ImageBuffer>) */
-export type ConvertImageResult = SharedImageBuffer;
+/**
+ * Result type that contains either a successful ImageBuffer or an Error
+ */
+export interface ConversionResult {
+  // Whether the conversion was successful
+  success: boolean;
+  // The image if conversion was successful, undefined otherwise
+  image?: ImageBuffer;
+  // The error if conversion failed, undefined otherwise
+  error?: ConverterError;
+}
 
 export interface ConvAvifModule {
-  convertImage(inputData: Uint8Array, width: number, height: number, config: EncodeConfig): ConvertImageResult;
   EncodeConfig: { new(): EncodeConfig };
   CodecChoice: typeof CodecChoice;
   AvifPixelFormat: typeof AvifPixelFormat;
   Tune: typeof Tune;
+  ErrorCode: typeof ErrorCode;
+  
+  // Original method (now used as a fallback)
+  convertImage(inputData: Uint8Array, width: number, height: number, config: EncodeConfig): ConversionResult;
+  
+  // New direct conversion method that provides reliable data transfer
+  convertImageDirect(inputData: Uint8Array, width: number, height: number, config: EncodeConfig): {
+    success: boolean;
+    data?: Uint8Array;
+    size?: number;
+    error?: ConverterError;
+  };
 }
-
-

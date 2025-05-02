@@ -2,14 +2,16 @@
 import {
     ConvAvifModule,
     ConvertImageParams,
-    ConvertImageResult,
+    ConversionResult,
     EncodeConfig,
     ResizeMode,
     ResizeOptionsFixed,
     ResizeOptionsPercent,
     AvifPixelFormat,
     CodecChoice,
-    Tune
+    Tune,
+    ErrorCode,
+    ConverterError
 } from './types.js';
 
 // Allow for both build-time and runtime import resolution
@@ -113,7 +115,7 @@ export function computeDimensions(
 }
 
 /**
- * Convert raw image data via WASM and return AVIF bytes
+ * Convert raw image data via WASM and return AVIF bytes or throw an error
  */
 export async function convertImage(
   inputData: Uint8Array,
@@ -122,20 +124,43 @@ export async function convertImage(
   config: EncodeConfig
 ): Promise<Uint8Array> {
   const mod = await initWasm();
-  const result: ConvertImageResult = mod.convertImage(inputData, width, height, config);
-  const view = result.getData();
-  const copy = new Uint8Array(view);
-  result.delete();
-  return copy;
+  // Use the direct conversion method for reliable data transfer
+  const result = mod.convertImageDirect(inputData, width, height, config);
+  
+  // Check if there was an error
+  if (!result.success && result.error) {
+    const error = result.error;
+    const errorObj = new Error(error.message);
+    // Add custom properties
+    (errorObj as any).code = error.code;
+    (errorObj as any).stackTrace = error.stackTrace;
+    throw errorObj;
+  }
+  
+  // If successful, get the image data directly
+  if (result.success && result.data) {
+    // data is already a Uint8Array, just create a copy to ensure it's detached
+    const copy = new Uint8Array(result.data);
+    return copy;
+  }
+  
+  throw new Error('Conversion successful but no image data returned');
 }
 
 /**
  * High-level helper: convert and produce a Blob for download
+ * 
+ * @throws Error with additional properties `code` and `stackTrace` when conversion fails
  */
 export async function convertToBlob(
   params: ConvertImageParams
 ): Promise<{ data: Uint8Array; blob: Blob }> {
-  const data = await convertImage(params.inputData, params.width, params.height, params.config);
-  const blob = new Blob([data], { type: 'image/avif' });
-  return { data, blob };
+  try {
+    const data = await convertImage(params.inputData, params.width, params.height, params.config);
+    const blob = new Blob([data], { type: 'image/avif' });
+    return { data, blob };
+  } catch (error) {
+    // Re-throw the error from convertImage
+    throw error;
+  }
 }

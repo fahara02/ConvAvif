@@ -14,6 +14,9 @@ public:
   }
 
   size_t getSize() const { return data_.size(); }
+  
+  // Direct access to the underlying data vector
+  const std::vector<uint8_t>& getRawData() const { return data_; }
 
 private:
   std::vector<uint8_t> data_; 
@@ -23,5 +26,6 @@ EMSCRIPTEN_BINDINGS(ImageBuffer) {
   emscripten::class_<ImageBuffer>("ImageBuffer")
       .smart_ptr<std::shared_ptr<ImageBuffer>>("shared_ptr<ImageBuffer>")
       .function("getData", &ImageBuffer::getData)
-      .function("getSize", &ImageBuffer::getSize);
+      .function("getSize", &ImageBuffer::getSize)
+      .function("getRawData", &ImageBuffer::getRawData);
 }

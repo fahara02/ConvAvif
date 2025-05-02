@@ -97,17 +97,19 @@ ExternalProject_Add(svt_av1
     -DEB_THREAD_SANITIZER_ENABLED=1
 )
 
-# Add AOM as a dependency
+
 ExternalProject_Add(aom
   PREFIX ${CMAKE_BINARY_DIR}/aom
-  DOWNLOAD_COMMAND ""  # skip, already cloned
-  UPDATE_COMMAND ""    # no update
+  DOWNLOAD_COMMAND ""  # Skip, already cloned
+  UPDATE_COMMAND ""    # No update
   SOURCE_DIR ${AOM_SRC_DIR}
   BINARY_DIR ${CMAKE_BINARY_DIR}/aom/build
   INSTALL_DIR ${EXTERNAL_INSTALL_DIR}
   CMAKE_ARGS
+    
     -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
     -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_DIR}
+    -DCMAKE_BUILD_TYPE=Release
     -DCONFIG_MULTITHREAD=0
     -DENABLE_DOCS=OFF
     -DENABLE_TESTS=OFF
@@ -117,7 +119,10 @@ ExternalProject_Add(aom
     -DENABLE_NASM=OFF
     -DAOM_TARGET_CPU=generic
     -DCONFIG_RUNTIME_CPU_DETECT=0
+    -DCONFIG_REALTIME_ONLY=0
     -DCONFIG_WEBM_IO=0
+    -DCONFIG_PIC=0
+    -DCONFIG_AV1_HIGHBITDEPTH=0
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_C_FLAGS=-pthread
     -DCMAKE_C_FLAGS=-sUSE_PTHREADS=1
@@ -129,7 +134,6 @@ ExternalProject_Add(aom
     -DCMAKE_EXE_LINKER_FLAGS=-sUSE_PTHREADS=1
     -DCMAKE_EXE_LINKER_FLAGS=-sSHARED_MEMORY=1
 )
-
 # Build libavif with CMake
 ExternalProject_Add(libavif
   GIT_REPOSITORY https://github.com/AOMediaCodec/libavif.git
@@ -158,8 +162,8 @@ ExternalProject_Add(libavif
 
 # Configure Emscripten flags with pthread support
 set(CMAKE_EXECUTABLE_SUFFIX ".html")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --no-wasm-opt --bind -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,UTF8ToString,allocate,intArrayFromString,HEAPU8 -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1 -sEXPORT_ES6=1 -pthread -sUSE_PTHREADS=1 -sSHARED_MEMORY=1 ")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --no-wasm-opt --bind -sDISABLE_EXCEPTION_CATCHING=0 -pthread -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=4")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --no-wasm-opt --bind -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,UTF8ToString,allocate,intArrayFromString,HEAPU8 -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1 -sEXPORT_ES6=1 -pthread -sUSE_PTHREADS=1 -sSHARED_MEMORY=1 -sINITIAL_MEMORY=512MB ")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --no-wasm-opt --bind -sDISABLE_EXCEPTION_CATCHING=0 -pthread -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=navigator.hardwareConcurrency")
 
 include(FetchContent)
 FetchContent_Declare(

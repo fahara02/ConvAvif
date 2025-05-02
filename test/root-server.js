@@ -1,6 +1,10 @@
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Required security headers
 app.use((req, res, next) => {
@@ -25,13 +29,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(PROJECT_ROOT, 'test', 'basic', 'index.html'));
 });
 
+// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}
-  - Project root: ${PROJECT_ROOT}
-  - Serving:
-    - /build → ${path.join(PROJECT_ROOT, 'build')}
-    - /asset → ${path.join(PROJECT_ROOT, 'asset')}
-    - /dist  → ${path.join(PROJECT_ROOT, 'dist')}
-  Press Ctrl+C to stop`);
+  console.log(`Server running on http://localhost:${PORT}`);
+  console.log('CORS headers enabled for SharedArrayBuffer support');
 });

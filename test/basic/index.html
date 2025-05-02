@@ -4,57 +4,87 @@
   <meta charset="UTF-8" />
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
   <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+  <!-- Added viewport meta tag for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module">
-    import Module from '/build/imageconverter.js';
-    Module().then(Module => {
-      let origWidth = 0, origHeight = 0;
-      const fileInput = document.getElementById('fileInput');
-      const widthInput = document.getElementById('width');
-      const heightInput = document.getElementById('height');
-      const convertBtn = document.getElementById('convertBtn');
-      const outputImg = document.getElementById('output');
-      const qualityInput = document.getElementById('quality');
-      const qualityValue = document.getElementById('qualityValue');
-      qualityInput.addEventListener('input', () => {
-               qualityValue.textContent = qualityInput.value;
-          });
+    // Dynamically load WASM module
+    import Module from '../../build/imageconverter.js';
 
-      // auto-detect image dimensions on file selection
-      fileInput.addEventListener('change', () => {
-        if (!fileInput.files.length) return;
-        const file = fileInput.files[0];
-        const imgTmp = new Image();
-        imgTmp.onload = () => {
-          origWidth = imgTmp.naturalWidth;
-          origHeight = imgTmp.naturalHeight;
-          widthInput.value = imgTmp.naturalWidth;
-          heightInput.value = imgTmp.naturalHeight;
-          URL.revokeObjectURL(imgTmp.src);
-        };
-        imgTmp.src = URL.createObjectURL(file);
-       
+    // Global reference to the WebAssembly module
+    let moduleInstance;
+
+    // Captured image dimensions for resizing
+    let origWidth = 0;
+    let origHeight = 0;
+    const fileInput = document.getElementById('fileInput');
+    const widthInput = document.getElementById('width');
+    const heightInput = document.getElementById('height');
+    const qualityInput = document.getElementById('quality');
+    const qualityValue = document.getElementById('qualityValue');
+    const outputImg = document.getElementById('output');
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize module when the page loads
+      Module().then(instance => {
+        moduleInstance = instance;
+        console.log('WASM module loaded successfully!');
+      }).catch(e => {
+        console.error('Failed to load WASM module:', e);
+        alert('Failed to load WASM module: ' + e.message);
       });
 
-      const resizeModeInput = document.getElementById('resizeMode');
-      resizeModeInput.addEventListener('change', () => {
-        document.getElementById('fixedResizeInputs').style.display = resizeModeInput.value === 'fixed' ? '' : 'none';
-        document.getElementById('percentResizeInputs').style.display = resizeModeInput.value === 'percent' ? '' : 'none';
+      // Handle resize mode switching
+      document.getElementById('resizeMode').addEventListener('change', function(e) {
+        document.getElementById('fixedResizeInputs').style.display = 
+          e.target.value === 'fixed' ? 'grid' : 'none';
+        document.getElementById('percentResizeInputs').style.display = 
+          e.target.value === 'percent' ? 'grid' : 'none';
       });
-      const keepAspectCheckbox = document.getElementById('keepAspect');
-      widthInput.addEventListener('input', () => {
-        if (resizeModeInput.value === 'fixed' && keepAspectCheckbox.checked && origWidth && origHeight) {
+
+      // Update quality value display
+      qualityInput.addEventListener('input', function() {
+        qualityValue.textContent = qualityInput.value;
+      });
+
+      // Show file preview and capture dimensions
+      fileInput.addEventListener('change', function() {
+        if (fileInput.files && fileInput.files[0]) {
+          const file = fileInput.files[0];
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const img = new Image();
+            img.onload = function() {
+              origWidth = img.width;
+              origHeight = img.height;
+              
+              // Set default dimensions
+              widthInput.value = img.width;
+              heightInput.value = img.height;
+              
+              // Show preview
+              outputImg.src = e.target.result;
+            }
+            img.src = e.target.result;
+          }
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Handle aspect ratio maintenance
+      widthInput.addEventListener('input', function() {
+        if (document.getElementById('keepAspect').checked && origWidth > 0) {
           heightInput.value = Math.round(widthInput.value * origHeight / origWidth);
         }
       });
-      heightInput.addEventListener('input', () => {
-        if (resizeModeInput.value === 'fixed' && keepAspectCheckbox.checked && origWidth && origHeight) {
-          widthInput.value = Math.round(heightInput.value * origWidth / origHeight);
-        }
-      });
 
-      convertBtn.addEventListener('click', async () => {
-        if (!fileInput.files.length) {
-          alert('Please select an image file.');
+      // Convert button functionality
+      document.getElementById('convertBtn').addEventListener('click', async function() {
+        if (!moduleInstance) {
+          alert('WASM module is not loaded yet. Please try again in a moment.');
+          return;
+        }
+        if (!fileInput.files || !fileInput.files[0]) {
+          alert('Please select an image file first!');
           return;
         }
         const file = fileInput.files[0];
@@ -74,11 +104,11 @@
         }
         const buffer = await file.arrayBuffer();
         const uint8 = new Uint8Array(buffer);
-        const config = new Module.EncodeConfig();
-        config.codecChoice = Module.CodecChoice.AOM;
+        const config = new moduleInstance.EncodeConfig();
+        config.codecChoice = moduleInstance.CodecChoice.AOM;
         // set chroma subsampling based on user selection
         const pf = document.getElementById('pixelFormat').value;
-        config.pixelFormat = Module.AvifPixelFormat[pf];
+        config.pixelFormat = moduleInstance.AvifPixelFormat[pf];
         config.quality = parseInt(qualityInput.value); 
         config.speed = parseInt(document.getElementById('speed').value);
         config.tune = parseInt(document.getElementById('tune').value);
@@ -86,14 +116,25 @@
         config.tileRowsLog2=parseInt(document.getElementById('tileRows').value);
         config.tileColsLog2=parseInt(document.getElementById('tileCols').value);
         try {
-          const result = Module.convertImage(uint8, width, height, config);
-          const view = result.getData();
-          const copy = new Uint8Array(view); // Correct copy
-           result.delete(); // Now safe to free WASM memory
-
+          // Use the direct conversion function that properly transfers image data
+          const result = moduleInstance.convertImageDirect(uint8, width, height, config);
+          
+          // Check if conversion was successful
+          if (!result.success || !result.data) {
+            throw new Error(result.error ? result.error.message : 'Unknown conversion error');
+          }
+          
+          // Get image data directly from result.data (which is now a proper Uint8Array)
+          const copy = new Uint8Array(result.data); // Make a copy of the data
+          
           console.log('From JS AVIF data size:', copy.byteLength);
-            // Use the copied data to create the Blob
-           const blob = new Blob([copy], { type: 'image/avif' });
+          
+          // Create blob with proper MIME type
+          let blob;
+          let mimeType = 'image/avif';
+          
+          // Use the copied data to create the Blob
+          blob = new Blob([copy], { type: mimeType });
           // Update size stats
           const originalSize = file.size;
           const newSize = copy.byteLength;
@@ -101,8 +142,70 @@
           document.getElementById('originalSize').textContent = `${(originalSize/1024).toFixed(2)} KB`;
           document.getElementById('newSize').textContent = `${(newSize/1024).toFixed(2)} KB`;
           document.getElementById('compressionPercent').textContent = `${compression}%`;
+          
+          // Add debug info about the first few bytes of the AVIF file
+          const header = Array.from(copy.slice(0, 32)).map(b => b.toString(16).padStart(2, '0')).join(' ');
+          console.log("AVIF header bytes:", header);
+          
+          // Check for AVIF file signature
+          const isAvifSignature = copy.length > 12 && 
+              copy[4] === 0x66 && copy[5] === 0x74 && copy[6] === 0x79 && copy[7] === 0x70 && 
+              copy[8] === 0x61 && copy[9] === 0x76 && copy[10] === 0x69 && copy[11] === 0x66;
+          console.log("Valid AVIF signature:", isAvifSignature);
+          
           const url = URL.createObjectURL(blob);
           console.log(url);
+          
+          // Create a backup download link that always works
+          const directDownloadLink = document.createElement('a');
+          directDownloadLink.href = url;
+          directDownloadLink.download = 'converted.avif';
+          directDownloadLink.textContent = '⬇️ Download AVIF (Direct)';
+          directDownloadLink.style.margin = '10px';
+          directDownloadLink.style.display = 'inline-block';
+          directDownloadLink.classList.add('btn', 'btn-secondary');
+          document.getElementById('resultContainer').appendChild(directDownloadLink);
+          
+          // Try to display the image
+          outputImg.onerror = function(e) {
+            console.error('Error loading image:', e);
+            
+            // Try alternative display method - convert to PNG
+            document.getElementById('resultContainer').innerHTML += 
+              '<div class="alert alert-warning mt-3">' +
+              '<p>Your browser may not support displaying AVIF images directly. ' +
+              'You can still download the AVIF file using the links below.</p>' +
+              '<p>Common reasons for blank images:</p>' +
+              '<ul>' +
+              '<li>The browser does not fully support the AVIF format</li>' +
+              '<li>The specific AVIF encoding parameters are not compatible with this browser</li>' +
+              '<li>The image content is valid but cannot be rendered in this context</li>' +
+              '</ul>' +
+              '</div>';
+            
+            // Add info about successful conversion despite display issues
+            document.getElementById('resultContainer').innerHTML += 
+              '<div class="alert alert-success">' +
+              'The conversion was successful (output size: ' + copy.byteLength + ' bytes). ' +
+              'Try downloading and viewing the file in another application that supports AVIF.' +
+              '</div>';
+          };
+          
+          // Add specific AVIF settings used
+          const settingsInfo = document.createElement('div');
+          settingsInfo.classList.add('mt-3', 'small', 'text-muted');
+          settingsInfo.innerHTML = `
+            <strong>AVIF Settings Used:</strong><br>
+            Quality: ${config.quality}<br>
+            Codec: ${moduleInstance.CodecChoice[config.codecChoice] || 'AOM'}<br>
+            Pixel Format: ${pf}<br>
+            Speed: ${config.speed}<br>
+            Sharpness: ${config.sharpness}<br>
+            Tile Rows: 2^${config.tileRowsLog2}<br>
+            Tile Columns: 2^${config.tileColsLog2}
+          `;
+          document.getElementById('resultContainer').appendChild(settingsInfo);
+          
           outputImg.src = url;
           const downloadLink = document.getElementById('downloadLink');
           downloadLink.href = url;
@@ -118,169 +221,307 @@
   </script>
   <title>ConvAvif - AVIF Image Converter</title>
   <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #4b5563;
+      --success-color: #22c55e;
+      --warning-color: #f59e0b;
+      --error-color: #dc2626;
+      --background-color: #f8fafc;
+      --border-color: #e2e8f0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 640px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #f5f5f5;
-      color: #333;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      background-color: var(--background-color);
+      color: #1e293b;
+      line-height: 1.6;
     }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
     .project-header h1 {
-      margin: 0;
-      font-size: 2em;
-      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.025em;
     }
+
     .project-header p {
-      text-align: center;
-      margin: 0 0 20px;
-      color: #666;
+      font-size: 1.125rem;
+      color: var(--secondary-color);
+      margin: 0;
     }
+
     .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 20px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
     }
-    .controls input[type="file"] {
-      flex: 1 1 auto;
+
+    .control-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
-    .controls input[type="number"] {
-      width: 80px;
-      padding: 5px;
+
+    input, select, button {
+      font-family: inherit;
+      font-size: 0.9375rem;
+      padding: 0.625rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      transition: all 0.15s ease;
     }
-    .controls button {
-      padding: 8px 16px;
-      background: #0066cc;
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    button {
+      background-color: var(--primary-color);
       color: white;
+      font-weight: 600;
+      cursor: pointer;
       border: none;
-      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    #fileInput {
+      background: white;
+      padding: 0.75rem;
+      border: 1px dashed var(--border-color);
+    }
+
+    .advanced-settings {
+      background: white;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .advanced-settings summary {
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
       cursor: pointer;
     }
-    .controls button:hover {
-      background: #0055aa;
+
+    .advanced-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border-color);
     }
-    img#output {
-      display: block;
-      margin-top: 20px;
-      max-width: 100%;
-      border: 1px solid #ddd;
+
+    .stats {
+      display: flex;
+      gap: 1.5rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    a#downloadLink {
-      display: inline-block;
-      margin-top: 10px;
-      color: #0066cc;
+
+    .stats span {
+      text-align: center;
+      flex: 1;
+      padding: 0.5rem;
+      background: var(--background-color);
+      border-radius: 0.5rem;
+    }
+
+    #resultContainer {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    #output {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-color);
+      margin: 1rem 0;
+    }
+
+    #downloadLink {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--success-color);
+      color: white;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.15s ease;
+    }
+
+    #downloadLink:hover {
+      transform: translateY(-1px);
       text-decoration: none;
     }
-    a#downloadLink:hover {
-      text-decoration: underline;
+
+    .alert {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
     }
-    .advanced-settings {
-  margin: 15px 0;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 4px;
-}
 
-.advanced-settings summary {
-  cursor: pointer;
-  font-weight: bold;
-}
+    .alert-warning {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
 
-.advanced-controls {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 10px;
-}
+    .alert-success {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
 
-.advanced-controls label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.advanced-controls input[type="number"] {
-  width: 80px;
-  padding: 5px;
-}
-.stats {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 10px;
-}
-.stats span {
-  flex: 1;
-  text-align: center;
-}
+    @media (max-width: 640px) {
+      body {
+        padding: 0 1rem;
+      }
+      
+      .control-group {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Maintained original HTML structure with enhanced class names -->
   <div class="project-header">
     <h1>ConvAvif</h1>
-    <p>AVIF Image Converter</p>
+    <p>Professional AVIF Image Conversion Tool</p>
   </div>
-  <div class="controls">
-    <input type="file" id="fileInput" accept="image/*" required />
-    <label for="resizeMode">Resize Mode:</label>
-    <select id="resizeMode">
-      <option value="fixed" selected>Fixed</option>
-      <option value="percent">Percentage</option>
-    </select>
-    <div id="fixedResizeInputs">
-      <label for="width">Width:</label>
-      <input type="number" id="width" value="800" placeholder="px" required />
-      <label for="height">Height:</label>
-      <input type="number" id="height" value="600" placeholder="px" required />
-      <label><input type="checkbox" id="keepAspect" checked> Keep aspect ratio</label>
-    </div>
-    <div id="percentResizeInputs" style="display:none;">
-      <label for="percentValue">Percent (%):</label>
-      <input type="number" id="percentValue" min="1" max="100" value="100">
-    </div>
-    <label for="quality">Quality:</label>
-    <input type="range" id="quality" min="0" max="99" value="30">
-    <span id="qualityValue">30</span>
-    <button id="convertBtn">Convert to AVIF</button>
-  </div>
-<details class="advanced-settings">
-  <summary>Advanced Settings</summary>
-  <div class="advanced-controls">
-    <label for="speed">Speed (0-10):</label>
-    <input type="number" id="speed" min="0" max="10" value="6">
-    
-    <label for="tune">Tune:</label>
-    <select id="tune">
-      <option value="0">Default</option>
-      <option value="1">PSNR</option>
-      <option value="2">SSIM</option>
-    </select>
 
-    <label for="sharpness">Sharpness (0-7):</label>
-    <input type="number" id="sharpness" min="0" max="7" value="0">
+  <div class="controls">
+    <div class="control-group">
+      <input type="file" id="fileInput" accept="image/*" required />
+    </div>
     
-    <label for="pixelFormat">Chroma Subsampling:</label>
-    <select id="pixelFormat">
-      <option value="YUV400">4:0:0</option>
-      <option value="YUV420" selected>4:2:0</option>
-      <option value="YUV422">4:2:2</option>
-      <option value="YUV444">4:4:4</option>
-    </select>
-    
-    <label for="tileRows">Tile Rows Log2:</label>
-    <input type="number" id="tileRows" min="0" max="6" value="0">
-    
-    <label for="tileCols">Tile Columns Log2:</label>
-    <input type="number" id="tileCols" min="0" max="6" value="0">
+    <div class="control-group">
+      <select id="resizeMode">
+        <option value="fixed" selected>Fixed Dimensions</option>
+        <option value="percent">Percentage Scaling</option>
+      </select>
+    </div>
+
+    <div class="control-group" id="fixedResizeInputs">
+      <input type="number" id="width" value="800" placeholder="Width (px)" required />
+      <input type="number" id="height" value="600" placeholder="Height (px)" required />
+      <label class="checkbox-label">
+        <input type="checkbox" id="keepAspect" checked> Maintain Aspect Ratio
+      </label>
+    </div>
+
+    <div class="control-group" id="percentResizeInputs" style="display:none;">
+      <input type="number" id="percentValue" min="1" max="100" value="100" placeholder="Scale Percentage">
+    </div>
+
+    <div class="control-group">
+      <label for="quality">Compression Quality:</label>
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <input type="range" id="quality" min="0" max="99" value="30" style="flex: 1;">
+        <span id="qualityValue" style="min-width: 40px;">30</span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <button id="convertBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+          <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3zM2.5 10a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 1 0v3a.5.5 0 0 1-.5.5z"/>
+        </svg>
+        Convert to AVIF
+      </button>
+    </div>
   </div>
-</details>
+
+  <details class="advanced-settings">
+    <summary>Advanced Settings</summary>
+    <div class="advanced-controls">
+      <div>
+        <label for="pixelFormat">Chroma Subsampling:</label>
+        <select id="pixelFormat">
+          <option value="YUV444">YUV444 (No Subsampling)</option>
+          <option value="YUV422">YUV422 (Horizontal Subsampling)</option>
+          <option value="YUV420" selected>YUV420 (Standard Subsampling)</option>
+          <option value="YUV400">YUV400 (Grayscale)</option>
+        </select>
+      </div>
+      <div>
+        <label for="speed">Encoder Speed (0-10):</label>
+        <input type="number" id="speed" min="0" max="10" value="6">
+      </div>
+      <div>
+        <label for="tune">Tuning:</label>
+        <select id="tune">
+          <option value="0" selected>Default</option>
+          <option value="1">PSNR</option>
+          <option value="2">SSIM</option>
+        </select>
+      </div>
+      <div>
+        <label for="sharpness">Sharpness (0-7):</label>
+        <input type="number" id="sharpness" min="0" max="7" value="0">
+      </div>
+      <div>
+        <label for="tileRows">Tile Rows (2^n):</label>
+        <input type="number" id="tileRows" min="0" max="6" value="0">
+      </div>
+      <div>
+        <label for="tileCols">Tile Columns (2^n):</label>
+        <input type="number" id="tileCols" min="0" max="6" value="0">
+      </div>
+    </div>
+  </details>
+
   <div class="stats">
     <span>Original size: <span id="originalSize">-</span></span>
     <span>New size: <span id="newSize">-</span></span>
     <span>Compression: <span id="compressionPercent">-</span></span>
   </div>
-  <img id="output" src="/asset/placeholder.svg" alt="Converted AVIF will appear here" />
-  <a id="downloadLink" style="display:none;"></a>
+
+  <div id="resultContainer">
+    <img id="output" src="../../asset/placeholder.svg" alt="Converted AVIF will appear here" />
+    <a id="downloadLink" style="display:none;"></a>
+  </div>
 </body>
 </html>

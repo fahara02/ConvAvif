@@ -22,6 +22,7 @@ var index_exports = {};
 __export(index_exports, {
   AvifPixelFormat: () => AvifPixelFormat,
   CodecChoice: () => CodecChoice,
+  ErrorCode: () => ErrorCode,
   ResizeMode: () => ResizeMode,
   Tune: () => Tune,
   computeDimensions: () => computeDimensions,
@@ -56,6 +57,20 @@ var Tune = /* @__PURE__ */ ((Tune3) => {
   Tune3[Tune3["TUNE_SSIM"] = 2] = "TUNE_SSIM";
   return Tune3;
 })(Tune || {});
+var ErrorCode = /* @__PURE__ */ ((ErrorCode3) => {
+  ErrorCode3[ErrorCode3["OK"] = 0] = "OK";
+  ErrorCode3[ErrorCode3["INVALID_DIMENSIONS"] = 100] = "INVALID_DIMENSIONS";
+  ErrorCode3[ErrorCode3["IMAGE_LOAD_FAILED"] = 101] = "IMAGE_LOAD_FAILED";
+  ErrorCode3[ErrorCode3["ENCODER_CREATION_FAILED"] = 102] = "ENCODER_CREATION_FAILED";
+  ErrorCode3[ErrorCode3["CONVERSION_FAILED"] = 103] = "CONVERSION_FAILED";
+  ErrorCode3[ErrorCode3["ENCODING_FAILED"] = 104] = "ENCODING_FAILED";
+  ErrorCode3[ErrorCode3["INVALID_ARGUMENT"] = 105] = "INVALID_ARGUMENT";
+  ErrorCode3[ErrorCode3["OUT_OF_MEMORY"] = 106] = "OUT_OF_MEMORY";
+  ErrorCode3[ErrorCode3["INVALID_QUANTIZER_VALUES"] = 107] = "INVALID_QUANTIZER_VALUES";
+  ErrorCode3[ErrorCode3["UNKNOWN_ERROR"] = 108] = "UNKNOWN_ERROR";
+  ErrorCode3[ErrorCode3["AVIF_ERROR_START"] = 200] = "AVIF_ERROR_START";
+  return ErrorCode3;
+})(ErrorCode || {});
 
 // src/convAvif.ts
 var loadModuleFactory = async () => {
@@ -114,21 +129,34 @@ function computeDimensions(origWidth, origHeight, mode, fixedOpts, percentOpts) 
 }
 async function convertImage(inputData, width, height, config) {
   const mod = await initWasm();
-  const result = mod.convertImage(inputData, width, height, config);
-  const view = result.getData();
-  const copy = new Uint8Array(view);
-  result.delete();
-  return copy;
+  const result = mod.convertImageDirect(inputData, width, height, config);
+  if (!result.success && result.error) {
+    const error = result.error;
+    const errorObj = new Error(error.message);
+    errorObj.code = error.code;
+    errorObj.stackTrace = error.stackTrace;
+    throw errorObj;
+  }
+  if (result.success && result.data) {
+    const copy = new Uint8Array(result.data);
+    return copy;
+  }
+  throw new Error("Conversion successful but no image data returned");
 }
 async function convertToBlob(params) {
-  const data = await convertImage(params.inputData, params.width, params.height, params.config);
-  const blob = new Blob([data], { type: "image/avif" });
-  return { data, blob };
+  try {
+    const data = await convertImage(params.inputData, params.width, params.height, params.config);
+    const blob = new Blob([data], { type: "image/avif" });
+    return { data, blob };
+  } catch (error) {
+    throw error;
+  }
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   AvifPixelFormat,
   CodecChoice,
+  ErrorCode,
   ResizeMode,
   Tune,
   computeDimensions,

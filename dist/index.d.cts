@@ -26,6 +26,27 @@ declare enum Tune {
     TUNE_PSNR = 1,
     TUNE_SSIM = 2
 }
+declare enum ErrorCode {
+    OK = 0,
+    INVALID_DIMENSIONS = 100,
+    IMAGE_LOAD_FAILED = 101,
+    ENCODER_CREATION_FAILED = 102,
+    CONVERSION_FAILED = 103,
+    ENCODING_FAILED = 104,
+    INVALID_ARGUMENT = 105,
+    OUT_OF_MEMORY = 106,
+    INVALID_QUANTIZER_VALUES = 107,
+    UNKNOWN_ERROR = 108,
+    AVIF_ERROR_START = 200
+}
+interface ConverterError {
+    /** Error code */
+    code: ErrorCode;
+    /** Error message */
+    message: string;
+    /** Stack trace (if available) */
+    stackTrace: string;
+}
 interface EncodeConfig {
     quality: number;
     qualityAlpha: number;
@@ -61,16 +82,29 @@ interface SharedImageBuffer extends ImageBuffer {
     /** Frees the WASM-side memory, decrementing ref count */
     delete(): void;
 }
-/** Return type of Module.convertImage (std::shared_ptr<ImageBuffer>) */
-type ConvertImageResult = SharedImageBuffer;
+/**
+ * Result type that contains either a successful ImageBuffer or an Error
+ */
+interface ConversionResult {
+    success: boolean;
+    image?: ImageBuffer;
+    error?: ConverterError;
+}
 interface ConvAvifModule {
-    convertImage(inputData: Uint8Array, width: number, height: number, config: EncodeConfig): ConvertImageResult;
     EncodeConfig: {
         new (): EncodeConfig;
     };
     CodecChoice: typeof CodecChoice;
     AvifPixelFormat: typeof AvifPixelFormat;
     Tune: typeof Tune;
+    ErrorCode: typeof ErrorCode;
+    convertImage(inputData: Uint8Array, width: number, height: number, config: EncodeConfig): ConversionResult;
+    convertImageDirect(inputData: Uint8Array, width: number, height: number, config: EncodeConfig): {
+        success: boolean;
+        data?: Uint8Array;
+        size?: number;
+        error?: ConverterError;
+    };
 }
 
 declare global {
@@ -90,15 +124,17 @@ declare function computeDimensions(origWidth: number, origHeight: number, mode: 
     height: number;
 };
 /**
- * Convert raw image data via WASM and return AVIF bytes
+ * Convert raw image data via WASM and return AVIF bytes or throw an error
  */
 declare function convertImage(inputData: Uint8Array, width: number, height: number, config: EncodeConfig): Promise<Uint8Array>;
 /**
  * High-level helper: convert and produce a Blob for download
+ *
+ * @throws Error with additional properties `code` and `stackTrace` when conversion fails
  */
 declare function convertToBlob(params: ConvertImageParams): Promise<{
     data: Uint8Array;
     blob: Blob;
 }>;
 
-export { AvifPixelFormat, CodecChoice, type ConvAvifModule, type ConvertImageParams, type ConvertImageResult, type EncodeConfig, type ImageBuffer, ResizeMode, type ResizeOptionsFixed, type ResizeOptionsPercent, type SharedImageBuffer, Tune, computeDimensions, convertImage, convertToBlob, initWasm };
+export { AvifPixelFormat, CodecChoice, type ConvAvifModule, type ConversionResult, type ConvertImageParams, type ConverterError, type EncodeConfig, ErrorCode, type ImageBuffer, ResizeMode, type ResizeOptionsFixed, type ResizeOptionsPercent, type SharedImageBuffer, Tune, computeDimensions, convertImage, convertToBlob, initWasm };

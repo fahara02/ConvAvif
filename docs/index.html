@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="module">
       // Configure WASM path first
-      const wasmPath = './asset/imageconverter.wasm';
-      const jsPath = './asset/imageconverter.js';
+      const wasmPath = './asset/imageconverter_st.wasm';
+      const jsPath = './asset/imageconverter_st.js';
     
      // 2. Unified configuration
   const moduleConfig = {
@@ -20,7 +20,7 @@
   };
 
   // 3. Import using absolute path
-  import _Module from './asset/imageconverter.js';
+  import _Module from './asset/imageconverter_st.js';
   const Module = _Module(moduleConfig);
 
     // Global reference to the WebAssembly module

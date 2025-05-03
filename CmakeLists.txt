@@ -8,9 +8,9 @@ endif()
 
 
 # Emscripten: enable threads, atomics  in all external builds
-set(ENV{EMCC_CFLAGS}   "$ENV{EMCC_CFLAGS} -pthread -sUSE_PTHREADS=1 -sSHARED_MEMORY=1 ")
-set(ENV{EMCC_CXXFLAGS} "$ENV{EMCC_CXXFLAGS} -pthread -sUSE_PTHREADS=1 -sSHARED_MEMORY=1 ")
-set(ENV{EMCC_LDFLAGS}  "$ENV{EMCC_LDFLAGS} -pthread -sUSE_PTHREADS=1 ")
+# set(ENV{EMCC_CFLAGS}   "$ENV{EMCC_CFLAGS} -pthread -sUSE_PTHREADS=1 -sSHARED_MEMORY=1 ")
+# set(ENV{EMCC_CXXFLAGS} "$ENV{EMCC_CXXFLAGS} -pthread -sUSE_PTHREADS=1 -sSHARED_MEMORY=1 ")
+# set(ENV{EMCC_LDFLAGS}  "$ENV{EMCC_LDFLAGS} -pthread -sUSE_PTHREADS=1 ")
 
 include(ExternalProject)
 find_package(Git REQUIRED)
@@ -56,9 +56,9 @@ file(WRITE ${DAV1D_MESON_CROSS_FILE}
 "cpu = 'wasm32'\n"
 "endian = 'little'\n"
 "\n[properties]\n"
-"c_args = ['-pthread','-sUSE_PTHREADS=1','-sSHARED_MEMORY=1']\n"
-"cpp_args = ['-pthread','-sUSE_PTHREADS=1','-sSHARED_MEMORY=1',]\n"
-"link_args = ['-pthread','-sUSE_PTHREADS=1','-sSHARED_MEMORY=1']\n"
+"c_args = ['-pthread','-sUSE_PTHREADS=0','-sSHARED_MEMORY=1']\n"
+"cpp_args = ['-pthread','-sUSE_PTHREADS=0','-sSHARED_MEMORY=1',]\n"
+"link_args = ['-pthread','-sUSE_PTHREADS=0','-sSHARED_MEMORY=1']\n"
 )
 
 # Build dav1d with Meson
@@ -86,13 +86,13 @@ ExternalProject_Add(svt_av1
     -DSVT_AV1_TESTS=OFF
     -DBUILD_APPS=OFF  # skip building Enc/Dec apps under Emscripten
     -DCMAKE_C_FLAGS=-pthread
-    -DCMAKE_C_FLAGS=-sUSE_PTHREADS=1
+    -DCMAKE_C_FLAGS=-sUSE_PTHREADS=0
     -DCMAKE_C_FLAGS=-sSHARED_MEMORY=1  
     -DCMAKE_CXX_FLAGS=-pthread
-    -DCMAKE_CXX_FLAGS=-sUSE_PTHREADS=1
+    -DCMAKE_CXX_FLAGS=-sUSE_PTHREADS=0
     -DCMAKE_CXX_FLAGS=-sSHARED_MEMORY=1    
     -DCMAKE_EXE_LINKER_FLAGS=-pthread
-    -DCMAKE_EXE_LINKER_FLAGS=-sUSE_PTHREADS=1
+    -DCMAKE_EXE_LINKER_FLAGS=-sUSE_PTHREADS=0
     -DCMAKE_EXE_LINKER_FLAGS=-sSHARED_MEMORY=1
     -DEB_THREAD_SANITIZER_ENABLED=1
 )
@@ -125,13 +125,13 @@ ExternalProject_Add(aom
     -DCONFIG_AV1_HIGHBITDEPTH=0
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_C_FLAGS=-pthread
-    -DCMAKE_C_FLAGS=-sUSE_PTHREADS=1
+    -DCMAKE_C_FLAGS=-sUSE_PTHREADS=0
     -DCMAKE_C_FLAGS=-sSHARED_MEMORY=1   
     -DCMAKE_CXX_FLAGS=-pthread
     -DCMAKE_CXX_FLAGS=-sUSE_PTHREADS=1
     -DCMAKE_CXX_FLAGS=-sSHARED_MEMORY=1 
     -DCMAKE_EXE_LINKER_FLAGS=-pthread
-    -DCMAKE_EXE_LINKER_FLAGS=-sUSE_PTHREADS=1
+    -DCMAKE_EXE_LINKER_FLAGS=-sUSE_PTHREADS=0
     -DCMAKE_EXE_LINKER_FLAGS=-sSHARED_MEMORY=1
 )
 # Build libavif with CMake
@@ -162,8 +162,8 @@ ExternalProject_Add(libavif
 
 # Configure Emscripten flags with pthread support
 set(CMAKE_EXECUTABLE_SUFFIX ".html")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --no-wasm-opt --bind -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,UTF8ToString,allocate,intArrayFromString,HEAPU8 -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1 -sEXPORT_ES6=1 -pthread -sUSE_PTHREADS=1 -sSTACK_SIZE=16MB -sSHARED_MEMORY=1 -sINITIAL_MEMORY=1GB -sMAXIMUM_MEMORY=2GB ")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --no-wasm-opt --bind -sDISABLE_EXCEPTION_CATCHING=0 -pthread -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=navigator.hardwareConcurrency")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --no-wasm-opt --bind -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,UTF8ToString,allocate,intArrayFromString,HEAPU8 -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1 -sEXPORT_ES6=1 -pthread  -sSTACK_SIZE=16MB -sSHARED_MEMORY=1 -sINITIAL_MEMORY=1GB -sMAXIMUM_MEMORY=2GB ")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --no-wasm-opt --bind -sDISABLE_EXCEPTION_CATCHING=0 -pthread -sUSE_PTHREADS=0  -sPTHREAD_POOL_SIZE=navigator.hardwareConcurrency")
 
 include(FetchContent)
 FetchContent_Declare(

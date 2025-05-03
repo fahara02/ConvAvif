@@ -14,43 +14,39 @@
 thread_local const emscripten::val Uint8Array =
     emscripten::val::global("Uint8Array");
 
-Result convert_image(const std::string &input_data, int width, int height,
-                     const EncodeConfig &config) {
+Result convert_image(const std::vector<uint8_t> &input_data, int width,
+                     int height, const EncodeConfig &config) {
 
-  // Before resizing
   if (width <= 0 || height <= 0 || width > 8192 || height > 8192) {
-    return Result::Failure(ConverterError::INVALID_DIMENSIONS,
-                           "Invalid dimensions (1-8192px allowed)", __func__);
+    return Error(ConverterError::INVALID_DIMENSIONS,
+                 "Invalid dimensions (1-8192px allowed)", __func__);
   }
-  // Decode input image
+
   int w, h, channels;
   unsigned char *data = stbi_load_from_memory(
-      reinterpret_cast<const stbi_uc *>(input_data.data()), input_data.size(),
-      &w, &h, &channels, STBI_rgb_alpha);
+      input_data.data(), input_data.size(), &w, &h, &channels, STBI_rgb_alpha);
   if (!data)
-    return Result::Failure(ConverterError::IMAGE_LOAD_FAILED,
-                           "STB image load failed", __func__);
+    return Error(ConverterError::IMAGE_LOAD_FAILED, "STB image load failed",
+                 __func__);
 
-  // Resize image to RGBA
-  std::vector<unsigned char> resized_data(width * height * 4);
-  printf("Resized buffer: %dx%d@4ch (expected %zu bytes)\n", width, height,
-         resized_data.size());
-  stbir_resize_uint8_linear(data, w, h, 0, resized_data.data(), width, height,
-                            0, STBIR_RGBA);
-  stbi_image_free(data);
-  printf("----received config from user----");
-  config.printConfig();
-  printf("--------------------------------");
-  // Configure AVIF encoder
-  UniqueAvifEncoder encoder(avifEncoderCreate());
-  // Inside convert_image() after creating encoder
-  if (!encoder) {
-    // Handle encoder creation failure
-    return Result::Failure(ConverterError::ENCODER_CREATION_FAILED,
-                           "Failed to create AVIF encoder", __func__);
+  std::vector<unsigned char> processed_data;
+  if (w == width && h == height) {
+    processed_data.assign(data, data + (w * h * 4));
+  } else {
+    processed_data.resize(width * height * 4);
+    stbir_resize_uint8_linear(data, w, h, 0, processed_data.data(), width,
+                              height, 0, STBIR_RGBA);
   }
 
-  // Set the codec choice based on config.codecChoice
+  stbi_image_free(data);
+  config.printConfig();
+
+  UniqueAvifEncoder encoder(avifEncoderCreate());
+  if (!encoder) {
+    return Error(ConverterError::ENCODER_CREATION_FAILED,
+                 "Failed to create AVIF encoder", __func__);
+  }
+
   switch (config.codecChoice) {
   case CodecChoice::AOM:
     encoder->codecChoice = AVIF_CODEC_CHOICE_AOM;
@@ -58,198 +54,175 @@ Result convert_image(const std::string &input_data, int width, int height,
   case CodecChoice::SVT:
     encoder->codecChoice = AVIF_CODEC_CHOICE_SVT;
     break;
-  case CodecChoice::AUTO:
   default:
     encoder->codecChoice = AVIF_CODEC_CHOICE_AUTO;
     break;
   }
 
   switch (config.tune) {
-  case Tune::TUNE_PSNR:
-    avifEncoderSetCodecSpecificOption(encoder.get(), "tune", "psnr");
+  case Tune::TUNE_PSNR: {
+    Result optionResult =
+        SetAvifOption(encoder.get(), "tune", "psnr", "PSNR Tuning", __func__);
+    if (auto *error = std::get_if<Error>(&optionResult)) {
+      return *error;
+    }
     break;
-  case Tune::TUNE_SSIM:
-    avifEncoderSetCodecSpecificOption(encoder.get(), "tune", "ssim");
+  }
+  case Tune::TUNE_SSIM: {
+    Result optionResult =
+        SetAvifOption(encoder.get(), "tune", "ssim", "SSIM Tuning", __func__);
+    if (auto *error = std::get_if<Error>(&optionResult)) {
+      return *error;
+    }
     break;
+  }
   default:
     break;
   }
+
   encoder->maxThreads = emscripten_num_logical_cores();
   encoder->quality = config.quality;
   encoder->qualityAlpha =
       (config.qualityAlpha == -1) ? config.quality : config.qualityAlpha;
   encoder->speed = config.getSpeed();
 
-  // Apply sharpness (0-7) via codec-specific option
-  avifEncoderSetCodecSpecificOption(encoder.get(), "sharpness",
-                                    std::to_string(config.sharpness).c_str());
+  Result sharpnessResult = SetAvifOption(
+      encoder.get(), "sharpness", std::to_string(config.sharpness).c_str(),
+      "Sharpness", __func__);
+  if (auto *error = std::get_if<Error>(&sharpnessResult)) {
+    return *error;
+  }
 
-  // Map percent quality (0-100) to libavif quantizer (0=best..63=worst)
   int q = static_cast<int>(
       std::round((100 - config.quality) * MAX_QUANTIZER / 100.0));
-  encoder->minQuantizer = q;
-  encoder->maxQuantizer = q;
-  encoder->minQuantizerAlpha = q;
-  encoder->maxQuantizerAlpha = q;
+  int minQ = (config.minQuantizer == -1) ? q : config.minQuantizer;
+  int maxQ = (config.maxQuantizer == -1) ? q : config.maxQuantizer;
+
+  if (minQ > maxQ) {
+    return Error(ConverterError::INVALID_QUANTIZER_VALUES,
+                 "minQuantizer must be <= maxQuantizer", __func__);
+  }
+
+  encoder->minQuantizer = minQ;
+  encoder->maxQuantizer = maxQ;
   encoder->tileRowsLog2 = config.tileRowsLog2;
   encoder->tileColsLog2 = config.tileColsLog2;
-  // Add a warning for low speed values
+
   if (config.getSpeed() < 5 && encoder->codecChoice == AVIF_CODEC_CHOICE_AOM) {
-    printf("Warning: Using AOM codec with speed < 5 may require more memory "
-           "than available in some WASM environments\n");
-    encoder->maxThreads = 1; // Force single-threaded operation
-    avifEncoderSetCodecSpecificOption(encoder.get(), "row-mt", "0");
-    avifEncoderSetCodecSpecificOption(encoder.get(), "tile-columns", "0");
-    avifEncoderSetCodecSpecificOption(encoder.get(), "tile-rows", "0");
-    avifEncoderSetCodecSpecificOption(encoder.get(), "frame-parallel", "0");
+    encoder->maxThreads = 1;
+
+    Result rowMtResult = SetAvifOption(encoder.get(), "row-mt", "0",
+                                       "Row Multi-Threading", __func__);
+    if (auto *error = std::get_if<Error>(&rowMtResult)) {
+      return *error;
+    }
+
+    Result tileColumnsResult = SetAvifOption(encoder.get(), "tile-columns", "0",
+                                             "Tile Columns", __func__);
+    if (auto *error = std::get_if<Error>(&tileColumnsResult)) {
+      return *error;
+    }
+
+    Result tileRowsResult =
+        SetAvifOption(encoder.get(), "tile-rows", "0", "Tile Rows", __func__);
+    if (auto *error = std::get_if<Error>(&tileRowsResult)) {
+      return *error;
+    }
+
+    Result frameParallelResult = SetAvifOption(encoder.get(), "frame-parallel",
+                                               "0", "Frame Parallel", __func__);
+    if (auto *error = std::get_if<Error>(&frameParallelResult)) {
+      return *error;
+    }
   }
 
   UniqueAvifImage image(
       avifImageCreate(width, height, RGB_DEPTH, config.pixelFormat));
-
-  // Set color profile to sRGB/BT.709
   image->colorPrimaries = AVIF_COLOR_PRIMARIES_BT709;
   image->transferCharacteristics = AVIF_TRANSFER_CHARACTERISTICS_SRGB;
   image->matrixCoefficients = AVIF_MATRIX_COEFFICIENTS_BT709;
-  image->yuvRange = AVIF_RANGE_FULL; // Use full range for web content
+  image->yuvRange = AVIF_RANGE_FULL;
 
   avifRGBImage rgb;
   avifRGBImageSetDefaults(&rgb, image.get());
   rgb.chromaUpsampling = AVIF_CHROMA_UPSAMPLING_AUTOMATIC;
   rgb.format = AVIF_RGB_FORMAT_RGBA;
-
   rgb.depth = RGB_DEPTH;
-  rgb.pixels = resized_data.data();
+  rgb.pixels = processed_data.data();
   rgb.rowBytes = width * avifRGBImagePixelSize(&rgb);
   rgb.alphaPremultiplied = AVIF_FALSE;
   rgb.ignoreAlpha = false;
 
   avifResult convertResult = avifImageRGBToYUV(image.get(), &rgb);
   if (convertResult != AVIF_RESULT_OK) {
-
-    return Result::Failure(ConverterError::CONVERSION_FAILED,
-                           "RGB->YUV conversion failed: " +
-                               std::string(avifResultToString(convertResult)),
-                           __func__);
+    return Error(ConverterError::CONVERSION_FAILED,
+                 "RGB->YUV conversion failed: " +
+                     std::string(avifResultToString(convertResult)),
+                 __func__);
   }
 
   avifRWData output = AVIF_DATA_EMPTY;
-  avifResult result;
-  try {
-    result = avifEncoderWrite(encoder.get(), image.get(), &output);
-    if (result != AVIF_RESULT_OK) {
-      std::string errorMsg = "Encoding failed: ";
-      errorMsg += avifResultToString(result);
-      if (result == AVIF_RESULT_OUT_OF_MEMORY) {
-        errorMsg += " - Try higher speed values (5-10)";
-      }
-      return Result::Failure(avifToConverterError(result), errorMsg, __func__);
+  avifResult result = avifEncoderWrite(encoder.get(), image.get(), &output);
+  if (result != AVIF_RESULT_OK) {
+    std::string errorMsg =
+        "Encoding failed: " + std::string(avifResultToString(result));
+    if (result == AVIF_RESULT_OUT_OF_MEMORY) {
+      errorMsg += " - Try higher speed values (5-10)";
     }
-  } catch (const std::exception &e) {
-    // Handle any unexpected exceptions during encoding
-
-    return Result::Failure(
-        ConverterError::ENCODING_FAILED,
-        "Exception during AVIF encoding: " + std::string(e.what()), __func__);
+    return Error(avifToConverterError(result), errorMsg, __func__);
   }
 
-  printf("From cpp AVIF output size: %zu bytes\n",
-         output.size); // Log output size
-
-  // Copy AVIF data into a vector (ensures ownership)
   std::vector<uint8_t> output_data(output.data, output.data + output.size);
-  avifRWDataFree(&output); // Free libavif's buffer
+  avifRWDataFree(&output);
 
-  return Result::Success(std::make_shared<ImageBuffer>(std::move(output_data)));
+  return std::make_shared<ImageBuffer>(std::move(output_data));
 }
 
-// New wrapper for JavaScript that directly returns a Uint8Array without complex
-// class wrapping
 emscripten::val convertImageDirect(emscripten::val jsData, int width,
                                    int height, const EncodeConfig &config) {
   try {
-    const auto length = jsData["length"].as<size_t>();
-    std::vector<unsigned char> inputData(length);
-    emscripten::val memoryView = emscripten::val(
-        emscripten::typed_memory_view(inputData.size(), inputData.data()));
-    memoryView.call<void>("set", jsData);
+    std::vector<uint8_t> inputData =
+        emscripten::convertJSArrayToNumberVector<uint8_t>(jsData);
+    Result r = convert_image(inputData, width, height, config);
+    jsResult result{r};
 
-    std::string str(inputData.begin(), inputData.end());
-
-    // Create the return object structure
-    emscripten::val result = emscripten::val::object();
-    result.set("success", false); // Default to false, set true on success
-
-    try {
-      auto avifResult = convert_image(str, width, height, config);
-
-      if (avifResult.error) {
-        // Conversion failed with a specific error
-        emscripten::val errorObj = emscripten::val::object();
-        errorObj.set("code", static_cast<int>(avifResult.error->code));
-        errorObj.set("message", avifResult.error->message);
-        result.set("error", errorObj);
-        return result;
-      }
-
-      if (!avifResult.image || !avifResult.image->getData() ||
-          avifResult.image->getSize() == 0) {
-        // Image data is missing or empty
-        emscripten::val errorObj = emscripten::val::object();
-        errorObj.set("code", static_cast<int>(ConverterError::UNKNOWN_ERROR));
-        errorObj.set("message", "Image data is empty or missing");
-        result.set("error", errorObj);
-        return result;
-      }
-
-      // Extract the data from ImageBuffer to a JavaScript TypedArray
-      const std::vector<uint8_t> &imageData = avifResult.image->getRawData();
-      auto dataView = emscripten::val(
-          emscripten::typed_memory_view(imageData.size(), imageData.data()));
-
-      // Create a new Uint8Array and copy the data
-      auto uint8Array =
-          emscripten::val::global("Uint8Array").new_(imageData.size());
-      uint8Array.call<void>("set", dataView);
-
-      // Set the success data
-      result.set("success", true);
-      result.set("data", uint8Array);
-      result.set("size", imageData.size());
-
-      return result;
-    } catch (const std::bad_alloc &e) {
-      // Specific handling for memory allocation errors (common with low encoder
-      // speeds)
+    emscripten::val jresult = emscripten::val::object();
+    if (result.hasError()) {
+      Error err = result.getError();
       emscripten::val errorObj = emscripten::val::object();
-      errorObj.set("code", static_cast<int>(ConverterError::OUT_OF_MEMORY));
-      errorObj.set(
-          "message",
-          "Memory allocation failed - try using a higher speed value (5-10)");
-      result.set("error", errorObj);
-      return result;
-    } catch (const std::exception &e) {
-      // General exception handler
+      errorObj.set("code", static_cast<int>(err.code));
+      errorObj.set("message", err.message);
+      errorObj.set("stackTrace", err.stackTrace);
+      jresult.set("error", errorObj);
+      jresult.set("success", false);
+    } else if (result.hasImage()) {
+      auto image = result.getImage();
+      const auto &imageData = image->getRawData();
+      emscripten::val uint8Array =
+          emscripten::val::global("Uint8Array").new_(imageData.size());
+      uint8Array.call<void>("set",
+                            emscripten::val(emscripten::typed_memory_view(
+                                imageData.size(), imageData.data())));
+      jresult.set("data", uint8Array);
+      jresult.set("success", true);
+    } else {
       emscripten::val errorObj = emscripten::val::object();
       errorObj.set("code", static_cast<int>(ConverterError::UNKNOWN_ERROR));
-      errorObj.set("message", std::string("Exception: ") + e.what());
-      result.set("error", errorObj);
-      return result;
+      errorObj.set("message", "Unexpected result type");
+      jresult.set("error", errorObj);
+      jresult.set("success", false);
     }
+    return jresult;
   } catch (const std::exception &e) {
-    // Outer try-catch for handling errors in setup/parameter processing
-    emscripten::val result = emscripten::val::object();
-    result.set("success", false);
-
     emscripten::val errorObj = emscripten::val::object();
     errorObj.set("code", static_cast<int>(ConverterError::UNKNOWN_ERROR));
-    errorObj.set("message", std::string("Setup error: ") + e.what());
-    result.set("error", errorObj);
-
-    return result;
+    errorObj.set("message", e.what());
+    emscripten::val jresult = emscripten::val::object();
+    jresult.set("error", errorObj);
+    jresult.set("success", false);
+    return jresult;
   }
 }
-
 EMSCRIPTEN_BINDINGS(ImageConverter) {
   emscripten::enum_<SpeedPreset>("SpeedPreset")
       .value("Good", SpeedPreset::Good)
@@ -286,7 +259,7 @@ EMSCRIPTEN_BINDINGS(ImageConverter) {
   emscripten::class_<EncodeConfig>("EncodeConfig")
       .constructor<>()
       .property("quality", &EncodeConfig::getQuality, &EncodeConfig::setQuality)
-      .property("preset", &EncodeConfig::preset)
+      .property("preset", &EncodeConfig::getPreset, &EncodeConfig::setPreset)
       .property("pixelFormat", &EncodeConfig::pixelFormat)
       .property("codecChoice", &EncodeConfig::getCodecChoice,
                 &EncodeConfig::setCodecChoice)
@@ -329,7 +302,7 @@ EMSCRIPTEN_BINDINGS(ErrorHandling) {
       .value("CONVERSION_FAILED", ConverterError::CONVERSION_FAILED)
       .value("ENCODING_FAILED", ConverterError::ENCODING_FAILED)
       .value("INVALID_ARGUMENT", ConverterError::INVALID_ARGUMENT)
-      .value("OUT_OF_MEMEORY", ConverterError::OUT_OF_MEMORY)
+      .value("OUT_OF_MEMORY", ConverterError::OUT_OF_MEMORY)
       .value("INVALID_QUANTIZER_VALUES",
              ConverterError::INVALID_QUANTIZER_VALUES)
       .value("UNKNOWN_ERROR", ConverterError::UNKNOWN_ERROR)
@@ -340,9 +313,9 @@ EMSCRIPTEN_BINDINGS(ErrorHandling) {
       .property("message", &Error::message)
       .property("stackTrace", &Error::stackTrace);
 
-  emscripten::class_<Result>("Result")
-      .function("getImage", &Result::getImage,
-                emscripten::allow_raw_pointer<ImageBuffer>())
-      .function("getError", &Result::getError,
-                emscripten::allow_raw_pointer<Error>());
+  emscripten::class_<jsResult>("Result")
+      .function("hasError", &jsResult::hasError)
+      .function("hasImage", &jsResult::hasImage)
+      .function("getError", &jsResult::getError)
+      .function("getImage", &jsResult::getImage);
 }

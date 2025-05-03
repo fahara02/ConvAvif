@@ -4,6 +4,10 @@
 #include <algorithm>
 #include <avif/avif.h>
 #include <string>
+#include <variant>
+
+enum class ImageType { JPEG, PNG, GIF, BMP, TIFF, WEBP, AVIF, UNKNOWN };
+
 static constexpr int RGB_DEPTH = 8;
 static constexpr int MIN_SPEED = 0;
 static constexpr int MAX_SPEED = 9;
@@ -83,30 +87,20 @@ std::string getErrorMessage(ConverterError error) {
     return "Unknown error";
   }
 }
+using ImgaePtr = std::shared_ptr<ImageBuffer>;
 
-class Result {
-public:
-  std::shared_ptr<ImageBuffer> image;
-  std::unique_ptr<Error> error;
+using Result = std::variant<ImgaePtr, avifResult, Error>;
 
-  // Getters for Emscripten bindings
-  ImageBuffer *getImage() const { return image.get(); }
+struct jsResult {
+  // Avoided avifResult extracting as its not relevant for avif ok and errors
+  // are already translated
+  Result result;
 
-  // Special getter for the error field that transfers ownership
-  Error *getError() { return error.release(); }
+  bool hasError() const { return std::holds_alternative<Error>(result); }
+  bool hasImage() const { return std::holds_alternative<ImgaePtr>(result); }
 
-  static Result Success(std::shared_ptr<ImageBuffer> img) {
-    Result res;
-    res.image = img;
-    return res;
-  }
-
-  static Result Failure(ConverterError code, const std::string &message,
-                        const std::string &trace = "") {
-    Result res;
-    res.error = std::make_unique<Error>(code, message, trace);
-    return res;
-  }
+  Error getError() const { return std::get<Error>(result); }
+  ImgaePtr getImage() const { return std::get<ImgaePtr>(result); }
 };
 
 enum class CodecChoice { AUTO, AOM, SVT };
@@ -237,18 +231,27 @@ public:
   int getTileColsLog2() const { return tileColsLog2; }
   int getSharpness() const { return sharpness; }
   int getSpeed() const { return speed.getDefault(); }
+
+  void setPreset(SpeedPreset newPreset) {
+    preset = newPreset;
+    speed = Speed(codecChoice, preset);
+  }
+  SpeedPreset getPreset() const { return preset; }
+
   void updateSpeed(int new_speed, SpeedPreset newPreset) {
 
-    preset = newPreset;
+    setPreset(newPreset);
     printf("Updating speed: preset=%d, new_speed=%d, codec=%d\n",
            static_cast<int>(newPreset), new_speed,
            static_cast<int>(codecChoice));
-    speed = Speed(codecChoice, preset);
     speed.set(new_speed);
     printf("updated new speed: %d\n", speed.getDefault());
   }
   CodecChoice getCodecChoice() const { return codecChoice; }
-  void setCodecChoice(CodecChoice choice) { codecChoice = choice; }
+  void setCodecChoice(CodecChoice choice) {
+    codecChoice = choice;
+    speed = Speed(codecChoice, preset);
+  }
   void printConfig() const {
     printf("EncodeConfig:\n");
     printf("  quality: %d\n", quality);
@@ -271,8 +274,8 @@ private:
   Speed speed = Speed(CodecChoice::AOM, SpeedPreset::Good);
 };
 
-Result convert_image(const std::string &input_data, int width, int height,
-                     const EncodeConfig &config);
+Result convert_image(const std::vector<uint8_t> &input_data, int width,
+                     int height, const EncodeConfig &config);
 
 struct AvifEncoderDeleter {
   void operator()(avifEncoder *enc) { avifEncoderDestroy(enc); }
@@ -283,5 +286,23 @@ struct AvifImageDeleter {
   void operator()(avifImage *img) { avifImageDestroy(img); }
 };
 using UniqueAvifImage = std::unique_ptr<avifImage, AvifImageDeleter>;
+
+// ========================
+// Helper Functions
+// ========================
+
+[[nodiscard]] Result SetAvifOption(avifEncoder *encoder, const char *key,
+                                   const char *value,
+                                   const std::string &humanReadableOption,
+                                   const char *callerFunction = __func__) {
+  avifResult result = avifEncoderSetCodecSpecificOption(encoder, key, value);
+  if (result != AVIF_RESULT_OK) {
+    return Error{avifToConverterError(result),
+                 "Failed to set [" + std::string(key) + "=" + value + "] (" +
+                     humanReadableOption + "): " + avifResultToString(result),
+                 callerFunction};
+  }
+  return avifResult::AVIF_RESULT_OK;
+}
 
 #endif

@@ -111,6 +111,7 @@ export interface EncodeConfig {
   tune: Tune;
   updateSpeed():void;
   getSpeed():number;
+
 }
 
 // Parameters for the convertImage call
@@ -140,7 +141,7 @@ export interface SharedImageBuffer extends ImageBuffer {
 }
 
 /**
- * Result type that contains either a successful ImageBuffer or an Error
+ * Result type (emscripten val) that contains either a successful ImageBuffer or an Error
  */
 export interface ConversionResult {
   // Whether the conversion was successful

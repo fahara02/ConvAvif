@@ -1,8 +1,8 @@
 // Test script for the convavif npm package using actual image file
-import * as convavif from '../dist/index.js';
-import { readFile, writeFile, mkdir } from 'fs/promises';
-import { join } from 'path';
 import { existsSync } from 'fs';
+import { mkdir, readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
+import * as convavif from '../dist/index.js';
 
 // Create test output directory if it doesn't exist
 const TEST_OUTPUT_DIR = join(process.cwd(), 'test-output');
@@ -34,7 +34,7 @@ async function runTest(testName, testFunction) {
 // Test different quality settings (with smaller range to avoid memory issues)
 async function testQualitySettings(module, imageData, width, height) {
   // Test fewer quality levels to avoid memory issues
-  const qualityLevels = [30, 70];
+  const qualityLevels = [20, 90];
   console.log('Testing different quality levels...');
   
   for (const quality of qualityLevels) {
@@ -64,7 +64,8 @@ async function testPixelFormats(module, imageData, width, height) {
   // Test fewer formats to avoid memory issues
   const formats = [
     { name: 'YUV420', value: module.AvifPixelFormat.YUV420 },
-    { name: 'YUV400', value: module.AvifPixelFormat.YUV400 }
+    { name: 'YUV400', value: module.AvifPixelFormat.YUV400 },
+    { name: 'YUV444', value: module.AvifPixelFormat.YUV444 }
   ];
   
   console.log('Testing different pixel formats...');

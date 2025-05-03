@@ -1,6 +1,9 @@
 // TypeScript definitions for AVIF converter config and UI types
-
 // Resize modes in the UI
+
+
+
+
 export enum ResizeMode {
   Fixed = 'fixed',
   Percent = 'percent',
@@ -39,7 +42,30 @@ export enum Tune {
   TUNE_PSNR = 1,
   TUNE_SSIM = 2,
 }
+// Speed range structure (matches SpeedRange struct in C++)
+export interface SpeedRange {
+  min: number;
+  max: number;
+}
+// Speed presets (match SpeedPreset enum in C++)
+export enum SpeedPreset {
+  MemoryHungry='MemoryHungry',
+  Good='Good',
+  RealTime='RealTime',
+}
+// Speed configuration (matches Speed class in C++)
+export interface Speed {
+ 
+  default_speed: number;
+  speed_range: SpeedRange;
+  preset: SpeedPreset;
+  getDefault():Speed;
+  getRange():SpeedRange;
+  isValid():boolean;
+  getPreset():SpeedPreset;  
+  set():void;
 
+}
 // Error codes (match ConverterError enum in C++)
 export enum ErrorCode {
   // Success
@@ -74,7 +100,7 @@ export interface ConverterError {
 export interface EncodeConfig {
   quality: number;
   qualityAlpha: number;
-  speed: number;
+  preset:SpeedPreset;
   sharpness: number;
   pixelFormat: AvifPixelFormat;
   codecChoice: CodecChoice;
@@ -83,6 +109,8 @@ export interface EncodeConfig {
   tileRowsLog2: number;
   tileColsLog2: number;
   tune: Tune;
+  updateSpeed():void;
+  getSpeed():number;
 }
 
 // Parameters for the convertImage call

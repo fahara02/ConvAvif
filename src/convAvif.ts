@@ -1,17 +1,11 @@
 // Wrapper for ConvAvif WASM module and utility functions
 import {
-    ConvAvifModule,
-    ConvertImageParams,
-    ConversionResult,
-    EncodeConfig,
-    ResizeMode,
-    ResizeOptionsFixed,
-    ResizeOptionsPercent,
-    AvifPixelFormat,
-    CodecChoice,
-    Tune,
-    ErrorCode,
-    ConverterError
+  ConvAvifModule,
+  ConvertImageParams,
+  EncodeConfig,
+  ResizeMode,
+  ResizeOptionsFixed,
+  ResizeOptionsPercent
 } from './types.js';
 
 // Allow for both build-time and runtime import resolution

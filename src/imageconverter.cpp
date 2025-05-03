@@ -38,9 +38,11 @@ Result convert_image(const std::string &input_data, int width, int height,
   stbir_resize_uint8_linear(data, w, h, 0, resized_data.data(), width, height,
                             0, STBIR_RGBA);
   stbi_image_free(data);
-
+  printf("----received config from user----");
+  config.printConfig();
+  printf("--------------------------------");
   // Configure AVIF encoder
-  avifEncoder *encoder = avifEncoderCreate();
+  UniqueAvifEncoder encoder(avifEncoderCreate());
   // Inside convert_image() after creating encoder
   if (!encoder) {
     // Handle encoder creation failure
@@ -50,24 +52,24 @@ Result convert_image(const std::string &input_data, int width, int height,
 
   // Set the codec choice based on config.codecChoice
   switch (config.codecChoice) {
-  case EncodeConfig::AOM:
+  case CodecChoice::AOM:
     encoder->codecChoice = AVIF_CODEC_CHOICE_AOM;
     break;
-  case EncodeConfig::SVT:
+  case CodecChoice::SVT:
     encoder->codecChoice = AVIF_CODEC_CHOICE_SVT;
     break;
-  case EncodeConfig::AUTO:
+  case CodecChoice::AUTO:
   default:
     encoder->codecChoice = AVIF_CODEC_CHOICE_AUTO;
     break;
   }
 
   switch (config.tune) {
-  case EncodeConfig::TUNE_PSNR:
-    avifEncoderSetCodecSpecificOption(encoder, "tune", "psnr");
+  case Tune::TUNE_PSNR:
+    avifEncoderSetCodecSpecificOption(encoder.get(), "tune", "psnr");
     break;
-  case EncodeConfig::TUNE_SSIM:
-    avifEncoderSetCodecSpecificOption(encoder, "tune", "ssim");
+  case Tune::TUNE_SSIM:
+    avifEncoderSetCodecSpecificOption(encoder.get(), "tune", "ssim");
     break;
   default:
     break;
@@ -76,10 +78,10 @@ Result convert_image(const std::string &input_data, int width, int height,
   encoder->quality = config.quality;
   encoder->qualityAlpha =
       (config.qualityAlpha == -1) ? config.quality : config.qualityAlpha;
-  encoder->speed = config.speed;
+  encoder->speed = config.getSpeed();
 
   // Apply sharpness (0-7) via codec-specific option
-  avifEncoderSetCodecSpecificOption(encoder, "sharpness",
+  avifEncoderSetCodecSpecificOption(encoder.get(), "sharpness",
                                     std::to_string(config.sharpness).c_str());
 
   // Map percent quality (0-100) to libavif quantizer (0=best..63=worst)
@@ -92,32 +94,19 @@ Result convert_image(const std::string &input_data, int width, int height,
   encoder->tileRowsLog2 = config.tileRowsLog2;
   encoder->tileColsLog2 = config.tileColsLog2;
   // Add a warning for low speed values
-  if (config.speed < 5 && encoder->codecChoice == AVIF_CODEC_CHOICE_AOM) {
+  if (config.getSpeed() < 5 && encoder->codecChoice == AVIF_CODEC_CHOICE_AOM) {
     printf("Warning: Using AOM codec with speed < 5 may require more memory "
            "than available in some WASM environments\n");
     encoder->maxThreads = 1; // Force single-threaded operation
-    avifEncoderSetCodecSpecificOption(encoder, "row-mt", "0");
-    avifEncoderSetCodecSpecificOption(encoder, "tile-columns", "0");
-    avifEncoderSetCodecSpecificOption(encoder, "tile-rows", "0");
-    avifEncoderSetCodecSpecificOption(encoder, "frame-parallel", "0");
+    avifEncoderSetCodecSpecificOption(encoder.get(), "row-mt", "0");
+    avifEncoderSetCodecSpecificOption(encoder.get(), "tile-columns", "0");
+    avifEncoderSetCodecSpecificOption(encoder.get(), "tile-rows", "0");
+    avifEncoderSetCodecSpecificOption(encoder.get(), "frame-parallel", "0");
   }
 
-  // avifEncoderSetCodecSpecificOption(encoder, "cpu-used",
-  //                                   std::to_string(config.speed).c_str());
-  // avifEncoderSetCodecSpecificOption(encoder, "auto-alt-ref", "1");
-  // avifEncoderSetCodecSpecificOption(encoder, "lag-in-frames", "0");
+  UniqueAvifImage image(
+      avifImageCreate(width, height, RGB_DEPTH, config.pixelFormat));
 
-  avifImage *image;
-  try {
-    image = avifImageCreate(width, height, RGB_DEPTH, config.pixelFormat);
-
-  } catch (const std::exception &e) {
-    avifEncoderDestroy(encoder);
-    return Result::Failure(ConverterError::OUT_OF_MEMORY,
-                           "Memory allocation failed for AOM encoder" +
-                               std::string(e.what()),
-                           __func__);
-  }
   // Set color profile to sRGB/BT.709
   image->colorPrimaries = AVIF_COLOR_PRIMARIES_BT709;
   image->transferCharacteristics = AVIF_TRANSFER_CHARACTERISTICS_SRGB;
@@ -125,7 +114,7 @@ Result convert_image(const std::string &input_data, int width, int height,
   image->yuvRange = AVIF_RANGE_FULL; // Use full range for web content
 
   avifRGBImage rgb;
-  avifRGBImageSetDefaults(&rgb, image);
+  avifRGBImageSetDefaults(&rgb, image.get());
   rgb.chromaUpsampling = AVIF_CHROMA_UPSAMPLING_AUTOMATIC;
   rgb.format = AVIF_RGB_FORMAT_RGBA;
 
@@ -135,10 +124,9 @@ Result convert_image(const std::string &input_data, int width, int height,
   rgb.alphaPremultiplied = AVIF_FALSE;
   rgb.ignoreAlpha = false;
 
-  avifResult convertResult = avifImageRGBToYUV(image, &rgb);
+  avifResult convertResult = avifImageRGBToYUV(image.get(), &rgb);
   if (convertResult != AVIF_RESULT_OK) {
-    avifEncoderDestroy(encoder);
-    avifImageDestroy(image);
+
     return Result::Failure(ConverterError::CONVERSION_FAILED,
                            "RGB->YUV conversion failed: " +
                                std::string(avifResultToString(convertResult)),
@@ -148,7 +136,7 @@ Result convert_image(const std::string &input_data, int width, int height,
   avifRWData output = AVIF_DATA_EMPTY;
   avifResult result;
   try {
-    result = avifEncoderWrite(encoder, image, &output);
+    result = avifEncoderWrite(encoder.get(), image.get(), &output);
     if (result != AVIF_RESULT_OK) {
       std::string errorMsg = "Encoding failed: ";
       errorMsg += avifResultToString(result);
@@ -159,8 +147,7 @@ Result convert_image(const std::string &input_data, int width, int height,
     }
   } catch (const std::exception &e) {
     // Handle any unexpected exceptions during encoding
-    avifEncoderDestroy(encoder);
-    avifImageDestroy(image);
+
     return Result::Failure(
         ConverterError::ENCODING_FAILED,
         "Exception during AVIF encoding: " + std::string(e.what()), __func__);
@@ -168,8 +155,6 @@ Result convert_image(const std::string &input_data, int width, int height,
 
   printf("From cpp AVIF output size: %zu bytes\n",
          output.size); // Log output size
-  avifEncoderDestroy(encoder);
-  avifImageDestroy(image);
 
   // Copy AVIF data into a vector (ensures ownership)
   std::vector<uint8_t> output_data(output.data, output.data + output.size);
@@ -266,13 +251,45 @@ emscripten::val convertImageDirect(emscripten::val jsData, int width,
 }
 
 EMSCRIPTEN_BINDINGS(ImageConverter) {
+  emscripten::enum_<SpeedPreset>("SpeedPreset")
+      .value("Good", SpeedPreset::Good)
+      .value("MemoryHungry", SpeedPreset::MemoryHungry)
+      .value("RealTime", SpeedPreset::RealTime);
+
+  emscripten::enum_<CodecChoice>("CodecChoice")
+      .value("AUTO", CodecChoice::AUTO)
+      .value("AOM", CodecChoice::AOM)
+      .value("SVT", CodecChoice::SVT);
+
+  emscripten::enum_<Tune>("Tune")
+      .value("DEFAULT", Tune::TUNE_DEFAULT)
+      .value("PSNR", Tune::TUNE_PSNR)
+      .value("SSIM", Tune::TUNE_SSIM);
+
+  emscripten::class_<SpeedRange>("SpeedRange")
+      .constructor<>()
+      .property("min", &SpeedRange::min)
+      .property("max", &SpeedRange::max);
+
+  emscripten::class_<Speed>("Speed")
+      .constructor<CodecChoice, SpeedPreset>()
+      .property("default_speed", &Speed::getDefault, &Speed::set,
+                &Speed::default_speed)
+      .property("speed_range", &Speed::getRange, &Speed::setSpeedRange)
+      .property("preset", &Speed::preset_)
+      .function("getDefault", &Speed::getDefault)
+      .function("getRange", &Speed::getRange)
+      .function("isValid", &Speed::isValid)
+      .function("getPreset", &Speed::getPreset)
+      .function("set", &Speed::set);
 
   emscripten::class_<EncodeConfig>("EncodeConfig")
       .constructor<>()
       .property("quality", &EncodeConfig::getQuality, &EncodeConfig::setQuality)
-      .property("speed", &EncodeConfig::speed)
+      .property("preset", &EncodeConfig::preset)
       .property("pixelFormat", &EncodeConfig::pixelFormat)
-      .property("codecChoice", &EncodeConfig::codecChoice)
+      .property("codecChoice", &EncodeConfig::getCodecChoice,
+                &EncodeConfig::setCodecChoice)
       .property("minQuantizer", &EncodeConfig::getMinQuantizer,
                 &EncodeConfig::setMinQuantizer)
       .property("maxQuantizer", &EncodeConfig::getMaxQuantizer,
@@ -282,16 +299,9 @@ EMSCRIPTEN_BINDINGS(ImageConverter) {
       .property("tileColsLog2", &EncodeConfig::getTileColsLog2,
                 &EncodeConfig::setTileColsLog2)
       .property("tune", &EncodeConfig::tune)
-      .property("sharpness", &EncodeConfig::sharpness);
-  emscripten::enum_<EncodeConfig::CodecChoice>("CodecChoice")
-      .value("AUTO", EncodeConfig::CodecChoice::AUTO)
-      .value("AOM", EncodeConfig::CodecChoice::AOM)
-      .value("SVT", EncodeConfig::CodecChoice::SVT);
-
-  emscripten::enum_<EncodeConfig::Tune>("Tune")
-      .value("DEFAULT", EncodeConfig::TUNE_DEFAULT)
-      .value("PSNR", EncodeConfig::TUNE_PSNR)
-      .value("SSIM", EncodeConfig::TUNE_SSIM);
+      .property("sharpness", &EncodeConfig::sharpness)
+      .function("getSpeed", &EncodeConfig::getSpeed)
+      .function("updateSpeed", &EncodeConfig::updateSpeed);
 
   emscripten::function("convertImageDirect", &convertImageDirect);
 }

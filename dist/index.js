@@ -4,38 +4,44 @@ var ResizeMode = /* @__PURE__ */ ((ResizeMode2) => {
   ResizeMode2["Percent"] = "percent";
   return ResizeMode2;
 })(ResizeMode || {});
-var AvifPixelFormat = /* @__PURE__ */ ((AvifPixelFormat3) => {
-  AvifPixelFormat3[AvifPixelFormat3["YUV444"] = 0] = "YUV444";
-  AvifPixelFormat3[AvifPixelFormat3["YUV422"] = 1] = "YUV422";
-  AvifPixelFormat3[AvifPixelFormat3["YUV420"] = 2] = "YUV420";
-  AvifPixelFormat3[AvifPixelFormat3["YUV400"] = 3] = "YUV400";
-  return AvifPixelFormat3;
+var AvifPixelFormat = /* @__PURE__ */ ((AvifPixelFormat2) => {
+  AvifPixelFormat2[AvifPixelFormat2["YUV444"] = 0] = "YUV444";
+  AvifPixelFormat2[AvifPixelFormat2["YUV422"] = 1] = "YUV422";
+  AvifPixelFormat2[AvifPixelFormat2["YUV420"] = 2] = "YUV420";
+  AvifPixelFormat2[AvifPixelFormat2["YUV400"] = 3] = "YUV400";
+  return AvifPixelFormat2;
 })(AvifPixelFormat || {});
-var CodecChoice = /* @__PURE__ */ ((CodecChoice3) => {
-  CodecChoice3[CodecChoice3["AUTO"] = 0] = "AUTO";
-  CodecChoice3[CodecChoice3["AOM"] = 1] = "AOM";
-  CodecChoice3[CodecChoice3["SVT"] = 2] = "SVT";
-  return CodecChoice3;
+var CodecChoice = /* @__PURE__ */ ((CodecChoice2) => {
+  CodecChoice2[CodecChoice2["AUTO"] = 0] = "AUTO";
+  CodecChoice2[CodecChoice2["AOM"] = 1] = "AOM";
+  CodecChoice2[CodecChoice2["SVT"] = 2] = "SVT";
+  return CodecChoice2;
 })(CodecChoice || {});
-var Tune = /* @__PURE__ */ ((Tune3) => {
-  Tune3[Tune3["TUNE_DEFAULT"] = 0] = "TUNE_DEFAULT";
-  Tune3[Tune3["TUNE_PSNR"] = 1] = "TUNE_PSNR";
-  Tune3[Tune3["TUNE_SSIM"] = 2] = "TUNE_SSIM";
-  return Tune3;
+var Tune = /* @__PURE__ */ ((Tune2) => {
+  Tune2[Tune2["TUNE_DEFAULT"] = 0] = "TUNE_DEFAULT";
+  Tune2[Tune2["TUNE_PSNR"] = 1] = "TUNE_PSNR";
+  Tune2[Tune2["TUNE_SSIM"] = 2] = "TUNE_SSIM";
+  return Tune2;
 })(Tune || {});
-var ErrorCode = /* @__PURE__ */ ((ErrorCode3) => {
-  ErrorCode3[ErrorCode3["OK"] = 0] = "OK";
-  ErrorCode3[ErrorCode3["INVALID_DIMENSIONS"] = 100] = "INVALID_DIMENSIONS";
-  ErrorCode3[ErrorCode3["IMAGE_LOAD_FAILED"] = 101] = "IMAGE_LOAD_FAILED";
-  ErrorCode3[ErrorCode3["ENCODER_CREATION_FAILED"] = 102] = "ENCODER_CREATION_FAILED";
-  ErrorCode3[ErrorCode3["CONVERSION_FAILED"] = 103] = "CONVERSION_FAILED";
-  ErrorCode3[ErrorCode3["ENCODING_FAILED"] = 104] = "ENCODING_FAILED";
-  ErrorCode3[ErrorCode3["INVALID_ARGUMENT"] = 105] = "INVALID_ARGUMENT";
-  ErrorCode3[ErrorCode3["OUT_OF_MEMORY"] = 106] = "OUT_OF_MEMORY";
-  ErrorCode3[ErrorCode3["INVALID_QUANTIZER_VALUES"] = 107] = "INVALID_QUANTIZER_VALUES";
-  ErrorCode3[ErrorCode3["UNKNOWN_ERROR"] = 108] = "UNKNOWN_ERROR";
-  ErrorCode3[ErrorCode3["AVIF_ERROR_START"] = 200] = "AVIF_ERROR_START";
-  return ErrorCode3;
+var SpeedPreset = /* @__PURE__ */ ((SpeedPreset2) => {
+  SpeedPreset2["MemoryHungry"] = "MemoryHungry";
+  SpeedPreset2["Good"] = "Good";
+  SpeedPreset2["RealTime"] = "RealTime";
+  return SpeedPreset2;
+})(SpeedPreset || {});
+var ErrorCode = /* @__PURE__ */ ((ErrorCode2) => {
+  ErrorCode2[ErrorCode2["OK"] = 0] = "OK";
+  ErrorCode2[ErrorCode2["INVALID_DIMENSIONS"] = 100] = "INVALID_DIMENSIONS";
+  ErrorCode2[ErrorCode2["IMAGE_LOAD_FAILED"] = 101] = "IMAGE_LOAD_FAILED";
+  ErrorCode2[ErrorCode2["ENCODER_CREATION_FAILED"] = 102] = "ENCODER_CREATION_FAILED";
+  ErrorCode2[ErrorCode2["CONVERSION_FAILED"] = 103] = "CONVERSION_FAILED";
+  ErrorCode2[ErrorCode2["ENCODING_FAILED"] = 104] = "ENCODING_FAILED";
+  ErrorCode2[ErrorCode2["INVALID_ARGUMENT"] = 105] = "INVALID_ARGUMENT";
+  ErrorCode2[ErrorCode2["OUT_OF_MEMORY"] = 106] = "OUT_OF_MEMORY";
+  ErrorCode2[ErrorCode2["INVALID_QUANTIZER_VALUES"] = 107] = "INVALID_QUANTIZER_VALUES";
+  ErrorCode2[ErrorCode2["UNKNOWN_ERROR"] = 108] = "UNKNOWN_ERROR";
+  ErrorCode2[ErrorCode2["AVIF_ERROR_START"] = 200] = "AVIF_ERROR_START";
+  return ErrorCode2;
 })(ErrorCode || {});
 
 // src/convAvif.ts
@@ -123,6 +129,7 @@ export {
   CodecChoice,
   ErrorCode,
   ResizeMode,
+  SpeedPreset,
   Tune,
   computeDimensions,
   convertImage,

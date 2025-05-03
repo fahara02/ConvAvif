@@ -26,6 +26,25 @@ declare enum Tune {
     TUNE_PSNR = 1,
     TUNE_SSIM = 2
 }
+interface SpeedRange {
+    min: number;
+    max: number;
+}
+declare enum SpeedPreset {
+    MemoryHungry = "MemoryHungry",
+    Good = "Good",
+    RealTime = "RealTime"
+}
+interface Speed {
+    default_speed: number;
+    speed_range: SpeedRange;
+    preset: SpeedPreset;
+    getDefault(): Speed;
+    getRange(): SpeedRange;
+    isValid(): boolean;
+    getPreset(): SpeedPreset;
+    set(): void;
+}
 declare enum ErrorCode {
     OK = 0,
     INVALID_DIMENSIONS = 100,
@@ -50,7 +69,7 @@ interface ConverterError {
 interface EncodeConfig {
     quality: number;
     qualityAlpha: number;
-    speed: number;
+    preset: SpeedPreset;
     sharpness: number;
     pixelFormat: AvifPixelFormat;
     codecChoice: CodecChoice;
@@ -59,6 +78,8 @@ interface EncodeConfig {
     tileRowsLog2: number;
     tileColsLog2: number;
     tune: Tune;
+    updateSpeed(): void;
+    getSpeed(): number;
 }
 interface ConvertImageParams {
     inputData: Uint8Array;
@@ -137,4 +158,4 @@ declare function convertToBlob(params: ConvertImageParams): Promise<{
     blob: Blob;
 }>;
 
-export { AvifPixelFormat, CodecChoice, type ConvAvifModule, type ConversionResult, type ConvertImageParams, type ConverterError, type EncodeConfig, ErrorCode, type ImageBuffer, ResizeMode, type ResizeOptionsFixed, type ResizeOptionsPercent, type SharedImageBuffer, Tune, computeDimensions, convertImage, convertToBlob, initWasm };
+export { AvifPixelFormat, CodecChoice, type ConvAvifModule, type ConversionResult, type ConvertImageParams, type ConverterError, type EncodeConfig, ErrorCode, type ImageBuffer, ResizeMode, type ResizeOptionsFixed, type ResizeOptionsPercent, type SharedImageBuffer, type Speed, SpeedPreset, type SpeedRange, Tune, computeDimensions, convertImage, convertToBlob, initWasm };

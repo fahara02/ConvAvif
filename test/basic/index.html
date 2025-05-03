@@ -110,7 +110,16 @@
         const pf = document.getElementById('pixelFormat').value;
         config.pixelFormat = moduleInstance.AvifPixelFormat[pf];
         config.quality = parseInt(qualityInput.value); 
-        config.speed = parseInt(document.getElementById('speed').value);
+        
+        // In your convert button click handler:
+       const presetString = document.getElementById('speedPreset').value;
+       console.log("preset is:", presetString);
+       const presetEnum = moduleInstance.SpeedPreset[presetString]; // Convert string to enum value
+       console.log("enum value:", presetEnum);
+       config.preset = presetEnum;
+       let speed_value = parseInt(document.getElementById('speed').value);
+       console.log("speed selected:", speed_value);
+       config.updateSpeed(speed_value, presetEnum); // Pass the enum value here
         config.tune = parseInt(document.getElementById('tune').value);
         config.sharpness = parseInt(document.getElementById('sharpness').value);
         config.tileRowsLog2=parseInt(document.getElementById('tileRows').value);
@@ -194,12 +203,13 @@
           // Add specific AVIF settings used
           const settingsInfo = document.createElement('div');
           settingsInfo.classList.add('mt-3', 'small', 'text-muted');
+          let speed=config.getSpeed() ;
           settingsInfo.innerHTML = `
             <strong>AVIF Settings Used:</strong><br>
             Quality: ${config.quality}<br>
             Codec: ${moduleInstance.CodecChoice[config.codecChoice] || 'AOM'}<br>
             Pixel Format: ${pf}<br>
-            Speed: ${config.speed}<br>
+            Speed: ${speed}<br>
             Sharpness: ${config.sharpness}<br>
             Tile Rows: 2^${config.tileRowsLog2}<br>
             Tile Columns: 2^${config.tileColsLog2}
@@ -318,12 +328,46 @@
       border: 1px dashed var(--border-color);
     }
 
-    .advanced-settings {
-      background: white;
-      border-radius: 0.75rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
+    .advanced-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Add this to your existing CSS */
+.tuning-group {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.setting-group {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.setting-group > div {
+  flex: 1;
+  min-width: 200px;
+}
+/* Maintain vertical alignment for form elements */
+.advanced-controls label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+.advanced-controls select,
+.advanced-controls input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
 
     .advanced-settings summary {
       padding: 1rem 1.5rem;
@@ -486,11 +530,25 @@
           <option value="YUV400">YUV400 (Grayscale)</option>
         </select>
       </div>
-      <div>
-        <label for="speed">Encoder Speed (0-10):</label>
-        <input type="number" id="speed" min="0" max="10" value="6">
+  
+      <!-- Grouped Speed Settings -->
+      <div class="setting-group">
+        <div>
+          <label for="speedPreset">Speed Preset:</label>
+          <select id="speedPreset">
+            <option value="MemoryHungry">MemoryHungry (Higher detail)</option>
+            <option value="Good" selected>Good</option>
+            <option value="RealTime">RealTime</option>        
+          </select>
+        </div>
+        <div>
+          <label for="speed">Encoder Speed (0-10):</label>
+          <input type="number" id="speed" min="0" max="10" value="6">
+        </div>
       </div>
-      <div>
+  
+      <!-- Tuning now properly separated -->
+      <div class="tuning-group">
         <label for="tune">Tuning:</label>
         <select id="tune">
           <option value="0" selected>Default</option>
@@ -498,14 +556,17 @@
           <option value="2">SSIM</option>
         </select>
       </div>
+      
       <div>
         <label for="sharpness">Sharpness (0-7):</label>
         <input type="number" id="sharpness" min="0" max="7" value="0">
       </div>
+      
       <div>
         <label for="tileRows">Tile Rows (2^n):</label>
         <input type="number" id="tileRows" min="0" max="6" value="0">
       </div>
+      
       <div>
         <label for="tileCols">Tile Columns (2^n):</label>
         <input type="number" id="tileCols" min="0" max="6" value="0">

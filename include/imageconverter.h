@@ -5,6 +5,8 @@
 #include <avif/avif.h>
 #include <string>
 static constexpr int RGB_DEPTH = 8;
+static constexpr int MIN_SPEED = 0;
+static constexpr int MAX_SPEED = 9;
 static constexpr int MAX_QUALITY = 99;
 static constexpr int MAX_QUANTIZER = 63;
 static constexpr int MAX_TILE_LOG2 = 6;
@@ -88,14 +90,10 @@ public:
   std::unique_ptr<Error> error;
 
   // Getters for Emscripten bindings
-  ImageBuffer* getImage() const { 
-    return image.get(); 
-  }
-  
+  ImageBuffer *getImage() const { return image.get(); }
+
   // Special getter for the error field that transfers ownership
-  Error* getError() {
-    return error.release();
-  }
+  Error *getError() { return error.release(); }
 
   static Result Success(std::shared_ptr<ImageBuffer> img) {
     Result res;
@@ -108,6 +106,90 @@ public:
     Result res;
     res.error = std::make_unique<Error>(code, message, trace);
     return res;
+  }
+};
+
+enum class CodecChoice { AUTO, AOM, SVT };
+enum class Tune { TUNE_DEFAULT = 0, TUNE_PSNR, TUNE_SSIM };
+struct SpeedRange {
+  int min;
+  int max;
+};
+enum class SpeedPreset : int { Good, MemoryHungry, RealTime };
+
+struct Speed {
+
+  SpeedPreset preset_ = SpeedPreset::Good;
+  int default_speed = 5;
+  SpeedRange speed_range = {5, 6};
+
+  Speed(CodecChoice codec, SpeedPreset preset) : preset_(preset) {
+    switch (codec) {
+    case CodecChoice::AOM:
+      switch (preset) {
+      case SpeedPreset::MemoryHungry:
+        default_speed = 4;
+        speed_range = {0, 4};
+        break;
+      case SpeedPreset::Good:
+        default_speed = 6;
+        speed_range = {5, 7};
+        break;
+      case SpeedPreset::RealTime:
+        default_speed = 9;
+        speed_range = {8, 10};
+        break;
+      default:
+        default_speed = 6;
+        speed_range = {5, 7};
+        break;
+      }
+      break;
+    case CodecChoice::SVT:
+      // Example ranges for SVT (adjust as needed)
+      switch (preset) {
+      case SpeedPreset::MemoryHungry:
+        default_speed = 2;
+        speed_range = {0, 2};
+        break;
+      case SpeedPreset::Good:
+        default_speed = 5;
+        speed_range = {3, 5};
+        break;
+      case SpeedPreset::RealTime:
+        default_speed = 7;
+        speed_range = {6, 8};
+        break;
+      default:
+        default_speed = 5;
+        speed_range = {3, 5};
+        break;
+      }
+      break;
+    case CodecChoice::AUTO:
+      default_speed = 5;
+      speed_range = {3, 5};
+      break;
+    default:
+      default_speed = 5;
+      speed_range = {3, 5};
+      break;
+    }
+  }
+
+  int getDefault() const { return default_speed; }
+  void setSpeedRange(const SpeedRange &range) { speed_range = range; }
+  SpeedRange getRange() const { return speed_range; }
+  bool isValid(int speed) {
+    return speed >= speed_range.min && speed <= speed_range.max;
+  }
+  SpeedPreset getPreset() const { return preset_; }
+  void set(int ns) {
+    if (isValid(ns)) {
+      default_speed = ns;
+    } else {
+      printf("Speed is not valid! going back to default!\n");
+    }
   }
 };
 
@@ -126,16 +208,18 @@ private:
 public:
   int quality = 30;
   int qualityAlpha = -1;
-  int speed = 6;
+
   int sharpness = 0; // 0-7 filter strength
   avifPixelFormat pixelFormat = AVIF_PIXEL_FORMAT_YUV420;
-  enum CodecChoice { AUTO, AOM, SVT } codecChoice = AOM;
+  CodecChoice codecChoice;
+  SpeedPreset preset;
+
   int minQuantizer = -1; // 0-63, -1 for default
   int maxQuantizer = -1;
   int tileRowsLog2 = 0;
   int tileColsLog2 = 0;
-  enum Tune { TUNE_DEFAULT = 0, TUNE_PSNR, TUNE_SSIM };
-  Tune tune = TUNE_DEFAULT;
+
+  Tune tune = Tune::TUNE_DEFAULT;
 
   // Setters with validation
   void setQuality(int q) { quality = validatedQuality(q); }
@@ -152,9 +236,52 @@ public:
   int getTileRowsLog2() const { return tileRowsLog2; }
   int getTileColsLog2() const { return tileColsLog2; }
   int getSharpness() const { return sharpness; }
+  int getSpeed() const { return speed.getDefault(); }
+  void updateSpeed(int new_speed, SpeedPreset newPreset) {
+
+    preset = newPreset;
+    printf("Updating speed: preset=%d, new_speed=%d, codec=%d\n",
+           static_cast<int>(newPreset), new_speed,
+           static_cast<int>(codecChoice));
+    speed = Speed(codecChoice, preset);
+    speed.set(new_speed);
+    printf("updated new speed: %d\n", speed.getDefault());
+  }
+  CodecChoice getCodecChoice() const { return codecChoice; }
+  void setCodecChoice(CodecChoice choice) { codecChoice = choice; }
+  void printConfig() const {
+    printf("EncodeConfig:\n");
+    printf("  quality: %d\n", quality);
+    printf("  qualityAlpha: %d\n", qualityAlpha);
+    printf("  sharpness: %d\n", sharpness);
+    printf("  pixelFormat: %d\n", pixelFormat);
+    printf("  codecChoice: %d\n", static_cast<int>(codecChoice));
+    printf("  preset: %d\n", static_cast<int>(preset));
+    printf("  minQuantizer: %d\n", minQuantizer);
+    printf("  maxQuantizer: %d\n", maxQuantizer);
+    printf("  tileRowsLog2: %d\n", tileRowsLog2);
+    printf("  tileColsLog2: %d\n", tileColsLog2);
+    printf("  tune: %d\n", static_cast<int>(tune));
+    printf("  speed: %d\n", speed.getDefault());
+    printf("  speedRange: [%d, %d]\n", speed.getRange().min,
+           speed.getRange().max);
+  }
+
+private:
+  Speed speed = Speed(CodecChoice::AOM, SpeedPreset::Good);
 };
 
 Result convert_image(const std::string &input_data, int width, int height,
                      const EncodeConfig &config);
+
+struct AvifEncoderDeleter {
+  void operator()(avifEncoder *enc) { avifEncoderDestroy(enc); }
+};
+using UniqueAvifEncoder = std::unique_ptr<avifEncoder, AvifEncoderDeleter>;
+
+struct AvifImageDeleter {
+  void operator()(avifImage *img) { avifImageDestroy(img); }
+};
+using UniqueAvifImage = std::unique_ptr<avifImage, AvifImageDeleter>;
 
 #endif

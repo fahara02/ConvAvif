@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="module">
       // Configure WASM path first
-      const wasmURL = new URL('./asset/imageconverter.wasm', import.meta.url);
+      const wasmURL = new URL('./dist/imageconverter.wasm', import.meta.url);
     
     const moduleConfig = {
         locateFile: (path) => {
@@ -19,7 +19,7 @@
     };
 
     // Import the module with configuration
-    import _Module from './asset/imageconverter.js';
+    import _Module from './dist/imageconverter.js';
     const Module = _Module(moduleConfig);
 
     // Global reference to the WebAssembly module

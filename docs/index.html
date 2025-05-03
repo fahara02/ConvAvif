@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="module">
     // Dynamically load WASM module
-    import Module from './dist/imageconverter.js';
+    import Module from './asset/imageconverter.js';
 
     // Global reference to the WebAssembly module
     let moduleInstance;
@@ -639,7 +639,7 @@
   </div>
 
   <div id="resultContainer">
-    <img id="output" src="./placeholder.svg" alt="Converted AVIF will appear here" />
+    <img id="output" src="./asset/placeholder.svg" alt="Converted AVIF will appear here" />
     <a id="downloadLink" style="display:none;"></a>
   </div>
 </body>

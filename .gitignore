@@ -3,8 +3,7 @@ _deps
 build
 # Ignore third-party dependencies except STB
 third_party/*
-!third_party/stb/
-!third_party/stb/**
+
 dav1d
 libavif
 external

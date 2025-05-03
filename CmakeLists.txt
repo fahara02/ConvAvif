@@ -197,7 +197,11 @@ set_target_properties(avif_static PROPERTIES
   INTERFACE_LINK_LIBRARIES dav1d_static
 )
 
-add_executable(imageconverter src/imageconverter.cpp)
+add_executable(imageconverter 
+  src/imageconverter.cpp
+  src/bind.cpp          
+  src/error.cpp         
+)
 add_dependencies(imageconverter dav1d libavif svt_av1)
 
 target_compile_definitions(imageconverter PRIVATE STB_IMAGE_IMPLEMENTATION STB_IMAGE_RESIZE_IMPLEMENTATION)

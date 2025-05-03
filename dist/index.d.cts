@@ -104,7 +104,7 @@ interface SharedImageBuffer extends ImageBuffer {
     delete(): void;
 }
 /**
- * Result type that contains either a successful ImageBuffer or an Error
+ * Result type (emscripten val) that contains either a successful ImageBuffer or an Error
  */
 interface ConversionResult {
     success: boolean;

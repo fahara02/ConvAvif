@@ -2,11 +2,14 @@
 #define ERROR_H
 
 #include <avif/avif.h>
+#include <emscripten/val.h>
 #include <string>
+
 
 enum class ConverterError {
   OK = 0,
   INVALID_DIMENSIONS = 100,
+  UNSUPPORTED_IMAGETYPE,
   IMAGE_LOAD_FAILED,
   ENCODER_CREATION_FAILED,
   CONVERSION_FAILED,
@@ -30,5 +33,6 @@ public:
 
 ConverterError avifToConverterError(avifResult result);
 std::string getErrorMessage(ConverterError error);
+emscripten::val toJsError(const Error &e);
 
 #endif // ERROR_H

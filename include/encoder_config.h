@@ -6,7 +6,6 @@
 #include <avif/avif.h>
 #include <string>
 
-enum class ImageType { JPEG, PNG, GIF, BMP, TIFF, WEBP, AVIF, UNKNOWN };
 enum class CodecChoice { AUTO, AOM, SVT };
 enum class Tune { TUNE_DEFAULT = 0, TUNE_PSNR, TUNE_SSIM };
 enum class SpeedPreset : int { Good, MemoryHungry, RealTime };

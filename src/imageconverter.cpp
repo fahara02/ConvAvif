@@ -183,18 +183,21 @@ emscripten::val convertImageDirect(emscripten::val jsData, int width,
   try {
     std::vector<uint8_t> inputData =
         emscripten::convertJSArrayToNumberVector<uint8_t>(jsData);
+
+    ImageType type = ImageGuru::GetImageType(inputData);
+
+    if (type == ImageType::UNKNOWN) {
+      Error err(ConverterError::UNSUPPORTED_IMAGETYPE, "unsupported image type",
+                __func__);
+      return toJsError(err);
+    }
     Result r = convert_image(inputData, width, height, config);
     jsResult result{r};
-
     emscripten::val jresult = emscripten::val::object();
+
     if (result.hasError()) {
       Error err = result.getError();
-      emscripten::val errorObj = emscripten::val::object();
-      errorObj.set("code", static_cast<int>(err.code));
-      errorObj.set("message", err.message);
-      errorObj.set("stackTrace", err.stackTrace);
-      jresult.set("error", errorObj);
-      jresult.set("success", false);
+      return toJsError(err);
     } else if (result.hasImage()) {
       auto image = result.getImage();
       const auto &imageData = image->getRawData();
@@ -205,6 +208,7 @@ emscripten::val convertImageDirect(emscripten::val jsData, int width,
                                 imageData.size(), imageData.data())));
       jresult.set("data", uint8Array);
       jresult.set("success", true);
+
     } else {
       emscripten::val errorObj = emscripten::val::object();
       errorObj.set("code", static_cast<int>(ConverterError::UNKNOWN_ERROR));

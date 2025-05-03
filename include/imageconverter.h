@@ -4,6 +4,7 @@
 #include "constants.h"
 #include "encoder_config.h"
 #include "error.h"
+#include "imageGuru.h"
 #include "imagebuffer.h"
 #include "result.h"
 #include <algorithm>

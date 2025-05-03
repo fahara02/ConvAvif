@@ -40,3 +40,14 @@ std::string getErrorMessage(ConverterError error) {
     return "Unknown error";
   }
 }
+
+emscripten::val toJsError(const Error &e) {
+  emscripten::val jresult = emscripten::val::object();
+  emscripten::val errorObj = emscripten::val::object();
+  errorObj.set("code", static_cast<int>(e.code));
+  errorObj.set("message", e.message);
+  errorObj.set("stackTrace", e.stackTrace);
+  jresult.set("error", errorObj);
+  jresult.set("success", false);
+  return jresult;
+}

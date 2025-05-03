@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['set_0',['set',['../struct_speed.html#ad56c0359dedbf94a72fd69493a31b50e',1,'Speed']]],
+  ['setavifoption_1',['SetAvifOption',['../avif__helper_8h.html#ae966f90c71b8f126e1371e4b7be62f57',1,'avif_helper.h']]],
+  ['setcodecchoice_2',['setCodecChoice',['../struct_encode_config.html#a2093dc7745148029839988b97e326d8f',1,'EncodeConfig']]],
+  ['setfield_3',['setField',['../encoder__config_8h.html#ad76fc3f49f931c6e964bb07e7c6c3838',1,'encoder_config.h']]],
+  ['setmaxquantizer_4',['setMaxQuantizer',['../struct_encode_config.html#a0a62ac9ddfb1e9a04513ba22cf6d22ab',1,'EncodeConfig']]],
+  ['setminquantizer_5',['setMinQuantizer',['../struct_encode_config.html#a6555d4838568780b89de5cb13a0fb4e3',1,'EncodeConfig']]],
+  ['setpreset_6',['setPreset',['../struct_encode_config.html#a2e11b5548644ac0e7ff3adc08f470566',1,'EncodeConfig']]],
+  ['setquality_7',['setQuality',['../struct_encode_config.html#a86949bc6781d85fb9b384366b70d6357',1,'EncodeConfig']]],
+  ['setsharpness_8',['setSharpness',['../struct_encode_config.html#aecd3fadd3f5433e4e87457839afeba23',1,'EncodeConfig']]],
+  ['setspeedrange_9',['setSpeedRange',['../struct_speed.html#a757d6d07a38e686bfd046eab9a6fd5f4',1,'Speed']]],
+  ['settilecolslog2_10',['setTileColsLog2',['../struct_encode_config.html#ac4925a17623dd5df54d9c12439605878',1,'EncodeConfig']]],
+  ['settilerowslog2_11',['setTileRowsLog2',['../struct_encode_config.html#a68c9ca2bda0198dd1e25005625ee0bfe',1,'EncodeConfig']]],
+  ['sharpness_12',['sharpness',['../struct_encode_config.html#ad28bd98f1bdbe276275b754548d23986',1,'EncodeConfig']]],
+  ['speed_13',['Speed',['../struct_speed.html',1,'Speed'],['../struct_speed.html#a86ba182c241d166bf5243184b093021e',1,'Speed::Speed()']]],
+  ['speed_14',['speed',['../struct_encode_config.html#a1619bbc1daf18fe98ba06272cb5de3dc',1,'EncodeConfig']]],
+  ['speed_5frange_15',['speed_range',['../struct_speed.html#a7d654245bf5a79d0f6a1da13cbc301d5',1,'Speed']]],
+  ['speedpreset_16',['SpeedPreset',['../encoder__config_8h.html#a7b5ddb70633c01f650076b8e18fd20d7',1,'encoder_config.h']]],
+  ['speedrange_17',['SpeedRange',['../struct_speed_range.html',1,'']]],
+  ['stacktrace_18',['stackTrace',['../class_error.html#a4051d2413bfd2780250043fc9c412865',1,'Error']]],
+  ['supported_19',['supported',['../struct_image_guru_1_1image_support.html#ac8203336cd34f13403a9263f45f4f85d',1,'ImageGuru::imageSupport']]],
+  ['supported_5fimage_20',['supported_image',['../class_image_guru.html#a584ee80b421a877e66108805931fd2d0',1,'ImageGuru']]],
+  ['svt_21',['SVT',['../encoder__config_8h.html#a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0',1,'encoder_config.h']]]
+];

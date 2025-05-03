@@ -1,0 +1,41 @@
+# Simplified Doxyfile for ConvAvif
+
+# Project information
+PROJECT_NAME           = "ConvAvif"
+PROJECT_NUMBER         = 1.0
+PROJECT_BRIEF          = "AVIF Image Conversion Library with WebAssembly Support"
+OUTPUT_DIRECTORY       = docs/api
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = English
+
+# Build related options
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+HIDE_UNDOC_MEMBERS     = NO
+
+# Input options
+INPUT                  = ./include ./src
+RECURSIVE              = NO
+FILE_PATTERNS          = *.cpp *.h *.c
+EXCLUDE                = 
+EXCLUDE_SYMLINKS       = YES
+EXCLUDE_PATTERNS       = */node_modules/* */build/* */dist/* */test-convavif/*
+
+# Source browsing options
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# HTML output options
+GENERATE_HTML          = YES
+HTML_OUTPUT            = .
+HTML_FILE_EXTENSION    = .html
+GENERATE_TREEVIEW      = YES
+SEARCHENGINE           = YES
+
+# Other options
+GENERATE_LATEX         = NO
+HAVE_DOT               = NO

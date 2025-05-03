@@ -79,7 +79,7 @@ SHOW_NAMESPACES        = YES
 # Input options
 INPUT                  = ./include ./src
 RECURSIVE              = YES
-EXCLUDE                = ./build ./node_modules ./dist ./test-convavif
+EXCLUDE                = ./build ./node_modules ./dist ./test-convavif ./test-convavif/node_modules
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = */\.*
 EXCLUDE_SYMBOLS        = 

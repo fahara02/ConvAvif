@@ -8,8 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="module">
-    // Dynamically load WASM module
-    import Module from './asset/imageconverter.js';
+      // Configure WASM path first
+      const wasmURL = new URL('./asset/imageconverter.wasm', import.meta.url);
+    
+    const moduleConfig = {
+        locateFile: (path) => {
+            if (path.endsWith('.wasm')) return wasmURL.href;
+            return path;
+        }
+    };
+
+    // Import the module with configuration
+    import _Module from './asset/imageconverter.js';
+    const Module = _Module(moduleConfig);
 
     // Global reference to the WebAssembly module
     let moduleInstance;
@@ -23,23 +34,17 @@
     const qualityInput = document.getElementById('quality');
     const qualityValue = document.getElementById('qualityValue');
     const outputImg = document.getElementById('output');
-
-       // Initialize module when the page loads
-       Module().then(instance => {
-        moduleInstance = instance;
-        console.log('WASM module loaded successfully!');
-    }).catch(e => {
-        console.error('Failed to load WASM module:', e);
-        alert('Failed to load WASM module: ' + e.message);
-    });
+    
+    Module.then(instance =>  {
+      moduleInstance = instance;
+      console.log('WASM module loaded successfully!');
       // Handle resize mode switching
       document.getElementById('resizeMode').addEventListener('change', function(e) {
         document.getElementById('fixedResizeInputs').style.display = 
-            e.target.value === 'fixed' ? 'grid' : 'none';
+          e.target.value === 'fixed' ? 'grid' : 'none';
         document.getElementById('percentResizeInputs').style.display = 
-            e.target.value === 'percent' ? 'grid' : 'none';
-    });
-   
+          e.target.value === 'percent' ? 'grid' : 'none';
+      });
 
       // Update quality value display
       qualityInput.addEventListener('input', function() {

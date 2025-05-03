@@ -18,9 +18,7 @@ Makefile
 install_manifest.txt
 build.ninja
 
-# WebAssembly artifacts
-*.wasm
-*.js.map
+
 
 # Node.js
 node_modules/

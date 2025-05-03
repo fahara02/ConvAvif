@@ -11,8 +11,8 @@
 #include <avif/avif.h>
 #include <string>
 
-Result convert_image(const std::vector<uint8_t> &input_data, int width,
-                     int height, const EncodeConfig &config);
+Result convert_image(ImageType type, const std::vector<uint8_t> &input_data,
+                     int width, int height, const EncodeConfig &config);
 emscripten::val convertImageDirect(emscripten::val jsData, int width,
                                    int height, const EncodeConfig &config);
 

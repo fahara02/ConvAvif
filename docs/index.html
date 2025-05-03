@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+  <!-- Added viewport meta tag for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="module">
+    // Dynamically load WASM module
+    import Module from '../dist/imageconverter.js';
+
+    // Global reference to the WebAssembly module
+    let moduleInstance;
+
+    // Captured image dimensions for resizing
+    let origWidth = 0;
+    let origHeight = 0;
+    const fileInput = document.getElementById('fileInput');
+    const widthInput = document.getElementById('width');
+    const heightInput = document.getElementById('height');
+    const qualityInput = document.getElementById('quality');
+    const qualityValue = document.getElementById('qualityValue');
+    const outputImg = document.getElementById('output');
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize module when the page loads
+      Module().then(instance => {
+        moduleInstance = instance;
+        console.log('WASM module loaded successfully!');
+      }).catch(e => {
+        console.error('Failed to load WASM module:', e);
+        alert('Failed to load WASM module: ' + e.message);
+      });
+
+      // Handle resize mode switching
+      document.getElementById('resizeMode').addEventListener('change', function(e) {
+        document.getElementById('fixedResizeInputs').style.display = 
+          e.target.value === 'fixed' ? 'grid' : 'none';
+        document.getElementById('percentResizeInputs').style.display = 
+          e.target.value === 'percent' ? 'grid' : 'none';
+      });
+
+      // Update quality value display
+      qualityInput.addEventListener('input', function() {
+        qualityValue.textContent = qualityInput.value;
+      });
+
+      // Show file preview and capture dimensions
+      fileInput.addEventListener('change', function() {
+        if (fileInput.files && fileInput.files[0]) {
+          const file = fileInput.files[0];
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const img = new Image();
+            img.onload = function() {
+              origWidth = img.width;
+              origHeight = img.height;
+              
+              // Set default dimensions
+              widthInput.value = img.width;
+              heightInput.value = img.height;
+              
+              // Show preview
+              outputImg.src = e.target.result;
+            }
+            img.src = e.target.result;
+          }
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Handle aspect ratio maintenance
+      widthInput.addEventListener('input', function() {
+        if (document.getElementById('keepAspect').checked && origWidth > 0) {
+          heightInput.value = Math.round(widthInput.value * origHeight / origWidth);
+        }
+      });
+
+      // Convert button functionality
+      document.getElementById('convertBtn').addEventListener('click', async function() {
+        if (!moduleInstance) {
+          alert('WASM module is not loaded yet. Please try again in a moment.');
+          return;
+        }
+        if (!fileInput.files || !fileInput.files[0]) {
+          alert('Please select an image file first!');
+          return;
+        }
+        const file = fileInput.files[0];
+        // Compute resize dimensions
+        let width, height;
+        const mode = document.getElementById('resizeMode').value;
+        if (mode === 'percent') {
+          const percent = parseInt(document.getElementById('percentValue').value, 10);
+          width = Math.round(origWidth * percent / 100);
+          height = Math.round(origHeight * percent / 100);
+        } else {
+          width = parseInt(widthInput.value, 10);
+          height = parseInt(heightInput.value, 10);
+          if (document.getElementById('keepAspect').checked) {
+            height = Math.round(width * origHeight / origWidth);
+          }
+        }
+        const buffer = await file.arrayBuffer();
+        const uint8 = new Uint8Array(buffer);
+        const config = new moduleInstance.EncodeConfig();
+        config.codecChoice = moduleInstance.CodecChoice.AOM;
+        // set chroma subsampling based on user selection
+        const pf = document.getElementById('pixelFormat').value;
+        config.pixelFormat = moduleInstance.AvifPixelFormat[pf];
+        config.quality = parseInt(qualityInput.value); 
+        
+        // In your convert button click handler:
+       const presetString = document.getElementById('speedPreset').value;
+       
+       const presetEnum = moduleInstance.SpeedPreset[presetString]; // Convert string to enum value
+     
+       config.preset=presetEnum;
+       let speed_value = parseInt(document.getElementById('speed').value);       
+       config.updateSpeed(speed_value, presetEnum); // Pass the enum value here
+       config.tune = parseInt(document.getElementById('tune').value);
+       config.sharpness = parseInt(document.getElementById('sharpness').value);
+       config.tileRowsLog2=parseInt(document.getElementById('tileRows').value);
+       config.tileColsLog2=parseInt(document.getElementById('tileCols').value);
+        try {
+          // Use the direct conversion function that properly transfers image data
+          const result = moduleInstance.convertImageDirect(uint8, width, height, config);
+          
+          // Check if conversion was successful
+          if (!result.success || !result.data) {
+            throw new Error(result.error ? result.error.message : 'Unknown conversion error');
+          }
+          
+          // Get image data directly from result.data (which is now a proper Uint8Array)
+          const copy = new Uint8Array(result.data); // Make a copy of the data
+          
+          console.log('From JS AVIF data size:', copy.byteLength);
+          
+          // Create blob with proper MIME type
+          let blob;
+          let mimeType = 'image/avif';
+          
+          // Use the copied data to create the Blob
+          blob = new Blob([copy], { type: mimeType });
+          // Update size stats
+          const originalSize = file.size;
+          const newSize = copy.byteLength;
+          const compression = ((originalSize - newSize) / originalSize * 100).toFixed(2);
+          document.getElementById('originalSize').textContent = `${(originalSize/1024).toFixed(2)} KB`;
+          document.getElementById('newSize').textContent = `${(newSize/1024).toFixed(2)} KB`;
+          document.getElementById('compressionPercent').textContent = `${compression}%`;
+          
+          // Add debug info about the first few bytes of the AVIF file
+          const header = Array.from(copy.slice(0, 32)).map(b => b.toString(16).padStart(2, '0')).join(' ');
+          console.log("AVIF header bytes:", header);
+          
+          // Check for AVIF file signature
+          const isAvifSignature = copy.length > 12 && 
+              copy[4] === 0x66 && copy[5] === 0x74 && copy[6] === 0x79 && copy[7] === 0x70 && 
+              copy[8] === 0x61 && copy[9] === 0x76 && copy[10] === 0x69 && copy[11] === 0x66;
+          console.log("Valid AVIF signature:", isAvifSignature);
+          
+          const url = URL.createObjectURL(blob);
+          console.log(url);
+          const uuid = crypto.randomUUID().substring(0, 8);
+          const fileName = `converted-${uuid}.avif`;
+          // Create a backup download link that always works
+          const directDownloadLink = document.createElement('a');
+          directDownloadLink.href = url;
+          directDownloadLink.download = fileName;
+          directDownloadLink.textContent = '⬇️ Download AVIF (Direct)';
+          directDownloadLink.style.margin = '10px';
+          directDownloadLink.style.display = 'inline-block';
+          directDownloadLink.classList.add('btn', 'btn-secondary');
+          document.getElementById('resultContainer').appendChild(directDownloadLink);
+          
+          // Try to display the image
+          outputImg.onerror = function(e) {
+            console.error('Error loading image:', e);
+            
+            // Try alternative display method - convert to PNG
+            document.getElementById('resultContainer').innerHTML += 
+              '<div class="alert alert-warning mt-3">' +
+              '<p>Your browser may not support displaying AVIF images directly. ' +
+              'You can still download the AVIF file using the links below.</p>' +
+              '<p>Common reasons for blank images:</p>' +
+              '<ul>' +
+              '<li>The browser does not fully support the AVIF format</li>' +
+              '<li>The specific AVIF encoding parameters are not compatible with this browser</li>' +
+              '<li>The image content is valid but cannot be rendered in this context</li>' +
+              '</ul>' +
+              '</div>';
+            
+            // Add info about successful conversion despite display issues
+            document.getElementById('resultContainer').innerHTML += 
+              '<div class="alert alert-success">' +
+              'The conversion was successful (output size: ' + copy.byteLength + ' bytes). ' +
+              'Try downloading and viewing the file in another application that supports AVIF.' +
+              '</div>';
+          };
+          
+          // Add specific AVIF settings used
+          const settingsInfo = document.createElement('div');
+          settingsInfo.classList.add('mt-3', 'small', 'text-muted');
+          let speed=config.getSpeed() ;
+          settingsInfo.innerHTML = `
+            <strong>AVIF Settings Used:</strong><br>
+            Quality: ${config.quality}<br>
+            Codec: ${moduleInstance.CodecChoice[config.codecChoice] || 'AOM'}<br>
+            Pixel Format: ${pf}<br>
+            Speed: ${speed}<br>
+            Sharpness: ${config.sharpness}<br>
+            Tile Rows: 2^${config.tileRowsLog2}<br>
+            Tile Columns: 2^${config.tileColsLog2}
+          `;
+          document.getElementById('resultContainer').appendChild(settingsInfo);
+          
+          outputImg.src = url;
+          const downloadLink = document.getElementById('downloadLink');
+          downloadLink.href = url;
+          downloadLink.download = fileName;
+          downloadLink.style.display = 'block';
+          downloadLink.textContent = '⬇️ Download AVIF';
+        } catch (e) {
+          console.error('Conversion error:', e);
+          alert('Conversion failed: ' + (e.message || e));
+        }
+      });
+    });
+  </script>
+  <title>ConvAvif - AVIF Image Converter</title>
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --secondary-color: #6366f1;
+      --accent-color: #8b5cf6;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --error-color: #ef4444;
+      --background-color: #f8fafc;
+      --border-color: #e2e8f0;
+      --card-bg: #ffffff;
+      --gradient-start: #6366f1;
+      --gradient-end: #8b5cf6;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      background: var(--background-color);
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 3px solid var(--primary-color);
+      background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .project-header h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin: 0 0 0.25rem;
+    }
+
+    .project-header p {
+      font-size: 1.25rem;
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    .controls {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .control-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    input, select, button {
+      font-family: inherit;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    button {
+      background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+      color: white;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+    }
+
+    #fileInput {
+      background: var(--card-bg);
+      padding: 1.25rem;
+      border: 2px dashed var(--border-color);
+      transition: border-color 0.2s;
+    }
+
+    #fileInput:hover {
+      border-color: var(--primary-color);
+    }
+    .advanced-controls {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+} 
+.settings-group {
+  background: var(--background-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.settings-group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.settings-group-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: -0.5rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings-group-title svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--secondary-color);
+}
+
+.setting-item {
+  margin-bottom: 1.25rem;
+}
+
+.setting-item:last-child {
+  margin-bottom: 0;
+}
+
+.setting-item label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.setting-item input,
+.setting-item select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  transition: all 0.2s ease;
+}
+
+.setting-item input:focus,
+.setting-item select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+
+
+    .advanced-settings {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .advanced-settings summary {
+      padding: 1.25rem 2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .advanced-settings summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .advanced-settings summary:before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 0.75rem;
+      transition: transform 0.2s;
+    }
+
+    .advanced-settings[open] summary:before {
+      transform: rotate(90deg);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color);
+    }
+
+    .stats span {
+      text-align: center;
+      padding: 1.25rem;
+      background: var(--background-color);
+      border-radius: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .stats span:before {
+      content: attr(data-label);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--secondary-color);
+    }
+
+    #resultContainer {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color);
+    }
+
+    #downloadLink {
+      background: linear-gradient(45deg, var(--success-color), #059669);
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    @media (max-width: 640px) {
+  .advanced-controls {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  
+  .settings-group {
+    padding: 1.25rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Maintained original HTML structure with enhanced class names -->
+  <div class="project-header">
+    <h1>ConvAvif</h1>
+    <p>Professional AVIF Image Conversion Tool</p>
+  </div>
+
+  <div class="controls">
+    <div class="control-group">
+     
+      <input  type="file" name="image" id="fileInput" accept="image/*" required />
+    </div>
+    
+    <div class="control-group">
+      <select id="resizeMode">
+        <option value="fixed" selected>Fixed Dimensions</option>
+        <option value="percent">Percentage Scaling</option>
+      </select>
+    </div>
+
+    <div class="control-group" id="fixedResizeInputs">
+      <input type="number" id="width" value="800" placeholder="Width (px)" required />
+      <input type="number" id="height" value="600" placeholder="Height (px)" required />
+      <label class="checkbox-label">
+        <input type="checkbox" id="keepAspect" checked> Maintain Aspect Ratio
+      </label>
+    </div>
+
+    <div class="control-group" id="percentResizeInputs" style="display:none;">
+      <input type="number" id="percentValue" min="1" max="100" value="100" placeholder="Scale Percentage">
+    </div>
+
+    <div class="control-group">
+      <label for="quality">Compression Quality:</label>
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <input type="range" id="quality" min="0" max="99" value="30" style="flex: 1;">
+        <span id="qualityValue" style="min-width: 40px;">30</span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <button id="convertBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+          <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3zM2.5 10a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 1 0v3a.5.5 0 0 1-.5.5z"/>
+        </svg>
+        Convert to AVIF
+      </button>
+    </div>
+  </div>
+
+  <details class="advanced-settings">
+    <summary>Advanced Settings</summary>
+    <div class="advanced-controls">
+      <!-- Encoding Parameters Group -->
+      <div class="settings-group">
+        <div class="settings-group-title">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+          Encoding Parameters
+        </div>
+        
+        <div class="setting-item">
+          <label for="pixelFormat">Chroma Subsampling</label>
+          <select id="pixelFormat">
+            <option value="YUV444">YUV444 (No Subsampling)</option>
+            <option value="YUV422">YUV422 (Horizontal Subsampling)</option>
+            <option value="YUV420" selected>YUV420 (Standard)</option>
+            <option value="YUV400">YUV400 (Grayscale)</option>
+          </select>
+        </div>
+  
+        <div class="setting-item">
+          <label for="tune">Tuning Mode</label>
+          <select id="tune">
+            <option value="0" selected>Default</option>
+            <option value="1">PSNR</option>
+            <option value="2">SSIM</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Performance Tuning Group -->
+      <div class="settings-group">
+        <div class="settings-group-title">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+          </svg>
+          Performance Tuning
+        </div>
+  
+        <div class="tuning-group">
+          <div class="setting-item">
+            <label for="speedPreset">Speed Preset</label>
+            <select id="speedPreset">
+              <option value="MemoryHungry">MemoryHungry</option>
+              <option value="Good" selected>Balanced</option>
+              <option value="RealTime">RealTime</option>
+            </select>
+          </div>
+  
+          <div class="setting-item">
+            <label for="speed">Encoder Speed</label>
+            <input type="number" id="speed" min="0" max="10" value="6">
+          </div>
+        </div>
+  
+        <div class="setting-item">
+          <label for="sharpness">Sharpness Level</label>
+          <input type="number" id="sharpness" min="0" max="7" value="0">
+        </div>
+      </div>
+  
+      <!-- Tiling Options Group -->
+      <div class="settings-group">
+        <div class="settings-group-title">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c.4.4.1 1.098-.349 1.4a9.065 9.065 0 01-10.654-10.653c.302-.45 1-.75 1.4-.349L19.8 15.3z" />
+          </svg>
+          Tiling Options
+        </div>
+  
+        <div class="tuning-group">
+          <div class="setting-item">
+            <label for="tileRows">Tile Rows (2^n)</label>
+            <input type="number" id="tileRows" min="0" max="6" value="0">
+          </div>
+  
+          <div class="setting-item">
+            <label for="tileCols">Tile Columns (2^n)</label>
+            <input type="number" id="tileCols" min="0" max="6" value="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <div class="stats">
+    <span>Original size: <span id="originalSize">-</span></span>
+    <span>New size: <span id="newSize">-</span></span>
+    <span>Compression: <span id="compressionPercent">-</span></span>
+  </div>
+
+  <div id="resultContainer">
+    <img id="output" src="../../asset/placeholder.svg" alt="Converted AVIF will appear here" />
+    <a id="downloadLink" style="display:none;"></a>
+  </div>
+</body>
+</html>

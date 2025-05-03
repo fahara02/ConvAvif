@@ -2,6 +2,7 @@
 #define IMAGE_GURU_H
 #include <algorithm>
 #include <array>
+#include <string>
 #include <vector>
 
 enum class ImageType { JPEG, PNG, GIF, BMP, TIFF, WEBP, AVIF, UNKNOWN };
@@ -77,5 +78,53 @@ public:
   static bool IsSpecificType(const std::vector<uint8_t> &data, ImageType type) {
     return GetImageType(data) == type;
   }
+
+  struct imageSupport {
+    ImageType type;
+    bool supported;
+  };
+  static bool isSupported(const ImageType type) {
+
+    auto it = std::find_if(
+        supported_image.begin(), supported_image.end(),
+        [type](const imageSupport &entry) { return entry.type == type; });
+
+    return (it != supported_image.end()) ? it->supported : false;
+  }
+
+  static std::string typeToString(const ImageType type) {
+    switch (type) {
+    case ImageType::JPEG:
+      return "JPEG";
+    case ImageType::PNG:
+      return "PNG";
+    case ImageType::GIF:
+      return "GIF";
+    case ImageType::BMP:
+      return "BMP";
+    case ImageType::TIFF:
+      return "TIFF";
+    case ImageType::WEBP:
+      return "WEBP";
+    case ImageType::AVIF:
+      return "AVIF";
+    case ImageType::UNKNOWN:
+      return "UNKNOWN";
+    default:
+      return "UNKNOWN";
+    }
+  }
+
+private:
+  // Array size matches the number of ImageType values (8)
+  static constexpr std::array<imageSupport, 8> supported_image = {
+      {{ImageType::JPEG, true}, // JPEG supported
+       {ImageType::PNG, true},  // PNG supported
+       {ImageType::GIF, false}, // Others unsupported
+       {ImageType::BMP, false},
+       {ImageType::TIFF, false},
+       {ImageType::WEBP, false},
+       {ImageType::AVIF, true},
+       {ImageType::UNKNOWN, false}}};
 };
 #endif

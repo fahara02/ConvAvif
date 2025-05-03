@@ -14,8 +14,8 @@
 thread_local const emscripten::val Uint8Array =
     emscripten::val::global("Uint8Array");
 
-Result convert_image(const std::vector<uint8_t> &input_data, int width,
-                     int height, const EncodeConfig &config) {
+Result convert_image(ImageType type, const std::vector<uint8_t> &input_data,
+                     int width, int height, const EncodeConfig &config) {
 
   if (width <= 0 || height <= 0 || width > 8192 || height > 8192) {
     return Error(ConverterError::INVALID_DIMENSIONS,
@@ -191,7 +191,14 @@ emscripten::val convertImageDirect(emscripten::val jsData, int width,
                 __func__);
       return toJsError(err);
     }
-    Result r = convert_image(inputData, width, height, config);
+
+    if (!ImageGuru::isSupported(type)) {
+      Error err(ConverterError::UNSUPPORTED_IMAGETYPE,
+                ImageGuru::typeToString(type) + "-type still not supported",
+                __func__);
+      return toJsError(err);
+    }
+    Result r = convert_image(type, inputData, width, height, config);
     jsResult result{r};
     emscripten::val jresult = emscripten::val::object();
 

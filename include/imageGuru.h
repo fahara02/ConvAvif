@@ -1,3 +1,12 @@
+/**
+ * @file imageGuru.h
+ * @brief Image format detection and type management
+ * @author ConvAvif Developer
+ * @date 2025
+ * 
+ * This file provides utilities for detecting image formats from binary data
+ * and checking format support status for the AVIF conversion process.
+ */
 #ifndef IMAGE_GURU_H
 #define IMAGE_GURU_H
 #include <algorithm>
@@ -5,10 +14,31 @@
 #include <string>
 #include <vector>
 
+/**
+ * @brief Enumeration of supported image types
+ * 
+ * Lists all the image formats that can be detected by the ImageGuru,
+ * regardless of whether they can be converted to AVIF.
+ */
 enum class ImageType { JPEG, PNG, GIF, BMP, TIFF, WEBP, AVIF, UNKNOWN };
 
+/**
+ * @brief Utility class for image format detection and support checking
+ * 
+ * This class provides static methods to detect image formats from binary data
+ * and check whether specific formats are supported for conversion to AVIF.
+ */
 class ImageGuru {
 public:
+  /**
+   * @brief Detect the image format from binary data
+   * 
+   * Examines the file header/magic bytes in the provided data to
+   * determine the image format.
+   * 
+   * @param data Binary image data to analyze
+   * @return Detected ImageType, or ImageType::UNKNOWN if format isn't recognized
+   */
   static ImageType GetImageType(const std::vector<uint8_t> &data) {
     if (data.empty()) {
       return ImageType::UNKNOWN;
@@ -71,18 +101,41 @@ public:
     return ImageType::UNKNOWN;
   }
 
+  /**
+   * @brief Check if binary data appears to be a valid image
+   * 
+   * @param data Binary data to check
+   * @return true if the data appears to be a recognized image format, false otherwise
+   */
   static bool IsValid(const std::vector<uint8_t> &data) {
     return GetImageType(data) != ImageType::UNKNOWN;
   }
 
+  /**
+   * @brief Check if binary data matches a specific image format
+   * 
+   * @param data Binary data to check
+   * @param type Specific ImageType to check for
+   * @return true if the data matches the specified format, false otherwise
+   */
   static bool IsSpecificType(const std::vector<uint8_t> &data, ImageType type) {
     return GetImageType(data) == type;
   }
 
+  /**
+   * @brief Structure for tracking image format support status
+   */
   struct imageSupport {
-    ImageType type;
-    bool supported;
+    ImageType type;      ///< Type of image format
+    bool supported;      ///< Whether conversion is supported
   };
+  
+  /**
+   * @brief Check if a specific image type is supported for conversion
+   * 
+   * @param type The ImageType to check support for
+   * @return true if the format is supported for conversion, false otherwise
+   */
   static bool isSupported(const ImageType type) {
 
     auto it = std::find_if(
@@ -92,6 +145,12 @@ public:
     return (it != supported_image.end()) ? it->supported : false;
   }
 
+  /**
+   * @brief Convert an ImageType enum to a string representation
+   * 
+   * @param type The ImageType to convert
+   * @return String representation of the image type
+   */
   static std::string typeToString(const ImageType type) {
     switch (type) {
     case ImageType::JPEG:
@@ -116,7 +175,12 @@ public:
   }
 
 private:
-  // Array size matches the number of ImageType values (8)
+  /**
+   * @brief Array defining which image formats are supported for conversion
+   * 
+   * This array maps each ImageType to a boolean indicating whether
+   * that format can be converted to AVIF by the library.
+   */
   static constexpr std::array<imageSupport, 8> supported_image = {
       {{ImageType::JPEG, true}, // JPEG supported
        {ImageType::PNG, true},  // PNG supported

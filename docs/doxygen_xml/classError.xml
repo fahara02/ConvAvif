@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classError" kind="class" language="C++" prot="public">
+    <compoundname>Error</compoundname>
+    <includes refid="error_8h" local="no">error.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classError_1af99b67523cea6feba2f76679f97f2cfe" prot="public" static="no" mutable="no">
+        <type><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref></type>
+        <definition>ConverterError Error::code</definition>
+        <argsstring></argsstring>
+        <name>code</name>
+        <qualifiedname>Error::code</qualifiedname>
+        <briefdescription>
+<para><ref refid="classError" kindref="compound">Error</ref> code identifying the error type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="47" column="18" bodyfile="include/error.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" compoundref="bind_8cpp" startline="86" endline="111">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="classError_1aeb2eed928f08439970781a1ea5ea2acb" compoundref="error_8cpp" startline="3" endline="4">Error</referencedby>
+        <referencedby refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" compoundref="error_8cpp" startline="44" endline="53">toJsError</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classError_1aa4713ef3ee9c3c0da43a54b01949510d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Error::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <qualifiedname>Error::message</qualifiedname>
+        <briefdescription>
+<para>Human-readable error message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="48" column="15" bodyfile="include/error.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" compoundref="bind_8cpp" startline="86" endline="111">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="classError_1aeb2eed928f08439970781a1ea5ea2acb" compoundref="error_8cpp" startline="3" endline="4">Error</referencedby>
+        <referencedby refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" compoundref="error_8cpp" startline="44" endline="53">toJsError</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classError_1a4051d2413bfd2780250043fc9c412865" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Error::stackTrace</definition>
+        <argsstring></argsstring>
+        <name>stackTrace</name>
+        <qualifiedname>Error::stackTrace</qualifiedname>
+        <briefdescription>
+<para>Function call stack or context information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="49" column="15" bodyfile="include/error.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" compoundref="bind_8cpp" startline="86" endline="111">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="classError_1aeb2eed928f08439970781a1ea5ea2acb" compoundref="error_8cpp" startline="3" endline="4">Error</referencedby>
+        <referencedby refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" compoundref="error_8cpp" startline="44" endline="53">toJsError</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classError_1aeb2eed928f08439970781a1ea5ea2acb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Error::Error</definition>
+        <argsstring>(ConverterError c, const std::string &amp;msg, const std::string &amp;trace=&quot;&quot;)</argsstring>
+        <name>Error</name>
+        <qualifiedname>Error::Error</qualifiedname>
+        <param>
+          <type><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref></type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>trace</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Constructor for <ref refid="classError" kindref="compound">Error</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classError" kindref="compound">Error</ref> code identifying the error type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Human-readable error message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>trace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional function name or call stack information </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="58" column="3" bodyfile="src/error.cpp" bodystart="3" bodyend="4"/>
+        <references refid="classError_1af99b67523cea6feba2f76679f97f2cfe" compoundref="error_8h" startline="47">code</references>
+        <references refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" compoundref="error_8h" startline="48">message</references>
+        <references refid="classError_1a4051d2413bfd2780250043fc9c412865" compoundref="error_8h" startline="49">stackTrace</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classError" kindref="compound">Error</ref> class for reporting conversion errors. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class encapsulates an error code, a descriptive message, and optional stack trace information for debugging. </para>
+    </detaileddescription>
+    <location file="include/error.h" line="45" column="1" bodyfile="include/error.h" bodystart="45" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classError_1af99b67523cea6feba2f76679f97f2cfe" prot="public" virt="non-virtual"><scope>Error</scope><name>code</name></member>
+      <member refid="classError_1aeb2eed928f08439970781a1ea5ea2acb" prot="public" virt="non-virtual"><scope>Error</scope><name>Error</name></member>
+      <member refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" prot="public" virt="non-virtual"><scope>Error</scope><name>message</name></member>
+      <member refid="classError_1a4051d2413bfd2780250043fc9c412865" prot="public" virt="non-virtual"><scope>Error</scope><name>stackTrace</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

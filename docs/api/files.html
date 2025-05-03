@@ -1,136 +1,1758 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.13.2"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ConvAvif: File List</title>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="clipboard.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="cookie.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(function() { init_search(); });
-/* @license-end */
-</script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Files &mdash; ConvAvif  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Namespaces" href="namespaces.html" />
+    <link rel="prev" title="Classes" href="classes.html" /> 
 </head>
-<body>
-<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea">
-<table cellspacing="0" cellpadding="0">
- <tbody>
- <tr id="projectrow">
-  <td id="projectalign">
-   <div id="projectname">ConvAvif<span id="projectnumber">&#160;1.0</span>
-   </div>
-   <div id="projectbrief">AVIF Image Conversion Library with WebAssembly Support</div>
-  </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ConvAvif
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">Library Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#header-files">Header Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#encoder-config-h">encoder_config.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv411CodecChoice"><code class="docutils literal notranslate"><span class="pre">CodecChoice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv44Tune"><code class="docutils literal notranslate"><span class="pre">Tune</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv411SpeedPreset"><code class="docutils literal notranslate"><span class="pre">SpeedPreset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0E8setFieldvR1T1T1T"><code class="docutils literal notranslate"><span class="pre">setField()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv410SpeedRange"><code class="docutils literal notranslate"><span class="pre">SpeedRange</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv45Speed"><code class="docutils literal notranslate"><span class="pre">Speed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv412EncodeConfig"><code class="docutils literal notranslate"><span class="pre">EncodeConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#error-h">error.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv414ConverterError"><code class="docutils literal notranslate"><span class="pre">ConverterError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420avifToConverterError10avifResult"><code class="docutils literal notranslate"><span class="pre">avifToConverterError()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415getErrorMessage14ConverterError"><code class="docutils literal notranslate"><span class="pre">getErrorMessage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49toJsErrorRK5Error"><code class="docutils literal notranslate"><span class="pre">toJsError()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv45Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imageguru-h">imageGuru.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49ImageType"><code class="docutils literal notranslate"><span class="pre">ImageType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49ImageGuru"><code class="docutils literal notranslate"><span class="pre">ImageGuru</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imagebuffer-h">imagebuffer.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv411ImageBuffer"><code class="docutils literal notranslate"><span class="pre">ImageBuffer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imageconverter-h">imageconverter.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv413convert_image9ImageTypeRKNSt6vectorI7uint8_tEEiiRK12EncodeConfig"><code class="docutils literal notranslate"><span class="pre">convert_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv418convertImageDirectN10emscripten3valEiiRK12EncodeConfig"><code class="docutils literal notranslate"><span class="pre">convertImageDirect()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#result-h">result.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv48ImgaePtr"><code class="docutils literal notranslate"><span class="pre">ImgaePtr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv46Result"><code class="docutils literal notranslate"><span class="pre">Result</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv48jsResult"><code class="docutils literal notranslate"><span class="pre">jsResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#avif-helper-h">avif_helper.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417UniqueAvifEncoder"><code class="docutils literal notranslate"><span class="pre">UniqueAvifEncoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415UniqueAvifImage"><code class="docutils literal notranslate"><span class="pre">UniqueAvifImage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv413SetAvifOptionP11avifEncoderPKcPKcRKNSt6stringEPKc"><code class="docutils literal notranslate"><span class="pre">SetAvifOption()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv418AvifEncoderDeleter"><code class="docutils literal notranslate"><span class="pre">AvifEncoderDeleter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416AvifImageDeleter"><code class="docutils literal notranslate"><span class="pre">AvifImageDeleter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#constants-h">constants.h</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49RGB_DEPTH"><code class="docutils literal notranslate"><span class="pre">RGB_DEPTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49MIN_SPEED"><code class="docutils literal notranslate"><span class="pre">MIN_SPEED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49MAX_SPEED"><code class="docutils literal notranslate"><span class="pre">MAX_SPEED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv411MAX_QUALITY"><code class="docutils literal notranslate"><span class="pre">MAX_QUALITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv413MAX_QUANTIZER"><code class="docutils literal notranslate"><span class="pre">MAX_QUANTIZER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv413MAX_TILE_LOG2"><code class="docutils literal notranslate"><span class="pre">MAX_TILE_LOG2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv413MAX_SHARPNESS"><code class="docutils literal notranslate"><span class="pre">MAX_SHARPNESS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#implementation-files">Implementation Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#error-cpp">error.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bind-cpp">bind.cpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419EMSCRIPTEN_BINDINGS11ImageBuffer"><code class="docutils literal notranslate"><span class="pre">EMSCRIPTEN_BINDINGS()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419EMSCRIPTEN_BINDINGS14ImageConverter"><code class="docutils literal notranslate"><span class="pre">EMSCRIPTEN_BINDINGS()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419EMSCRIPTEN_BINDINGS10avif_enums"><code class="docutils literal notranslate"><span class="pre">EMSCRIPTEN_BINDINGS()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419EMSCRIPTEN_BINDINGS13ErrorHandling"><code class="docutils literal notranslate"><span class="pre">EMSCRIPTEN_BINDINGS()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imageconverter-cpp">imageconverter.cpp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv410Uint8Array"><code class="docutils literal notranslate"><span class="pre">Uint8Array</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="namespaces.html">Namespaces</a></li>
+</ul>
+
         </div>
-</td>
- </tr>
- </tbody>
-</table>
-</div>
-<!-- end header part -->
-<!-- Generated by Doxygen 1.13.2 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
-</script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() { codefold.init(0); });
-/* @license-end */
-</script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('files.html',''); initResizable(true); });
-/* @license-end */
-</script>
-<div id="doc-content">
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+      </div>
+    </nav>
 
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Loading...</div>
-<div class="SRStatus" id="Searching">Searching...</div>
-<div class="SRStatus" id="NoMatches">No Matches</div>
-</div>
-</div>
-</div>
-</div>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ConvAvif</a>
+      </nav>
 
-<div class="header">
-  <div class="headertitle"><div class="title">File List</div></div>
-</div><!--header-->
-<div class="contents">
-<div class="textblock">Here is a list of all files with brief descriptions:</div><div class="directory">
-<div class="levels">[detail level <span onclick="javascript:dynsection.toggleLevel(1);">1</span><span onclick="javascript:dynsection.toggleLevel(2);">2</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="dynsection.toggleFolder('0_')">&#9660;</span><span id="img_0_" class="iconfopen" onclick="dynsection.toggleFolder('0_')">&#160;</span><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html" target="_self">include</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="avif__helper_8h_source.html"><span class="icondoc"></span></a><a class="el" href="avif__helper_8h.html" target="_self">avif_helper.h</a></td><td class="desc">Helper utilities for AVIF library integration </td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="constants_8h_source.html"><span class="icondoc"></span></a><a class="el" href="constants_8h.html" target="_self">constants.h</a></td><td class="desc">Global constants used throughout the ConvAvif project </td></tr>
-<tr id="row_0_2_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="encoder__config_8h_source.html"><span class="icondoc"></span></a><a class="el" href="encoder__config_8h.html" target="_self">encoder_config.h</a></td><td class="desc">Configuration parameters and settings for AVIF encoding </td></tr>
-<tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="error_8h_source.html"><span class="icondoc"></span></a><a class="el" href="error_8h.html" target="_self">error.h</a></td><td class="desc"><a class="el" href="class_error.html" title="Error class for reporting conversion errors.">Error</a> handling for AVIF conversion operations </td></tr>
-<tr id="row_0_4_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="imagebuffer_8h_source.html"><span class="icondoc"></span></a><a class="el" href="imagebuffer_8h.html" target="_self">imagebuffer.h</a></td><td class="desc">Image buffer management for AVIF conversion results </td></tr>
-<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="imageconverter_8h_source.html"><span class="icondoc"></span></a><a class="el" href="imageconverter_8h.html" target="_self">imageconverter.h</a></td><td class="desc">Header for image conversion functionality to AVIF format </td></tr>
-<tr id="row_0_6_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="image_guru_8h_source.html"><span class="icondoc"></span></a><a class="el" href="image_guru_8h.html" target="_self">imageGuru.h</a></td><td class="desc">Image format detection and type management </td></tr>
-<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="result_8h_source.html"><span class="icondoc"></span></a><a class="el" href="result_8h.html" target="_self">result.h</a></td><td class="desc"><a class="el" href="result_8h.html#a9cf14801ef7f9742ef6de61e4316676d" title="Result type that can hold either an image buffer or an error.">Result</a> handling utilities for the AVIF conversion process </td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="dynsection.toggleFolder('1_')">&#9660;</span><span id="img_1_" class="iconfopen" onclick="dynsection.toggleFolder('1_')">&#160;</span><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" target="_self">src</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="bind_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="bind_8cpp.html" target="_self">bind.cpp</a></td><td class="desc"></td></tr>
-<tr id="row_1_1_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="error_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="error_8cpp.html" target="_self">error.cpp</a></td><td class="desc"></td></tr>
-<tr id="row_1_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="imageconverter_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="imageconverter_8cpp.html" target="_self">imageconverter.cpp</a></td><td class="desc">Implementation of image conversion functionality to AVIF format </td></tr>
-<tr id="row_1_3_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="pthread__stubs_8c_source.html"><span class="icondoc"></span></a><a class="el" href="pthread__stubs_8c.html" target="_self">pthread_stubs.c</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
-</div><!-- doc-content -->
-<!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/files.rst.txt" rel="nofollow"> View page source</a>
+      </li>
   </ul>
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="files">
+<h1>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h1>
+<p>This section describes the source files in the ConvAvif library.</p>
+<section id="header-files">
+<h2>Header Files<a class="headerlink" href="#header-files" title="Link to this heading"></a></h2>
+<section id="encoder-config-h">
+<h3>encoder_config.h<a class="headerlink" href="#encoder-config-h" title="Link to this heading"></a></h3>
+<p>Configuration parameters and settings for AVIF encoding. </p>
+<p>
+This file defines the configuration structures and enums that control the AVIF encoding process, including codec selection, quality settings, and various encoder-specific parameters. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv411CodecChoice">
+<span id="_CPPv311CodecChoice"></span><span id="_CPPv211CodecChoice"></span><span class="target" id="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CodecChoice</span></span></span><br /></dt>
+<dd><p>Codecs available for AVIF encoding. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N11CodecChoice4AUTOE">
+<span id="_CPPv3N11CodecChoice4AUTOE"></span><span id="_CPPv2N11CodecChoice4AUTOE"></span><span class="target" id="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2ae1f2d5134ed2543d38a0de9751cf75d9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AUTO</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N11CodecChoice3AOME">
+<span id="_CPPv3N11CodecChoice3AOME"></span><span id="_CPPv2N11CodecChoice3AOME"></span><span class="target" id="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AOM</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N11CodecChoice3SVTE">
+<span id="_CPPv3N11CodecChoice3SVTE"></span><span id="_CPPv2N11CodecChoice3SVTE"></span><span class="target" id="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SVT</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv44Tune">
+<span id="_CPPv34Tune"></span><span id="_CPPv24Tune"></span><span class="target" id="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3a"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Tune</span></span></span><br /></dt>
+<dd><p>Tuning options for the encoder. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4Tune12TUNE_DEFAULTE">
+<span id="_CPPv3N4Tune12TUNE_DEFAULTE"></span><span id="_CPPv2N4Tune12TUNE_DEFAULTE"></span><span class="target" id="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa268c098dd4ed280b44814cb3626651b6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TUNE_DEFAULT</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4Tune9TUNE_PSNRE">
+<span id="_CPPv3N4Tune9TUNE_PSNRE"></span><span id="_CPPv2N4Tune9TUNE_PSNRE"></span><span class="target" id="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa36f2f11b44c5dbc63f70d5d2b9b21ade"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TUNE_PSNR</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4Tune9TUNE_SSIME">
+<span id="_CPPv3N4Tune9TUNE_SSIME"></span><span id="_CPPv2N4Tune9TUNE_SSIME"></span><span class="target" id="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa2b5b777c2bdf867ddf4693c9d806c4bf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TUNE_SSIM</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv411SpeedPreset">
+<span id="_CPPv311SpeedPreset"></span><span id="_CPPv211SpeedPreset"></span><span class="target" id="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SpeedPreset</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><br /></dt>
+<dd><p><a class="reference internal" href="library_root.html#structSpeed"><span class="std std-ref">Speed</span></a> presets for encoding with different performance/quality tradeoffs. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N11SpeedPreset4GoodE">
+<span id="_CPPv3N11SpeedPreset4GoodE"></span><span id="_CPPv2N11SpeedPreset4GoodE"></span><span class="target" id="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7a0c6ad70beb3a7e76c3fc7adab7c46acc"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Good</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N11SpeedPreset12MemoryHungryE">
+<span id="_CPPv3N11SpeedPreset12MemoryHungryE"></span><span id="_CPPv2N11SpeedPreset12MemoryHungryE"></span><span class="target" id="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad71809aa2264347869e22e47a2635e63"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MemoryHungry</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N11SpeedPreset8RealTimeE">
+<span id="_CPPv3N11SpeedPreset8RealTimeE"></span><span id="_CPPv2N11SpeedPreset8RealTimeE"></span><span class="target" id="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad50ae798e3aa50c3a502118e759cc216"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RealTime</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0E8setFieldvR1T1T1T">
+<span id="_CPPv3I0E8setFieldR1T1T1T"></span><span id="_CPPv2I0E8setFieldR1T1T1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="encoder__config_8h_1ad76fc3f49f931c6e964bb07e7c6c3838"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setField</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0E8setFieldvR1T1T1T" title="setField::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">field</span></span>, <a class="reference internal" href="#_CPPv4I0E8setFieldvR1T1T1T" title="setField::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">minVal</span></span>, <a class="reference internal" href="#_CPPv4I0E8setFieldvR1T1T1T" title="setField::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">maxVal</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E8setFieldvR1T1T1T" title="Link to this definition"></a><br /></dt>
+<dd><p>Helper template function to clamp a field value between minimum and maximum values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The type of the field (typically int) </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>field</strong> – Reference to the field to be clamped </p></li>
+<li><p><strong>minVal</strong> – Minimum allowed value </p></li>
+<li><p><strong>maxVal</strong> – Maximum allowed value </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv410SpeedRange">
+<span id="_CPPv310SpeedRange"></span><span id="_CPPv210SpeedRange"></span><span id="SpeedRange"></span><span class="target" id="structSpeedRange"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SpeedRange</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#encoder__config_8h"><span class="std std-ref">encoder_config.h</span></a>&gt;</em></div>
+<p>Structure to define the range of valid speed values. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10SpeedRange3minE">
+<span id="_CPPv3N10SpeedRange3minE"></span><span id="_CPPv2N10SpeedRange3minE"></span><span id="SpeedRange::min__i"></span><span class="target" id="structSpeedRange_1a210659c016cbaf56e19fd770bb292a19"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min</span></span></span><br /></dt>
+<dd><p>Minimum valid speed value. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10SpeedRange3maxE">
+<span id="_CPPv3N10SpeedRange3maxE"></span><span id="_CPPv2N10SpeedRange3maxE"></span><span id="SpeedRange::max__i"></span><span class="target" id="structSpeedRange_1ab7968f05a57de473488be534a6f849ce"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max</span></span></span><br /></dt>
+<dd><p>Maximum valid speed value. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv45Speed">
+<span id="_CPPv35Speed"></span><span id="_CPPv25Speed"></span><span id="Speed"></span><span class="target" id="structSpeed"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Speed</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#encoder__config_8h"><span class="std std-ref">encoder_config.h</span></a>&gt;</em></div>
+<p><a class="reference internal" href="library_root.html#structSpeed"><span class="std std-ref">Speed</span></a> settings manager for AVIF encoding. </p>
+<p>This class manages speed settings based on the selected codec and preset. Different codecs have different optimal speed ranges for various quality/speed tradeoffs. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Speed5SpeedE11CodecChoice11SpeedPreset">
+<span id="_CPPv3N5Speed5SpeedE11CodecChoice11SpeedPreset"></span><span id="_CPPv2N5Speed5SpeedE11CodecChoice11SpeedPreset"></span><span id="Speed::Speed__CodecChoice.SpeedPreset"></span><span class="target" id="structSpeed_1a86ba182c241d166bf5243184b093021e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Speed</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classes.html#_CPPv411CodecChoice" title="CodecChoice"><span class="n"><span class="pre">CodecChoice</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">codec</span></span>, <a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">preset</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor that sets appropriate speed ranges based on codec and preset. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>codec</strong> – The selected codec (AOM, SVT, AUTO) </p></li>
+<li><p><strong>preset</strong> – The desired speed preset (Good, MemoryHungry, RealTime) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Speed10getDefaultEv">
+<span id="_CPPv3NK5Speed10getDefaultEv"></span><span id="_CPPv2NK5Speed10getDefaultEv"></span><span id="Speed::getDefaultC"></span><span class="target" id="structSpeed_1a6593324af610f9a059908764c3c58948"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDefault</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the default speed value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current default speed value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Speed13setSpeedRangeERK10SpeedRange">
+<span id="_CPPv3N5Speed13setSpeedRangeERK10SpeedRange"></span><span id="_CPPv2N5Speed13setSpeedRangeERK10SpeedRange"></span><span id="Speed::setSpeedRange__SpeedRangeCR"></span><span class="target" id="structSpeed_1a757d6d07a38e686bfd046eab9a6fd5f4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSpeedRange</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv410SpeedRange" title="SpeedRange"><span class="n"><span class="pre">SpeedRange</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">range</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set a new speed range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>range</strong> – New speed range to use </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Speed8getRangeEv">
+<span id="_CPPv3NK5Speed8getRangeEv"></span><span id="_CPPv2NK5Speed8getRangeEv"></span><span id="Speed::getRangeC"></span><span class="target" id="structSpeed_1a76fc4e89bba513f25cf3a749e122daff"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv410SpeedRange" title="SpeedRange"><span class="n"><span class="pre">SpeedRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRange</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current speed range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current speed range </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Speed7isValidEi">
+<span id="_CPPv3N5Speed7isValidEi"></span><span id="_CPPv2N5Speed7isValidEi"></span><span id="Speed::isValid__i"></span><span class="target" id="structSpeed_1af0a84886324cba325796995fc199c440"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">speed</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Check if a speed value is within the valid range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>speed</strong> – <a class="reference internal" href="library_root.html#structSpeed"><span class="std std-ref">Speed</span></a> value to check </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if speed is valid, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Speed9getPresetEv">
+<span id="_CPPv3NK5Speed9getPresetEv"></span><span id="_CPPv2NK5Speed9getPresetEv"></span><span id="Speed::getPresetC"></span><span class="target" id="structSpeed_1a1779b0706d63ca81528521464450365b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPreset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current speed preset. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current <a class="reference internal" href="library_root.html#encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7"><span class="std std-ref">SpeedPreset</span></a> value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Speed3setEi">
+<span id="_CPPv3N5Speed3setEi"></span><span id="_CPPv2N5Speed3setEi"></span><span id="Speed::set__i"></span><span class="target" id="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ns</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set a new speed value if it’s valid. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ns</strong> – New speed value to set </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Speed7preset_E">
+<span id="_CPPv3N5Speed7preset_E"></span><span id="_CPPv2N5Speed7preset_E"></span><span id="Speed::preset___SpeedPreset"></span><span class="target" id="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0"></span><a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preset_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classes.html#_CPPv4N11SpeedPreset4GoodE" title="SpeedPreset::Good"><span class="n"><span class="pre">Good</span></span></a><br /></dt>
+<dd><p>Current speed preset. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Speed13default_speedE">
+<span id="_CPPv3N5Speed13default_speedE"></span><span id="_CPPv2N5Speed13default_speedE"></span><span id="Speed::default_speed__i"></span><span class="target" id="structSpeed_1acc62b2640be63bb616a22a526a603e71"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">default_speed</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><br /></dt>
+<dd><p>Default speed value. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Speed11speed_rangeE">
+<span id="_CPPv3N5Speed11speed_rangeE"></span><span id="_CPPv2N5Speed11speed_rangeE"></span><span id="Speed::speed_range__SpeedRange"></span><span class="target" id="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5"></span><a class="reference internal" href="classes.html#_CPPv410SpeedRange" title="SpeedRange"><span class="n"><span class="pre">SpeedRange</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">speed_range</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">5</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="p"><span class="pre">}</span></span><br /></dt>
+<dd><p>Valid speed range. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv412EncodeConfig">
+<span id="_CPPv312EncodeConfig"></span><span id="_CPPv212EncodeConfig"></span><span id="EncodeConfig"></span><span class="target" id="structEncodeConfig"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EncodeConfig</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#encoder__config_8h"><span class="std std-ref">encoder_config.h</span></a>&gt;</em></div>
+<p>Main configuration structure for AVIF encoding. </p>
+<p>This structure contains all the parameters that control the AVIF encoding process, including quality settings, codec choice, and various encoder-specific parameters. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig10setQualityEi">
+<span id="_CPPv3N12EncodeConfig10setQualityEi"></span><span id="_CPPv2N12EncodeConfig10setQualityEi"></span><span id="EncodeConfig::setQuality__i"></span><span class="target" id="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setQuality</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">q</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the quality value with validation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>q</strong> – New quality value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig15setMinQuantizerEi">
+<span id="_CPPv3N12EncodeConfig15setMinQuantizerEi"></span><span id="_CPPv2N12EncodeConfig15setMinQuantizerEi"></span><span id="EncodeConfig::setMinQuantizer__i"></span><span class="target" id="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMinQuantizer</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">q</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the minimum quantizer value with validation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>q</strong> – New minimum quantizer value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig15setMaxQuantizerEi">
+<span id="_CPPv3N12EncodeConfig15setMaxQuantizerEi"></span><span id="_CPPv2N12EncodeConfig15setMaxQuantizerEi"></span><span id="EncodeConfig::setMaxQuantizer__i"></span><span class="target" id="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMaxQuantizer</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">q</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the maximum quantizer value with validation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>q</strong> – New maximum quantizer value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig15setTileRowsLog2Ei">
+<span id="_CPPv3N12EncodeConfig15setTileRowsLog2Ei"></span><span id="_CPPv2N12EncodeConfig15setTileRowsLog2Ei"></span><span id="EncodeConfig::setTileRowsLog2__i"></span><span class="target" id="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTileRowsLog2</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the tile rows log2 value with validation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t</strong> – New tile rows log2 value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig15setTileColsLog2Ei">
+<span id="_CPPv3N12EncodeConfig15setTileColsLog2Ei"></span><span id="_CPPv2N12EncodeConfig15setTileColsLog2Ei"></span><span id="EncodeConfig::setTileColsLog2__i"></span><span class="target" id="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTileColsLog2</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the tile columns log2 value with validation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t</strong> – New tile columns log2 value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig12setSharpnessEi">
+<span id="_CPPv3N12EncodeConfig12setSharpnessEi"></span><span id="_CPPv2N12EncodeConfig12setSharpnessEi"></span><span id="EncodeConfig::setSharpness__i"></span><span class="target" id="structEncodeConfig_1aecd3fadd3f5433e4e87457839afeba23"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSharpness</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the sharpness value with validation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – New sharpness value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig10getQualityEv">
+<span id="_CPPv3NK12EncodeConfig10getQualityEv"></span><span id="_CPPv2NK12EncodeConfig10getQualityEv"></span><span id="EncodeConfig::getQualityC"></span><span class="target" id="structEncodeConfig_1a1e0dc7eca05d0af1d76b0ed56881a18b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getQuality</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current quality value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current quality value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig15getMinQuantizerEv">
+<span id="_CPPv3NK12EncodeConfig15getMinQuantizerEv"></span><span id="_CPPv2NK12EncodeConfig15getMinQuantizerEv"></span><span id="EncodeConfig::getMinQuantizerC"></span><span class="target" id="structEncodeConfig_1abbc70deea92ee3d6281d4bf9e8719a79"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMinQuantizer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current minimum quantizer value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current minimum quantizer value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig15getMaxQuantizerEv">
+<span id="_CPPv3NK12EncodeConfig15getMaxQuantizerEv"></span><span id="_CPPv2NK12EncodeConfig15getMaxQuantizerEv"></span><span id="EncodeConfig::getMaxQuantizerC"></span><span class="target" id="structEncodeConfig_1a862e39ee31543db2398aa54b41d5ce53"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxQuantizer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current maximum quantizer value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current maximum quantizer value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig15getTileRowsLog2Ev">
+<span id="_CPPv3NK12EncodeConfig15getTileRowsLog2Ev"></span><span id="_CPPv2NK12EncodeConfig15getTileRowsLog2Ev"></span><span id="EncodeConfig::getTileRowsLog2C"></span><span class="target" id="structEncodeConfig_1ad801a3a45fcf41d5b15778d6134e8af6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTileRowsLog2</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current tile rows log2 value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current tile rows log2 value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig15getTileColsLog2Ev">
+<span id="_CPPv3NK12EncodeConfig15getTileColsLog2Ev"></span><span id="_CPPv2NK12EncodeConfig15getTileColsLog2Ev"></span><span id="EncodeConfig::getTileColsLog2C"></span><span class="target" id="structEncodeConfig_1a7bc6672173171422aa86af1d0b98e5fc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTileColsLog2</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current tile columns log2 value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current tile columns log2 value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig12getSharpnessEv">
+<span id="_CPPv3NK12EncodeConfig12getSharpnessEv"></span><span id="_CPPv2NK12EncodeConfig12getSharpnessEv"></span><span id="EncodeConfig::getSharpnessC"></span><span class="target" id="structEncodeConfig_1a7367ff60ebe464c9eae16c7678ded332"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSharpness</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current sharpness value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current sharpness value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig8getSpeedEv">
+<span id="_CPPv3NK12EncodeConfig8getSpeedEv"></span><span id="_CPPv2NK12EncodeConfig8getSpeedEv"></span><span id="EncodeConfig::getSpeedC"></span><span class="target" id="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSpeed</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current speed value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current speed value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig9setPresetE11SpeedPreset">
+<span id="_CPPv3N12EncodeConfig9setPresetE11SpeedPreset"></span><span id="_CPPv2N12EncodeConfig9setPresetE11SpeedPreset"></span><span id="EncodeConfig::setPreset__SpeedPreset"></span><span class="target" id="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPreset</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">newPreset</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set a new speed preset and update speed settings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>newPreset</strong> – New speed preset </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig9getPresetEv">
+<span id="_CPPv3NK12EncodeConfig9getPresetEv"></span><span id="_CPPv2NK12EncodeConfig9getPresetEv"></span><span id="EncodeConfig::getPresetC"></span><span class="target" id="structEncodeConfig_1aee7530598b42b2a7cd315834ebdce54f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPreset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current speed preset. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current speed preset </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig11updateSpeedEi11SpeedPreset">
+<span id="_CPPv3N12EncodeConfig11updateSpeedEi11SpeedPreset"></span><span id="_CPPv2N12EncodeConfig11updateSpeedEi11SpeedPreset"></span><span id="EncodeConfig::updateSpeed__i.SpeedPreset"></span><span class="target" id="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateSpeed</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">new_speed</span></span>, <a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">newPreset</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Update speed settings with new values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_speed</strong> – New speed value </p></li>
+<li><p><strong>newPreset</strong> – New speed preset </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig14getCodecChoiceEv">
+<span id="_CPPv3NK12EncodeConfig14getCodecChoiceEv"></span><span id="_CPPv2NK12EncodeConfig14getCodecChoiceEv"></span><span id="EncodeConfig::getCodecChoiceC"></span><span class="target" id="structEncodeConfig_1a282e07fde01ba67dc2018b6d86bd9f26"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv411CodecChoice" title="CodecChoice"><span class="n"><span class="pre">CodecChoice</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCodecChoice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current codec choice. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current codec choice </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig14setCodecChoiceE11CodecChoice">
+<span id="_CPPv3N12EncodeConfig14setCodecChoiceE11CodecChoice"></span><span id="_CPPv2N12EncodeConfig14setCodecChoiceE11CodecChoice"></span><span id="EncodeConfig::setCodecChoice__CodecChoice"></span><span class="target" id="structEncodeConfig_1a2093dc7745148029839988b97e326d8f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCodecChoice</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classes.html#_CPPv411CodecChoice" title="CodecChoice"><span class="n"><span class="pre">CodecChoice</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">choice</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set a new codec choice and update speed settings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>choice</strong> – New codec choice </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig11printConfigEv">
+<span id="_CPPv3NK12EncodeConfig11printConfigEv"></span><span id="_CPPv2NK12EncodeConfig11printConfigEv"></span><span id="EncodeConfig::printConfigC"></span><span class="target" id="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printConfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Print the current configuration to stdout. </p>
+<p>Useful for debugging and logging purposes </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig7qualityE">
+<span id="_CPPv3N12EncodeConfig7qualityE"></span><span id="_CPPv2N12EncodeConfig7qualityE"></span><span id="EncodeConfig::quality__i"></span><span class="target" id="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">quality</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">30</span></span><br /></dt>
+<dd><p>Quality value (0-100, higher is better quality) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig12qualityAlphaE">
+<span id="_CPPv3N12EncodeConfig12qualityAlphaE"></span><span id="_CPPv2N12EncodeConfig12qualityAlphaE"></span><span id="EncodeConfig::qualityAlpha__i"></span><span class="target" id="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">qualityAlpha</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dd><p>Alpha channel quality (-1 means use quality value) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig9sharpnessE">
+<span id="_CPPv3N12EncodeConfig9sharpnessE"></span><span id="_CPPv2N12EncodeConfig9sharpnessE"></span><span id="EncodeConfig::sharpness__i"></span><span class="target" id="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sharpness</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd><p>Sharpness filter strength (0-7) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig11pixelFormatE">
+<span id="_CPPv3N12EncodeConfig11pixelFormatE"></span><span id="_CPPv2N12EncodeConfig11pixelFormatE"></span><span id="EncodeConfig::pixelFormat__avifPixelFormat"></span><span class="target" id="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34"></span><span class="n"><span class="pre">avifPixelFormat</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pixelFormat</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">AVIF_PIXEL_FORMAT_YUV420</span></span><br /></dt>
+<dd><p>YUV pixel format. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig11codecChoiceE">
+<span id="_CPPv3N12EncodeConfig11codecChoiceE"></span><span id="_CPPv2N12EncodeConfig11codecChoiceE"></span><span id="EncodeConfig::codecChoice__CodecChoice"></span><span class="target" id="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7"></span><a class="reference internal" href="classes.html#_CPPv411CodecChoice" title="CodecChoice"><span class="n"><span class="pre">CodecChoice</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">codecChoice</span></span></span><br /></dt>
+<dd><p>Selected codec (AOM, SVT, AUTO) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig6presetE">
+<span id="_CPPv3N12EncodeConfig6presetE"></span><span id="_CPPv2N12EncodeConfig6presetE"></span><span id="EncodeConfig::preset__SpeedPreset"></span><span class="target" id="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b"></span><a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preset</span></span></span><br /></dt>
+<dd><p><a class="reference internal" href="library_root.html#structSpeed"><span class="std std-ref">Speed</span></a> preset. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig12minQuantizerE">
+<span id="_CPPv3N12EncodeConfig12minQuantizerE"></span><span id="_CPPv2N12EncodeConfig12minQuantizerE"></span><span id="EncodeConfig::minQuantizer__i"></span><span class="target" id="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minQuantizer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dd><p>Minimum quantizer (0-63, -1 for default) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig12maxQuantizerE">
+<span id="_CPPv3N12EncodeConfig12maxQuantizerE"></span><span id="_CPPv2N12EncodeConfig12maxQuantizerE"></span><span id="EncodeConfig::maxQuantizer__i"></span><span class="target" id="structEncodeConfig_1a02535067f903087f2a2f53124d441d36"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxQuantizer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dd><p>Maximum quantizer (0-63, -1 for default) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig12tileRowsLog2E">
+<span id="_CPPv3N12EncodeConfig12tileRowsLog2E"></span><span id="_CPPv2N12EncodeConfig12tileRowsLog2E"></span><span id="EncodeConfig::tileRowsLog2__i"></span><span class="target" id="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileRowsLog2</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd><p>Log2 of tile rows (0 = 1 tile row, 1 = 2 rows, etc) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig12tileColsLog2E">
+<span id="_CPPv3N12EncodeConfig12tileColsLog2E"></span><span id="_CPPv2N12EncodeConfig12tileColsLog2E"></span><span id="EncodeConfig::tileColsLog2__i"></span><span class="target" id="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileColsLog2</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd><p>Log2 of tile columns. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig4tuneE">
+<span id="_CPPv3N12EncodeConfig4tuneE"></span><span id="_CPPv2N12EncodeConfig4tuneE"></span><span id="EncodeConfig::tune__Tune"></span><span class="target" id="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba"></span><a class="reference internal" href="classes.html#_CPPv44Tune" title="Tune"><span class="n"><span class="pre">Tune</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tune</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv44Tune" title="Tune"><span class="n"><span class="pre">Tune</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classes.html#_CPPv4N4Tune12TUNE_DEFAULTE" title="Tune::TUNE_DEFAULT"><span class="n"><span class="pre">TUNE_DEFAULT</span></span></a><br /></dt>
+<dd><p>Encoder tuning option. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig16validatedQualityEi">
+<span id="_CPPv3NK12EncodeConfig16validatedQualityEi"></span><span id="_CPPv2NK12EncodeConfig16validatedQualityEi"></span><span id="EncodeConfig::validatedQuality__iC"></span><span class="target" id="structEncodeConfig_1afe94310735c47f3bff7130a0c6c5bf46"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">validatedQuality</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">q</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK12EncodeConfig16validatedQualityEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Validate and clamp quality value to valid range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>q</strong> – Quality value to validate </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clamped quality value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig18validatedQuantizerEi">
+<span id="_CPPv3NK12EncodeConfig18validatedQuantizerEi"></span><span id="_CPPv2NK12EncodeConfig18validatedQuantizerEi"></span><span id="EncodeConfig::validatedQuantizer__iC"></span><span class="target" id="structEncodeConfig_1ae626c1aebfacf14b2daf53461df7af81"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">validatedQuantizer</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">q</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK12EncodeConfig18validatedQuantizerEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Validate and clamp quantizer value to valid range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>q</strong> – Quantizer value to validate </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clamped quantizer value or -1 if default value is specified </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig17validatedTileLog2Ei">
+<span id="_CPPv3NK12EncodeConfig17validatedTileLog2Ei"></span><span id="_CPPv2NK12EncodeConfig17validatedTileLog2Ei"></span><span id="EncodeConfig::validatedTileLog2__iC"></span><span class="target" id="structEncodeConfig_1a22817009cb293eb8bb0b7a03be85e080"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">validatedTileLog2</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK12EncodeConfig17validatedTileLog2Ei" title="Link to this definition"></a><br /></dt>
+<dd><p>Validate and clamp tile log2 value to valid range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t</strong> – Tile log2 value to validate </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clamped tile log2 value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EncodeConfig18validatedSharpnessEi">
+<span id="_CPPv3NK12EncodeConfig18validatedSharpnessEi"></span><span id="_CPPv2NK12EncodeConfig18validatedSharpnessEi"></span><span id="EncodeConfig::validatedSharpness__iC"></span><span class="target" id="structEncodeConfig_1afd40635e79ff8f9851cfa0ef79a3d12f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">validatedSharpness</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK12EncodeConfig18validatedSharpnessEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Validate and clamp sharpness value to valid range. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – Sharpness value to validate </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clamped sharpness value </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12EncodeConfig5speedE">
+<span id="_CPPv3N12EncodeConfig5speedE"></span><span id="_CPPv2N12EncodeConfig5speedE"></span><span id="EncodeConfig::speed__Speed"></span><span class="target" id="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc"></span><a class="reference internal" href="classes.html#_CPPv45Speed" title="Speed"><span class="n"><span class="pre">Speed</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">speed</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv45Speed" title="Speed"><span class="n"><span class="pre">Speed</span></span></a><span class="p"><span class="pre">(</span></span><a class="reference internal" href="classes.html#_CPPv411CodecChoice" title="CodecChoice"><span class="n"><span class="pre">CodecChoice</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classes.html#_CPPv4N11CodecChoice3AOME" title="CodecChoice::AOM"><span class="n"><span class="pre">AOM</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv411SpeedPreset" title="SpeedPreset"><span class="n"><span class="pre">SpeedPreset</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classes.html#_CPPv4N11SpeedPreset4GoodE" title="SpeedPreset::Good"><span class="n"><span class="pre">Good</span></span></a><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N12EncodeConfig5speedE" title="Link to this definition"></a><br /></dt>
+<dd><p><a class="reference internal" href="library_root.html#structSpeed"><span class="std std-ref">Speed</span></a> settings. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="error-h">
+<h3>error.h<a class="headerlink" href="#error-h" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> handling for AVIF conversion operations. </p>
+<p>
+This file defines error types, error codes, and helper functions for handling and reporting errors during AVIF conversion operations. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv414ConverterError">
+<span id="_CPPv314ConverterError"></span><span id="_CPPv214ConverterError"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConverterError</span></span></span><br /></dt>
+<dd><p><a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> codes for the image converter. </p>
+<p>These error codes identify different failure modes in the conversion process. <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> codes 100-199 are specific to the converter, while codes 200+ are mapped from the AVIF library. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError2OKE">
+<span id="_CPPv3N14ConverterError2OKE"></span><span id="_CPPv2N14ConverterError2OKE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OK</span></span></span><br /></dt>
+<dd><p>No error, operation successful. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError18INVALID_DIMENSIONSE">
+<span id="_CPPv3N14ConverterError18INVALID_DIMENSIONSE"></span><span id="_CPPv2N14ConverterError18INVALID_DIMENSIONSE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INVALID_DIMENSIONS</span></span></span><br /></dt>
+<dd><p>Image dimensions are invalid (too small/large) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError21UNSUPPORTED_IMAGETYPEE">
+<span id="_CPPv3N14ConverterError21UNSUPPORTED_IMAGETYPEE"></span><span id="_CPPv2N14ConverterError21UNSUPPORTED_IMAGETYPEE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNSUPPORTED_IMAGETYPE</span></span></span><br /></dt>
+<dd><p>Image format is not supported. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError17IMAGE_LOAD_FAILEDE">
+<span id="_CPPv3N14ConverterError17IMAGE_LOAD_FAILEDE"></span><span id="_CPPv2N14ConverterError17IMAGE_LOAD_FAILEDE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IMAGE_LOAD_FAILED</span></span></span><br /></dt>
+<dd><p>Failed to load/decode the input image. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError23ENCODER_CREATION_FAILEDE">
+<span id="_CPPv3N14ConverterError23ENCODER_CREATION_FAILEDE"></span><span id="_CPPv2N14ConverterError23ENCODER_CREATION_FAILEDE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENCODER_CREATION_FAILED</span></span></span><br /></dt>
+<dd><p>Failed to create the AVIF encoder. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError17CONVERSION_FAILEDE">
+<span id="_CPPv3N14ConverterError17CONVERSION_FAILEDE"></span><span id="_CPPv2N14ConverterError17CONVERSION_FAILEDE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONVERSION_FAILED</span></span></span><br /></dt>
+<dd><p>Failed during the RGB to YUV conversion. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError15ENCODING_FAILEDE">
+<span id="_CPPv3N14ConverterError15ENCODING_FAILEDE"></span><span id="_CPPv2N14ConverterError15ENCODING_FAILEDE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENCODING_FAILED</span></span></span><br /></dt>
+<dd><p>Failed during the encoding process. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError16INVALID_ARGUMENTE">
+<span id="_CPPv3N14ConverterError16INVALID_ARGUMENTE"></span><span id="_CPPv2N14ConverterError16INVALID_ARGUMENTE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INVALID_ARGUMENT</span></span></span><br /></dt>
+<dd><p>Invalid argument provided to a function. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError13OUT_OF_MEMORYE">
+<span id="_CPPv3N14ConverterError13OUT_OF_MEMORYE"></span><span id="_CPPv2N14ConverterError13OUT_OF_MEMORYE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUT_OF_MEMORY</span></span></span><br /></dt>
+<dd><p>Memory allocation failed. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError24INVALID_QUANTIZER_VALUESE">
+<span id="_CPPv3N14ConverterError24INVALID_QUANTIZER_VALUESE"></span><span id="_CPPv2N14ConverterError24INVALID_QUANTIZER_VALUESE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INVALID_QUANTIZER_VALUES</span></span></span><br /></dt>
+<dd><p>Invalid quantizer values (e.g., min &gt; max) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError13UNKNOWN_ERRORE">
+<span id="_CPPv3N14ConverterError13UNKNOWN_ERRORE"></span><span id="_CPPv2N14ConverterError13UNKNOWN_ERRORE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNKNOWN_ERROR</span></span></span><br /></dt>
+<dd><p>Unspecified error. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14ConverterError16AVIF_ERROR_STARTE">
+<span id="_CPPv3N14ConverterError16AVIF_ERROR_STARTE"></span><span id="_CPPv2N14ConverterError16AVIF_ERROR_STARTE"></span><span class="target" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AVIF_ERROR_START</span></span></span><br /></dt>
+<dd><p>Start of error codes mapped from avifResult. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420avifToConverterError10avifResult">
+<span id="_CPPv320avifToConverterError10avifResult"></span><span id="_CPPv220avifToConverterError10avifResult"></span><span id="avifToConverterError__avifResult"></span><span class="target" id="error_8h_1a5ad5e023f34da8b98e088da72c1b3744"></span><a class="reference internal" href="classes.html#_CPPv414ConverterError" title="ConverterError"><span class="n"><span class="pre">ConverterError</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avifToConverterError</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">avifResult</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420avifToConverterError10avifResult" title="Link to this definition"></a><br /></dt>
+<dd><p>Converts an AVIF library error code to a <a class="reference internal" href="library_root.html#error_8h_1ae34bfe75944861aa76edbf308eaeedc4"><span class="std std-ref">ConverterError</span></a>. </p>
+<p>Maps the native AVIF library error codes to the application’s error enum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>result</strong> – AVIF library result code </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Equivalent <a class="reference internal" href="library_root.html#error_8h_1ae34bfe75944861aa76edbf308eaeedc4"><span class="std std-ref">ConverterError</span></a> code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415getErrorMessage14ConverterError">
+<span id="_CPPv315getErrorMessage14ConverterError"></span><span id="_CPPv215getErrorMessage14ConverterError"></span><span id="getErrorMessage__ConverterError"></span><span class="target" id="error_8h_1a0ef438c9db81c195e8b44bab972a415c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getErrorMessage</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classes.html#_CPPv414ConverterError" title="ConverterError"><span class="n"><span class="pre">ConverterError</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">error</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415getErrorMessage14ConverterError" title="Link to this definition"></a><br /></dt>
+<dd><p>Get a human-readable error message for an error code. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>error</strong> – <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> code to get the message for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Standard error message for the given code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49toJsErrorRK5Error">
+<span id="_CPPv39toJsErrorRK5Error"></span><span id="_CPPv29toJsErrorRK5Error"></span><span id="toJsError__ErrorCR"></span><span class="target" id="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4"></span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toJsError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv45Error" title="Error"><span class="n"><span class="pre">Error</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49toJsErrorRK5Error" title="Link to this definition"></a><br /></dt>
+<dd><p>Convert a C++ <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> object to a JavaScript error object. </p>
+<p>Creates a JavaScript error object with properties for code, message, and stackTrace suitable for returning to JavaScript code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The C++ <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> object to convert </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JavaScript object representing the error </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv45Error">
+<span id="_CPPv35Error"></span><span id="_CPPv25Error"></span><span id="Error"></span><span class="target" id="classError"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Error</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#error_8h"><span class="std std-ref">error.h</span></a>&gt;</em></div>
+<p><a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> class for reporting conversion errors. </p>
+<p>This class encapsulates an error code, a descriptive message, and optional stack trace information for debugging. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Error5ErrorE14ConverterErrorRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N5Error5ErrorE14ConverterErrorRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N5Error5ErrorE14ConverterErrorRKNSt6stringERKNSt6stringE"></span><span id="Error::Error__ConverterError.ssCR.ssCR"></span><span class="target" id="classError_1aeb2eed928f08439970781a1ea5ea2acb"></span><span class="sig-name descname"><span class="n"><span class="pre">Error</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classes.html#_CPPv414ConverterError" title="ConverterError"><span class="n"><span class="pre">ConverterError</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">trace</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor for <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> objects. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>c</strong> – <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> code identifying the error type </p></li>
+<li><p><strong>msg</strong> – Human-readable error message </p></li>
+<li><p><strong>trace</strong> – Optional function name or call stack information </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Error4codeE">
+<span id="_CPPv3N5Error4codeE"></span><span id="_CPPv2N5Error4codeE"></span><span id="Error::code__ConverterError"></span><span class="target" id="classError_1af99b67523cea6feba2f76679f97f2cfe"></span><a class="reference internal" href="classes.html#_CPPv414ConverterError" title="ConverterError"><span class="n"><span class="pre">ConverterError</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">code</span></span></span><br /></dt>
+<dd><p><a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> code identifying the error type. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Error7messageE">
+<span id="_CPPv3N5Error7messageE"></span><span id="_CPPv2N5Error7messageE"></span><span id="Error::message__ss"></span><span class="target" id="classError_1aa4713ef3ee9c3c0da43a54b01949510d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">message</span></span></span><br /></dt>
+<dd><p>Human-readable error message. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Error10stackTraceE">
+<span id="_CPPv3N5Error10stackTraceE"></span><span id="_CPPv2N5Error10stackTraceE"></span><span id="Error::stackTrace__ss"></span><span class="target" id="classError_1a4051d2413bfd2780250043fc9c412865"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stackTrace</span></span></span><br /></dt>
+<dd><p>Function call stack or context information. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="imageguru-h">
+<h3>imageGuru.h<a class="headerlink" href="#imageguru-h" title="Link to this heading"></a></h3>
+<p>Image format detection and type management. </p>
+<p>
+This file provides utilities for detecting image formats from binary data and checking format support status for the AVIF conversion process. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv49ImageType">
+<span id="_CPPv39ImageType"></span><span id="_CPPv29ImageType"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImageType</span></span></span><a class="headerlink" href="#_CPPv49ImageType" title="Link to this definition"></a><br /></dt>
+<dd><p>Enumeration of supported image types. </p>
+<p>Lists all the image formats that can be detected by the <a class="reference internal" href="library_root.html#classImageGuru"><span class="std std-ref">ImageGuru</span></a>, regardless of whether they can be converted to AVIF. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType4JPEGE">
+<span id="_CPPv3N9ImageType4JPEGE"></span><span id="_CPPv2N9ImageType4JPEGE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a907e06a16862d82ca6907a28a68d0ad6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JPEG</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType4JPEGE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType3PNGE">
+<span id="_CPPv3N9ImageType3PNGE"></span><span id="_CPPv2N9ImageType3PNGE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a55505ba281b015ec31f03ccb151b2a34"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PNG</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType3PNGE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType3GIFE">
+<span id="_CPPv3N9ImageType3GIFE"></span><span id="_CPPv2N9ImageType3GIFE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a95a66bab4c0c0fd8387e680daeff99a8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GIF</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType3GIFE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType3BMPE">
+<span id="_CPPv3N9ImageType3BMPE"></span><span id="_CPPv2N9ImageType3BMPE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0aa5d5ca1447586e23dc011f8c0cc0a6db"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BMP</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType3BMPE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType4TIFFE">
+<span id="_CPPv3N9ImageType4TIFFE"></span><span id="_CPPv2N9ImageType4TIFFE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ace0dbe5045edda1a0e9686ce899798ea"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TIFF</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType4TIFFE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType4WEBPE">
+<span id="_CPPv3N9ImageType4WEBPE"></span><span id="_CPPv2N9ImageType4WEBPE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ab8dbf614b2c3a603c8c8c723a3f6eb7a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WEBP</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType4WEBPE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType4AVIFE">
+<span id="_CPPv3N9ImageType4AVIFE"></span><span id="_CPPv2N9ImageType4AVIFE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AVIF</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType4AVIFE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageType7UNKNOWNE">
+<span id="_CPPv3N9ImageType7UNKNOWNE"></span><span id="_CPPv2N9ImageType7UNKNOWNE"></span><span class="target" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNKNOWN</span></span></span><a class="headerlink" href="#_CPPv4N9ImageType7UNKNOWNE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv49ImageGuru">
+<span id="_CPPv39ImageGuru"></span><span id="_CPPv29ImageGuru"></span><span id="ImageGuru"></span><span class="target" id="classImageGuru"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImageGuru</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#imageGuru_8h"><span class="std std-ref">imageGuru.h</span></a>&gt;</em></div>
+<p>Utility class for image format detection and support checking. </p>
+<p>This class provides static methods to detect image formats from binary data and check whether specific formats are supported for conversion to AVIF. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru12GetImageTypeERKNSt6vectorI7uint8_tEE">
+<span id="_CPPv3N9ImageGuru12GetImageTypeERKNSt6vectorI7uint8_tEE"></span><span id="_CPPv2N9ImageGuru12GetImageTypeERKNSt6vectorI7uint8_tEE"></span><span id="ImageGuru::GetImageType__std::vector:uint8_t:CR"></span><span class="target" id="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetImageType</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Detect the image format from binary data. </p>
+<p>Examines the file header/magic bytes in the provided data to determine the image format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Binary image data to analyze </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Detected <a class="reference internal" href="library_root.html#imageGuru_8h_1a3154c405c975616503bac23f51b78fc0"><span class="std std-ref">ImageType</span></a>, or <a class="reference internal" href="library_root.html#imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3"><span class="std std-ref">ImageType::UNKNOWN</span></a> if format isn’t recognized </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru7IsValidERKNSt6vectorI7uint8_tEE">
+<span id="_CPPv3N9ImageGuru7IsValidERKNSt6vectorI7uint8_tEE"></span><span id="_CPPv2N9ImageGuru7IsValidERKNSt6vectorI7uint8_tEE"></span><span id="ImageGuru::IsValid__std::vector:uint8_t:CR"></span><span class="target" id="classImageGuru_1ad4730c44991d536d63807ed17361540d"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IsValid</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Check if binary data appears to be a valid image. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Binary data to check </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the data appears to be a recognized image format, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru14IsSpecificTypeERKNSt6vectorI7uint8_tEE9ImageType">
+<span id="_CPPv3N9ImageGuru14IsSpecificTypeERKNSt6vectorI7uint8_tEE9ImageType"></span><span id="_CPPv2N9ImageGuru14IsSpecificTypeERKNSt6vectorI7uint8_tEE9ImageType"></span><span id="ImageGuru::IsSpecificType__std::vector:uint8_t:CR.ImageType"></span><span class="target" id="classImageGuru_1af8b04916cf74b30b69ecdbde53ae7b4f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IsSpecificType</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Check if binary data matches a specific image format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Binary data to check </p></li>
+<li><p><strong>type</strong> – Specific <a class="reference internal" href="library_root.html#imageGuru_8h_1a3154c405c975616503bac23f51b78fc0"><span class="std std-ref">ImageType</span></a> to check for </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the data matches the specified format, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru11isSupportedEK9ImageType">
+<span id="_CPPv3N9ImageGuru11isSupportedEK9ImageType"></span><span id="_CPPv2N9ImageGuru11isSupportedEK9ImageType"></span><span id="ImageGuru::isSupported__ImageTypeC"></span><span class="target" id="classImageGuru_1a9656fc9753f60aa1dda76030a7906d9f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isSupported</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Check if a specific image type is supported for conversion. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The <a class="reference internal" href="library_root.html#imageGuru_8h_1a3154c405c975616503bac23f51b78fc0"><span class="std std-ref">ImageType</span></a> to check support for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the format is supported for conversion, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru12typeToStringEK9ImageType">
+<span id="_CPPv3N9ImageGuru12typeToStringEK9ImageType"></span><span id="_CPPv2N9ImageGuru12typeToStringEK9ImageType"></span><span id="ImageGuru::typeToString__ImageTypeC"></span><span class="target" id="classImageGuru_1a250967309e02e5a4a2226361f56cf5f6"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">typeToString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Convert an <a class="reference internal" href="library_root.html#imageGuru_8h_1a3154c405c975616503bac23f51b78fc0"><span class="std std-ref">ImageType</span></a> enum to a string representation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The <a class="reference internal" href="library_root.html#imageGuru_8h_1a3154c405c975616503bac23f51b78fc0"><span class="std std-ref">ImageType</span></a> to convert </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String representation of the image type </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-static-attributes">Private Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru15supported_imageE">
+<span id="_CPPv3N9ImageGuru15supported_imageE"></span><span id="_CPPv2N9ImageGuru15supported_imageE"></span><span id="ImageGuru::supported_image__std::array:imageSupport.8:"></span><span class="target" id="classImageGuru_1a584ee80b421a877e66108805931fd2d0"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="classes.html#_CPPv4N9ImageGuru12imageSupportE" title="ImageGuru::imageSupport"><span class="n"><span class="pre">imageSupport</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supported_image</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType4JPEGE" title="ImageType::JPEG"><span class="n"><span class="pre">JPEG</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType3PNGE" title="ImageType::PNG"><span class="n"><span class="pre">PNG</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType3GIFE" title="ImageType::GIF"><span class="n"><span class="pre">GIF</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType3BMPE" title="ImageType::BMP"><span class="n"><span class="pre">BMP</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType4TIFFE" title="ImageType::TIFF"><span class="n"><span class="pre">TIFF</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType4WEBPE" title="ImageType::WEBP"><span class="n"><span class="pre">WEBP</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType4AVIFE" title="ImageType::AVIF"><span class="n"><span class="pre">AVIF</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9ImageType7UNKNOWNE" title="ImageType::UNKNOWN"><span class="n"><span class="pre">UNKNOWN</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9ImageGuru15supported_imageE" title="Link to this definition"></a><br /></dt>
+<dd><p>Array defining which image formats are supported for conversion. </p>
+<p>This array maps each <a class="reference internal" href="library_root.html#imageGuru_8h_1a3154c405c975616503bac23f51b78fc0"><span class="std std-ref">ImageType</span></a> to a boolean indicating whether that format can be converted to AVIF by the library. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru12imageSupportE">
+<span id="_CPPv3N9ImageGuru12imageSupportE"></span><span id="_CPPv2N9ImageGuru12imageSupportE"></span><span id="ImageGuru::imageSupport"></span><span class="target" id="structImageGuru_1_1imageSupport"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imageSupport</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#imageGuru_8h"><span class="std std-ref">imageGuru.h</span></a>&gt;</em></div>
+<p>Structure for tracking image format support status. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru12imageSupport4typeE">
+<span id="_CPPv3N9ImageGuru12imageSupport4typeE"></span><span id="_CPPv2N9ImageGuru12imageSupport4typeE"></span><span id="ImageGuru::imageSupport::type__ImageType"></span><span class="target" id="structImageGuru_1_1imageSupport_1a4ff5927da2afbda84dd5b4dc866248b1"></span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><br /></dt>
+<dd><p>Type of image format. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9ImageGuru12imageSupport9supportedE">
+<span id="_CPPv3N9ImageGuru12imageSupport9supportedE"></span><span id="_CPPv2N9ImageGuru12imageSupport9supportedE"></span><span id="ImageGuru::imageSupport::supported__b"></span><span class="target" id="structImageGuru_1_1imageSupport_1ac8203336cd34f13403a9263f45f4f85d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supported</span></span></span><br /></dt>
+<dd><p>Whether conversion is supported. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="imagebuffer-h">
+<h3>imagebuffer.h<a class="headerlink" href="#imagebuffer-h" title="Link to this heading"></a></h3>
+<p>Image buffer management for AVIF conversion results. </p>
+<p>
+This file defines the <a class="reference internal" href="library_root.html#classImageBuffer"><span class="std std-ref">ImageBuffer</span></a> class which encapsulates the raw binary data of a converted image and provides methods to access it from both C++ and JavaScript contexts. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv411ImageBuffer">
+<span id="_CPPv311ImageBuffer"></span><span id="_CPPv211ImageBuffer"></span><span id="ImageBuffer"></span><span class="target" id="classImageBuffer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImageBuffer</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#imagebuffer_8h"><span class="std std-ref">imagebuffer.h</span></a>&gt;</em></div>
+<p>Container class for image binary data. </p>
+<p>This class encapsulates a vector of bytes representing image data and provides methods to access this data from both C++ and JavaScript. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11ImageBuffer11ImageBufferENSt6vectorI7uint8_tEE">
+<span id="_CPPv3N11ImageBuffer11ImageBufferENSt6vectorI7uint8_tEE"></span><span id="_CPPv2N11ImageBuffer11ImageBufferENSt6vectorI7uint8_tEE"></span><span id="ImageBuffer::ImageBuffer__std::vector:uint8_t:"></span><span class="target" id="classImageBuffer_1ae35022dca7c053de97b73c9e55d7a6c0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImageBuffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor that takes ownership of image data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Vector containing the binary image data (typically AVIF encoded) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK11ImageBuffer7getDataEv">
+<span id="_CPPv3NK11ImageBuffer7getDataEv"></span><span id="_CPPv2NK11ImageBuffer7getDataEv"></span><span id="ImageBuffer::getDataC"></span><span class="target" id="classImageBuffer_1a092d25f5f27ff06124cd28764bf091cb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getData</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the image data as a JavaScript typed array. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This creates a view into the existing memory without copying </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JavaScript typed array (Uint8Array) view of the image data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK11ImageBuffer7getSizeEv">
+<span id="_CPPv3NK11ImageBuffer7getSizeEv"></span><span id="_CPPv2NK11ImageBuffer7getSizeEv"></span><span id="ImageBuffer::getSizeC"></span><span class="target" id="classImageBuffer_1ab2fce31da3b99684f3621762e9230022"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the size of the image data in bytes. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Size of the image data in bytes </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK11ImageBuffer10getRawDataEv">
+<span id="_CPPv3NK11ImageBuffer10getRawDataEv"></span><span id="_CPPv2NK11ImageBuffer10getRawDataEv"></span><span id="ImageBuffer::getRawDataC"></span><span class="target" id="classImageBuffer_1a5c2bf3c39d985e8f25726764d4bd29f4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRawData</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get direct access to the underlying data vector. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Const reference to the underlying byte vector </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11ImageBuffer5data_E">
+<span id="_CPPv3N11ImageBuffer5data_E"></span><span id="_CPPv2N11ImageBuffer5data_E"></span><span id="ImageBuffer::data___std::vector:uint8_t:"></span><span class="target" id="classImageBuffer_1a63f6553c8908a439066d3e51b3897dc4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data_</span></span></span><a class="headerlink" href="#_CPPv4N11ImageBuffer5data_E" title="Link to this definition"></a><br /></dt>
+<dd><p>The binary image data. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="imageconverter-h">
+<h3>imageconverter.h<a class="headerlink" href="#imageconverter-h" title="Link to this heading"></a></h3>
+<p>Header for image conversion functionality to AVIF format. </p>
+<p>
+Provides functions to convert various image formats to AVIF using the AVIF library with configurable encoding parameters. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413convert_image9ImageTypeRKNSt6vectorI7uint8_tEEiiRK12EncodeConfig">
+<span id="_CPPv313convert_image9ImageTypeRKNSt6vectorI7uint8_tEEiiRK12EncodeConfig"></span><span id="_CPPv213convert_image9ImageTypeRKNSt6vectorI7uint8_tEEiiRK12EncodeConfig"></span><span id="convert_image__ImageType.std::vector:uint8_t:CR.i.i.EncodeConfigCR"></span><span class="target" id="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343"></span><a class="reference internal" href="#_CPPv46Result" title="Result"><span class="n"><span class="pre">Result</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convert_image</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input_data</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv412EncodeConfig" title="EncodeConfig"><span class="n"><span class="pre">EncodeConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413convert_image9ImageTypeRKNSt6vectorI7uint8_tEEiiRK12EncodeConfig" title="Link to this definition"></a><br /></dt>
+<dd><p>Converts an image to AVIF format with specified parameters. </p>
+<p>
+This function handles the complete conversion pipeline:<ol class="loweralpha simple">
+<li><p>Validates input dimensions</p></li>
+<li><p>Loads and decodes input image data</p></li>
+<li><p>Resizes image if necessary</p></li>
+<li><p>Configures the AVIF encoder based on provided settings</p></li>
+<li><p>Converts RGB data to YUV colorspace</p></li>
+<li><p>Encodes image to AVIF format</p></li>
+</ol>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Image dimensions are limited to 1-8192px</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – The type of input image (e.g., PNG, JPEG) </p></li>
+<li><p><strong>input_data</strong> – Vector containing the raw image data </p></li>
+<li><p><strong>width</strong> – Desired width of the output image (will resize if different from source) </p></li>
+<li><p><strong>height</strong> – Desired height of the output image (will resize if different from source) </p></li>
+<li><p><strong>config</strong> – Encoding configuration parameters</p></li>
+<li><p><strong>type</strong> – The type of input image (e.g., PNG, JPEG) </p></li>
+<li><p><strong>input_data</strong> – Vector containing the raw image data </p></li>
+<li><p><strong>width</strong> – Desired width of the output image </p></li>
+<li><p><strong>height</strong> – Desired height of the output image </p></li>
+<li><p><strong>config</strong> – Encoding configuration parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> object containing either the encoded image data on success or an <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> on failure</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> object containing either the encoded image data or an <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418convertImageDirectN10emscripten3valEiiRK12EncodeConfig">
+<span id="_CPPv318convertImageDirectN10emscripten3valEiiRK12EncodeConfig"></span><span id="_CPPv218convertImageDirectN10emscripten3valEiiRK12EncodeConfig"></span><span id="convertImageDirect__emscripten::val.i.i.EncodeConfigCR"></span><span class="target" id="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5"></span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convertImageDirect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">jsData</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv412EncodeConfig" title="EncodeConfig"><span class="n"><span class="pre">EncodeConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418convertImageDirectN10emscripten3valEiiRK12EncodeConfig" title="Link to this definition"></a><br /></dt>
+<dd><p>JavaScript binding wrapper for image conversion. </p>
+<p>Takes JavaScript Uint8Array input and returns JavaScript object with result data.</p>
+<p>
+This function:<ol class="loweralpha simple">
+<li><p>Converts JavaScript data to C++ vector</p></li>
+<li><p>Detects the image type</p></li>
+<li><p>Validates the image can be processed</p></li>
+<li><p>Calls convert_image to perform the actual conversion</p></li>
+<li><p>Returns JavaScript object with result</p></li>
+</ol>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jsData</strong> – JavaScript array/TypedArray containing image data </p></li>
+<li><p><strong>width</strong> – Desired width of the output image </p></li>
+<li><p><strong>height</strong> – Desired height of the output image </p></li>
+<li><p><strong>config</strong> – Encoding configuration parameters</p></li>
+<li><p><strong>jsData</strong> – JavaScript array/TypedArray containing image data </p></li>
+<li><p><strong>width</strong> – Desired width of the output image </p></li>
+<li><p><strong>height</strong> – Desired height of the output image </p></li>
+<li><p><strong>config</strong> – Encoding configuration parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JavaScript object containing either the encoded image buffer or error information</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JavaScript object containing either the encoded image buffer or error information </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</section>
+<section id="result-h">
+<h3>result.h<a class="headerlink" href="#result-h" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> handling utilities for the AVIF conversion process. </p>
+<p>
+This file defines the <a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> type and related structures used to handle the outcome of image conversion operations, which can be either a successfully converted image or an error. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv48ImgaePtr">
+<span id="_CPPv38ImgaePtr"></span><span id="_CPPv28ImgaePtr"></span><span class="target" id="result_8h_1ac27a0c880b3a6990e93c23615c3be199"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImgaePtr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="classes.html#_CPPv411ImageBuffer" title="ImageBuffer"><span class="n"><span class="pre">ImageBuffer</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv48ImgaePtr" title="Link to this definition"></a><br /></dt>
+<dd><p>Shared pointer to an <a class="reference internal" href="library_root.html#classImageBuffer"><span class="std std-ref">ImageBuffer</span></a>, representing a successfully converted image. </p>
+<p>This type alias is used as the success case in the <a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> variant. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv46Result">
+<span id="_CPPv36Result"></span><span id="_CPPv26Result"></span><span class="target" id="result_8h_1a9cf14801ef7f9742ef6de61e4316676d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Result</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">variant</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv48ImgaePtr" title="ImgaePtr"><span class="n"><span class="pre">ImgaePtr</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">avifResult</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv45Error" title="Error"><span class="n"><span class="pre">Error</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv46Result" title="Link to this definition"></a><br /></dt>
+<dd><p><a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> type that can hold either an image buffer or an error. </p>
+<p>This variant type is used as the return value for conversion operations, allowing functions to return either a successful result (image data) or an error condition. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv48jsResult">
+<span id="_CPPv38jsResult"></span><span id="_CPPv28jsResult"></span><span id="jsResult"></span><span class="target" id="structjsResult"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jsResult</span></span></span><a class="headerlink" href="#_CPPv48jsResult" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#result_8h"><span class="std std-ref">result.h</span></a>&gt;</em></div>
+<p>JavaScript-friendly result structure. </p>
+<p>This structure wraps the C++ <a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> variant and provides helper methods for JavaScript bindings to easily check result status and extract data. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8jsResult8hasErrorEv">
+<span id="_CPPv3NK8jsResult8hasErrorEv"></span><span id="_CPPv2NK8jsResult8hasErrorEv"></span><span id="jsResult::hasErrorC"></span><span class="target" id="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasError</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8jsResult8hasErrorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Check if the result contains an error. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the result is an error, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8jsResult8hasImageEv">
+<span id="_CPPv3NK8jsResult8hasImageEv"></span><span id="_CPPv2NK8jsResult8hasImageEv"></span><span id="jsResult::hasImageC"></span><span class="target" id="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasImage</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8jsResult8hasImageEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Check if the result contains an image. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the result is an image, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8jsResult8getErrorEv">
+<span id="_CPPv3NK8jsResult8getErrorEv"></span><span id="_CPPv2NK8jsResult8getErrorEv"></span><span id="jsResult::getErrorC"></span><span class="target" id="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv45Error" title="Error"><span class="n"><span class="pre">Error</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getError</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8jsResult8getErrorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the error from the result. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> object </p>
+</dd>
+<dt class="field-even">Pre<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result must contain an error (check with <a class="reference internal" href="library_root.html#structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab"><span class="std std-ref">hasError()</span></a> first) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8jsResult8getImageEv">
+<span id="_CPPv3NK8jsResult8getImageEv"></span><span id="_CPPv2NK8jsResult8getImageEv"></span><span id="jsResult::getImageC"></span><span class="target" id="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv48ImgaePtr" title="ImgaePtr"><span class="n"><span class="pre">ImgaePtr</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getImage</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8jsResult8getImageEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the image from the result. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The image buffer pointer </p>
+</dd>
+<dt class="field-even">Pre<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result must contain an image (check with <a class="reference internal" href="library_root.html#structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5"><span class="std std-ref">hasImage()</span></a> first) </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8jsResult6resultE">
+<span id="_CPPv3N8jsResult6resultE"></span><span id="_CPPv2N8jsResult6resultE"></span><span id="jsResult::result__Result"></span><span class="target" id="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9"></span><a class="reference internal" href="#_CPPv46Result" title="Result"><span class="n"><span class="pre">Result</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result</span></span></span><a class="headerlink" href="#_CPPv4N8jsResult6resultE" title="Link to this definition"></a><br /></dt>
+<dd><p>The wrapped <a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> variant. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="avif-helper-h">
+<h3>avif_helper.h<a class="headerlink" href="#avif-helper-h" title="Link to this heading"></a></h3>
+<p>Helper utilities for AVIF library integration. </p>
+<p>
+This file provides utility classes and functions to simplify working with the AVIF library, including RAII wrappers for AVIF objects and helper functions for common operations. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv417UniqueAvifEncoder">
+<span id="_CPPv317UniqueAvifEncoder"></span><span id="_CPPv217UniqueAvifEncoder"></span><span class="target" id="avif__helper_8h_1a331a86d5fe51c7cbe0906bfe1fa96f2d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UniqueAvifEncoder</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">avifEncoder</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv418AvifEncoderDeleter" title="AvifEncoderDeleter"><span class="n"><span class="pre">AvifEncoderDeleter</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv417UniqueAvifEncoder" title="Link to this definition"></a><br /></dt>
+<dd><p>Unique pointer type for AVIF encoders with automatic cleanup. </p>
+<p>This type ensures that avifEncoder objects are properly destroyed when they are no longer needed. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv415UniqueAvifImage">
+<span id="_CPPv315UniqueAvifImage"></span><span id="_CPPv215UniqueAvifImage"></span><span class="target" id="avif__helper_8h_1acb6a592f91b69619ec29fd6bb942c4ba"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UniqueAvifImage</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">avifImage</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv416AvifImageDeleter" title="AvifImageDeleter"><span class="n"><span class="pre">AvifImageDeleter</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv415UniqueAvifImage" title="Link to this definition"></a><br /></dt>
+<dd><p>Unique pointer type for AVIF images with automatic cleanup. </p>
+<p>This type ensures that avifImage objects are properly destroyed when they are no longer needed. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413SetAvifOptionP11avifEncoderPKcPKcRKNSt6stringEPKc">
+<span id="_CPPv313SetAvifOptionP11avifEncoderPKcPKcRKNSt6stringEPKc"></span><span id="_CPPv213SetAvifOptionP11avifEncoderPKcPKcRKNSt6stringEPKc"></span><span id="SetAvifOption__avifEncoderP.cCP.cCP.ssCR.cCP"></span><span class="target" id="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46Result" title="Result"><span class="n"><span class="pre">Result</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetAvifOption</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">avifEncoder</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">encoder</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">value</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">humanReadableOption</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">callerFunction</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">__func__</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413SetAvifOptionP11avifEncoderPKcPKcRKNSt6stringEPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Set a codec-specific option on an AVIF encoder. </p>
+<p>This function wraps the avifEncoderSetCodecSpecificOption function with error handling and detailed error messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoder</strong> – The AVIF encoder to set the option on </p></li>
+<li><p><strong>key</strong> – The option key (specific to the codec) </p></li>
+<li><p><strong>value</strong> – The option value to set </p></li>
+<li><p><strong>humanReadableOption</strong> – Human-readable description of the option (for error messages) </p></li>
+<li><p><strong>callerFunction</strong> – Name of the calling function (for error context)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> containing either OK status or an <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> with details </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv418AvifEncoderDeleter">
+<span id="_CPPv318AvifEncoderDeleter"></span><span id="_CPPv218AvifEncoderDeleter"></span><span id="AvifEncoderDeleter"></span><span class="target" id="structAvifEncoderDeleter"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AvifEncoderDeleter</span></span></span><a class="headerlink" href="#_CPPv418AvifEncoderDeleter" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#avif__helper_8h"><span class="std std-ref">avif_helper.h</span></a>&gt;</em></div>
+<p>Custom deleter for avifEncoder objects. </p>
+<p>This functor is used with std::unique_ptr to properly clean up avifEncoder resources when the unique_ptr goes out of scope. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18AvifEncoderDeleterclEP11avifEncoder">
+<span id="_CPPv3N18AvifEncoderDeleterclEP11avifEncoder"></span><span id="_CPPv2N18AvifEncoderDeleterclEP11avifEncoder"></span><span id="AvifEncoderDeleter::call-operator__avifEncoderP"></span><span class="target" id="structAvifEncoderDeleter_1a07f65e1f4d11ce9cd23e172ecdbf79eb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">avifEncoder</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">enc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18AvifEncoderDeleterclEP11avifEncoder" title="Link to this definition"></a><br /></dt>
+<dd><p>Deletes an avifEncoder object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enc</strong> – Pointer to the avifEncoder to destroy </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv416AvifImageDeleter">
+<span id="_CPPv316AvifImageDeleter"></span><span id="_CPPv216AvifImageDeleter"></span><span id="AvifImageDeleter"></span><span class="target" id="structAvifImageDeleter"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AvifImageDeleter</span></span></span><a class="headerlink" href="#_CPPv416AvifImageDeleter" title="Link to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="library_root.html#avif__helper_8h"><span class="std std-ref">avif_helper.h</span></a>&gt;</em></div>
+<p>Custom deleter for avifImage objects. </p>
+<p>This functor is used with std::unique_ptr to properly clean up avifImage resources when the unique_ptr goes out of scope. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16AvifImageDeleterclEP9avifImage">
+<span id="_CPPv3N16AvifImageDeleterclEP9avifImage"></span><span id="_CPPv2N16AvifImageDeleterclEP9avifImage"></span><span id="AvifImageDeleter::call-operator__avifImageP"></span><span class="target" id="structAvifImageDeleter_1a6788fcd79a25d2562a24ac62c980fdaf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">avifImage</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">img</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16AvifImageDeleterclEP9avifImage" title="Link to this definition"></a><br /></dt>
+<dd><p>Deletes an avifImage object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>img</strong> – Pointer to the avifImage to destroy </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="constants-h">
+<h3>constants.h<a class="headerlink" href="#constants-h" title="Link to this heading"></a></h3>
+<p>Global constants used throughout the ConvAvif project. </p>
+<p>
+This file defines the key constant values used for image conversion configuration, including RGB depth, quality ranges, and encoder-specific parameter limits. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv49RGB_DEPTH">
+<span id="_CPPv39RGB_DEPTH"></span><span id="_CPPv29RGB_DEPTH"></span><span id="RGB_DEPTH__i"></span><span class="target" id="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RGB_DEPTH</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><a class="headerlink" href="#_CPPv49RGB_DEPTH" title="Link to this definition"></a><br /></dt>
+<dd><p>Bit depth for RGB image processing. </p>
+<p>Standard 8-bit per channel depth used for input/output RGB images </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv49MIN_SPEED">
+<span id="_CPPv39MIN_SPEED"></span><span id="_CPPv29MIN_SPEED"></span><span id="MIN_SPEED__i"></span><span class="target" id="constants_8h_1a39ec4a5ee2aa5355e76e11311159f06c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MIN_SPEED</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv49MIN_SPEED" title="Link to this definition"></a><br /></dt>
+<dd><p>Minimum encoder speed setting. </p>
+<p>Slowest speed setting (best quality, highest compression) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv49MAX_SPEED">
+<span id="_CPPv39MAX_SPEED"></span><span id="_CPPv29MAX_SPEED"></span><span id="MAX_SPEED__i"></span><span class="target" id="constants_8h_1a5ddf2283d980402c15e157a865fe3c1c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MAX_SPEED</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">9</span></span><a class="headerlink" href="#_CPPv49MAX_SPEED" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum encoder speed setting. </p>
+<p>Fastest speed setting (lowest quality, fastest encoding) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv411MAX_QUALITY">
+<span id="_CPPv311MAX_QUALITY"></span><span id="_CPPv211MAX_QUALITY"></span><span id="MAX_QUALITY__i"></span><span class="target" id="constants_8h_1ae5f45d70a0eedde96102b5e8dbad6e53"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MAX_QUALITY</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">99</span></span><a class="headerlink" href="#_CPPv411MAX_QUALITY" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum quality value. </p>
+<p>Highest possible quality setting (99 out of 100) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413MAX_QUANTIZER">
+<span id="_CPPv313MAX_QUANTIZER"></span><span id="_CPPv213MAX_QUANTIZER"></span><span id="MAX_QUANTIZER__i"></span><span class="target" id="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MAX_QUANTIZER</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">63</span></span><a class="headerlink" href="#_CPPv413MAX_QUANTIZER" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum quantizer value. </p>
+<p>Highest quantizer value for the encoder (63) Higher values mean lower quality but better compression </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413MAX_TILE_LOG2">
+<span id="_CPPv313MAX_TILE_LOG2"></span><span id="_CPPv213MAX_TILE_LOG2"></span><span id="MAX_TILE_LOG2__i"></span><span class="target" id="constants_8h_1a5d199cfd82019c3f1492ea53e0147c4f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MAX_TILE_LOG2</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><a class="headerlink" href="#_CPPv413MAX_TILE_LOG2" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum tile log2 value. </p>
+<p>Controls maximum number of tiles as 2^MAX_TILE_LOG2 </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413MAX_SHARPNESS">
+<span id="_CPPv313MAX_SHARPNESS"></span><span id="_CPPv213MAX_SHARPNESS"></span><span id="MAX_SHARPNESS__i"></span><span class="target" id="constants_8h_1aee1922493f64795bd542968d022aa99a"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MAX_SHARPNESS</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">7</span></span><a class="headerlink" href="#_CPPv413MAX_SHARPNESS" title="Link to this definition"></a><br /></dt>
+<dd><p>Maximum sharpness filter value. </p>
+<p>Controls the strength of the sharpness filter (0-7) </p>
+</dd></dl>
+
+</div>
+</section>
+</section>
+<section id="implementation-files">
+<h2>Implementation Files<a class="headerlink" href="#implementation-files" title="Link to this heading"></a></h2>
+<section id="error-cpp">
+<h3>error.cpp<a class="headerlink" href="#error-cpp" title="Link to this heading"></a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="error_8cpp_1a5ad5e023f34da8b98e088da72c1b3744"></span><a class="reference internal" href="classes.html#_CPPv414ConverterError" title="ConverterError"><span class="n"><span class="pre">ConverterError</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avifToConverterError</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">avifResult</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Converts an AVIF library error code to a <a class="reference internal" href="library_root.html#error_8h_1ae34bfe75944861aa76edbf308eaeedc4"><span class="std std-ref">ConverterError</span></a>. </p>
+<p>Maps the native AVIF library error codes to the application’s error enum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>result</strong> – AVIF library result code </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Equivalent <a class="reference internal" href="library_root.html#error_8h_1ae34bfe75944861aa76edbf308eaeedc4"><span class="std std-ref">ConverterError</span></a> code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="error_8cpp_1a0ef438c9db81c195e8b44bab972a415c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getErrorMessage</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classes.html#_CPPv414ConverterError" title="ConverterError"><span class="n"><span class="pre">ConverterError</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">error</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get a human-readable error message for an error code. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>error</strong> – <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> code to get the message for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Standard error message for the given code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="error_8cpp_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4"></span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toJsError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv45Error" title="Error"><span class="n"><span class="pre">Error</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Convert a C++ <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> object to a JavaScript error object. </p>
+<p>Creates a JavaScript error object with properties for code, message, and stackTrace suitable for returning to JavaScript code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The C++ <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a> object to convert </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JavaScript object representing the error </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</section>
+<section id="bind-cpp">
+<h3>bind.cpp<a class="headerlink" href="#bind-cpp" title="Link to this heading"></a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419EMSCRIPTEN_BINDINGS11ImageBuffer">
+<span id="_CPPv319EMSCRIPTEN_BINDINGS11ImageBuffer"></span><span id="_CPPv219EMSCRIPTEN_BINDINGS11ImageBuffer"></span><span id="EMSCRIPTEN_BINDINGS__ImageBuffer"></span><span class="target" id="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab"></span><span class="sig-name descname"><span class="n"><span class="pre">EMSCRIPTEN_BINDINGS</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classes.html#_CPPv411ImageBuffer" title="ImageBuffer"><span class="n"><span class="pre">ImageBuffer</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419EMSCRIPTEN_BINDINGS11ImageBuffer" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419EMSCRIPTEN_BINDINGS14ImageConverter">
+<span id="_CPPv319EMSCRIPTEN_BINDINGS14ImageConverter"></span><span id="_CPPv219EMSCRIPTEN_BINDINGS14ImageConverter"></span><span id="EMSCRIPTEN_BINDINGS__ImageConverter"></span><span class="target" id="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9"></span><span class="sig-name descname"><span class="n"><span class="pre">EMSCRIPTEN_BINDINGS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ImageConverter</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419EMSCRIPTEN_BINDINGS14ImageConverter" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419EMSCRIPTEN_BINDINGS10avif_enums">
+<span id="_CPPv319EMSCRIPTEN_BINDINGS10avif_enums"></span><span id="_CPPv219EMSCRIPTEN_BINDINGS10avif_enums"></span><span id="EMSCRIPTEN_BINDINGS__avif_enums"></span><span class="target" id="bind_8cpp_1acc71d87100b55443e2c7407f017e8e81"></span><span class="sig-name descname"><span class="n"><span class="pre">EMSCRIPTEN_BINDINGS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">avif_enums</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419EMSCRIPTEN_BINDINGS10avif_enums" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419EMSCRIPTEN_BINDINGS13ErrorHandling">
+<span id="_CPPv319EMSCRIPTEN_BINDINGS13ErrorHandling"></span><span id="_CPPv219EMSCRIPTEN_BINDINGS13ErrorHandling"></span><span id="EMSCRIPTEN_BINDINGS__ErrorHandling"></span><span class="target" id="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1"></span><span class="sig-name descname"><span class="n"><span class="pre">EMSCRIPTEN_BINDINGS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ErrorHandling</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419EMSCRIPTEN_BINDINGS13ErrorHandling" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</section>
+<section id="imageconverter-cpp">
+<h3>imageconverter.cpp<a class="headerlink" href="#imageconverter-cpp" title="Link to this heading"></a></h3>
+<p>Implementation of image conversion functionality to AVIF format. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>ConvAvif Developer </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2025 </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="imageconverter_8cpp_1ad6ba1bd00ba7d9e8f381d223af9f4343"></span><a class="reference internal" href="#_CPPv46Result" title="Result"><span class="n"><span class="pre">Result</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convert_image</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49ImageType" title="ImageType"><span class="n"><span class="pre">ImageType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input_data</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv412EncodeConfig" title="EncodeConfig"><span class="n"><span class="pre">EncodeConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Converts an image to AVIF format with specified parameters. </p>
+<p>This function handles the complete conversion pipeline:<ol class="loweralpha simple">
+<li><p>Validates input dimensions</p></li>
+<li><p>Loads and decodes input image data</p></li>
+<li><p>Resizes image if necessary</p></li>
+<li><p>Configures the AVIF encoder based on provided settings</p></li>
+<li><p>Converts RGB data to YUV colorspace</p></li>
+<li><p>Encodes image to AVIF format</p></li>
+</ol>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> – The type of input image (e.g., PNG, JPEG) </p></li>
+<li><p><strong>input_data</strong> – Vector containing the raw image data </p></li>
+<li><p><strong>width</strong> – Desired width of the output image </p></li>
+<li><p><strong>height</strong> – Desired height of the output image </p></li>
+<li><p><strong>config</strong> – Encoding configuration parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="library_root.html#result_8h_1a9cf14801ef7f9742ef6de61e4316676d"><span class="std std-ref">Result</span></a> object containing either the encoded image data or an <a class="reference internal" href="library_root.html#classError"><span class="std std-ref">Error</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="imageconverter_8cpp_1a739d2db06147b652cbc5145fb97925d5"></span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convertImageDirect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">jsData</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classes.html#_CPPv412EncodeConfig" title="EncodeConfig"><span class="n"><span class="pre">EncodeConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>JavaScript binding wrapper for image conversion. </p>
+<p>This function:<ol class="loweralpha simple">
+<li><p>Converts JavaScript data to C++ vector</p></li>
+<li><p>Detects the image type</p></li>
+<li><p>Validates the image can be processed</p></li>
+<li><p>Calls convert_image to perform the actual conversion</p></li>
+<li><p>Returns JavaScript object with result</p></li>
+</ol>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jsData</strong> – JavaScript array/TypedArray containing image data </p></li>
+<li><p><strong>width</strong> – Desired width of the output image </p></li>
+<li><p><strong>height</strong> – Desired height of the output image </p></li>
+<li><p><strong>config</strong> – Encoding configuration parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JavaScript object containing either the encoded image buffer or error information </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv410Uint8Array">
+<span id="_CPPv310Uint8Array"></span><span id="_CPPv210Uint8Array"></span><span id="Uint8Array__emscripten::valC"></span><span class="target" id="imageconverter_8cpp_1a0e3d823db0d3ab0b3d9d8848a37b66f3"></span><span class="k"><span class="pre">thread_local</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Uint8Array</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">emscripten</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">global</span></span><span class="p"><span class="pre">(</span></span><span class="s"><span class="pre">&quot;Uint8Array&quot;</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv410Uint8Array" title="Link to this definition"></a><br /></dt>
+<dd><p>Thread-local Uint8Array reference from JavaScript. </p>
+<p>Used for efficient data transfer between C++ and JavaScript </p>
+</dd></dl>
+
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classes.html" class="btn btn-neutral float-left" title="Classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="namespaces.html" class="btn btn-neutral float-right" title="Namespaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, ConvAvif Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
 </body>
 </html>

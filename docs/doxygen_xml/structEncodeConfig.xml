@@ -1,0 +1,963 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structEncodeConfig" kind="struct" language="C++" prot="public">
+    <compoundname>EncodeConfig</compoundname>
+    <includes refid="encoder__config_8h" local="no">encoder_config.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EncodeConfig::quality</definition>
+        <argsstring></argsstring>
+        <name>quality</name>
+        <qualifiedname>EncodeConfig::quality</qualifiedname>
+        <initializer>= 30</initializer>
+        <briefdescription>
+<para>Quality value (0-100, higher is better quality) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="213" column="7" bodyfile="include/encoder_config.h" bodystart="213" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1a1e0dc7eca05d0af1d76b0ed56881a18b" compoundref="encoder__config_8h" startline="268" endline="268">getQuality</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357" compoundref="encoder__config_8h" startline="232" endline="232">setQuality</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EncodeConfig::qualityAlpha</definition>
+        <argsstring></argsstring>
+        <name>qualityAlpha</name>
+        <qualifiedname>EncodeConfig::qualityAlpha</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>Alpha channel quality (-1 means use quality value) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="214" column="7" bodyfile="include/encoder_config.h" bodystart="214" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EncodeConfig::sharpness</definition>
+        <argsstring></argsstring>
+        <name>sharpness</name>
+        <qualifiedname>EncodeConfig::sharpness</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Sharpness filter strength (0-7) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="216" column="7" bodyfile="include/encoder_config.h" bodystart="216" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="structEncodeConfig_1a7367ff60ebe464c9eae16c7678ded332" compoundref="encoder__config_8h" startline="298" endline="298">getSharpness</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1aecd3fadd3f5433e4e87457839afeba23" compoundref="encoder__config_8h" startline="262" endline="262">setSharpness</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" prot="public" static="no" mutable="no">
+        <type>avifPixelFormat</type>
+        <definition>avifPixelFormat EncodeConfig::pixelFormat</definition>
+        <argsstring></argsstring>
+        <name>pixelFormat</name>
+        <qualifiedname>EncodeConfig::pixelFormat</qualifiedname>
+        <initializer>= AVIF_PIXEL_FORMAT_YUV420</initializer>
+        <briefdescription>
+<para>YUV pixel format. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="217" column="19" bodyfile="include/encoder_config.h" bodystart="217" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" prot="public" static="no" mutable="no">
+        <type><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2" kindref="member">CodecChoice</ref></type>
+        <definition>CodecChoice EncodeConfig::codecChoice</definition>
+        <argsstring></argsstring>
+        <name>codecChoice</name>
+        <qualifiedname>EncodeConfig::codecChoice</qualifiedname>
+        <briefdescription>
+<para>Selected codec (AOM, SVT, AUTO) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="218" column="15" bodyfile="include/encoder_config.h" bodystart="218" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1a282e07fde01ba67dc2018b6d86bd9f26" compoundref="encoder__config_8h" startline="341" endline="341">getCodecChoice</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" compoundref="encoder__config_8h" startline="347" endline="350">setCodecChoice</referencedby>
+        <referencedby refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" compoundref="encoder__config_8h" startline="310" endline="313">setPreset</referencedby>
+        <referencedby refid="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" compoundref="encoder__config_8h" startline="327" endline="335">updateSpeed</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b" prot="public" static="no" mutable="no">
+        <type><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref></type>
+        <definition>SpeedPreset EncodeConfig::preset</definition>
+        <argsstring></argsstring>
+        <name>preset</name>
+        <qualifiedname>EncodeConfig::preset</qualifiedname>
+        <briefdescription>
+<para><ref refid="structSpeed" kindref="compound">Speed</ref> preset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="219" column="15" bodyfile="include/encoder_config.h" bodystart="219" bodyend="-1"/>
+        <referencedby refid="structEncodeConfig_1aee7530598b42b2a7cd315834ebdce54f" compoundref="encoder__config_8h" startline="319" endline="319">getPreset</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" compoundref="encoder__config_8h" startline="347" endline="350">setCodecChoice</referencedby>
+        <referencedby refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" compoundref="encoder__config_8h" startline="310" endline="313">setPreset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EncodeConfig::minQuantizer</definition>
+        <argsstring></argsstring>
+        <name>minQuantizer</name>
+        <qualifiedname>EncodeConfig::minQuantizer</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>Minimum quantizer (0-63, -1 for default) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="221" column="7" bodyfile="include/encoder_config.h" bodystart="221" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1abbc70deea92ee3d6281d4bf9e8719a79" compoundref="encoder__config_8h" startline="274" endline="274">getMinQuantizer</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3" compoundref="encoder__config_8h" startline="238" endline="238">setMinQuantizer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EncodeConfig::maxQuantizer</definition>
+        <argsstring></argsstring>
+        <name>maxQuantizer</name>
+        <qualifiedname>EncodeConfig::maxQuantizer</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>Maximum quantizer (0-63, -1 for default) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="222" column="7" bodyfile="include/encoder_config.h" bodystart="222" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1a862e39ee31543db2398aa54b41d5ce53" compoundref="encoder__config_8h" startline="280" endline="280">getMaxQuantizer</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab" compoundref="encoder__config_8h" startline="244" endline="244">setMaxQuantizer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EncodeConfig::tileRowsLog2</definition>
+        <argsstring></argsstring>
+        <name>tileRowsLog2</name>
+        <qualifiedname>EncodeConfig::tileRowsLog2</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Log2 of tile rows (0 = 1 tile row, 1 = 2 rows, etc) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="223" column="7" bodyfile="include/encoder_config.h" bodystart="223" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1ad801a3a45fcf41d5b15778d6134e8af6" compoundref="encoder__config_8h" startline="286" endline="286">getTileRowsLog2</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe" compoundref="encoder__config_8h" startline="250" endline="250">setTileRowsLog2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EncodeConfig::tileColsLog2</definition>
+        <argsstring></argsstring>
+        <name>tileColsLog2</name>
+        <qualifiedname>EncodeConfig::tileColsLog2</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Log2 of tile columns. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="224" column="7" bodyfile="include/encoder_config.h" bodystart="224" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1a7bc6672173171422aa86af1d0b98e5fc" compoundref="encoder__config_8h" startline="292" endline="292">getTileColsLog2</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878" compoundref="encoder__config_8h" startline="256" endline="256">setTileColsLog2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" prot="public" static="no" mutable="no">
+        <type><ref refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3a" kindref="member">Tune</ref></type>
+        <definition>Tune EncodeConfig::tune</definition>
+        <argsstring></argsstring>
+        <name>tune</name>
+        <qualifiedname>EncodeConfig::tune</qualifiedname>
+        <initializer>= <ref refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa268c098dd4ed280b44814cb3626651b6" kindref="member">Tune::TUNE_DEFAULT</ref></initializer>
+        <briefdescription>
+<para>Encoder tuning option. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="226" column="8" bodyfile="include/encoder_config.h" bodystart="226" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" prot="private" static="no" mutable="no">
+        <type><ref refid="structSpeed" kindref="compound">Speed</ref></type>
+        <definition>Speed EncodeConfig::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <qualifiedname>EncodeConfig::speed</qualifiedname>
+        <initializer>= <ref refid="structSpeed" kindref="compound">Speed</ref>(<ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" kindref="member">CodecChoice::AOM</ref>, <ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7a0c6ad70beb3a7e76c3fc7adab7c46acc" kindref="member">SpeedPreset::Good</ref>)</initializer>
+        <briefdescription>
+<para><ref refid="structSpeed" kindref="compound">Speed</ref> settings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="376" column="9" bodyfile="include/encoder_config.h" bodystart="376" bodyend="-1"/>
+        <referencedby refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" compoundref="encoder__config_8h" startline="304" endline="304">getSpeed</referencedby>
+        <referencedby refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">printConfig</referencedby>
+        <referencedby refid="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" compoundref="encoder__config_8h" startline="347" endline="350">setCodecChoice</referencedby>
+        <referencedby refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" compoundref="encoder__config_8h" startline="310" endline="313">setPreset</referencedby>
+        <referencedby refid="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" compoundref="encoder__config_8h" startline="327" endline="335">updateSpeed</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structEncodeConfig_1afe94310735c47f3bff7130a0c6c5bf46" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::validatedQuality</definition>
+        <argsstring>(int q) const</argsstring>
+        <name>validatedQuality</name>
+        <qualifiedname>EncodeConfig::validatedQuality</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Validate and clamp quality value to valid range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quality value to validate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Clamped quality value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="185" column="7" bodyfile="include/encoder_config.h" bodystart="185" bodyend="185"/>
+        <references refid="constants_8h_1ae5f45d70a0eedde96102b5e8dbad6e53" compoundref="constants_8h" startline="40">MAX_QUALITY</references>
+        <referencedby refid="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357" compoundref="encoder__config_8h" startline="232" endline="232">setQuality</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1ae626c1aebfacf14b2daf53461df7af81" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::validatedQuantizer</definition>
+        <argsstring>(int q) const</argsstring>
+        <name>validatedQuantizer</name>
+        <qualifiedname>EncodeConfig::validatedQuantizer</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Validate and clamp quantizer value to valid range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quantizer value to validate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Clamped quantizer value or -1 if default value is specified </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="192" column="7" bodyfile="include/encoder_config.h" bodystart="192" bodyend="194"/>
+        <references refid="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" compoundref="constants_8h" startline="48">MAX_QUANTIZER</references>
+        <referencedby refid="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab" compoundref="encoder__config_8h" startline="244" endline="244">setMaxQuantizer</referencedby>
+        <referencedby refid="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3" compoundref="encoder__config_8h" startline="238" endline="238">setMinQuantizer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a22817009cb293eb8bb0b7a03be85e080" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::validatedTileLog2</definition>
+        <argsstring>(int t) const</argsstring>
+        <name>validatedTileLog2</name>
+        <qualifiedname>EncodeConfig::validatedTileLog2</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Validate and clamp tile log2 value to valid range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tile log2 value to validate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Clamped tile log2 value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="201" column="7" bodyfile="include/encoder_config.h" bodystart="201" bodyend="201"/>
+        <references refid="constants_8h_1a5d199cfd82019c3f1492ea53e0147c4f" compoundref="constants_8h" startline="55">MAX_TILE_LOG2</references>
+        <referencedby refid="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878" compoundref="encoder__config_8h" startline="256" endline="256">setTileColsLog2</referencedby>
+        <referencedby refid="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe" compoundref="encoder__config_8h" startline="250" endline="250">setTileRowsLog2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1afd40635e79ff8f9851cfa0ef79a3d12f" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::validatedSharpness</definition>
+        <argsstring>(int s) const</argsstring>
+        <name>validatedSharpness</name>
+        <qualifiedname>EncodeConfig::validatedSharpness</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Validate and clamp sharpness value to valid range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sharpness value to validate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Clamped sharpness value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="208" column="7" bodyfile="include/encoder_config.h" bodystart="208" bodyend="210"/>
+        <references refid="constants_8h_1aee1922493f64795bd542968d022aa99a" compoundref="constants_8h" startline="62">MAX_SHARPNESS</references>
+        <referencedby refid="structEncodeConfig_1aecd3fadd3f5433e4e87457839afeba23" compoundref="encoder__config_8h" startline="262" endline="262">setSharpness</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setQuality</definition>
+        <argsstring>(int q)</argsstring>
+        <name>setQuality</name>
+        <qualifiedname>EncodeConfig::setQuality</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Set the quality value with validation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New quality value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="232" column="8" bodyfile="include/encoder_config.h" bodystart="232" bodyend="232"/>
+        <references refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" compoundref="encoder__config_8h" startline="213">quality</references>
+        <references refid="structEncodeConfig_1afe94310735c47f3bff7130a0c6c5bf46" compoundref="encoder__config_8h" startline="185" endline="185">validatedQuality</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setMinQuantizer</definition>
+        <argsstring>(int q)</argsstring>
+        <name>setMinQuantizer</name>
+        <qualifiedname>EncodeConfig::setMinQuantizer</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Set the minimum quantizer value with validation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New minimum quantizer value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="238" column="8" bodyfile="include/encoder_config.h" bodystart="238" bodyend="238"/>
+        <references refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" compoundref="encoder__config_8h" startline="221">minQuantizer</references>
+        <references refid="structEncodeConfig_1ae626c1aebfacf14b2daf53461df7af81" compoundref="encoder__config_8h" startline="192" endline="194">validatedQuantizer</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setMaxQuantizer</definition>
+        <argsstring>(int q)</argsstring>
+        <name>setMaxQuantizer</name>
+        <qualifiedname>EncodeConfig::setMaxQuantizer</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Set the maximum quantizer value with validation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New maximum quantizer value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="244" column="8" bodyfile="include/encoder_config.h" bodystart="244" bodyend="244"/>
+        <references refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" compoundref="encoder__config_8h" startline="222">maxQuantizer</references>
+        <references refid="structEncodeConfig_1ae626c1aebfacf14b2daf53461df7af81" compoundref="encoder__config_8h" startline="192" endline="194">validatedQuantizer</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setTileRowsLog2</definition>
+        <argsstring>(int t)</argsstring>
+        <name>setTileRowsLog2</name>
+        <qualifiedname>EncodeConfig::setTileRowsLog2</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Set the tile rows log2 value with validation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New tile rows log2 value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="250" column="8" bodyfile="include/encoder_config.h" bodystart="250" bodyend="250"/>
+        <references refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" compoundref="encoder__config_8h" startline="223">tileRowsLog2</references>
+        <references refid="structEncodeConfig_1a22817009cb293eb8bb0b7a03be85e080" compoundref="encoder__config_8h" startline="201" endline="201">validatedTileLog2</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setTileColsLog2</definition>
+        <argsstring>(int t)</argsstring>
+        <name>setTileColsLog2</name>
+        <qualifiedname>EncodeConfig::setTileColsLog2</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Set the tile columns log2 value with validation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New tile columns log2 value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="256" column="8" bodyfile="include/encoder_config.h" bodystart="256" bodyend="256"/>
+        <references refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" compoundref="encoder__config_8h" startline="224">tileColsLog2</references>
+        <references refid="structEncodeConfig_1a22817009cb293eb8bb0b7a03be85e080" compoundref="encoder__config_8h" startline="201" endline="201">validatedTileLog2</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1aecd3fadd3f5433e4e87457839afeba23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setSharpness</definition>
+        <argsstring>(int s)</argsstring>
+        <name>setSharpness</name>
+        <qualifiedname>EncodeConfig::setSharpness</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Set the sharpness value with validation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New sharpness value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="262" column="8" bodyfile="include/encoder_config.h" bodystart="262" bodyend="262"/>
+        <references refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" compoundref="encoder__config_8h" startline="216">sharpness</references>
+        <references refid="structEncodeConfig_1afd40635e79ff8f9851cfa0ef79a3d12f" compoundref="encoder__config_8h" startline="208" endline="210">validatedSharpness</references>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a1e0dc7eca05d0af1d76b0ed56881a18b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::getQuality</definition>
+        <argsstring>() const</argsstring>
+        <name>getQuality</name>
+        <qualifiedname>EncodeConfig::getQuality</qualifiedname>
+        <briefdescription>
+<para>Get the current quality value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current quality value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="268" column="7" bodyfile="include/encoder_config.h" bodystart="268" bodyend="268"/>
+        <references refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" compoundref="encoder__config_8h" startline="213">quality</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1abbc70deea92ee3d6281d4bf9e8719a79" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::getMinQuantizer</definition>
+        <argsstring>() const</argsstring>
+        <name>getMinQuantizer</name>
+        <qualifiedname>EncodeConfig::getMinQuantizer</qualifiedname>
+        <briefdescription>
+<para>Get the current minimum quantizer value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current minimum quantizer value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="274" column="7" bodyfile="include/encoder_config.h" bodystart="274" bodyend="274"/>
+        <references refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" compoundref="encoder__config_8h" startline="221">minQuantizer</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a862e39ee31543db2398aa54b41d5ce53" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::getMaxQuantizer</definition>
+        <argsstring>() const</argsstring>
+        <name>getMaxQuantizer</name>
+        <qualifiedname>EncodeConfig::getMaxQuantizer</qualifiedname>
+        <briefdescription>
+<para>Get the current maximum quantizer value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current maximum quantizer value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="280" column="7" bodyfile="include/encoder_config.h" bodystart="280" bodyend="280"/>
+        <references refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" compoundref="encoder__config_8h" startline="222">maxQuantizer</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1ad801a3a45fcf41d5b15778d6134e8af6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::getTileRowsLog2</definition>
+        <argsstring>() const</argsstring>
+        <name>getTileRowsLog2</name>
+        <qualifiedname>EncodeConfig::getTileRowsLog2</qualifiedname>
+        <briefdescription>
+<para>Get the current tile rows log2 value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current tile rows log2 value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="286" column="7" bodyfile="include/encoder_config.h" bodystart="286" bodyend="286"/>
+        <references refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" compoundref="encoder__config_8h" startline="223">tileRowsLog2</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a7bc6672173171422aa86af1d0b98e5fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::getTileColsLog2</definition>
+        <argsstring>() const</argsstring>
+        <name>getTileColsLog2</name>
+        <qualifiedname>EncodeConfig::getTileColsLog2</qualifiedname>
+        <briefdescription>
+<para>Get the current tile columns log2 value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current tile columns log2 value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="292" column="7" bodyfile="include/encoder_config.h" bodystart="292" bodyend="292"/>
+        <references refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" compoundref="encoder__config_8h" startline="224">tileColsLog2</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a7367ff60ebe464c9eae16c7678ded332" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::getSharpness</definition>
+        <argsstring>() const</argsstring>
+        <name>getSharpness</name>
+        <qualifiedname>EncodeConfig::getSharpness</qualifiedname>
+        <briefdescription>
+<para>Get the current sharpness value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current sharpness value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="298" column="7" bodyfile="include/encoder_config.h" bodystart="298" bodyend="298"/>
+        <references refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" compoundref="encoder__config_8h" startline="216">sharpness</references>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EncodeConfig::getSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>getSpeed</name>
+        <qualifiedname>EncodeConfig::getSpeed</qualifiedname>
+        <briefdescription>
+<para>Get the current speed value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current speed value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="304" column="7" bodyfile="include/encoder_config.h" bodystart="304" bodyend="304"/>
+        <references refid="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" compoundref="encoder__config_8h" startline="376">speed</references>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setPreset</definition>
+        <argsstring>(SpeedPreset newPreset)</argsstring>
+        <name>setPreset</name>
+        <qualifiedname>EncodeConfig::setPreset</qualifiedname>
+        <param>
+          <type><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref></type>
+          <declname>newPreset</declname>
+        </param>
+        <briefdescription>
+<para>Set a new speed preset and update speed settings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newPreset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New speed preset </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="310" column="8" bodyfile="include/encoder_config.h" bodystart="310" bodyend="313"/>
+        <references refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" compoundref="encoder__config_8h" startline="218">codecChoice</references>
+        <references refid="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b" compoundref="encoder__config_8h" startline="219">preset</references>
+        <references refid="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" compoundref="encoder__config_8h" startline="376">speed</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" compoundref="encoder__config_8h" startline="327" endline="335">updateSpeed</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1aee7530598b42b2a7cd315834ebdce54f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref></type>
+        <definition>SpeedPreset EncodeConfig::getPreset</definition>
+        <argsstring>() const</argsstring>
+        <name>getPreset</name>
+        <qualifiedname>EncodeConfig::getPreset</qualifiedname>
+        <briefdescription>
+<para>Get the current speed preset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current speed preset </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="319" column="15" bodyfile="include/encoder_config.h" bodystart="319" bodyend="319"/>
+        <references refid="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b" compoundref="encoder__config_8h" startline="219">preset</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::updateSpeed</definition>
+        <argsstring>(int new_speed, SpeedPreset newPreset)</argsstring>
+        <name>updateSpeed</name>
+        <qualifiedname>EncodeConfig::updateSpeed</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>new_speed</declname>
+        </param>
+        <param>
+          <type><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref></type>
+          <declname>newPreset</declname>
+        </param>
+        <briefdescription>
+<para>Update speed settings with new values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New speed value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newPreset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New speed preset </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="327" column="8" bodyfile="include/encoder_config.h" bodystart="327" bodyend="335"/>
+        <references refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" compoundref="encoder__config_8h" startline="218">codecChoice</references>
+        <references refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" compoundref="encoder__config_8h" startline="310" endline="313">setPreset</references>
+        <references refid="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" compoundref="encoder__config_8h" startline="376">speed</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a282e07fde01ba67dc2018b6d86bd9f26" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2" kindref="member">CodecChoice</ref></type>
+        <definition>CodecChoice EncodeConfig::getCodecChoice</definition>
+        <argsstring>() const</argsstring>
+        <name>getCodecChoice</name>
+        <qualifiedname>EncodeConfig::getCodecChoice</qualifiedname>
+        <briefdescription>
+<para>Get the current codec choice. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current codec choice </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="341" column="15" bodyfile="include/encoder_config.h" bodystart="341" bodyend="341"/>
+        <references refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" compoundref="encoder__config_8h" startline="218">codecChoice</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::setCodecChoice</definition>
+        <argsstring>(CodecChoice choice)</argsstring>
+        <name>setCodecChoice</name>
+        <qualifiedname>EncodeConfig::setCodecChoice</qualifiedname>
+        <param>
+          <type><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2" kindref="member">CodecChoice</ref></type>
+          <declname>choice</declname>
+        </param>
+        <briefdescription>
+<para>Set a new codec choice and update speed settings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>choice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New codec choice </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="347" column="8" bodyfile="include/encoder_config.h" bodystart="347" bodyend="350"/>
+        <references refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" compoundref="encoder__config_8h" startline="218">codecChoice</references>
+        <references refid="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b" compoundref="encoder__config_8h" startline="219">preset</references>
+        <references refid="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" compoundref="encoder__config_8h" startline="376">speed</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodeConfig::printConfig</definition>
+        <argsstring>() const</argsstring>
+        <name>printConfig</name>
+        <qualifiedname>EncodeConfig::printConfig</qualifiedname>
+        <briefdescription>
+<para>Print the current configuration to stdout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Useful for debugging and logging purposes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="357" column="8" bodyfile="include/encoder_config.h" bodystart="357" bodyend="373"/>
+        <references refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" compoundref="encoder__config_8h" startline="218">codecChoice</references>
+        <references refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" compoundref="encoder__config_8h" startline="222">maxQuantizer</references>
+        <references refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" compoundref="encoder__config_8h" startline="221">minQuantizer</references>
+        <references refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" compoundref="encoder__config_8h" startline="217">pixelFormat</references>
+        <references refid="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b" compoundref="encoder__config_8h" startline="219">preset</references>
+        <references refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" compoundref="encoder__config_8h" startline="213">quality</references>
+        <references refid="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" compoundref="encoder__config_8h" startline="214">qualityAlpha</references>
+        <references refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" compoundref="encoder__config_8h" startline="216">sharpness</references>
+        <references refid="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" compoundref="encoder__config_8h" startline="376">speed</references>
+        <references refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" compoundref="encoder__config_8h" startline="224">tileColsLog2</references>
+        <references refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" compoundref="encoder__config_8h" startline="223">tileRowsLog2</references>
+        <references refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" compoundref="encoder__config_8h" startline="226">tune</references>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Main configuration structure for AVIF encoding. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This structure contains all the parameters that control the AVIF encoding process, including quality settings, codec choice, and various encoder-specific parameters. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>EncodeConfig</label>
+        <link refid="structEncodeConfig"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>speed</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Speed</label>
+        <link refid="structSpeed"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>speed_range</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SpeedRange</label>
+        <link refid="structSpeedRange"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/encoder_config.h" line="178" column="1" bodyfile="include/encoder_config.h" bodystart="178" bodyend="377"/>
+    <listofallmembers>
+      <member refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>codecChoice</name></member>
+      <member refid="structEncodeConfig_1a282e07fde01ba67dc2018b6d86bd9f26" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getCodecChoice</name></member>
+      <member refid="structEncodeConfig_1a862e39ee31543db2398aa54b41d5ce53" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getMaxQuantizer</name></member>
+      <member refid="structEncodeConfig_1abbc70deea92ee3d6281d4bf9e8719a79" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getMinQuantizer</name></member>
+      <member refid="structEncodeConfig_1aee7530598b42b2a7cd315834ebdce54f" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getPreset</name></member>
+      <member refid="structEncodeConfig_1a1e0dc7eca05d0af1d76b0ed56881a18b" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getQuality</name></member>
+      <member refid="structEncodeConfig_1a7367ff60ebe464c9eae16c7678ded332" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getSharpness</name></member>
+      <member refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getSpeed</name></member>
+      <member refid="structEncodeConfig_1a7bc6672173171422aa86af1d0b98e5fc" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getTileColsLog2</name></member>
+      <member refid="structEncodeConfig_1ad801a3a45fcf41d5b15778d6134e8af6" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>getTileRowsLog2</name></member>
+      <member refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>maxQuantizer</name></member>
+      <member refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>minQuantizer</name></member>
+      <member refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>pixelFormat</name></member>
+      <member refid="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>preset</name></member>
+      <member refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>printConfig</name></member>
+      <member refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>quality</name></member>
+      <member refid="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>qualityAlpha</name></member>
+      <member refid="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setCodecChoice</name></member>
+      <member refid="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setMaxQuantizer</name></member>
+      <member refid="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setMinQuantizer</name></member>
+      <member refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setPreset</name></member>
+      <member refid="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setQuality</name></member>
+      <member refid="structEncodeConfig_1aecd3fadd3f5433e4e87457839afeba23" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setSharpness</name></member>
+      <member refid="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setTileColsLog2</name></member>
+      <member refid="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>setTileRowsLog2</name></member>
+      <member refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>sharpness</name></member>
+      <member refid="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" prot="private" virt="non-virtual"><scope>EncodeConfig</scope><name>speed</name></member>
+      <member refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>tileColsLog2</name></member>
+      <member refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>tileRowsLog2</name></member>
+      <member refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>tune</name></member>
+      <member refid="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" prot="public" virt="non-virtual"><scope>EncodeConfig</scope><name>updateSpeed</name></member>
+      <member refid="structEncodeConfig_1afe94310735c47f3bff7130a0c6c5bf46" prot="private" virt="non-virtual"><scope>EncodeConfig</scope><name>validatedQuality</name></member>
+      <member refid="structEncodeConfig_1ae626c1aebfacf14b2daf53461df7af81" prot="private" virt="non-virtual"><scope>EncodeConfig</scope><name>validatedQuantizer</name></member>
+      <member refid="structEncodeConfig_1afd40635e79ff8f9851cfa0ef79a3d12f" prot="private" virt="non-virtual"><scope>EncodeConfig</scope><name>validatedSharpness</name></member>
+      <member refid="structEncodeConfig_1a22817009cb293eb8bb0b7a03be85e080" prot="private" virt="non-virtual"><scope>EncodeConfig</scope><name>validatedTileLog2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

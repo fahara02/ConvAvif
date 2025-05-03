@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structSpeedRange" kind="struct" language="C++" prot="public">
+    <compoundname>SpeedRange</compoundname>
+    <includes refid="encoder__config_8h" local="no">encoder_config.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSpeedRange_1a210659c016cbaf56e19fd770bb292a19" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpeedRange::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <qualifiedname>SpeedRange::min</qualifiedname>
+        <briefdescription>
+<para>Minimum valid speed value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="50" column="7" bodyfile="include/encoder_config.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structSpeedRange_1ab7968f05a57de473488be534a6f849ce" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpeedRange::max</definition>
+        <argsstring></argsstring>
+        <name>max</name>
+        <qualifiedname>SpeedRange::max</qualifiedname>
+        <briefdescription>
+<para>Maximum valid speed value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="51" column="7" bodyfile="include/encoder_config.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Structure to define the range of valid speed values. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/encoder_config.h" line="49" column="1" bodyfile="include/encoder_config.h" bodystart="49" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structSpeedRange_1ab7968f05a57de473488be534a6f849ce" prot="public" virt="non-virtual"><scope>SpeedRange</scope><name>max</name></member>
+      <member refid="structSpeedRange_1a210659c016cbaf56e19fd770bb292a19" prot="public" virt="non-virtual"><scope>SpeedRange</scope><name>min</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

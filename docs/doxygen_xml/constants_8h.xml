@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="constants_8h" kind="file" language="C++">
+    <compoundname>constants.h</compoundname>
+    <includedby refid="encoder__config_8h" local="yes">include/encoder_config.h</includedby>
+    <includedby refid="imageconverter_8h" local="yes">include/imageconverter.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/encoder_config.h</label>
+        <link refid="encoder__config_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/bind.cpp</label>
+        <link refid="bind_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/imageconverter.cpp</label>
+        <link refid="imageconverter_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int RGB_DEPTH</definition>
+        <argsstring></argsstring>
+        <name>RGB_DEPTH</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Bit depth for RGB image processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Standard 8-bit per channel depth used for input/output RGB images </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/constants.h" line="19" column="22" bodyfile="include/constants.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1a39ec4a5ee2aa5355e76e11311159f06c" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int MIN_SPEED</definition>
+        <argsstring></argsstring>
+        <name>MIN_SPEED</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Minimum encoder speed setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Slowest speed setting (best quality, highest compression) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/constants.h" line="26" column="22" bodyfile="include/constants.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1a5ddf2283d980402c15e157a865fe3c1c" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int MAX_SPEED</definition>
+        <argsstring></argsstring>
+        <name>MAX_SPEED</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+<para>Maximum encoder speed setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Fastest speed setting (lowest quality, fastest encoding) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/constants.h" line="33" column="22" bodyfile="include/constants.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1ae5f45d70a0eedde96102b5e8dbad6e53" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int MAX_QUALITY</definition>
+        <argsstring></argsstring>
+        <name>MAX_QUALITY</name>
+        <initializer>= 99</initializer>
+        <briefdescription>
+<para>Maximum quality value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Highest possible quality setting (99 out of 100) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/constants.h" line="40" column="22" bodyfile="include/constants.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="structEncodeConfig_1afe94310735c47f3bff7130a0c6c5bf46" compoundref="encoder__config_8h" startline="185" endline="185">EncodeConfig::validatedQuality</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int MAX_QUANTIZER</definition>
+        <argsstring></argsstring>
+        <name>MAX_QUANTIZER</name>
+        <initializer>= 63</initializer>
+        <briefdescription>
+<para>Maximum quantizer value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Highest quantizer value for the encoder (63) Higher values mean lower quality but better compression </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/constants.h" line="48" column="22" bodyfile="include/constants.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="structEncodeConfig_1ae626c1aebfacf14b2daf53461df7af81" compoundref="encoder__config_8h" startline="192" endline="194">EncodeConfig::validatedQuantizer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1a5d199cfd82019c3f1492ea53e0147c4f" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int MAX_TILE_LOG2</definition>
+        <argsstring></argsstring>
+        <name>MAX_TILE_LOG2</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>Maximum tile log2 value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls maximum number of tiles as 2^MAX_TILE_LOG2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/constants.h" line="55" column="22" bodyfile="include/constants.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="structEncodeConfig_1a22817009cb293eb8bb0b7a03be85e080" compoundref="encoder__config_8h" startline="201" endline="201">EncodeConfig::validatedTileLog2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1aee1922493f64795bd542968d022aa99a" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int MAX_SHARPNESS</definition>
+        <argsstring></argsstring>
+        <name>MAX_SHARPNESS</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+<para>Maximum sharpness filter value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls the strength of the sharpness filter (0-7) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/constants.h" line="62" column="22" bodyfile="include/constants.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="structEncodeConfig_1afd40635e79ff8f9851cfa0ef79a3d12f" compoundref="encoder__config_8h" startline="208" endline="210">EncodeConfig::validatedSharpness</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Global constants used throughout the ConvAvif project. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>ConvAvif Developer </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+This file defines the key constant values used for image conversion configuration, including RGB depth, quality ranges, and encoder-specific parameter limits. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONSTANTS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONSTANTS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" kindref="member">RGB_DEPTH</ref><sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="constants_8h_1a39ec4a5ee2aa5355e76e11311159f06c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1a39ec4a5ee2aa5355e76e11311159f06c" kindref="member">MIN_SPEED</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="constants_8h_1a5ddf2283d980402c15e157a865fe3c1c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1a5ddf2283d980402c15e157a865fe3c1c" kindref="member">MAX_SPEED</ref><sp/>=<sp/>9;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="constants_8h_1ae5f45d70a0eedde96102b5e8dbad6e53" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1ae5f45d70a0eedde96102b5e8dbad6e53" kindref="member">MAX_QUALITY</ref><sp/>=<sp/>99;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" kindref="member">MAX_QUANTIZER</ref><sp/>=<sp/>63;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="constants_8h_1a5d199cfd82019c3f1492ea53e0147c4f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1a5d199cfd82019c3f1492ea53e0147c4f" kindref="member">MAX_TILE_LOG2</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="constants_8h_1aee1922493f64795bd542968d022aa99a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1aee1922493f64795bd542968d022aa99a" kindref="member">MAX_SHARPNESS</ref><sp/>=<sp/>7;<sp/></highlight><highlight class="comment">//<sp/>Sharpness<sp/>range<sp/>(0-7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/constants.h"/>
+  </compounddef>
+</doxygen>

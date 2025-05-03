@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="structAvifEncoderDeleter" kind="struct"><name>AvifEncoderDeleter</name>
+    <member refid="structAvifEncoderDeleter_1a07f65e1f4d11ce9cd23e172ecdbf79eb" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structAvifImageDeleter" kind="struct"><name>AvifImageDeleter</name>
+    <member refid="structAvifImageDeleter_1a6788fcd79a25d2562a24ac62c980fdaf" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structEncodeConfig" kind="struct"><name>EncodeConfig</name>
+    <member refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" kind="variable"><name>quality</name></member>
+    <member refid="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" kind="variable"><name>qualityAlpha</name></member>
+    <member refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" kind="variable"><name>sharpness</name></member>
+    <member refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" kind="variable"><name>pixelFormat</name></member>
+    <member refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" kind="variable"><name>codecChoice</name></member>
+    <member refid="structEncodeConfig_1affadb59d7b28183fb6b3e6e08739fb4b" kind="variable"><name>preset</name></member>
+    <member refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" kind="variable"><name>minQuantizer</name></member>
+    <member refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" kind="variable"><name>maxQuantizer</name></member>
+    <member refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" kind="variable"><name>tileRowsLog2</name></member>
+    <member refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" kind="variable"><name>tileColsLog2</name></member>
+    <member refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" kind="variable"><name>tune</name></member>
+    <member refid="structEncodeConfig_1a1619bbc1daf18fe98ba06272cb5de3dc" kind="variable"><name>speed</name></member>
+    <member refid="structEncodeConfig_1afe94310735c47f3bff7130a0c6c5bf46" kind="function"><name>validatedQuality</name></member>
+    <member refid="structEncodeConfig_1ae626c1aebfacf14b2daf53461df7af81" kind="function"><name>validatedQuantizer</name></member>
+    <member refid="structEncodeConfig_1a22817009cb293eb8bb0b7a03be85e080" kind="function"><name>validatedTileLog2</name></member>
+    <member refid="structEncodeConfig_1afd40635e79ff8f9851cfa0ef79a3d12f" kind="function"><name>validatedSharpness</name></member>
+    <member refid="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357" kind="function"><name>setQuality</name></member>
+    <member refid="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3" kind="function"><name>setMinQuantizer</name></member>
+    <member refid="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab" kind="function"><name>setMaxQuantizer</name></member>
+    <member refid="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe" kind="function"><name>setTileRowsLog2</name></member>
+    <member refid="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878" kind="function"><name>setTileColsLog2</name></member>
+    <member refid="structEncodeConfig_1aecd3fadd3f5433e4e87457839afeba23" kind="function"><name>setSharpness</name></member>
+    <member refid="structEncodeConfig_1a1e0dc7eca05d0af1d76b0ed56881a18b" kind="function"><name>getQuality</name></member>
+    <member refid="structEncodeConfig_1abbc70deea92ee3d6281d4bf9e8719a79" kind="function"><name>getMinQuantizer</name></member>
+    <member refid="structEncodeConfig_1a862e39ee31543db2398aa54b41d5ce53" kind="function"><name>getMaxQuantizer</name></member>
+    <member refid="structEncodeConfig_1ad801a3a45fcf41d5b15778d6134e8af6" kind="function"><name>getTileRowsLog2</name></member>
+    <member refid="structEncodeConfig_1a7bc6672173171422aa86af1d0b98e5fc" kind="function"><name>getTileColsLog2</name></member>
+    <member refid="structEncodeConfig_1a7367ff60ebe464c9eae16c7678ded332" kind="function"><name>getSharpness</name></member>
+    <member refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" kind="function"><name>getSpeed</name></member>
+    <member refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" kind="function"><name>setPreset</name></member>
+    <member refid="structEncodeConfig_1aee7530598b42b2a7cd315834ebdce54f" kind="function"><name>getPreset</name></member>
+    <member refid="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" kind="function"><name>updateSpeed</name></member>
+    <member refid="structEncodeConfig_1a282e07fde01ba67dc2018b6d86bd9f26" kind="function"><name>getCodecChoice</name></member>
+    <member refid="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" kind="function"><name>setCodecChoice</name></member>
+    <member refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" kind="function"><name>printConfig</name></member>
+  </compound>
+  <compound refid="classError" kind="class"><name>Error</name>
+    <member refid="classError_1af99b67523cea6feba2f76679f97f2cfe" kind="variable"><name>code</name></member>
+    <member refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" kind="variable"><name>message</name></member>
+    <member refid="classError_1a4051d2413bfd2780250043fc9c412865" kind="variable"><name>stackTrace</name></member>
+    <member refid="classError_1aeb2eed928f08439970781a1ea5ea2acb" kind="function"><name>Error</name></member>
+  </compound>
+  <compound refid="classImageBuffer" kind="class"><name>ImageBuffer</name>
+    <member refid="classImageBuffer_1a63f6553c8908a439066d3e51b3897dc4" kind="variable"><name>data_</name></member>
+    <member refid="classImageBuffer_1ae35022dca7c053de97b73c9e55d7a6c0" kind="function"><name>ImageBuffer</name></member>
+    <member refid="classImageBuffer_1a092d25f5f27ff06124cd28764bf091cb" kind="function"><name>getData</name></member>
+    <member refid="classImageBuffer_1ab2fce31da3b99684f3621762e9230022" kind="function"><name>getSize</name></member>
+    <member refid="classImageBuffer_1a5c2bf3c39d985e8f25726764d4bd29f4" kind="function"><name>getRawData</name></member>
+  </compound>
+  <compound refid="classImageGuru" kind="class"><name>ImageGuru</name>
+    <member refid="classImageGuru_1a584ee80b421a877e66108805931fd2d0" kind="variable"><name>supported_image</name></member>
+    <member refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" kind="function"><name>GetImageType</name></member>
+    <member refid="classImageGuru_1ad4730c44991d536d63807ed17361540d" kind="function"><name>IsValid</name></member>
+    <member refid="classImageGuru_1af8b04916cf74b30b69ecdbde53ae7b4f" kind="function"><name>IsSpecificType</name></member>
+    <member refid="classImageGuru_1a9656fc9753f60aa1dda76030a7906d9f" kind="function"><name>isSupported</name></member>
+    <member refid="classImageGuru_1a250967309e02e5a4a2226361f56cf5f6" kind="function"><name>typeToString</name></member>
+  </compound>
+  <compound refid="structImageGuru_1_1imageSupport" kind="struct"><name>ImageGuru::imageSupport</name>
+    <member refid="structImageGuru_1_1imageSupport_1a4ff5927da2afbda84dd5b4dc866248b1" kind="variable"><name>type</name></member>
+    <member refid="structImageGuru_1_1imageSupport_1ac8203336cd34f13403a9263f45f4f85d" kind="variable"><name>supported</name></member>
+  </compound>
+  <compound refid="structjsResult" kind="struct"><name>jsResult</name>
+    <member refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" kind="variable"><name>result</name></member>
+    <member refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" kind="function"><name>hasError</name></member>
+    <member refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" kind="function"><name>hasImage</name></member>
+    <member refid="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" kind="function"><name>getError</name></member>
+    <member refid="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" kind="function"><name>getImage</name></member>
+  </compound>
+  <compound refid="structSpeed" kind="struct"><name>Speed</name>
+    <member refid="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0" kind="variable"><name>preset_</name></member>
+    <member refid="structSpeed_1acc62b2640be63bb616a22a526a603e71" kind="variable"><name>default_speed</name></member>
+    <member refid="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5" kind="variable"><name>speed_range</name></member>
+    <member refid="structSpeed_1a86ba182c241d166bf5243184b093021e" kind="function"><name>Speed</name></member>
+    <member refid="structSpeed_1a6593324af610f9a059908764c3c58948" kind="function"><name>getDefault</name></member>
+    <member refid="structSpeed_1a757d6d07a38e686bfd046eab9a6fd5f4" kind="function"><name>setSpeedRange</name></member>
+    <member refid="structSpeed_1a76fc4e89bba513f25cf3a749e122daff" kind="function"><name>getRange</name></member>
+    <member refid="structSpeed_1af0a84886324cba325796995fc199c440" kind="function"><name>isValid</name></member>
+    <member refid="structSpeed_1a1779b0706d63ca81528521464450365b" kind="function"><name>getPreset</name></member>
+    <member refid="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" kind="function"><name>set</name></member>
+  </compound>
+  <compound refid="structSpeedRange" kind="struct"><name>SpeedRange</name>
+    <member refid="structSpeedRange_1a210659c016cbaf56e19fd770bb292a19" kind="variable"><name>min</name></member>
+    <member refid="structSpeedRange_1ab7968f05a57de473488be534a6f849ce" kind="variable"><name>max</name></member>
+  </compound>
+  <compound refid="avif__helper_8h" kind="file"><name>avif_helper.h</name>
+    <member refid="avif__helper_8h_1a331a86d5fe51c7cbe0906bfe1fa96f2d" kind="typedef"><name>UniqueAvifEncoder</name></member>
+    <member refid="avif__helper_8h_1acb6a592f91b69619ec29fd6bb942c4ba" kind="typedef"><name>UniqueAvifImage</name></member>
+    <member refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kind="function"><name>SetAvifOption</name></member>
+  </compound>
+  <compound refid="constants_8h" kind="file"><name>constants.h</name>
+    <member refid="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" kind="variable"><name>RGB_DEPTH</name></member>
+    <member refid="constants_8h_1a39ec4a5ee2aa5355e76e11311159f06c" kind="variable"><name>MIN_SPEED</name></member>
+    <member refid="constants_8h_1a5ddf2283d980402c15e157a865fe3c1c" kind="variable"><name>MAX_SPEED</name></member>
+    <member refid="constants_8h_1ae5f45d70a0eedde96102b5e8dbad6e53" kind="variable"><name>MAX_QUALITY</name></member>
+    <member refid="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" kind="variable"><name>MAX_QUANTIZER</name></member>
+    <member refid="constants_8h_1a5d199cfd82019c3f1492ea53e0147c4f" kind="variable"><name>MAX_TILE_LOG2</name></member>
+    <member refid="constants_8h_1aee1922493f64795bd542968d022aa99a" kind="variable"><name>MAX_SHARPNESS</name></member>
+  </compound>
+  <compound refid="encoder__config_8h" kind="file"><name>encoder_config.h</name>
+    <member refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2" kind="enum"><name>CodecChoice</name></member>
+    <member refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2ae1f2d5134ed2543d38a0de9751cf75d9" kind="enumvalue"><name>AUTO</name></member>
+    <member refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" kind="enumvalue"><name>AOM</name></member>
+    <member refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0" kind="enumvalue"><name>SVT</name></member>
+    <member refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3a" kind="enum"><name>Tune</name></member>
+    <member refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa268c098dd4ed280b44814cb3626651b6" kind="enumvalue"><name>TUNE_DEFAULT</name></member>
+    <member refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa36f2f11b44c5dbc63f70d5d2b9b21ade" kind="enumvalue"><name>TUNE_PSNR</name></member>
+    <member refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa2b5b777c2bdf867ddf4693c9d806c4bf" kind="enumvalue"><name>TUNE_SSIM</name></member>
+    <member refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kind="enum"><name>SpeedPreset</name></member>
+    <member refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7a0c6ad70beb3a7e76c3fc7adab7c46acc" kind="enumvalue"><name>Good</name></member>
+    <member refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad71809aa2264347869e22e47a2635e63" kind="enumvalue"><name>MemoryHungry</name></member>
+    <member refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad50ae798e3aa50c3a502118e759cc216" kind="enumvalue"><name>RealTime</name></member>
+    <member refid="encoder__config_8h_1ad76fc3f49f931c6e964bb07e7c6c3838" kind="function"><name>setField</name></member>
+  </compound>
+  <compound refid="error_8h" kind="file"><name>error.h</name>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kind="enum"><name>ConverterError</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564" kind="enumvalue"><name>OK</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" kind="enumvalue"><name>INVALID_DIMENSIONS</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" kind="enumvalue"><name>UNSUPPORTED_IMAGETYPE</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" kind="enumvalue"><name>IMAGE_LOAD_FAILED</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" kind="enumvalue"><name>ENCODER_CREATION_FAILED</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" kind="enumvalue"><name>CONVERSION_FAILED</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6" kind="enumvalue"><name>ENCODING_FAILED</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d" kind="enumvalue"><name>INVALID_ARGUMENT</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6" kind="enumvalue"><name>OUT_OF_MEMORY</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" kind="enumvalue"><name>INVALID_QUANTIZER_VALUES</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" kind="enumvalue"><name>UNKNOWN_ERROR</name></member>
+    <member refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" kind="enumvalue"><name>AVIF_ERROR_START</name></member>
+    <member refid="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" kind="function"><name>avifToConverterError</name></member>
+    <member refid="error_8h_1a0ef438c9db81c195e8b44bab972a415c" kind="function"><name>getErrorMessage</name></member>
+    <member refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" kind="function"><name>toJsError</name></member>
+  </compound>
+  <compound refid="imagebuffer_8h" kind="file"><name>imagebuffer.h</name>
+  </compound>
+  <compound refid="imageconverter_8h" kind="file"><name>imageconverter.h</name>
+    <member refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" kind="function"><name>convert_image</name></member>
+    <member refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" kind="function"><name>convertImageDirect</name></member>
+  </compound>
+  <compound refid="imageGuru_8h" kind="file"><name>imageGuru.h</name>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kind="enum"><name>ImageType</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a907e06a16862d82ca6907a28a68d0ad6" kind="enumvalue"><name>JPEG</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a55505ba281b015ec31f03ccb151b2a34" kind="enumvalue"><name>PNG</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a95a66bab4c0c0fd8387e680daeff99a8" kind="enumvalue"><name>GIF</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0aa5d5ca1447586e23dc011f8c0cc0a6db" kind="enumvalue"><name>BMP</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ace0dbe5045edda1a0e9686ce899798ea" kind="enumvalue"><name>TIFF</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ab8dbf614b2c3a603c8c8c723a3f6eb7a" kind="enumvalue"><name>WEBP</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93" kind="enumvalue"><name>AVIF</name></member>
+    <member refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kind="enumvalue"><name>UNKNOWN</name></member>
+  </compound>
+  <compound refid="result_8h" kind="file"><name>result.h</name>
+    <member refid="result_8h_1ac27a0c880b3a6990e93c23615c3be199" kind="typedef"><name>ImgaePtr</name></member>
+    <member refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kind="typedef"><name>Result</name></member>
+  </compound>
+  <compound refid="bind_8cpp" kind="file"><name>bind.cpp</name>
+    <member refid="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab" kind="function"><name>EMSCRIPTEN_BINDINGS</name></member>
+    <member refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" kind="function"><name>EMSCRIPTEN_BINDINGS</name></member>
+    <member refid="bind_8cpp_1acc71d87100b55443e2c7407f017e8e81" kind="function"><name>EMSCRIPTEN_BINDINGS</name></member>
+    <member refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" kind="function"><name>EMSCRIPTEN_BINDINGS</name></member>
+  </compound>
+  <compound refid="error_8cpp" kind="file"><name>error.cpp</name>
+    <member refid="error_8cpp_1a5ad5e023f34da8b98e088da72c1b3744" kind="function"><name>avifToConverterError</name></member>
+    <member refid="error_8cpp_1a0ef438c9db81c195e8b44bab972a415c" kind="function"><name>getErrorMessage</name></member>
+    <member refid="error_8cpp_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" kind="function"><name>toJsError</name></member>
+  </compound>
+  <compound refid="imageconverter_8cpp" kind="file"><name>imageconverter.cpp</name>
+    <member refid="imageconverter_8cpp_1a0e3d823db0d3ab0b3d9d8848a37b66f3" kind="variable"><name>Uint8Array</name></member>
+    <member refid="imageconverter_8cpp_1ad6ba1bd00ba7d9e8f381d223af9f4343" kind="function"><name>convert_image</name></member>
+    <member refid="imageconverter_8cpp_1a739d2db06147b652cbc5145fb97925d5" kind="function"><name>convertImageDirect</name></member>
+  </compound>
+  <compound refid="pthread__stubs_8c" kind="file"><name>pthread_stubs.c</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerfile refid="avif__helper_8h">avif_helper.h</innerfile>
+    <innerfile refid="constants_8h">constants.h</innerfile>
+    <innerfile refid="encoder__config_8h">encoder_config.h</innerfile>
+    <innerfile refid="error_8h">error.h</innerfile>
+    <innerfile refid="imagebuffer_8h">imagebuffer.h</innerfile>
+    <innerfile refid="imageconverter_8h">imageconverter.h</innerfile>
+    <innerfile refid="imageGuru_8h">imageGuru.h</innerfile>
+    <innerfile refid="result_8h">result.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/"/>
+  </compounddef>
+</doxygen>

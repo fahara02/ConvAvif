@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structImageGuru_1_1imageSupport" kind="struct" language="C++" prot="public">
+    <compoundname>ImageGuru::imageSupport</compoundname>
+    <includes refid="imageGuru_8h" local="no">imageGuru.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structImageGuru_1_1imageSupport_1a4ff5927da2afbda84dd5b4dc866248b1" prot="public" static="no" mutable="no">
+        <type><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref></type>
+        <definition>ImageType ImageGuru::imageSupport::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>ImageGuru::imageSupport::type</qualifiedname>
+        <briefdescription>
+<para>Type of image format. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imageGuru.h" line="129" column="15" bodyfile="include/imageGuru.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structImageGuru_1_1imageSupport_1ac8203336cd34f13403a9263f45f4f85d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ImageGuru::imageSupport::supported</definition>
+        <argsstring></argsstring>
+        <name>supported</name>
+        <qualifiedname>ImageGuru::imageSupport::supported</qualifiedname>
+        <briefdescription>
+<para>Whether conversion is supported. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imageGuru.h" line="130" column="10" bodyfile="include/imageGuru.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Structure for tracking image format support status. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/imageGuru.h" line="128" column="3" bodyfile="include/imageGuru.h" bodystart="128" bodyend="131"/>
+    <listofallmembers>
+      <member refid="structImageGuru_1_1imageSupport_1ac8203336cd34f13403a9263f45f4f85d" prot="public" virt="non-virtual"><scope>ImageGuru::imageSupport</scope><name>supported</name></member>
+      <member refid="structImageGuru_1_1imageSupport_1a4ff5927da2afbda84dd5b4dc866248b1" prot="public" virt="non-virtual"><scope>ImageGuru::imageSupport</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

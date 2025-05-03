@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structSpeed" kind="struct" language="C++" prot="public">
+    <compoundname>Speed</compoundname>
+    <includes refid="encoder__config_8h" local="no">encoder_config.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0" prot="public" static="no" mutable="no">
+        <type><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref></type>
+        <definition>SpeedPreset Speed::preset_</definition>
+        <argsstring></argsstring>
+        <name>preset_</name>
+        <qualifiedname>Speed::preset_</qualifiedname>
+        <initializer>= <ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7a0c6ad70beb3a7e76c3fc7adab7c46acc" kindref="member">SpeedPreset::Good</ref></initializer>
+        <briefdescription>
+<para>Current speed preset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="62" column="15" bodyfile="include/encoder_config.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="structSpeed_1a1779b0706d63ca81528521464450365b" compoundref="encoder__config_8h" startline="157" endline="157">getPreset</referencedby>
+        <referencedby refid="structSpeed_1a86ba182c241d166bf5243184b093021e" compoundref="encoder__config_8h" startline="72" endline="124">Speed</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structSpeed_1acc62b2640be63bb616a22a526a603e71" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Speed::default_speed</definition>
+        <argsstring></argsstring>
+        <name>default_speed</name>
+        <qualifiedname>Speed::default_speed</qualifiedname>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Default speed value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="63" column="7" bodyfile="include/encoder_config.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="structSpeed_1a6593324af610f9a059908764c3c58948" compoundref="encoder__config_8h" startline="130" endline="130">getDefault</referencedby>
+        <referencedby refid="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" compoundref="encoder__config_8h" startline="163" endline="169">set</referencedby>
+        <referencedby refid="structSpeed_1a86ba182c241d166bf5243184b093021e" compoundref="encoder__config_8h" startline="72" endline="124">Speed</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5" prot="public" static="no" mutable="no">
+        <type><ref refid="structSpeedRange" kindref="compound">SpeedRange</ref></type>
+        <definition>SpeedRange Speed::speed_range</definition>
+        <argsstring></argsstring>
+        <name>speed_range</name>
+        <qualifiedname>Speed::speed_range</qualifiedname>
+        <initializer>= {5, 6}</initializer>
+        <briefdescription>
+<para>Valid speed range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="64" column="14" bodyfile="include/encoder_config.h" bodystart="64" bodyend="64"/>
+        <referencedby refid="structSpeed_1a76fc4e89bba513f25cf3a749e122daff" compoundref="encoder__config_8h" startline="142" endline="142">getRange</referencedby>
+        <referencedby refid="structSpeed_1af0a84886324cba325796995fc199c440" compoundref="encoder__config_8h" startline="149" endline="151">isValid</referencedby>
+        <referencedby refid="structSpeed_1a757d6d07a38e686bfd046eab9a6fd5f4" compoundref="encoder__config_8h" startline="136" endline="136">setSpeedRange</referencedby>
+        <referencedby refid="structSpeed_1a86ba182c241d166bf5243184b093021e" compoundref="encoder__config_8h" startline="72" endline="124">Speed</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structSpeed_1a86ba182c241d166bf5243184b093021e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Speed::Speed</definition>
+        <argsstring>(CodecChoice codec, SpeedPreset preset)</argsstring>
+        <name>Speed</name>
+        <qualifiedname>Speed::Speed</qualifiedname>
+        <param>
+          <type><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2" kindref="member">CodecChoice</ref></type>
+          <declname>codec</declname>
+        </param>
+        <param>
+          <type><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref></type>
+          <declname>preset</declname>
+        </param>
+        <briefdescription>
+<para>Constructor that sets appropriate speed ranges based on codec and preset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>codec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selected codec (AOM, SVT, AUTO) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>preset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired speed preset (Good, MemoryHungry, RealTime) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="72" column="3" bodyfile="include/encoder_config.h" bodystart="72" bodyend="124"/>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" compoundref="encoder__config_8h" startline="22">AOM</references>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2ae1f2d5134ed2543d38a0de9751cf75d9" compoundref="encoder__config_8h" startline="22">AUTO</references>
+        <references refid="structSpeed_1acc62b2640be63bb616a22a526a603e71" compoundref="encoder__config_8h" startline="63">default_speed</references>
+        <references refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7a0c6ad70beb3a7e76c3fc7adab7c46acc" compoundref="encoder__config_8h" startline="32">Good</references>
+        <references refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad71809aa2264347869e22e47a2635e63" compoundref="encoder__config_8h" startline="32">MemoryHungry</references>
+        <references refid="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0" compoundref="encoder__config_8h" startline="62">preset_</references>
+        <references refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad50ae798e3aa50c3a502118e759cc216" compoundref="encoder__config_8h" startline="32">RealTime</references>
+        <references refid="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5" compoundref="encoder__config_8h" startline="64" endline="64">speed_range</references>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0" compoundref="encoder__config_8h" startline="22">SVT</references>
+      </memberdef>
+      <memberdef kind="function" id="structSpeed_1a6593324af610f9a059908764c3c58948" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Speed::getDefault</definition>
+        <argsstring>() const</argsstring>
+        <name>getDefault</name>
+        <qualifiedname>Speed::getDefault</qualifiedname>
+        <briefdescription>
+<para>Get the default speed value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current default speed value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="130" column="7" bodyfile="include/encoder_config.h" bodystart="130" bodyend="130"/>
+        <references refid="structSpeed_1acc62b2640be63bb616a22a526a603e71" compoundref="encoder__config_8h" startline="63">default_speed</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structSpeed_1a757d6d07a38e686bfd046eab9a6fd5f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Speed::setSpeedRange</definition>
+        <argsstring>(const SpeedRange &amp;range)</argsstring>
+        <name>setSpeedRange</name>
+        <qualifiedname>Speed::setSpeedRange</qualifiedname>
+        <param>
+          <type>const <ref refid="structSpeedRange" kindref="compound">SpeedRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+<para>Set a new speed range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New speed range to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="136" column="8" bodyfile="include/encoder_config.h" bodystart="136" bodyend="136"/>
+        <references refid="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5" compoundref="encoder__config_8h" startline="64" endline="64">speed_range</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structSpeed_1a76fc4e89bba513f25cf3a749e122daff" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structSpeedRange" kindref="compound">SpeedRange</ref></type>
+        <definition>SpeedRange Speed::getRange</definition>
+        <argsstring>() const</argsstring>
+        <name>getRange</name>
+        <qualifiedname>Speed::getRange</qualifiedname>
+        <briefdescription>
+<para>Get the current speed range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current speed range </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="142" column="14" bodyfile="include/encoder_config.h" bodystart="142" bodyend="142"/>
+        <references refid="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5" compoundref="encoder__config_8h" startline="64" endline="64">speed_range</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structSpeed_1af0a84886324cba325796995fc199c440" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Speed::isValid</definition>
+        <argsstring>(int speed)</argsstring>
+        <name>isValid</name>
+        <qualifiedname>Speed::isValid</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+<para>Check if a speed value is within the valid range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structSpeed" kindref="compound">Speed</ref> value to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if speed is valid, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="149" column="8" bodyfile="include/encoder_config.h" bodystart="149" bodyend="151"/>
+        <references refid="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5" compoundref="encoder__config_8h" startline="64" endline="64">speed_range</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+        <referencedby refid="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" compoundref="encoder__config_8h" startline="163" endline="169">set</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structSpeed_1a1779b0706d63ca81528521464450365b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref></type>
+        <definition>SpeedPreset Speed::getPreset</definition>
+        <argsstring>() const</argsstring>
+        <name>getPreset</name>
+        <qualifiedname>Speed::getPreset</qualifiedname>
+        <briefdescription>
+<para>Get the current speed preset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current <ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref> value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="157" column="15" bodyfile="include/encoder_config.h" bodystart="157" bodyend="157"/>
+        <references refid="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0" compoundref="encoder__config_8h" startline="62">preset_</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Speed::set</definition>
+        <argsstring>(int ns)</argsstring>
+        <name>set</name>
+        <qualifiedname>Speed::set</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>ns</declname>
+        </param>
+        <briefdescription>
+<para>Set a new speed value if it&apos;s valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New speed value to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/encoder_config.h" line="163" column="8" bodyfile="include/encoder_config.h" bodystart="163" bodyend="169"/>
+        <references refid="structSpeed_1acc62b2640be63bb616a22a526a603e71" compoundref="encoder__config_8h" startline="63">default_speed</references>
+        <references refid="structSpeed_1af0a84886324cba325796995fc199c440" compoundref="encoder__config_8h" startline="149" endline="151">isValid</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="structSpeed" kindref="compound">Speed</ref> settings manager for AVIF encoding. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class manages speed settings based on the selected codec and preset. Different codecs have different optimal speed ranges for various quality/speed tradeoffs. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Speed</label>
+        <link refid="structSpeed"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>speed_range</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SpeedRange</label>
+        <link refid="structSpeedRange"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/encoder_config.h" line="60" column="1" bodyfile="include/encoder_config.h" bodystart="60" bodyend="170"/>
+    <listofallmembers>
+      <member refid="structSpeed_1acc62b2640be63bb616a22a526a603e71" prot="public" virt="non-virtual"><scope>Speed</scope><name>default_speed</name></member>
+      <member refid="structSpeed_1a6593324af610f9a059908764c3c58948" prot="public" virt="non-virtual"><scope>Speed</scope><name>getDefault</name></member>
+      <member refid="structSpeed_1a1779b0706d63ca81528521464450365b" prot="public" virt="non-virtual"><scope>Speed</scope><name>getPreset</name></member>
+      <member refid="structSpeed_1a76fc4e89bba513f25cf3a749e122daff" prot="public" virt="non-virtual"><scope>Speed</scope><name>getRange</name></member>
+      <member refid="structSpeed_1af0a84886324cba325796995fc199c440" prot="public" virt="non-virtual"><scope>Speed</scope><name>isValid</name></member>
+      <member refid="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0" prot="public" virt="non-virtual"><scope>Speed</scope><name>preset_</name></member>
+      <member refid="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" prot="public" virt="non-virtual"><scope>Speed</scope><name>set</name></member>
+      <member refid="structSpeed_1a757d6d07a38e686bfd046eab9a6fd5f4" prot="public" virt="non-virtual"><scope>Speed</scope><name>setSpeedRange</name></member>
+      <member refid="structSpeed_1a86ba182c241d166bf5243184b093021e" prot="public" virt="non-virtual"><scope>Speed</scope><name>Speed</name></member>
+      <member refid="structSpeed_1a7d654245bf5a79d0f6a1da13cbc301d5" prot="public" virt="non-virtual"><scope>Speed</scope><name>speed_range</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,77 @@
+
+Files
+=====
+
+This section describes the source files in the ConvAvif library.
+
+Header Files
+-----------
+
+encoder_config.h
+~~~~~~~~~~~~~~~
+
+.. doxygenfile:: encoder_config.h
+   :project: ConvAvif
+
+error.h
+~~~~~~
+
+.. doxygenfile:: error.h
+   :project: ConvAvif
+
+imageGuru.h
+~~~~~~~~~~
+
+.. doxygenfile:: imageGuru.h
+   :project: ConvAvif
+
+imagebuffer.h
+~~~~~~~~~~~~
+
+.. doxygenfile:: imagebuffer.h
+   :project: ConvAvif
+
+imageconverter.h
+~~~~~~~~~~~~~~~
+
+.. doxygenfile:: imageconverter.h
+   :project: ConvAvif
+
+result.h
+~~~~~~~
+
+.. doxygenfile:: result.h
+   :project: ConvAvif
+
+avif_helper.h
+~~~~~~~~~~~~
+
+.. doxygenfile:: avif_helper.h
+   :project: ConvAvif
+
+constants.h
+~~~~~~~~~~
+
+.. doxygenfile:: constants.h
+   :project: ConvAvif
+
+Implementation Files
+------------------
+
+error.cpp
+~~~~~~~~
+
+.. doxygenfile:: error.cpp
+   :project: ConvAvif
+
+bind.cpp
+~~~~~~~
+
+.. doxygenfile:: bind.cpp
+   :project: ConvAvif
+
+imageconverter.cpp
+~~~~~~~~~~~~~~~~~
+
+.. doxygenfile:: imageconverter.cpp
+   :project: ConvAvif

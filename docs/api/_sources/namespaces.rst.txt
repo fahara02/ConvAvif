@@ -1,0 +1,8 @@
+
+Namespaces
+==========
+
+This section describes the namespaces in the ConvAvif library.
+
+.. doxygennamespace:: std
+   :project: ConvAvif

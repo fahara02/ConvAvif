@@ -1,0 +1,73 @@
+
+Classes
+=======
+
+This section describes the classes and structures provided by the ConvAvif library.
+
+Core Classes
+-----------
+
+EncodeConfig
+~~~~~~~~~~~
+
+.. doxygenstruct:: EncodeConfig
+   :members:
+   :undoc-members:
+
+ImageGuru
+~~~~~~~~~
+
+.. doxygenclass:: ImageGuru
+   :members:
+   :undoc-members:
+
+Error
+~~~~~
+
+.. doxygenclass:: Error
+   :members:
+   :undoc-members:
+
+Speed
+~~~~~
+
+.. doxygenstruct:: Speed
+   :members:
+   :undoc-members:
+
+SpeedRange
+~~~~~~~~~~
+
+.. doxygenstruct:: SpeedRange
+   :members:
+   :undoc-members:
+
+ImageBuffer
+~~~~~~~~~~
+
+.. doxygenclass:: ImageBuffer
+   :members:
+   :undoc-members:
+
+Enumerations
+-----------
+
+CodecChoice
+~~~~~~~~~~
+
+.. doxygenenum:: CodecChoice
+
+Tune
+~~~~
+
+.. doxygenenum:: Tune
+
+SpeedPreset
+~~~~~~~~~~
+
+.. doxygenenum:: SpeedPreset
+
+ConverterError
+~~~~~~~~~~~~~
+
+.. doxygenenum:: ConverterError

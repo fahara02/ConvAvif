@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="error_8h" kind="file" language="C++">
+    <compoundname>error.h</compoundname>
+    <includes local="no">avif/avif.h</includes>
+    <includes local="no">emscripten/val.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="imageconverter_8h" local="yes">include/imageconverter.h</includedby>
+    <includedby refid="result_8h" local="yes">include/result.h</includedby>
+    <includedby refid="bind_8cpp" local="yes">src/bind.cpp</includedby>
+    <includedby refid="error_8cpp" local="yes">src/error.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>avif/avif.h</label>
+      </node>
+      <node id="3">
+        <label>emscripten/val.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>include/avif_helper.h</label>
+        <link refid="avif__helper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/bind.cpp</label>
+        <link refid="bind_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/error.cpp</label>
+        <link refid="error_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/imageconverter.cpp</label>
+        <link refid="imageconverter_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classError" prot="public">Error</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ConverterError</name>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564" prot="public">
+          <name>OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No error, operation successful. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" prot="public">
+          <name>INVALID_DIMENSIONS</name>
+          <initializer>= 100</initializer>
+          <briefdescription>
+<para>Image dimensions are invalid (too small/large) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" prot="public">
+          <name>UNSUPPORTED_IMAGETYPE</name>
+          <briefdescription>
+<para>Image format is not supported. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" prot="public">
+          <name>IMAGE_LOAD_FAILED</name>
+          <briefdescription>
+<para>Failed to load/decode the input image. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" prot="public">
+          <name>ENCODER_CREATION_FAILED</name>
+          <briefdescription>
+<para>Failed to create the AVIF encoder. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" prot="public">
+          <name>CONVERSION_FAILED</name>
+          <briefdescription>
+<para>Failed during the RGB to YUV conversion. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6" prot="public">
+          <name>ENCODING_FAILED</name>
+          <briefdescription>
+<para>Failed during the encoding process. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d" prot="public">
+          <name>INVALID_ARGUMENT</name>
+          <briefdescription>
+<para>Invalid argument provided to a function. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6" prot="public">
+          <name>OUT_OF_MEMORY</name>
+          <briefdescription>
+<para>Memory allocation failed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" prot="public">
+          <name>INVALID_QUANTIZER_VALUES</name>
+          <briefdescription>
+<para>Invalid quantizer values (e.g., min &gt; max) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" prot="public">
+          <name>UNKNOWN_ERROR</name>
+          <briefdescription>
+<para>Unspecified error. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" prot="public">
+          <name>AVIF_ERROR_START</name>
+          <initializer>= 200</initializer>
+          <briefdescription>
+<para>Start of error codes mapped from avifResult. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classError" kindref="compound">Error</ref> codes for the image converter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These error codes identify different failure modes in the conversion process. <ref refid="classError" kindref="compound">Error</ref> codes 100-199 are specific to the converter, while codes 200+ are mapped from the AVIF library. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="24" column="1" bodyfile="include/error.h" bodystart="24" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref></type>
+        <definition>ConverterError avifToConverterError</definition>
+        <argsstring>(avifResult result)</argsstring>
+        <name>avifToConverterError</name>
+        <param>
+          <type>avifResult</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Converts an AVIF library error code to a <ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps the native AVIF library error codes to the application&apos;s error enum.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>AVIF library result code </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Equivalent <ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref> code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="70" column="16" bodyfile="src/error.cpp" bodystart="6" bodyend="10" declfile="include/error.h" declline="70" declcolumn="16"/>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" compoundref="error_8h" startline="36">AVIF_ERROR_START</references>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+        <referencedby refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" compoundref="avif__helper_8h" startline="81" endline="92">SetAvifOption</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="error_8h_1a0ef438c9db81c195e8b44bab972a415c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string getErrorMessage</definition>
+        <argsstring>(ConverterError error)</argsstring>
+        <name>getErrorMessage</name>
+        <param>
+          <type><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref></type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Get a human-readable error message for an error code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classError" kindref="compound">Error</ref> code to get the message for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Standard error message for the given code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="78" column="13" bodyfile="src/error.cpp" bodystart="13" bodyend="42" declfile="include/error.h" declline="78" declcolumn="13"/>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" compoundref="error_8h" startline="36">AVIF_ERROR_START</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" compoundref="error_8h" startline="30">CONVERSION_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" compoundref="error_8h" startline="29">ENCODER_CREATION_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6" compoundref="error_8h" startline="31">ENCODING_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" compoundref="error_8h" startline="28">IMAGE_LOAD_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" compoundref="error_8h" startline="26">INVALID_DIMENSIONS</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" compoundref="error_8h" startline="34">INVALID_QUANTIZER_VALUES</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564" compoundref="error_8h" startline="25">OK</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6" compoundref="error_8h" startline="33">OUT_OF_MEMORY</references>
+      </memberdef>
+      <memberdef kind="function" id="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>emscripten::val</type>
+        <definition>emscripten::val toJsError</definition>
+        <argsstring>(const Error &amp;e)</argsstring>
+        <name>toJsError</name>
+        <param>
+          <type>const <ref refid="classError" kindref="compound">Error</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Convert a C++ <ref refid="classError" kindref="compound">Error</ref> object to a JavaScript error object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a JavaScript error object with properties for code, message, and stackTrace suitable for returning to JavaScript code.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ <ref refid="classError" kindref="compound">Error</ref> object to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>JavaScript object representing the error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/error.h" line="89" column="17" bodyfile="src/error.cpp" bodystart="44" bodyend="53" declfile="include/error.h" declline="89" declcolumn="17"/>
+        <references refid="classError_1af99b67523cea6feba2f76679f97f2cfe" compoundref="error_8h" startline="47">Error::code</references>
+        <references refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" compoundref="error_8h" startline="48">Error::message</references>
+        <references refid="classError_1a4051d2413bfd2780250043fc9c412865" compoundref="error_8h" startline="49">Error::stackTrace</references>
+        <referencedby refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" compoundref="imageconverter_8cpp" startline="243" endline="300">convertImageDirect</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classError" kindref="compound">Error</ref> handling for AVIF conversion operations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>ConvAvif Developer </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+This file defines error types, error codes, and helper functions for handling and reporting errors during AVIF conversion operations. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ERROR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERROR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avif/avif.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;emscripten/val.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref><sp/>{</highlight></codeline>
+<codeline lineno="25" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564" kindref="member">OK</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" kindref="member">INVALID_DIMENSIONS</ref><sp/>=<sp/>100,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" kindref="member">UNSUPPORTED_IMAGETYPE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" kindref="member">IMAGE_LOAD_FAILED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" kindref="member">ENCODER_CREATION_FAILED</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" kindref="member">CONVERSION_FAILED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6" kindref="member">ENCODING_FAILED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d" kindref="member">INVALID_ARGUMENT</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6" kindref="member">OUT_OF_MEMORY</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" kindref="member">INVALID_QUANTIZER_VALUES</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" kindref="member">UNKNOWN_ERROR</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" kindref="member">AVIF_ERROR_START</ref><sp/>=<sp/>200<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classError" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classError_1aeb2eed928f08439970781a1ea5ea2acb" kindref="member">Error</ref><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47" refid="classError_1af99b67523cea6feba2f76679f97f2cfe" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref><sp/><ref refid="classError_1af99b67523cea6feba2f76679f97f2cfe" kindref="member">code</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48" refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" kindref="member">message</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="classError_1a4051d2413bfd2780250043fc9c412865" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classError_1a4051d2413bfd2780250043fc9c412865" kindref="member">stackTrace</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><ref refid="classError_1aeb2eed928f08439970781a1ea5ea2acb" kindref="member">Error</ref>(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref><sp/>c,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;msg,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;trace<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref><sp/><ref refid="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" kindref="member">avifToConverterError</ref>(avifResult<sp/>result);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">std::string<sp/><ref refid="error_8h_1a0ef438c9db81c195e8b44bab972a415c" kindref="member">getErrorMessage</ref>(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4" kindref="member">ConverterError</ref><sp/>error);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">emscripten::val<sp/><ref refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" kindref="member">toJsError</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref><sp/>&amp;e);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ERROR_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/error.h"/>
+  </compounddef>
+</doxygen>

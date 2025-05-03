@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="imageGuru_8h" kind="file" language="C++">
+    <compoundname>imageGuru.h</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">array</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="imageconverter_8h" local="yes">include/imageconverter.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/imageGuru.h</label>
+        <link refid="imageGuru_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+      <node id="3">
+        <label>array</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/imageGuru.h</label>
+        <link refid="imageGuru_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/bind.cpp</label>
+        <link refid="bind_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/imageconverter.cpp</label>
+        <link refid="imageconverter_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classImageGuru" prot="public">ImageGuru</innerclass>
+    <innerclass refid="structImageGuru_1_1imageSupport" prot="public">ImageGuru::imageSupport</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ImageType</name>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a907e06a16862d82ca6907a28a68d0ad6" prot="public">
+          <name>JPEG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a55505ba281b015ec31f03ccb151b2a34" prot="public">
+          <name>PNG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a95a66bab4c0c0fd8387e680daeff99a8" prot="public">
+          <name>GIF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0aa5d5ca1447586e23dc011f8c0cc0a6db" prot="public">
+          <name>BMP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ace0dbe5045edda1a0e9686ce899798ea" prot="public">
+          <name>TIFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ab8dbf614b2c3a603c8c8c723a3f6eb7a" prot="public">
+          <name>WEBP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93" prot="public">
+          <name>AVIF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" prot="public">
+          <name>UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of supported image types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Lists all the image formats that can be detected by the <ref refid="classImageGuru" kindref="compound">ImageGuru</ref>, regardless of whether they can be converted to AVIF. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imageGuru.h" line="23" column="1" bodyfile="include/imageGuru.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Image format detection and type management. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>ConvAvif Developer </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+This file provides utilities for detecting image formats from binary data and checking format support status for the AVIF conversion process. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMAGE_GURU_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IMAGE_GURU_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>{<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a907e06a16862d82ca6907a28a68d0ad6" kindref="member">JPEG</ref>,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a55505ba281b015ec31f03ccb151b2a34" kindref="member">PNG</ref>,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a95a66bab4c0c0fd8387e680daeff99a8" kindref="member">GIF</ref>,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0aa5d5ca1447586e23dc011f8c0cc0a6db" kindref="member">BMP</ref>,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ace0dbe5045edda1a0e9686ce899798ea" kindref="member">TIFF</ref>,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ab8dbf614b2c3a603c8c8c723a3f6eb7a" kindref="member">WEBP</ref>,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93" kindref="member">AVIF</ref>,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">UNKNOWN</ref><sp/>};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classImageGuru" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classImageGuru" kindref="compound">ImageGuru</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/><ref refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" kindref="member">GetImageType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;data)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.empty())<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">ImageType::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;uint8_t,<sp/>12&gt;<sp/>buffer{};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bytes_to_copy<sp/>=<sp/>std::min(data.size(),<sp/>buffer.size());</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::copy_n(data.begin(),<sp/>bytes_to_copy,<sp/>buffer.begin());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>JPEG<sp/>(FF<sp/>D8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.size()<sp/>&gt;=<sp/>2<sp/>&amp;&amp;<sp/>buffer[0]<sp/>==<sp/>0xFF<sp/>&amp;&amp;<sp/>buffer[1]<sp/>==<sp/>0xD8)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a907e06a16862d82ca6907a28a68d0ad6" kindref="member">ImageType::JPEG</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>BMP<sp/>(BM)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.size()<sp/>&gt;=<sp/>2<sp/>&amp;&amp;<sp/>buffer[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;M&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0aa5d5ca1447586e23dc011f8c0cc0a6db" kindref="member">ImageType::BMP</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>GIF<sp/>(GIF87a<sp/>or<sp/>GIF89a)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.size()<sp/>&gt;=<sp/>6<sp/>&amp;&amp;<sp/>buffer[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;I&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer[2]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;F&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[3]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;8&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(buffer[4]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;7&apos;</highlight><highlight class="normal"><sp/>||<sp/>buffer[4]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>buffer[5]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a95a66bab4c0c0fd8387e680daeff99a8" kindref="member">ImageType::GIF</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>TIFF<sp/>(II<sp/>or<sp/>MM<sp/>header)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.size()<sp/>&gt;=<sp/>4)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isTiffLE<sp/>=<sp/>(buffer[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;I&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;I&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer[2]<sp/>==<sp/>0x2A<sp/>&amp;&amp;<sp/>buffer[3]<sp/>==<sp/>0x00);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isTiffBE<sp/>=<sp/>(buffer[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;M&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;M&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer[2]<sp/>==<sp/>0x00<sp/>&amp;&amp;<sp/>buffer[3]<sp/>==<sp/>0x2A);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isTiffLE<sp/>||<sp/>isTiffBE)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ace0dbe5045edda1a0e9686ce899798ea" kindref="member">ImageType::TIFF</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>PNG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.size()<sp/>&gt;=<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;uint8_t,<sp/>8&gt;<sp/>pngSig<sp/>=<sp/>{0x89,<sp/></highlight><highlight class="charliteral">&apos;P&apos;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0D,<sp/>0x0A,<sp/>0x1A,<sp/>0x0A};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::equal(pngSig.begin(),<sp/>pngSig.end(),<sp/>buffer.begin()))<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a55505ba281b015ec31f03ccb151b2a34" kindref="member">ImageType::PNG</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>WEBP<sp/>(RIFF....WEBP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.size()<sp/>&gt;=<sp/>12<sp/>&amp;&amp;<sp/>buffer[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;R&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;I&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer[2]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;F&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[3]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;F&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[8]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;W&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer[9]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;E&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[10]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[11]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;P&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ab8dbf614b2c3a603c8c8c723a3f6eb7a" kindref="member">ImageType::WEBP</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>AVIF<sp/>(ftypavif)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.size()<sp/>&gt;=<sp/>12<sp/>&amp;&amp;<sp/>buffer[4]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;f&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[5]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;t&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer[6]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;y&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[7]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;p&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[8]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer[9]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;v&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[10]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>buffer[11]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;f&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93" kindref="member">ImageType::AVIF</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">ImageType::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classImageGuru_1ad4730c44991d536d63807ed17361540d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classImageGuru_1ad4730c44991d536d63807ed17361540d" kindref="member">IsValid</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;data)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" kindref="member">GetImageType</ref>(data)<sp/>!=<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">ImageType::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classImageGuru_1af8b04916cf74b30b69ecdbde53ae7b4f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classImageGuru_1af8b04916cf74b30b69ecdbde53ae7b4f" kindref="member">IsSpecificType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;data,<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>type)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" kindref="member">GetImageType</ref>(data)<sp/>==<sp/>type;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="structImageGuru_1_1imageSupport" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structImageGuru_1_1imageSupport" kindref="compound">imageSupport</ref><sp/>{</highlight></codeline>
+<codeline lineno="129" refid="structImageGuru_1_1imageSupport_1a4ff5927da2afbda84dd5b4dc866248b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/><ref refid="structImageGuru_1_1imageSupport_1a4ff5927da2afbda84dd5b4dc866248b1" kindref="member">type</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130" refid="structImageGuru_1_1imageSupport_1ac8203336cd34f13403a9263f45f4f85d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structImageGuru_1_1imageSupport_1ac8203336cd34f13403a9263f45f4f85d" kindref="member">supported</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="139" refid="classImageGuru_1a9656fc9753f60aa1dda76030a7906d9f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classImageGuru_1a9656fc9753f60aa1dda76030a7906d9f" kindref="member">isSupported</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>type)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::find_if(</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classImageGuru_1a584ee80b421a877e66108805931fd2d0" kindref="member">supported_image</ref>.begin(),<sp/><ref refid="classImageGuru_1a584ee80b421a877e66108805931fd2d0" kindref="member">supported_image</ref>.end(),</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[type](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structImageGuru_1_1imageSupport" kindref="compound">imageSupport</ref><sp/>&amp;entry)<sp/>{<sp/>return<sp/>entry.type<sp/>==<sp/>type;<sp/>});</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/><ref refid="classImageGuru_1a584ee80b421a877e66108805931fd2d0" kindref="member">supported_image</ref>.end())<sp/>?<sp/>it-&gt;supported<sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="classImageGuru_1a250967309e02e5a4a2226361f56cf5f6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classImageGuru_1a250967309e02e5a4a2226361f56cf5f6" kindref="member">typeToString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>type)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(type)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a907e06a16862d82ca6907a28a68d0ad6" kindref="member">ImageType::JPEG</ref>:</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;JPEG&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a55505ba281b015ec31f03ccb151b2a34" kindref="member">ImageType::PNG</ref>:</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;PNG&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a95a66bab4c0c0fd8387e680daeff99a8" kindref="member">ImageType::GIF</ref>:</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;GIF&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0aa5d5ca1447586e23dc011f8c0cc0a6db" kindref="member">ImageType::BMP</ref>:</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;BMP&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ace0dbe5045edda1a0e9686ce899798ea" kindref="member">ImageType::TIFF</ref>:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;TIFF&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ab8dbf614b2c3a603c8c8c723a3f6eb7a" kindref="member">ImageType::WEBP</ref>:</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;WEBP&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93" kindref="member">ImageType::AVIF</ref>:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;AVIF&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">ImageType::UNKNOWN</ref>:</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;UNKNOWN&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;UNKNOWN&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="184" refid="classImageGuru_1a584ee80b421a877e66108805931fd2d0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::array&lt;imageSupport,<sp/>8&gt;<sp/><ref refid="classImageGuru_1a584ee80b421a877e66108805931fd2d0" kindref="member">supported_image</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a907e06a16862d82ca6907a28a68d0ad6" kindref="member">ImageType::JPEG</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">},<sp/></highlight><highlight class="comment">//<sp/>JPEG<sp/>supported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a55505ba281b015ec31f03ccb151b2a34" kindref="member">ImageType::PNG</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">},<sp/><sp/></highlight><highlight class="comment">//<sp/>PNG<sp/>supported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a95a66bab4c0c0fd8387e680daeff99a8" kindref="member">ImageType::GIF</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">},<sp/></highlight><highlight class="comment">//<sp/>Others<sp/>unsupported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0aa5d5ca1447586e23dc011f8c0cc0a6db" kindref="member">ImageType::BMP</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ace0dbe5045edda1a0e9686ce899798ea" kindref="member">ImageType::TIFF</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0ab8dbf614b2c3a603c8c8c723a3f6eb7a" kindref="member">ImageType::WEBP</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a35825f52ac558b8590c66431d1aa9c93" kindref="member">ImageType::AVIF</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">ImageType::UNKNOWN</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">}}};</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/imageGuru.h"/>
+  </compounddef>
+</doxygen>

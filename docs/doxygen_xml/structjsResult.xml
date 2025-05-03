@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structjsResult" kind="struct" language="C++" prot="public">
+    <compoundname>jsResult</compoundname>
+    <includes refid="result_8h" local="no">result.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" prot="public" static="no" mutable="no">
+        <type><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref></type>
+        <definition>Result jsResult::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <qualifiedname>jsResult::result</qualifiedname>
+        <briefdescription>
+<para>The wrapped <ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> variant. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/result.h" line="42" column="10" bodyfile="include/result.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" compoundref="result_8h" startline="61" endline="61">getError</referencedby>
+        <referencedby refid="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" compoundref="result_8h" startline="68" endline="68">getImage</referencedby>
+        <referencedby refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" compoundref="result_8h" startline="48" endline="48">hasError</referencedby>
+        <referencedby refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" compoundref="result_8h" startline="54" endline="54">hasImage</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool jsResult::hasError</definition>
+        <argsstring>() const</argsstring>
+        <name>hasError</name>
+        <qualifiedname>jsResult::hasError</qualifiedname>
+        <briefdescription>
+<para>Check if the result contains an error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the result is an error, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/result.h" line="48" column="8" bodyfile="include/result.h" bodystart="48" bodyend="48"/>
+        <references refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" compoundref="result_8h" startline="42">result</references>
+        <referencedby refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" compoundref="bind_8cpp" startline="86" endline="111">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool jsResult::hasImage</definition>
+        <argsstring>() const</argsstring>
+        <name>hasImage</name>
+        <qualifiedname>jsResult::hasImage</qualifiedname>
+        <briefdescription>
+<para>Check if the result contains an image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the result is an image, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/result.h" line="54" column="8" bodyfile="include/result.h" bodystart="54" bodyend="54"/>
+        <references refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" compoundref="result_8h" startline="42">result</references>
+        <referencedby refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" compoundref="bind_8cpp" startline="86" endline="111">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classError" kindref="compound">Error</ref></type>
+        <definition>Error jsResult::getError</definition>
+        <argsstring>() const</argsstring>
+        <name>getError</name>
+        <qualifiedname>jsResult::getError</qualifiedname>
+        <briefdescription>
+<para>Get the error from the result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="classError" kindref="compound">Error</ref> object </para>
+</simplesect>
+<simplesect kind="pre"><para>The result must contain an error (check with <ref refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" kindref="member">hasError()</ref> first) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/result.h" line="61" column="9" bodyfile="include/result.h" bodystart="61" bodyend="61"/>
+        <references refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" compoundref="result_8h" startline="42">result</references>
+        <referencedby refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" compoundref="bind_8cpp" startline="86" endline="111">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="result_8h_1ac27a0c880b3a6990e93c23615c3be199" kindref="member">ImgaePtr</ref></type>
+        <definition>ImgaePtr jsResult::getImage</definition>
+        <argsstring>() const</argsstring>
+        <name>getImage</name>
+        <qualifiedname>jsResult::getImage</qualifiedname>
+        <briefdescription>
+<para>Get the image from the result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The image buffer pointer </para>
+</simplesect>
+<simplesect kind="pre"><para>The result must contain an image (check with <ref refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" kindref="member">hasImage()</ref> first) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/result.h" line="68" column="12" bodyfile="include/result.h" bodystart="68" bodyend="68"/>
+        <references refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" compoundref="result_8h" startline="42">result</references>
+        <referencedby refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" compoundref="bind_8cpp" startline="86" endline="111">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>JavaScript-friendly result structure. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This structure wraps the C++ <ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> variant and provides helper methods for JavaScript bindings to easily check result status and extract data. </para>
+    </detaileddescription>
+    <location file="include/result.h" line="41" column="1" bodyfile="include/result.h" bodystart="41" bodyend="69"/>
+    <listofallmembers>
+      <member refid="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" prot="public" virt="non-virtual"><scope>jsResult</scope><name>getError</name></member>
+      <member refid="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" prot="public" virt="non-virtual"><scope>jsResult</scope><name>getImage</name></member>
+      <member refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" prot="public" virt="non-virtual"><scope>jsResult</scope><name>hasError</name></member>
+      <member refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" prot="public" virt="non-virtual"><scope>jsResult</scope><name>hasImage</name></member>
+      <member refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" prot="public" virt="non-virtual"><scope>jsResult</scope><name>result</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

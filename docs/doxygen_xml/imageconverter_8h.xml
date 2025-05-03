@@ -1,0 +1,477 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="imageconverter_8h" kind="file" language="C++">
+    <compoundname>imageconverter.h</compoundname>
+    <includes refid="avif__helper_8h" local="yes">avif_helper.h</includes>
+    <includes refid="constants_8h" local="yes">constants.h</includes>
+    <includes refid="encoder__config_8h" local="yes">encoder_config.h</includes>
+    <includes refid="error_8h" local="yes">error.h</includes>
+    <includes refid="imageGuru_8h" local="yes">imageGuru.h</includes>
+    <includes refid="imagebuffer_8h" local="yes">imagebuffer.h</includes>
+    <includes refid="result_8h" local="yes">result.h</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">avif/avif.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="bind_8cpp" local="yes">src/bind.cpp</includedby>
+    <includedby refid="imageconverter_8cpp" local="yes">src/imageconverter.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>avif_helper.h</label>
+        <link refid="avif__helper_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="15">
+        <label>encoder_config.h</label>
+        <link refid="encoder__config_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>imageGuru.h</label>
+        <link refid="imageGuru_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>imagebuffer.h</label>
+        <link refid="imagebuffer_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>algorithm</label>
+      </node>
+      <node id="18">
+        <label>array</label>
+      </node>
+      <node id="5">
+        <label>avif/avif.h</label>
+      </node>
+      <node id="9">
+        <label>emscripten.h</label>
+      </node>
+      <node id="10">
+        <label>emscripten/bind.h</label>
+      </node>
+      <node id="6">
+        <label>emscripten/val.h</label>
+      </node>
+      <node id="11">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>variant</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/bind.cpp</label>
+        <link refid="bind_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/imageconverter.cpp</label>
+        <link refid="imageconverter_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref></type>
+        <definition>Result convert_image</definition>
+        <argsstring>(ImageType type, const std::vector&lt; uint8_t &gt; &amp;input_data, int width, int height, const EncodeConfig &amp;config)</argsstring>
+        <name>convert_image</name>
+        <param>
+          <type><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>input_data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Converts an image to AVIF format with specified parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input image (e.g., PNG, JPEG) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector containing the raw image data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired width of the output image (will resize if different from source) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired height of the output image (will resize if different from source) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encoding configuration parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> object containing either the encoded image data on success or an <ref refid="classError" kindref="compound">Error</ref> on failure</para>
+</simplesect>
+<simplesect kind="note"><para>Image dimensions are limited to 1-8192px</para>
+</simplesect>
+This function handles the complete conversion pipeline:<orderedlist>
+<listitem><para>Validates input dimensions</para>
+</listitem><listitem><para>Loads and decodes input image data</para>
+</listitem><listitem><para>Resizes image if necessary</para>
+</listitem><listitem><para>Configures the AVIF encoder based on provided settings</para>
+</listitem><listitem><para>Converts RGB data to YUV colorspace</para>
+</listitem><listitem><para>Encodes image to AVIF format</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input image (e.g., PNG, JPEG) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector containing the raw image data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired width of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired height of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encoding configuration parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> object containing either the encoded image data or an <ref refid="classError" kindref="compound">Error</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imageconverter.h" line="36" column="8" bodyfile="src/imageconverter.cpp" bodystart="47" bodyend="224" declfile="include/imageconverter.h" declline="36" declcolumn="8"/>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" compoundref="encoder__config_8h" startline="22">AOM</references>
+        <references refid="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" compoundref="error_8cpp" startline="6" endline="10">avifToConverterError</references>
+        <references refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" compoundref="encoder__config_8h" startline="218">EncodeConfig::codecChoice</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" compoundref="error_8h" startline="30">CONVERSION_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" compoundref="error_8h" startline="29">ENCODER_CREATION_FAILED</references>
+        <references refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" compoundref="encoder__config_8h" startline="304" endline="304">EncodeConfig::getSpeed</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" compoundref="error_8h" startline="28">IMAGE_LOAD_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" compoundref="error_8h" startline="26">INVALID_DIMENSIONS</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" compoundref="error_8h" startline="34">INVALID_QUANTIZER_VALUES</references>
+        <references refid="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" compoundref="constants_8h" startline="48">MAX_QUANTIZER</references>
+        <references refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" compoundref="encoder__config_8h" startline="222">EncodeConfig::maxQuantizer</references>
+        <references refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" compoundref="encoder__config_8h" startline="221">EncodeConfig::minQuantizer</references>
+        <references refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" compoundref="encoder__config_8h" startline="217">EncodeConfig::pixelFormat</references>
+        <references refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">EncodeConfig::printConfig</references>
+        <references refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" compoundref="encoder__config_8h" startline="213">EncodeConfig::quality</references>
+        <references refid="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" compoundref="encoder__config_8h" startline="214">EncodeConfig::qualityAlpha</references>
+        <references refid="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" compoundref="constants_8h" startline="19">RGB_DEPTH</references>
+        <references refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" compoundref="avif__helper_8h" startline="81" endline="92">SetAvifOption</references>
+        <references refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" compoundref="encoder__config_8h" startline="216">EncodeConfig::sharpness</references>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0" compoundref="encoder__config_8h" startline="22">SVT</references>
+        <references refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" compoundref="encoder__config_8h" startline="224">EncodeConfig::tileColsLog2</references>
+        <references refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" compoundref="encoder__config_8h" startline="223">EncodeConfig::tileRowsLog2</references>
+        <references refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" compoundref="encoder__config_8h" startline="226">EncodeConfig::tune</references>
+        <references refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa36f2f11b44c5dbc63f70d5d2b9b21ade" compoundref="encoder__config_8h" startline="27">TUNE_PSNR</references>
+        <references refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa2b5b777c2bdf867ddf4693c9d806c4bf" compoundref="encoder__config_8h" startline="27">TUNE_SSIM</references>
+        <referencedby refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" compoundref="imageconverter_8cpp" startline="243" endline="300">convertImageDirect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>emscripten::val</type>
+        <definition>emscripten::val convertImageDirect</definition>
+        <argsstring>(emscripten::val jsData, int width, int height, const EncodeConfig &amp;config)</argsstring>
+        <name>convertImageDirect</name>
+        <param>
+          <type>emscripten::val</type>
+          <declname>jsData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>JavaScript binding wrapper for image conversion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Takes JavaScript Uint8Array input and returns JavaScript object with result data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>jsData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JavaScript array/TypedArray containing image data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired width of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired height of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encoding configuration parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>JavaScript object containing either the encoded image buffer or error information</para>
+</simplesect>
+This function:<orderedlist>
+<listitem><para>Converts JavaScript data to C++ vector</para>
+</listitem><listitem><para>Detects the image type</para>
+</listitem><listitem><para>Validates the image can be processed</para>
+</listitem><listitem><para>Calls convert_image to perform the actual conversion</para>
+</listitem><listitem><para>Returns JavaScript object with result</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>jsData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JavaScript array/TypedArray containing image data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired width of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired height of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encoding configuration parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>JavaScript object containing either the encoded image buffer or error information </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imageconverter.h" line="51" column="17" bodyfile="src/imageconverter.cpp" bodystart="243" bodyend="300" declfile="include/imageconverter.h" declline="51" declcolumn="17"/>
+        <references refid="imageconverter_8cpp_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</references>
+        <references refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" compoundref="imageGuru_8h" startline="42" endline="102">ImageGuru::GetImageType</references>
+        <references refid="classImageGuru_1a9656fc9753f60aa1dda76030a7906d9f" compoundref="imageGuru_8h" startline="139" endline="146">ImageGuru::isSupported</references>
+        <references refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" compoundref="error_8cpp" startline="44" endline="53">toJsError</references>
+        <references refid="classImageGuru_1a250967309e02e5a4a2226361f56cf5f6" compoundref="imageGuru_8h" startline="154" endline="175">ImageGuru::typeToString</references>
+        <references refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" compoundref="imageGuru_8h" startline="23">UNKNOWN</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" compoundref="error_8h" startline="35">UNKNOWN_ERROR</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" compoundref="error_8h" startline="27">UNSUPPORTED_IMAGETYPE</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Header for image conversion functionality to AVIF format. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>ConvAvif Developer </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+Provides functions to convert various image formats to AVIF using the AVIF library with configurable encoding parameters. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMAGECONVERTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IMAGECONVERTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="avif__helper_8h" kindref="compound">avif_helper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="encoder__config_8h" kindref="compound">encoder_config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8h" kindref="compound">error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imageGuru_8h" kindref="compound">imageGuru.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imagebuffer_8h" kindref="compound">imagebuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="result_8h" kindref="compound">result.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avif/avif.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/><ref refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" kindref="member">convert_image</ref>(<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;input_data,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref><sp/>&amp;config);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">emscripten::val<sp/><ref refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" kindref="member">convertImageDirect</ref>(emscripten::val<sp/>jsData,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref><sp/>&amp;config);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/imageconverter.h"/>
+  </compounddef>
+</doxygen>

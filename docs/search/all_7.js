@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['image_5fload_5ffailed_0',['IMAGE_LOAD_FAILED',['../error_8h.html#ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3',1,'error.h']]],
+  ['imagebuffer_1',['ImageBuffer',['../classImageBuffer.html',1,'ImageBuffer'],['../classImageBuffer.html#ae35022dca7c053de97b73c9e55d7a6c0',1,'ImageBuffer::ImageBuffer()']]],
+  ['imagebuffer_2eh_2',['imagebuffer.h',['../imagebuffer_8h.html',1,'']]],
+  ['imageconverter_2ecpp_3',['imageconverter.cpp',['../imageconverter_8cpp.html',1,'']]],
+  ['imageconverter_2eh_4',['imageconverter.h',['../imageconverter_8h.html',1,'']]],
+  ['imageguru_5',['ImageGuru',['../classImageGuru.html',1,'']]],
+  ['imageguru_2eh_6',['imageGuru.h',['../imageGuru_8h.html',1,'']]],
+  ['imagesupport_7',['imageSupport',['../structImageGuru_1_1imageSupport.html',1,'ImageGuru']]],
+  ['imagetype_8',['ImageType',['../imageGuru_8h.html#a3154c405c975616503bac23f51b78fc0',1,'imageGuru.h']]],
+  ['imgaeptr_9',['ImgaePtr',['../result_8h.html#ac27a0c880b3a6990e93c23615c3be199',1,'result.h']]],
+  ['invalid_5fargument_10',['INVALID_ARGUMENT',['../error_8h.html#ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d',1,'error.h']]],
+  ['invalid_5fdimensions_11',['INVALID_DIMENSIONS',['../error_8h.html#ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9',1,'error.h']]],
+  ['invalid_5fquantizer_5fvalues_12',['INVALID_QUANTIZER_VALUES',['../error_8h.html#ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581',1,'error.h']]],
+  ['isspecifictype_13',['IsSpecificType',['../classImageGuru.html#af8b04916cf74b30b69ecdbde53ae7b4f',1,'ImageGuru']]],
+  ['issupported_14',['isSupported',['../classImageGuru.html#a9656fc9753f60aa1dda76030a7906d9f',1,'ImageGuru']]],
+  ['isvalid_15',['IsValid',['../classImageGuru.html#ad4730c44991d536d63807ed17361540d',1,'ImageGuru']]],
+  ['isvalid_16',['isValid',['../structSpeed.html#af0a84886324cba325796995fc199c440',1,'Speed']]]
+];

@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="avif__helper_8h" kind="file" language="C++">
+    <compoundname>avif_helper.h</compoundname>
+    <includes refid="result_8h" local="yes">result.h</includes>
+    <includes local="no">avif/avif.h</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="imageconverter_8h" local="yes">include/imageconverter.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/avif_helper.h</label>
+        <link refid="avif__helper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>imagebuffer.h</label>
+        <link refid="imagebuffer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>avif/avif.h</label>
+      </node>
+      <node id="8">
+        <label>emscripten.h</label>
+      </node>
+      <node id="9">
+        <label>emscripten/bind.h</label>
+      </node>
+      <node id="5">
+        <label>emscripten/val.h</label>
+      </node>
+      <node id="10">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>variant</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/avif_helper.h</label>
+        <link refid="avif__helper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/bind.cpp</label>
+        <link refid="bind_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/imageconverter.cpp</label>
+        <link refid="imageconverter_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structAvifEncoderDeleter" prot="public">AvifEncoderDeleter</innerclass>
+    <innerclass refid="structAvifImageDeleter" prot="public">AvifImageDeleter</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="avif__helper_8h_1a331a86d5fe51c7cbe0906bfe1fa96f2d" prot="public" static="no">
+        <type>std::unique_ptr&lt; avifEncoder, <ref refid="structAvifEncoderDeleter" kindref="compound">AvifEncoderDeleter</ref> &gt;</type>
+        <definition>using UniqueAvifEncoder =  std::unique_ptr&lt;avifEncoder, AvifEncoderDeleter&gt;</definition>
+        <argsstring></argsstring>
+        <name>UniqueAvifEncoder</name>
+        <briefdescription>
+<para>Unique pointer type for AVIF encoders with automatic cleanup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This type ensures that avifEncoder objects are properly destroyed when they are no longer needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/avif_helper.h" line="38" column="1" bodyfile="include/avif_helper.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="avif__helper_8h_1acb6a592f91b69619ec29fd6bb942c4ba" prot="public" static="no">
+        <type>std::unique_ptr&lt; avifImage, <ref refid="structAvifImageDeleter" kindref="compound">AvifImageDeleter</ref> &gt;</type>
+        <definition>using UniqueAvifImage =  std::unique_ptr&lt;avifImage, AvifImageDeleter&gt;</definition>
+        <argsstring></argsstring>
+        <name>UniqueAvifImage</name>
+        <briefdescription>
+<para>Unique pointer type for AVIF images with automatic cleanup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This type ensures that avifImage objects are properly destroyed when they are no longer needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/avif_helper.h" line="60" column="1" bodyfile="include/avif_helper.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref></type>
+        <definition>Result SetAvifOption</definition>
+        <argsstring>(avifEncoder *encoder, const char *key, const char *value, const std::string &amp;humanReadableOption, const char *callerFunction=__func__)</argsstring>
+        <name>SetAvifOption</name>
+        <param>
+          <type>avifEncoder *</type>
+          <declname>encoder</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>humanReadableOption</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>callerFunction</declname>
+          <defval>__func__</defval>
+        </param>
+        <briefdescription>
+<para>Set a codec-specific option on an AVIF encoder. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function wraps the avifEncoderSetCodecSpecificOption function with error handling and detailed error messages.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>encoder</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The AVIF encoder to set the option on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The option key (specific to the codec) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The option value to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>humanReadableOption</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Human-readable description of the option (for error messages) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callerFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the calling function (for error context)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> containing either OK status or an <ref refid="classError" kindref="compound">Error</ref> with details </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/avif_helper.h" line="81" column="1" bodyfile="include/avif_helper.h" bodystart="81" bodyend="92"/>
+        <references refid="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" compoundref="error_8cpp" startline="6" endline="10">avifToConverterError</references>
+        <referencedby refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper utilities for AVIF library integration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>ConvAvif Developer </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+This file provides utility classes and functions to simplify working with the AVIF library, including RAII wrappers for AVIF objects and helper functions for common operations. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AVIF_HELPERS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AVIF_HELPERS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="result_8h" kindref="compound">result.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avif/avif.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="structAvifEncoderDeleter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structAvifEncoderDeleter" kindref="compound">AvifEncoderDeleter</ref><sp/>{</highlight></codeline>
+<codeline lineno="29" refid="structAvifEncoderDeleter_1a07f65e1f4d11ce9cd23e172ecdbf79eb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structAvifEncoderDeleter_1a07f65e1f4d11ce9cd23e172ecdbf79eb" kindref="member">operator()</ref>(avifEncoder<sp/>*enc)<sp/>{<sp/>avifEncoderDestroy(enc);<sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="avif__helper_8h_1a331a86d5fe51c7cbe0906bfe1fa96f2d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="avif__helper_8h_1a331a86d5fe51c7cbe0906bfe1fa96f2d" kindref="member">UniqueAvifEncoder</ref><sp/>=<sp/>std::unique_ptr&lt;avifEncoder,<sp/>AvifEncoderDeleter&gt;;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="structAvifImageDeleter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structAvifImageDeleter" kindref="compound">AvifImageDeleter</ref><sp/>{</highlight></codeline>
+<codeline lineno="51" refid="structAvifImageDeleter_1a6788fcd79a25d2562a24ac62c980fdaf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structAvifImageDeleter_1a6788fcd79a25d2562a24ac62c980fdaf" kindref="member">operator()</ref>(avifImage<sp/>*img)<sp/>{<sp/>avifImageDestroy(img);<sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="avif__helper_8h_1acb6a592f91b69619ec29fd6bb942c4ba" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="avif__helper_8h_1acb6a592f91b69619ec29fd6bb942c4ba" kindref="member">UniqueAvifImage</ref><sp/>=<sp/>std::unique_ptr&lt;avifImage,<sp/>AvifImageDeleter&gt;;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/>========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Helper<sp/>Functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/>========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">[[nodiscard]]<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref></highlight></codeline>
+<codeline lineno="81" refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" refkind="member"><highlight class="normal"><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(avifEncoder<sp/>*encoder,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;humanReadableOption,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*callerFunction<sp/>=<sp/>__func__)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>avifResult<sp/>result<sp/>=<sp/>avifEncoderSetCodecSpecificOption(encoder,<sp/>key,<sp/>value);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>!=<sp/>AVIF_RESULT_OK)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref>{<ref refid="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" kindref="member">avifToConverterError</ref>(result),</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>set<sp/>[&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(key)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;=&quot;</highlight><highlight class="normal"><sp/>+<sp/>value<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>(&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>humanReadableOption<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;):<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>avifResultToString(result),</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callerFunction};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>avifResult::AVIF_RESULT_OK;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>AVIF_HELPERS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/avif_helper.h"/>
+  </compounddef>
+</doxygen>

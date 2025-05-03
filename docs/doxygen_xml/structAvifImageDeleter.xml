@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structAvifImageDeleter" kind="struct" language="C++" prot="public">
+    <compoundname>AvifImageDeleter</compoundname>
+    <includes refid="avif__helper_8h" local="no">avif_helper.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structAvifImageDeleter_1a6788fcd79a25d2562a24ac62c980fdaf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AvifImageDeleter::operator()</definition>
+        <argsstring>(avifImage *img)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>AvifImageDeleter::operator()</qualifiedname>
+        <param>
+          <type>avifImage *</type>
+          <declname>img</declname>
+        </param>
+        <briefdescription>
+<para>Deletes an avifImage object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>img</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the avifImage to destroy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/avif_helper.h" line="51" column="8" bodyfile="include/avif_helper.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Custom deleter for avifImage objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This functor is used with std::unique_ptr to properly clean up avifImage resources when the unique_ptr goes out of scope. </para>
+    </detaileddescription>
+    <location file="include/avif_helper.h" line="46" column="1" bodyfile="include/avif_helper.h" bodystart="46" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structAvifImageDeleter_1a6788fcd79a25d2562a24ac62c980fdaf" prot="public" virt="non-virtual"><scope>AvifImageDeleter</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

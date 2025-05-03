@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structAvifEncoderDeleter" kind="struct" language="C++" prot="public">
+    <compoundname>AvifEncoderDeleter</compoundname>
+    <includes refid="avif__helper_8h" local="no">avif_helper.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structAvifEncoderDeleter_1a07f65e1f4d11ce9cd23e172ecdbf79eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AvifEncoderDeleter::operator()</definition>
+        <argsstring>(avifEncoder *enc)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>AvifEncoderDeleter::operator()</qualifiedname>
+        <param>
+          <type>avifEncoder *</type>
+          <declname>enc</declname>
+        </param>
+        <briefdescription>
+<para>Deletes an avifEncoder object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the avifEncoder to destroy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/avif_helper.h" line="29" column="8" bodyfile="include/avif_helper.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Custom deleter for avifEncoder objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This functor is used with std::unique_ptr to properly clean up avifEncoder resources when the unique_ptr goes out of scope. </para>
+    </detaileddescription>
+    <location file="include/avif_helper.h" line="24" column="1" bodyfile="include/avif_helper.h" bodystart="24" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structAvifEncoderDeleter_1a07f65e1f4d11ce9cd23e172ecdbf79eb" prot="public" virt="non-virtual"><scope>AvifEncoderDeleter</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

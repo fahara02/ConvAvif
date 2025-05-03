@@ -1,0 +1,679 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="imageconverter_8cpp" kind="file" language="C++">
+    <compoundname>imageconverter.cpp</compoundname>
+    <includes refid="imageconverter_8h" local="yes">imageconverter.h</includes>
+    <includes local="no">avif/avif.h</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">cstdlib</includes>
+    <includes local="no">emscripten/bind.h</includes>
+    <includes local="no">emscripten/emscripten.h</includes>
+    <includes local="no">emscripten/heap.h</includes>
+    <includes local="no">emscripten/threading.h</includes>
+    <includes local="no">emscripten/val.h</includes>
+    <includes local="no">stb_image.h</includes>
+    <includes local="no">stb_image_resize2.h</includes>
+    <includes local="no">vector</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>avif_helper.h</label>
+        <link refid="avif__helper_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="16">
+        <label>encoder_config.h</label>
+        <link refid="encoder__config_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>imageGuru.h</label>
+        <link refid="imageGuru_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>imagebuffer.h</label>
+        <link refid="imagebuffer_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/imageconverter.cpp</label>
+        <link refid="imageconverter_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>algorithm</label>
+      </node>
+      <node id="19">
+        <label>array</label>
+      </node>
+      <node id="6">
+        <label>avif/avif.h</label>
+      </node>
+      <node id="20">
+        <label>cmath</label>
+      </node>
+      <node id="21">
+        <label>cstdlib</label>
+      </node>
+      <node id="10">
+        <label>emscripten.h</label>
+      </node>
+      <node id="11">
+        <label>emscripten/bind.h</label>
+      </node>
+      <node id="22">
+        <label>emscripten/emscripten.h</label>
+      </node>
+      <node id="23">
+        <label>emscripten/heap.h</label>
+      </node>
+      <node id="24">
+        <label>emscripten/threading.h</label>
+      </node>
+      <node id="7">
+        <label>emscripten/val.h</label>
+      </node>
+      <node id="12">
+        <label>memory</label>
+      </node>
+      <node id="25">
+        <label>stb_image.h</label>
+      </node>
+      <node id="26">
+        <label>stb_image_resize2.h</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="14">
+        <label>variant</label>
+      </node>
+      <node id="13">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="imageconverter_8cpp_1a0e3d823db0d3ab0b3d9d8848a37b66f3" prot="public" static="no" mutable="no">
+        <type>thread_local const emscripten::val</type>
+        <definition>thread_local const emscripten::val Uint8Array</definition>
+        <argsstring></argsstring>
+        <name>Uint8Array</name>
+        <initializer>=
+    emscripten::val::global(&quot;Uint8Array&quot;)</initializer>
+        <briefdescription>
+<para>Thread-local Uint8Array reference from JavaScript. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used for efficient data transfer between C++ and JavaScript </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/imageconverter.cpp" line="25" column="36" bodyfile="src/imageconverter.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="imageconverter_8cpp_1ad6ba1bd00ba7d9e8f381d223af9f4343" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref></type>
+        <definition>Result convert_image</definition>
+        <argsstring>(ImageType type, const std::vector&lt; uint8_t &gt; &amp;input_data, int width, int height, const EncodeConfig &amp;config)</argsstring>
+        <name>convert_image</name>
+        <param>
+          <type><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>input_data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Converts an image to AVIF format with specified parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function handles the complete conversion pipeline:<orderedlist>
+<listitem><para>Validates input dimensions</para>
+</listitem><listitem><para>Loads and decodes input image data</para>
+</listitem><listitem><para>Resizes image if necessary</para>
+</listitem><listitem><para>Configures the AVIF encoder based on provided settings</para>
+</listitem><listitem><para>Converts RGB data to YUV colorspace</para>
+</listitem><listitem><para>Encodes image to AVIF format</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input image (e.g., PNG, JPEG) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector containing the raw image data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired width of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired height of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encoding configuration parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> object containing either the encoded image data or an <ref refid="classError" kindref="compound">Error</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/imageconverter.cpp" line="47" column="8" bodyfile="src/imageconverter.cpp" bodystart="47" bodyend="224"/>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" compoundref="encoder__config_8h" startline="22">AOM</references>
+        <references refid="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" compoundref="error_8cpp" startline="6" endline="10">avifToConverterError</references>
+        <references refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" compoundref="encoder__config_8h" startline="218">EncodeConfig::codecChoice</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" compoundref="error_8h" startline="30">CONVERSION_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" compoundref="error_8h" startline="29">ENCODER_CREATION_FAILED</references>
+        <references refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" compoundref="encoder__config_8h" startline="304" endline="304">EncodeConfig::getSpeed</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" compoundref="error_8h" startline="28">IMAGE_LOAD_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" compoundref="error_8h" startline="26">INVALID_DIMENSIONS</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" compoundref="error_8h" startline="34">INVALID_QUANTIZER_VALUES</references>
+        <references refid="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" compoundref="constants_8h" startline="48">MAX_QUANTIZER</references>
+        <references refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" compoundref="encoder__config_8h" startline="222">EncodeConfig::maxQuantizer</references>
+        <references refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" compoundref="encoder__config_8h" startline="221">EncodeConfig::minQuantizer</references>
+        <references refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" compoundref="encoder__config_8h" startline="217">EncodeConfig::pixelFormat</references>
+        <references refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" compoundref="encoder__config_8h" startline="357" endline="373">EncodeConfig::printConfig</references>
+        <references refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" compoundref="encoder__config_8h" startline="213">EncodeConfig::quality</references>
+        <references refid="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" compoundref="encoder__config_8h" startline="214">EncodeConfig::qualityAlpha</references>
+        <references refid="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" compoundref="constants_8h" startline="19">RGB_DEPTH</references>
+        <references refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" compoundref="avif__helper_8h" startline="81" endline="92">SetAvifOption</references>
+        <references refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" compoundref="encoder__config_8h" startline="216">EncodeConfig::sharpness</references>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0" compoundref="encoder__config_8h" startline="22">SVT</references>
+        <references refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" compoundref="encoder__config_8h" startline="224">EncodeConfig::tileColsLog2</references>
+        <references refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" compoundref="encoder__config_8h" startline="223">EncodeConfig::tileRowsLog2</references>
+        <references refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" compoundref="encoder__config_8h" startline="226">EncodeConfig::tune</references>
+        <references refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa36f2f11b44c5dbc63f70d5d2b9b21ade" compoundref="encoder__config_8h" startline="27">TUNE_PSNR</references>
+        <references refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa2b5b777c2bdf867ddf4693c9d806c4bf" compoundref="encoder__config_8h" startline="27">TUNE_SSIM</references>
+        <referencedby refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" compoundref="imageconverter_8cpp" startline="243" endline="300">convertImageDirect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imageconverter_8cpp_1a739d2db06147b652cbc5145fb97925d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>emscripten::val</type>
+        <definition>emscripten::val convertImageDirect</definition>
+        <argsstring>(emscripten::val jsData, int width, int height, const EncodeConfig &amp;config)</argsstring>
+        <name>convertImageDirect</name>
+        <param>
+          <type>emscripten::val</type>
+          <declname>jsData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>JavaScript binding wrapper for image conversion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function:<orderedlist>
+<listitem><para>Converts JavaScript data to C++ vector</para>
+</listitem><listitem><para>Detects the image type</para>
+</listitem><listitem><para>Validates the image can be processed</para>
+</listitem><listitem><para>Calls convert_image to perform the actual conversion</para>
+</listitem><listitem><para>Returns JavaScript object with result</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>jsData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JavaScript array/TypedArray containing image data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired width of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired height of the output image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encoding configuration parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>JavaScript object containing either the encoded image buffer or error information </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/imageconverter.cpp" line="243" column="17" bodyfile="src/imageconverter.cpp" bodystart="243" bodyend="300"/>
+        <references refid="imageconverter_8cpp_1ad6ba1bd00ba7d9e8f381d223af9f4343" compoundref="imageconverter_8cpp" startline="47" endline="224">convert_image</references>
+        <references refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" compoundref="imageGuru_8h" startline="42" endline="102">ImageGuru::GetImageType</references>
+        <references refid="classImageGuru_1a9656fc9753f60aa1dda76030a7906d9f" compoundref="imageGuru_8h" startline="139" endline="146">ImageGuru::isSupported</references>
+        <references refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" compoundref="error_8cpp" startline="44" endline="53">toJsError</references>
+        <references refid="classImageGuru_1a250967309e02e5a4a2226361f56cf5f6" compoundref="imageGuru_8h" startline="154" endline="175">ImageGuru::typeToString</references>
+        <references refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" compoundref="imageGuru_8h" startline="23">UNKNOWN</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" compoundref="error_8h" startline="35">UNKNOWN_ERROR</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" compoundref="error_8h" startline="27">UNSUPPORTED_IMAGETYPE</references>
+        <referencedby refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" compoundref="bind_8cpp" startline="16" endline="70">EMSCRIPTEN_BINDINGS</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implementation of image conversion functionality to AVIF format. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>ConvAvif Developer </para>
+</simplesect>
+<simplesect kind="date"><para>2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imageconverter_8h" kindref="compound">imageconverter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avif/avif.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;emscripten/bind.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>emscripten::val,<sp/>typed_memory_view</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;emscripten/emscripten.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>for<sp/>EM_ASM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;emscripten/heap.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;emscripten/threading.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;emscripten/val.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stb_image.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stb_image_resize2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="imageconverter_8cpp_1a0e3d823db0d3ab0b3d9d8848a37b66f3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">thread_local</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>emscripten::val<sp/><ref refid="imageconverter_8cpp_1a0e3d823db0d3ab0b3d9d8848a37b66f3" kindref="member">Uint8Array</ref><sp/>=</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>emscripten::val::global(</highlight><highlight class="stringliteral">&quot;Uint8Array&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="imageconverter_8h_1ad6ba1bd00ba7d9e8f381d223af9f4343" refkind="member"><highlight class="normal"><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/><ref refid="imageconverter_8cpp_1ad6ba1bd00ba7d9e8f381d223af9f4343" kindref="member">convert_image</ref>(<ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;<sp/>&amp;input_data,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref><sp/>&amp;config)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Input<sp/>validation<sp/>for<sp/>image<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(width<sp/>&lt;=<sp/>0<sp/>||<sp/>height<sp/>&lt;=<sp/>0<sp/>||<sp/>width<sp/>&gt;<sp/>8192<sp/>||<sp/>height<sp/>&gt;<sp/>8192)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref>(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" kindref="member">ConverterError::INVALID_DIMENSIONS</ref>,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>dimensions<sp/>(1-8192px<sp/>allowed)&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>image<sp/>using<sp/>STB<sp/>library</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/>h,<sp/>channels;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data<sp/>=<sp/>stbi_load_from_memory(</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>input_data.data(),<sp/>input_data.size(),<sp/>&amp;w,<sp/>&amp;h,<sp/>&amp;channels,<sp/>STBI_rgb_alpha);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!data)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref>(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" kindref="member">ConverterError::IMAGE_LOAD_FAILED</ref>,<sp/></highlight><highlight class="stringliteral">&quot;STB<sp/>image<sp/>load<sp/>failed&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__func__);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Resize<sp/>image<sp/>if<sp/>dimensions<sp/>don&apos;t<sp/>match<sp/>requested<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>std::vector&lt;unsigned<sp/>char&gt;<sp/>processed_data;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(w<sp/>==<sp/>width<sp/>&amp;&amp;<sp/>h<sp/>==<sp/>height)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>processed_data.assign(data,<sp/>data<sp/>+<sp/>(w<sp/>*<sp/>h<sp/>*<sp/>4));</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>processed_data.resize(width<sp/>*<sp/>height<sp/>*<sp/>4);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>stbir_resize_uint8_linear(data,<sp/>w,<sp/>h,<sp/>0,<sp/>processed_data.data(),<sp/>width,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height,<sp/>0,<sp/>STBIR_RGBA);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>stbi_image_free(data);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>config.<ref refid="structEncodeConfig_1a01e18a9cd250222d153b06247f0d0c74" kindref="member">printConfig</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>and<sp/>configure<sp/>the<sp/>AVIF<sp/>encoder</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="avif__helper_8h_1a331a86d5fe51c7cbe0906bfe1fa96f2d" kindref="member">UniqueAvifEncoder</ref><sp/>encoder(avifEncoderCreate());</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!encoder)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref>(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" kindref="member">ConverterError::ENCODER_CREATION_FAILED</ref>,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>AVIF<sp/>encoder&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>codec<sp/>choice<sp/>based<sp/>on<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(config.<ref refid="structEncodeConfig_1a22d4be5e6e77553ab2c37329826507b7" kindref="member">codecChoice</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" kindref="member">CodecChoice::AOM</ref>:</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>encoder-&gt;codecChoice<sp/>=<sp/>AVIF_CODEC_CHOICE_AOM;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0" kindref="member">CodecChoice::SVT</ref>:</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>encoder-&gt;codecChoice<sp/>=<sp/>AVIF_CODEC_CHOICE_SVT;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>encoder-&gt;codecChoice<sp/>=<sp/>AVIF_CODEC_CHOICE_AUTO;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Configure<sp/>tuning<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(config.<ref refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" kindref="member">tune</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa36f2f11b44c5dbc63f70d5d2b9b21ade" kindref="member">Tune::TUNE_PSNR</ref>:<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>optionResult<sp/>=</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(encoder.get(),<sp/></highlight><highlight class="stringliteral">&quot;tune&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;psnr&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;PSNR<sp/>Tuning&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>std::get_if&lt;Error&gt;(&amp;optionResult))<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*error;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa2b5b777c2bdf867ddf4693c9d806c4bf" kindref="member">Tune::TUNE_SSIM</ref>:<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>optionResult<sp/>=</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(encoder.get(),<sp/></highlight><highlight class="stringliteral">&quot;tune&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;ssim&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;SSIM<sp/>Tuning&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>std::get_if&lt;Error&gt;(&amp;optionResult))<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*error;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Configure<sp/>general<sp/>encoder<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>encoder-&gt;maxThreads<sp/>=<sp/>emscripten_num_logical_cores();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>encoder-&gt;quality<sp/>=<sp/>config.<ref refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" kindref="member">quality</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>encoder-&gt;qualityAlpha<sp/>=</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(config.<ref refid="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" kindref="member">qualityAlpha</ref><sp/>==<sp/>-1)<sp/>?<sp/>config.<ref refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" kindref="member">quality</ref><sp/>:<sp/>config.<ref refid="structEncodeConfig_1ae862e184fe3e744337d9899fba03c631" kindref="member">qualityAlpha</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>encoder-&gt;speed<sp/>=<sp/>config.<ref refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" kindref="member">getSpeed</ref>();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>sharpness<sp/>option</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>sharpnessResult<sp/>=<sp/><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>encoder.get(),<sp/></highlight><highlight class="stringliteral">&quot;sharpness&quot;</highlight><highlight class="normal">,<sp/>std::to_string(config.<ref refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" kindref="member">sharpness</ref>).c_str(),</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Sharpness&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>std::get_if&lt;Error&gt;(&amp;sharpnessResult))<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*error;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>and<sp/>set<sp/>quantizer<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::round((100<sp/>-<sp/>config.<ref refid="structEncodeConfig_1ac2d564ea102aded1e32cb8d0e39af104" kindref="member">quality</ref>)<sp/>*<sp/><ref refid="constants_8h_1a1fd253faead7ef5b52e7243c1e22a5fe" kindref="member">MAX_QUANTIZER</ref><sp/>/<sp/>100.0));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minQ<sp/>=<sp/>(config.<ref refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" kindref="member">minQuantizer</ref><sp/>==<sp/>-1)<sp/>?<sp/>q<sp/>:<sp/>config.<ref refid="structEncodeConfig_1afb55dabfd987c4a7e28f2c0dda9b82b2" kindref="member">minQuantizer</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxQ<sp/>=<sp/>(config.<ref refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" kindref="member">maxQuantizer</ref><sp/>==<sp/>-1)<sp/>?<sp/>q<sp/>:<sp/>config.<ref refid="structEncodeConfig_1a02535067f903087f2a2f53124d441d36" kindref="member">maxQuantizer</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(minQ<sp/>&gt;<sp/>maxQ)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref>(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" kindref="member">ConverterError::INVALID_QUANTIZER_VALUES</ref>,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;minQuantizer<sp/>must<sp/>be<sp/>&lt;=<sp/>maxQuantizer&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>encoder-&gt;minQuantizer<sp/>=<sp/>minQ;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>encoder-&gt;maxQuantizer<sp/>=<sp/>maxQ;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>encoder-&gt;tileRowsLog2<sp/>=<sp/>config.<ref refid="structEncodeConfig_1aead994e8209e0e35a19d6bc3bf6acdb2" kindref="member">tileRowsLog2</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>encoder-&gt;tileColsLog2<sp/>=<sp/>config.<ref refid="structEncodeConfig_1a16ced1fe1b4dc102b1a2a7bbf827f197" kindref="member">tileColsLog2</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Special<sp/>settings<sp/>for<sp/>AOM<sp/>codec<sp/>in<sp/>high-quality<sp/>mode<sp/>(speed<sp/>&lt;<sp/>5)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(config.<ref refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" kindref="member">getSpeed</ref>()<sp/>&lt;<sp/>5<sp/>&amp;&amp;<sp/>encoder-&gt;codecChoice<sp/>==<sp/>AVIF_CODEC_CHOICE_AOM)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>encoder-&gt;maxThreads<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>rowMtResult<sp/>=<sp/><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(encoder.get(),<sp/></highlight><highlight class="stringliteral">&quot;row-mt&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Row<sp/>Multi-Threading&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>std::get_if&lt;Error&gt;(&amp;rowMtResult))<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*error;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>tileColumnsResult<sp/>=<sp/><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(encoder.get(),<sp/></highlight><highlight class="stringliteral">&quot;tile-columns&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Tile<sp/>Columns&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>std::get_if&lt;Error&gt;(&amp;tileColumnsResult))<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*error;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>tileRowsResult<sp/>=</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(encoder.get(),<sp/></highlight><highlight class="stringliteral">&quot;tile-rows&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Tile<sp/>Rows&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>std::get_if&lt;Error&gt;(&amp;tileRowsResult))<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*error;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>frameParallelResult<sp/>=<sp/><ref refid="avif__helper_8h_1ae966f90c71b8f126e1371e4b7be62f57" kindref="member">SetAvifOption</ref>(encoder.get(),<sp/></highlight><highlight class="stringliteral">&quot;frame-parallel&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Frame<sp/>Parallel&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*error<sp/>=<sp/>std::get_if&lt;Error&gt;(&amp;frameParallelResult))<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*error;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>and<sp/>configure<sp/>the<sp/>AVIF<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><ref refid="avif__helper_8h_1acb6a592f91b69619ec29fd6bb942c4ba" kindref="member">UniqueAvifImage</ref><sp/>image(</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>avifImageCreate(width,<sp/>height,<sp/><ref refid="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" kindref="member">RGB_DEPTH</ref>,<sp/>config.<ref refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" kindref="member">pixelFormat</ref>));</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>image-&gt;colorPrimaries<sp/>=<sp/>AVIF_COLOR_PRIMARIES_BT709;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>image-&gt;transferCharacteristics<sp/>=<sp/>AVIF_TRANSFER_CHARACTERISTICS_SRGB;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>image-&gt;matrixCoefficients<sp/>=<sp/>AVIF_MATRIX_COEFFICIENTS_BT709;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>image-&gt;yuvRange<sp/>=<sp/>AVIF_RANGE_FULL;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>up<sp/>RGB<sp/>image<sp/>for<sp/>conversion<sp/>to<sp/>YUV</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>avifRGBImage<sp/>rgb;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>avifRGBImageSetDefaults(&amp;rgb,<sp/>image.get());</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>rgb.chromaUpsampling<sp/>=<sp/>AVIF_CHROMA_UPSAMPLING_AUTOMATIC;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>rgb.format<sp/>=<sp/>AVIF_RGB_FORMAT_RGBA;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>rgb.depth<sp/>=<sp/><ref refid="constants_8h_1ae0e4246a38017a5359bdf7214a27ba5e" kindref="member">RGB_DEPTH</ref>;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>rgb.pixels<sp/>=<sp/>processed_data.data();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>rgb.rowBytes<sp/>=<sp/>width<sp/>*<sp/>avifRGBImagePixelSize(&amp;rgb);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>rgb.alphaPremultiplied<sp/>=<sp/>AVIF_FALSE;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>rgb.ignoreAlpha<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>RGB<sp/>to<sp/>YUV</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>avifResult<sp/>convertResult<sp/>=<sp/>avifImageRGBToYUV(image.get(),<sp/>&amp;rgb);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(convertResult<sp/>!=<sp/>AVIF_RESULT_OK)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref>(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" kindref="member">ConverterError::CONVERSION_FAILED</ref>,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;RGB-&gt;YUV<sp/>conversion<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string(avifResultToString(convertResult)),</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__func__);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Encode<sp/>the<sp/>image<sp/>to<sp/>AVIF<sp/>format</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>avifRWData<sp/>output<sp/>=<sp/>AVIF_DATA_EMPTY;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>avifResult<sp/>result<sp/>=<sp/>avifEncoderWrite(encoder.get(),<sp/>image.get(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>!=<sp/>AVIF_RESULT_OK)<sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>errorMsg<sp/>=</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Encoding<sp/>failed:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(avifResultToString(result));</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>==<sp/>AVIF_RESULT_OUT_OF_MEMORY)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>errorMsg<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>-<sp/>Try<sp/>higher<sp/>speed<sp/>values<sp/>(5-10)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classError" kindref="compound">Error</ref>(<ref refid="error_8h_1a5ad5e023f34da8b98e088da72c1b3744" kindref="member">avifToConverterError</ref>(result),<sp/>errorMsg,<sp/>__func__);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>encoded<sp/>data<sp/>to<sp/>result<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>output_data(output.data,<sp/>output.data<sp/>+<sp/>output.size);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/>avifRWDataFree(&amp;output);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_shared&lt;ImageBuffer&gt;(std::move(output_data));</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" refkind="member"><highlight class="normal">emscripten::val<sp/><ref refid="imageconverter_8cpp_1a739d2db06147b652cbc5145fb97925d5" kindref="member">convertImageDirect</ref>(emscripten::val<sp/>jsData,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structEncodeConfig" kindref="compound">EncodeConfig</ref><sp/>&amp;config)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>JavaScript<sp/>data<sp/>to<sp/>C++<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>inputData<sp/>=</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emscripten::convertJSArrayToNumberVector&lt;uint8_t&gt;(jsData);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Detect<sp/>image<sp/>type<sp/>and<sp/>validate<sp/>it&apos;s<sp/>supported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>type<sp/>=<sp/><ref refid="classImageGuru_1a9cb88f9bb55997d72df4b4e9ab61fc35" kindref="member">ImageGuru::GetImageType</ref>(inputData);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="imageGuru_8h_1a3154c405c975616503bac23f51b78fc0a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">ImageType::UNKNOWN</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classError" kindref="compound">Error</ref><sp/>err(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" kindref="member">ConverterError::UNSUPPORTED_IMAGETYPE</ref>,<sp/></highlight><highlight class="stringliteral">&quot;unsupported<sp/>image<sp/>type&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__func__);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" kindref="member">toJsError</ref>(err);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classImageGuru_1a9656fc9753f60aa1dda76030a7906d9f" kindref="member">ImageGuru::isSupported</ref>(type))<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classError" kindref="compound">Error</ref><sp/>err(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a2b3ddef870964ca8c622d39ab6401e81" kindref="member">ConverterError::UNSUPPORTED_IMAGETYPE</ref>,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classImageGuru_1a250967309e02e5a4a2226361f56cf5f6" kindref="member">ImageGuru::typeToString</ref>(type)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;-type<sp/>still<sp/>not<sp/>supported&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__func__);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" kindref="member">toJsError</ref>(err);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>r<sp/>=<sp/><ref refid="imageconverter_8cpp_1ad6ba1bd00ba7d9e8f381d223af9f4343" kindref="member">convert_image</ref>(type,<sp/>inputData,<sp/>width,<sp/>height,<sp/>config);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structjsResult" kindref="compound">jsResult</ref><sp/>result{r};</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>emscripten::val<sp/>jresult<sp/>=<sp/>emscripten::val::object();</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result.hasError())<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classError" kindref="compound">Error</ref><sp/>err<sp/>=<sp/>result.getError();</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="error_8h_1ac51e0905a2ad6e6b5f3ab7eafd87f2a4" kindref="member">toJsError</ref>(err);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result.hasImage())<sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>image<sp/>=<sp/>result.getImage();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;imageData<sp/>=<sp/>image-&gt;getRawData();</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>emscripten::val<sp/>uint8Array<sp/>=</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emscripten::val::global(</highlight><highlight class="stringliteral">&quot;Uint8Array&quot;</highlight><highlight class="normal">).new_(imageData.size());</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uint8Array.call&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;set&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emscripten::val(emscripten::typed_memory_view(</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imageData.size(),<sp/>imageData.data())));</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jresult.set(</highlight><highlight class="stringliteral">&quot;data&quot;</highlight><highlight class="normal">,<sp/>uint8Array);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jresult.set(</highlight><highlight class="stringliteral">&quot;success&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>emscripten::val<sp/>errorObj<sp/>=<sp/>emscripten::val::object();</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>errorObj.set(</highlight><highlight class="stringliteral">&quot;code&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" kindref="member">ConverterError::UNKNOWN_ERROR</ref>));</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>errorObj.set(</highlight><highlight class="stringliteral">&quot;message&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Unexpected<sp/>result<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jresult.set(</highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/>errorObj);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jresult.set(</highlight><highlight class="stringliteral">&quot;success&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>jresult;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::exception<sp/>&amp;e)<sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>emscripten::val<sp/>errorObj<sp/>=<sp/>emscripten::val::object();</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>errorObj.set(</highlight><highlight class="stringliteral">&quot;code&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" kindref="member">ConverterError::UNKNOWN_ERROR</ref>));</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>errorObj.set(</highlight><highlight class="stringliteral">&quot;message&quot;</highlight><highlight class="normal">,<sp/>e.what());</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>emscripten::val<sp/>jresult<sp/>=<sp/>emscripten::val::object();</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>jresult.set(</highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/>errorObj);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>jresult.set(</highlight><highlight class="stringliteral">&quot;success&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>jresult;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/imageconverter.cpp"/>
+  </compounddef>
+</doxygen>

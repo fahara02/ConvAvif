@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="result_8h" kind="file" language="C++">
+    <compoundname>result.h</compoundname>
+    <includes refid="error_8h" local="yes">error.h</includes>
+    <includes refid="imagebuffer_8h" local="yes">imagebuffer.h</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">variant</includes>
+    <includedby refid="avif__helper_8h" local="yes">include/avif_helper.h</includedby>
+    <includedby refid="imageconverter_8h" local="yes">include/imageconverter.h</includedby>
+    <includedby refid="bind_8cpp" local="yes">src/bind.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>imagebuffer.h</label>
+        <link refid="imagebuffer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>avif/avif.h</label>
+      </node>
+      <node id="7">
+        <label>emscripten.h</label>
+      </node>
+      <node id="8">
+        <label>emscripten/bind.h</label>
+      </node>
+      <node id="4">
+        <label>emscripten/val.h</label>
+      </node>
+      <node id="9">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>variant</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/avif_helper.h</label>
+        <link refid="avif__helper_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/bind.cpp</label>
+        <link refid="bind_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/imageconverter.cpp</label>
+        <link refid="imageconverter_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structjsResult" prot="public">jsResult</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="result_8h_1ac27a0c880b3a6990e93c23615c3be199" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classImageBuffer" kindref="compound">ImageBuffer</ref> &gt;</type>
+        <definition>using ImgaePtr =  std::shared_ptr&lt;ImageBuffer&gt;</definition>
+        <argsstring></argsstring>
+        <name>ImgaePtr</name>
+        <briefdescription>
+<para>Shared pointer to an <ref refid="classImageBuffer" kindref="compound">ImageBuffer</ref>, representing a successfully converted image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This type alias is used as the success case in the <ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> variant. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/result.h" line="24" column="1" bodyfile="include/result.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="result_8h_1ac27a0c880b3a6990e93c23615c3be199" kindref="member">ImgaePtr</ref>, avifResult, <ref refid="classError" kindref="compound">Error</ref> &gt;</type>
+        <definition>using Result =  std::variant&lt;ImgaePtr, avifResult, Error&gt;</definition>
+        <argsstring></argsstring>
+        <name>Result</name>
+        <briefdescription>
+<para><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> type that can hold either an image buffer or an error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This variant type is used as the return value for conversion operations, allowing functions to return either a successful result (image data) or an error condition. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/result.h" line="33" column="1" bodyfile="include/result.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> handling utilities for the AVIF conversion process. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>ConvAvif Developer </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+This file defines the <ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref> type and related structures used to handle the outcome of image conversion operations, which can be either a successfully converted image or an error. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RESULT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RESULT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8h" kindref="compound">error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imagebuffer_8h" kindref="compound">imagebuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="result_8h_1ac27a0c880b3a6990e93c23615c3be199" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="result_8h_1ac27a0c880b3a6990e93c23615c3be199" kindref="member">ImgaePtr</ref><sp/>=<sp/>std::shared_ptr&lt;ImageBuffer&gt;;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/>=<sp/>std::variant&lt;ImgaePtr,<sp/>avifResult,<sp/>Error&gt;;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structjsResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structjsResult" kindref="compound">jsResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="42" refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="result_8h_1a9cf14801ef7f9742ef6de61e4316676d" kindref="member">Result</ref><sp/><ref refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" kindref="member">result</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" kindref="member">hasError</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::holds_alternative&lt;Error&gt;(<ref refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" kindref="member">result</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="54" refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" kindref="member">hasImage</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::holds_alternative&lt;ImgaePtr&gt;(<ref refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" kindref="member">result</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classError" kindref="compound">Error</ref><sp/><ref refid="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" kindref="member">getError</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::get&lt;Error&gt;(<ref refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" kindref="member">result</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="result_8h_1ac27a0c880b3a6990e93c23615c3be199" kindref="member">ImgaePtr</ref><sp/><ref refid="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" kindref="member">getImage</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::get&lt;ImgaePtr&gt;(<ref refid="structjsResult_1a3f90a9837d4b90f929fdf99f379103f9" kindref="member">result</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>RESULT_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/result.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,25 @@
+
+Library Overview
+===============
+
+ConvAvif provides a comprehensive API for converting images to the AVIF format.
+The library is designed to be used directly from C++ or through WebAssembly bindings in JavaScript/TypeScript.
+
+Key Features
+-----------
+
+* Support for JPEG and PNG input formats
+* Configurable encoding parameters
+* Multiple codec options (AOM, SVT)
+* Quality and performance tuning options
+
+Key Components
+-------------
+
+* **EncodeConfig**: Configuration for the AVIF encoder
+* **ImageGuru**: Image format detection and conversion
+* **Error**: Error handling and reporting
+* **ImageBuffer**: Image data buffer management
+
+.. doxygenindex::
+   :project: ConvAvif

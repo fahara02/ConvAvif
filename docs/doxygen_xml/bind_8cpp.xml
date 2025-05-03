@@ -1,0 +1,400 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="bind_8cpp" kind="file" language="C++">
+    <compoundname>bind.cpp</compoundname>
+    <includes refid="encoder__config_8h" local="yes">encoder_config.h</includes>
+    <includes refid="error_8h" local="yes">error.h</includes>
+    <includes refid="imagebuffer_8h" local="yes">imagebuffer.h</includes>
+    <includes refid="imageconverter_8h" local="yes">imageconverter.h</includes>
+    <includes refid="result_8h" local="yes">result.h</includes>
+    <includes local="no">emscripten/bind.h</includes>
+    <incdepgraph>
+      <node id="15">
+        <label>avif_helper.h</label>
+        <link refid="avif__helper_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="2">
+        <label>encoder_config.h</label>
+        <link refid="encoder__config_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>imageGuru.h</label>
+        <link refid="imageGuru_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>imagebuffer.h</label>
+        <link refid="imagebuffer_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>imageconverter.h</label>
+        <link refid="imageconverter_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>result.h</label>
+        <link refid="result_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/bind.cpp</label>
+        <link refid="bind_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>algorithm</label>
+      </node>
+      <node id="19">
+        <label>array</label>
+      </node>
+      <node id="5">
+        <label>avif/avif.h</label>
+      </node>
+      <node id="10">
+        <label>emscripten.h</label>
+      </node>
+      <node id="11">
+        <label>emscripten/bind.h</label>
+      </node>
+      <node id="8">
+        <label>emscripten/val.h</label>
+      </node>
+      <node id="12">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="17">
+        <label>variant</label>
+      </node>
+      <node id="13">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EMSCRIPTEN_BINDINGS</definition>
+        <argsstring>(ImageBuffer)</argsstring>
+        <name>EMSCRIPTEN_BINDINGS</name>
+        <param>
+          <type><ref refid="classImageBuffer" kindref="compound">ImageBuffer</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/bind.cpp" line="8" column="1" bodyfile="src/bind.cpp" bodystart="8" bodyend="14"/>
+        <references refid="classImageBuffer_1a092d25f5f27ff06124cd28764bf091cb" compoundref="imagebuffer_8h" startline="40" endline="44">ImageBuffer::getData</references>
+        <references refid="classImageBuffer_1a5c2bf3c39d985e8f25726764d4bd29f4" compoundref="imagebuffer_8h" startline="58" endline="58">ImageBuffer::getRawData</references>
+        <references refid="classImageBuffer_1ab2fce31da3b99684f3621762e9230022" compoundref="imagebuffer_8h" startline="51" endline="51">ImageBuffer::getSize</references>
+      </memberdef>
+      <memberdef kind="function" id="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EMSCRIPTEN_BINDINGS</definition>
+        <argsstring>(ImageConverter)</argsstring>
+        <name>EMSCRIPTEN_BINDINGS</name>
+        <param>
+          <type>ImageConverter</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/bind.cpp" line="16" column="1" bodyfile="src/bind.cpp" bodystart="16" bodyend="70"/>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" compoundref="encoder__config_8h" startline="22">AOM</references>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2ae1f2d5134ed2543d38a0de9751cf75d9" compoundref="encoder__config_8h" startline="22">AUTO</references>
+        <references refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" compoundref="imageconverter_8cpp" startline="243" endline="300">convertImageDirect</references>
+        <references refid="structSpeed_1acc62b2640be63bb616a22a526a603e71" compoundref="encoder__config_8h" startline="63">Speed::default_speed</references>
+        <references refid="structEncodeConfig_1a282e07fde01ba67dc2018b6d86bd9f26" compoundref="encoder__config_8h" startline="341" endline="341">EncodeConfig::getCodecChoice</references>
+        <references refid="structSpeed_1a6593324af610f9a059908764c3c58948" compoundref="encoder__config_8h" startline="130" endline="130">Speed::getDefault</references>
+        <references refid="structEncodeConfig_1a862e39ee31543db2398aa54b41d5ce53" compoundref="encoder__config_8h" startline="280" endline="280">EncodeConfig::getMaxQuantizer</references>
+        <references refid="structEncodeConfig_1abbc70deea92ee3d6281d4bf9e8719a79" compoundref="encoder__config_8h" startline="274" endline="274">EncodeConfig::getMinQuantizer</references>
+        <references refid="structEncodeConfig_1aee7530598b42b2a7cd315834ebdce54f" compoundref="encoder__config_8h" startline="319" endline="319">EncodeConfig::getPreset</references>
+        <references refid="structSpeed_1a1779b0706d63ca81528521464450365b" compoundref="encoder__config_8h" startline="157" endline="157">Speed::getPreset</references>
+        <references refid="structEncodeConfig_1a1e0dc7eca05d0af1d76b0ed56881a18b" compoundref="encoder__config_8h" startline="268" endline="268">EncodeConfig::getQuality</references>
+        <references refid="structSpeed_1a76fc4e89bba513f25cf3a749e122daff" compoundref="encoder__config_8h" startline="142" endline="142">Speed::getRange</references>
+        <references refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" compoundref="encoder__config_8h" startline="304" endline="304">EncodeConfig::getSpeed</references>
+        <references refid="structEncodeConfig_1a7bc6672173171422aa86af1d0b98e5fc" compoundref="encoder__config_8h" startline="292" endline="292">EncodeConfig::getTileColsLog2</references>
+        <references refid="structEncodeConfig_1ad801a3a45fcf41d5b15778d6134e8af6" compoundref="encoder__config_8h" startline="286" endline="286">EncodeConfig::getTileRowsLog2</references>
+        <references refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7a0c6ad70beb3a7e76c3fc7adab7c46acc" compoundref="encoder__config_8h" startline="32">Good</references>
+        <references refid="structSpeed_1af0a84886324cba325796995fc199c440" compoundref="encoder__config_8h" startline="149" endline="151">Speed::isValid</references>
+        <references refid="structSpeedRange_1ab7968f05a57de473488be534a6f849ce" compoundref="encoder__config_8h" startline="51">SpeedRange::max</references>
+        <references refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad71809aa2264347869e22e47a2635e63" compoundref="encoder__config_8h" startline="32">MemoryHungry</references>
+        <references refid="structSpeedRange_1a210659c016cbaf56e19fd770bb292a19" compoundref="encoder__config_8h" startline="50">SpeedRange::min</references>
+        <references refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" compoundref="encoder__config_8h" startline="217">EncodeConfig::pixelFormat</references>
+        <references refid="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0" compoundref="encoder__config_8h" startline="62">Speed::preset_</references>
+        <references refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad50ae798e3aa50c3a502118e759cc216" compoundref="encoder__config_8h" startline="32">RealTime</references>
+        <references refid="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" compoundref="encoder__config_8h" startline="163" endline="169">Speed::set</references>
+        <references refid="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" compoundref="encoder__config_8h" startline="347" endline="350">EncodeConfig::setCodecChoice</references>
+        <references refid="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab" compoundref="encoder__config_8h" startline="244" endline="244">EncodeConfig::setMaxQuantizer</references>
+        <references refid="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3" compoundref="encoder__config_8h" startline="238" endline="238">EncodeConfig::setMinQuantizer</references>
+        <references refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" compoundref="encoder__config_8h" startline="310" endline="313">EncodeConfig::setPreset</references>
+        <references refid="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357" compoundref="encoder__config_8h" startline="232" endline="232">EncodeConfig::setQuality</references>
+        <references refid="structSpeed_1a757d6d07a38e686bfd046eab9a6fd5f4" compoundref="encoder__config_8h" startline="136" endline="136">Speed::setSpeedRange</references>
+        <references refid="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878" compoundref="encoder__config_8h" startline="256" endline="256">EncodeConfig::setTileColsLog2</references>
+        <references refid="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe" compoundref="encoder__config_8h" startline="250" endline="250">EncodeConfig::setTileRowsLog2</references>
+        <references refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" compoundref="encoder__config_8h" startline="216">EncodeConfig::sharpness</references>
+        <references refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0" compoundref="encoder__config_8h" startline="22">SVT</references>
+        <references refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" compoundref="encoder__config_8h" startline="226">EncodeConfig::tune</references>
+        <references refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa268c098dd4ed280b44814cb3626651b6" compoundref="encoder__config_8h" startline="27">TUNE_DEFAULT</references>
+        <references refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa36f2f11b44c5dbc63f70d5d2b9b21ade" compoundref="encoder__config_8h" startline="27">TUNE_PSNR</references>
+        <references refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa2b5b777c2bdf867ddf4693c9d806c4bf" compoundref="encoder__config_8h" startline="27">TUNE_SSIM</references>
+        <references refid="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" compoundref="encoder__config_8h" startline="327" endline="335">EncodeConfig::updateSpeed</references>
+      </memberdef>
+      <memberdef kind="function" id="bind_8cpp_1acc71d87100b55443e2c7407f017e8e81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EMSCRIPTEN_BINDINGS</definition>
+        <argsstring>(avif_enums)</argsstring>
+        <name>EMSCRIPTEN_BINDINGS</name>
+        <param>
+          <type>avif_enums</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/bind.cpp" line="72" column="1" bodyfile="src/bind.cpp" bodystart="72" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EMSCRIPTEN_BINDINGS</definition>
+        <argsstring>(ErrorHandling)</argsstring>
+        <name>EMSCRIPTEN_BINDINGS</name>
+        <param>
+          <type>ErrorHandling</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/bind.cpp" line="86" column="1" bodyfile="src/bind.cpp" bodystart="86" bodyend="111"/>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" compoundref="error_8h" startline="36">AVIF_ERROR_START</references>
+        <references refid="classError_1af99b67523cea6feba2f76679f97f2cfe" compoundref="error_8h" startline="47">Error::code</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" compoundref="error_8h" startline="30">CONVERSION_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" compoundref="error_8h" startline="29">ENCODER_CREATION_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6" compoundref="error_8h" startline="31">ENCODING_FAILED</references>
+        <references refid="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" compoundref="result_8h" startline="61" endline="61">jsResult::getError</references>
+        <references refid="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" compoundref="result_8h" startline="68" endline="68">jsResult::getImage</references>
+        <references refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" compoundref="result_8h" startline="48" endline="48">jsResult::hasError</references>
+        <references refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" compoundref="result_8h" startline="54" endline="54">jsResult::hasImage</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" compoundref="error_8h" startline="28">IMAGE_LOAD_FAILED</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d" compoundref="error_8h" startline="32">INVALID_ARGUMENT</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" compoundref="error_8h" startline="26">INVALID_DIMENSIONS</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" compoundref="error_8h" startline="34">INVALID_QUANTIZER_VALUES</references>
+        <references refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" compoundref="error_8h" startline="48">Error::message</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564" compoundref="error_8h" startline="25">OK</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6" compoundref="error_8h" startline="33">OUT_OF_MEMORY</references>
+        <references refid="classError_1a4051d2413bfd2780250043fc9c412865" compoundref="error_8h" startline="49">Error::stackTrace</references>
+        <references refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" compoundref="error_8h" startline="35">UNKNOWN_ERROR</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="encoder__config_8h" kindref="compound">encoder_config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8h" kindref="compound">error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imagebuffer_8h" kindref="compound">imagebuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imageconverter_8h" kindref="compound">imageconverter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="result_8h" kindref="compound">result.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;emscripten/bind.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab" refkind="member"><highlight class="normal"><ref refid="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab" kindref="member">EMSCRIPTEN_BINDINGS</ref>(<ref refid="classImageBuffer" kindref="compound">ImageBuffer</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>emscripten::class_&lt;ImageBuffer&gt;(</highlight><highlight class="stringliteral">&quot;ImageBuffer&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.smart_ptr&lt;std::shared_ptr&lt;ImageBuffer&gt;&gt;(</highlight><highlight class="stringliteral">&quot;shared_ptr&lt;ImageBuffer&gt;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getData&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classImageBuffer_1a092d25f5f27ff06124cd28764bf091cb" kindref="member">ImageBuffer::getData</ref>)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getSize&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classImageBuffer_1ab2fce31da3b99684f3621762e9230022" kindref="member">ImageBuffer::getSize</ref>)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getRawData&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classImageBuffer_1a5c2bf3c39d985e8f25726764d4bd29f4" kindref="member">ImageBuffer::getRawData</ref>);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="bind_8cpp_1a7da79f21adc34fa5c42b97f82772d7d9" refkind="member"><highlight class="normal"><ref refid="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab" kindref="member">EMSCRIPTEN_BINDINGS</ref>(ImageConverter)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>emscripten::enum_&lt;SpeedPreset&gt;(</highlight><highlight class="stringliteral">&quot;SpeedPreset&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;Good&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7a0c6ad70beb3a7e76c3fc7adab7c46acc" kindref="member">SpeedPreset::Good</ref>)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;MemoryHungry&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad71809aa2264347869e22e47a2635e63" kindref="member">SpeedPreset::MemoryHungry</ref>)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;RealTime&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7ad50ae798e3aa50c3a502118e759cc216" kindref="member">SpeedPreset::RealTime</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>emscripten::enum_&lt;CodecChoice&gt;(</highlight><highlight class="stringliteral">&quot;CodecChoice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;AUTO&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2ae1f2d5134ed2543d38a0de9751cf75d9" kindref="member">CodecChoice::AUTO</ref>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;AOM&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2a8154e5c303d1ac0fddea00154b517c4b" kindref="member">CodecChoice::AOM</ref>)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;SVT&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2acebb140a48eabb833fcc8b81655243e0" kindref="member">CodecChoice::SVT</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>emscripten::enum_&lt;Tune&gt;(</highlight><highlight class="stringliteral">&quot;Tune&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;DEFAULT&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa268c098dd4ed280b44814cb3626651b6" kindref="member">Tune::TUNE_DEFAULT</ref>)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;PSNR&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa36f2f11b44c5dbc63f70d5d2b9b21ade" kindref="member">Tune::TUNE_PSNR</ref>)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;SSIM&quot;</highlight><highlight class="normal">,<sp/><ref refid="encoder__config_8h_1a1844848b49738630ccf4c985b5081e3aa2b5b777c2bdf867ddf4693c9d806c4bf" kindref="member">Tune::TUNE_SSIM</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>emscripten::class_&lt;SpeedRange&gt;(</highlight><highlight class="stringliteral">&quot;SpeedRange&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.constructor&lt;&gt;()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;min&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeedRange_1a210659c016cbaf56e19fd770bb292a19" kindref="member">SpeedRange::min</ref>)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;max&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeedRange_1ab7968f05a57de473488be534a6f849ce" kindref="member">SpeedRange::max</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>emscripten::class_&lt;Speed&gt;(</highlight><highlight class="stringliteral">&quot;Speed&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.constructor&lt;<ref refid="encoder__config_8h_1a558e1218fd14c7cae3791e9cf82a03e2" kindref="member">CodecChoice</ref>,<sp/><ref refid="encoder__config_8h_1a7b5ddb70633c01f650076b8e18fd20d7" kindref="member">SpeedPreset</ref>&gt;()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;default_speed&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1a6593324af610f9a059908764c3c58948" kindref="member">Speed::getDefault</ref>,<sp/>&amp;<ref refid="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" kindref="member">Speed::set</ref>,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="structSpeed_1acc62b2640be63bb616a22a526a603e71" kindref="member">Speed::default_speed</ref>)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;speed_range&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1a76fc4e89bba513f25cf3a749e122daff" kindref="member">Speed::getRange</ref>,<sp/>&amp;<ref refid="structSpeed_1a757d6d07a38e686bfd046eab9a6fd5f4" kindref="member">Speed::setSpeedRange</ref>)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;preset&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1ab857f2b28480e1fe39e473cbb11a2ef0" kindref="member">Speed::preset_</ref>)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getDefault&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1a6593324af610f9a059908764c3c58948" kindref="member">Speed::getDefault</ref>)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getRange&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1a76fc4e89bba513f25cf3a749e122daff" kindref="member">Speed::getRange</ref>)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;isValid&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1af0a84886324cba325796995fc199c440" kindref="member">Speed::isValid</ref>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getPreset&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1a1779b0706d63ca81528521464450365b" kindref="member">Speed::getPreset</ref>)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;set&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structSpeed_1ad56c0359dedbf94a72fd69493a31b50e" kindref="member">Speed::set</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>emscripten::class_&lt;EncodeConfig&gt;(</highlight><highlight class="stringliteral">&quot;EncodeConfig&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.constructor&lt;&gt;()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;quality&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1a1e0dc7eca05d0af1d76b0ed56881a18b" kindref="member">EncodeConfig::getQuality</ref>,<sp/>&amp;<ref refid="structEncodeConfig_1a86949bc6781d85fb9b384366b70d6357" kindref="member">EncodeConfig::setQuality</ref>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;preset&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1aee7530598b42b2a7cd315834ebdce54f" kindref="member">EncodeConfig::getPreset</ref>,<sp/>&amp;<ref refid="structEncodeConfig_1a2e11b5548644ac0e7ff3adc08f470566" kindref="member">EncodeConfig::setPreset</ref>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;pixelFormat&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1acbf1abb9ca8946131686ddd555f38e34" kindref="member">EncodeConfig::pixelFormat</ref>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;codecChoice&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1a282e07fde01ba67dc2018b6d86bd9f26" kindref="member">EncodeConfig::getCodecChoice</ref>,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="structEncodeConfig_1a2093dc7745148029839988b97e326d8f" kindref="member">EncodeConfig::setCodecChoice</ref>)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;minQuantizer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1abbc70deea92ee3d6281d4bf9e8719a79" kindref="member">EncodeConfig::getMinQuantizer</ref>,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="structEncodeConfig_1a6555d4838568780b89de5cb13a0fb4e3" kindref="member">EncodeConfig::setMinQuantizer</ref>)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;maxQuantizer&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1a862e39ee31543db2398aa54b41d5ce53" kindref="member">EncodeConfig::getMaxQuantizer</ref>,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="structEncodeConfig_1a0a62ac9ddfb1e9a04513ba22cf6d22ab" kindref="member">EncodeConfig::setMaxQuantizer</ref>)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;tileRowsLog2&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1ad801a3a45fcf41d5b15778d6134e8af6" kindref="member">EncodeConfig::getTileRowsLog2</ref>,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="structEncodeConfig_1a68c9ca2bda0198dd1e25005625ee0bfe" kindref="member">EncodeConfig::setTileRowsLog2</ref>)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;tileColsLog2&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1a7bc6672173171422aa86af1d0b98e5fc" kindref="member">EncodeConfig::getTileColsLog2</ref>,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="structEncodeConfig_1ac4925a17623dd5df54d9c12439605878" kindref="member">EncodeConfig::setTileColsLog2</ref>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;tune&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1a2672e5c7b0700657fd7621b87367b9ba" kindref="member">EncodeConfig::tune</ref>)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;sharpness&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1ad28bd98f1bdbe276275b754548d23986" kindref="member">EncodeConfig::sharpness</ref>)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getSpeed&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1acfc8437f000698097e3b1e0d7b379782" kindref="member">EncodeConfig::getSpeed</ref>)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;updateSpeed&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structEncodeConfig_1aa0b0d51d3f108037c810584e9a7ff7a9" kindref="member">EncodeConfig::updateSpeed</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>emscripten::function(</highlight><highlight class="stringliteral">&quot;convertImageDirect&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="imageconverter_8h_1a739d2db06147b652cbc5145fb97925d5" kindref="member">convertImageDirect</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="bind_8cpp_1acc71d87100b55443e2c7407f017e8e81" refkind="member"><highlight class="normal"><ref refid="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab" kindref="member">EMSCRIPTEN_BINDINGS</ref>(avif_enums)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>emscripten::enum_&lt;avifPixelFormat&gt;(</highlight><highlight class="stringliteral">&quot;AvifPixelFormat&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;YUV444&quot;</highlight><highlight class="normal">,<sp/>AVIF_PIXEL_FORMAT_YUV444)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;YUV422&quot;</highlight><highlight class="normal">,<sp/>AVIF_PIXEL_FORMAT_YUV422)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;YUV420&quot;</highlight><highlight class="normal">,<sp/>AVIF_PIXEL_FORMAT_YUV420)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;YUV400&quot;</highlight><highlight class="normal">,<sp/>AVIF_PIXEL_FORMAT_YUV400);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>emscripten::enum_&lt;avifCodecChoice&gt;(</highlight><highlight class="stringliteral">&quot;AvifCodecChoice&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;AUTO&quot;</highlight><highlight class="normal">,<sp/>AVIF_CODEC_CHOICE_AUTO)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;AOM&quot;</highlight><highlight class="normal">,<sp/>AVIF_CODEC_CHOICE_AOM)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;SVT&quot;</highlight><highlight class="normal">,<sp/>AVIF_CODEC_CHOICE_SVT)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;DAV1D&quot;</highlight><highlight class="normal">,<sp/>AVIF_CODEC_CHOICE_DAV1D);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="bind_8cpp_1a776fc1d4982516458f0fe5a8d51b72c1" refkind="member"><highlight class="normal"><ref refid="bind_8cpp_1a1e4a4c27063f79b3f55a1b887e25c4ab" kindref="member">EMSCRIPTEN_BINDINGS</ref>(ErrorHandling)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>emscripten::enum_&lt;ConverterError&gt;(</highlight><highlight class="stringliteral">&quot;ErrorCode&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae0aa021e21dddbd6d8cecec71e9cf564" kindref="member">ConverterError::OK</ref>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;INVALID_DIMENSIONS&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a85d5c1a701eb47300e4687b82001fac9" kindref="member">ConverterError::INVALID_DIMENSIONS</ref>)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;IMAGE_LOAD_FAILED&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a96e580b9f181d5ec9d7c2d126cbf30f3" kindref="member">ConverterError::IMAGE_LOAD_FAILED</ref>)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;ENCODER_CREATION_FAILED&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a378f312bf061d37517fc4d7bad1779da" kindref="member">ConverterError::ENCODER_CREATION_FAILED</ref>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;CONVERSION_FAILED&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ae1382465cfba6130c05d8b7ea77aa498" kindref="member">ConverterError::CONVERSION_FAILED</ref>)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;ENCODING_FAILED&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4aa0e09e20c5542d45de3253addf5714d6" kindref="member">ConverterError::ENCODING_FAILED</ref>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;INVALID_ARGUMENT&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4af295a0c3e37c94f078e1c5476479132d" kindref="member">ConverterError::INVALID_ARGUMENT</ref>)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;OUT_OF_MEMORY&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4ac56ddb8056b120c9d5fee05981f219c6" kindref="member">ConverterError::OUT_OF_MEMORY</ref>)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;INVALID_QUANTIZER_VALUES&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a11dcd80a782dade1bc316be2fbac2581" kindref="member">ConverterError::INVALID_QUANTIZER_VALUES</ref>)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;UNKNOWN_ERROR&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a9a10f345b0f755d461a8673a5e9ef6b4" kindref="member">ConverterError::UNKNOWN_ERROR</ref>)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.value(</highlight><highlight class="stringliteral">&quot;AVIF_ERROR_START&quot;</highlight><highlight class="normal">,<sp/><ref refid="error_8h_1ae34bfe75944861aa76edbf308eaeedc4a23e18d96edff50279e7705d60dddff28" kindref="member">ConverterError::AVIF_ERROR_START</ref>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>emscripten::class_&lt;Error&gt;(</highlight><highlight class="stringliteral">&quot;Error&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;code&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classError_1af99b67523cea6feba2f76679f97f2cfe" kindref="member">Error::code</ref>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;message&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classError_1aa4713ef3ee9c3c0da43a54b01949510d" kindref="member">Error::message</ref>)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.property(</highlight><highlight class="stringliteral">&quot;stackTrace&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classError_1a4051d2413bfd2780250043fc9c412865" kindref="member">Error::stackTrace</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>emscripten::class_&lt;jsResult&gt;(</highlight><highlight class="stringliteral">&quot;Result&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;hasError&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structjsResult_1a0bcb6e4e4eae193cdeb022733e7cc1ab" kindref="member">jsResult::hasError</ref>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;hasImage&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structjsResult_1a24bc5c4234f6374cd9198dd9710c25a5" kindref="member">jsResult::hasImage</ref>)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getError&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structjsResult_1a44dd226e5c8bfdd19f8828d84e627398" kindref="member">jsResult::getError</ref>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.function(</highlight><highlight class="stringliteral">&quot;getImage&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structjsResult_1acfbdc9787e2cfdc557b507a98d610cdd" kindref="member">jsResult::getImage</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/bind.cpp"/>
+  </compounddef>
+</doxygen>
